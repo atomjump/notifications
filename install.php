@@ -1,7 +1,7 @@
 <?php
 	if(!isset($notifications_config)) {
         //Get global plugin config - but only once
-		$data = file_get_contents (dirname(__FILE__) . "/../../config/config.json");
+		$data = file_get_contents (dirname(__FILE__) . "/config/config.json");
         if($data) {
             $notifications_config = json_decode($data, true);
             if(!isset($notifications_config)) {
@@ -18,7 +18,7 @@
   
     }
  
-	$start_path = $notifications_config['fileRoot'];
+	$start_path = $notifications_config['serverPath'];
 	
 	
 	$notify = false;

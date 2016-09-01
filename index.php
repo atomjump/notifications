@@ -2,6 +2,26 @@
 
  include_once("classes/cls.pluginapi.php");
 
+	if(!isset($notifications_config)) {
+        //Get global plugin config - but only once
+		$data = file_get_contents (dirname(__FILE__) . "/config/config.json");
+        if($data) {
+            $notifications_config = json_decode($data, true);
+            if(!isset($notifications_config)) {
+                echo "Error: notifications config/config.json is not valid JSON.";
+                exit(0);
+            }
+     
+        } else {
+            echo "Error: Missing config/config.json in notifications plugin.";
+            exit(0);
+     
+        }
+  
+  
+    }
+
+
     class plugin_hide_aargh
     {
         public function on_message($message_forum_name, $message, $message_id, $sender_id, $recipient_id, $sender_name, $sender_email, $sender_phone)
@@ -48,7 +68,7 @@
 	{
 		// Insert real GCM API key from the Google APIs Console
 		// https://code.google.com/apis/console/        
-		$apiKey = 'abc';
+		$apiKey = $notifications_config['private_key_id'];
 
 		// Set POST request body
 		$post = array(
