@@ -36,11 +36,7 @@
 
 
 
-			// Payload data you want to send to Android device(s)
-			$out_message = str_replace("\\r", "", $message);
-			$out_message = str_replace("\\n", "", $out_message);
-			// (it will be accessible via intent extras)    
-			$data = array('message' => trim(preg_replace('/\s\s+/', ' ', $out_message)));		//remove newlines and double spaces
+			
 			
 			// The recipient registration tokens for this notification
 			// https://developer.android.com/google/gcm/    
@@ -52,6 +48,23 @@
 			{
 				error_log("Notification id:" . $row['var_notification_id']);
 				if(isset($row['var_notification_id'])) {
+					
+					//Confirmed we want to send a message
+					
+					// Payload data you want to send to Android device(s)
+					$out_message = str_replace("\\r", "", $message);
+					$out_message = str_replace("\\n", "", $out_message);
+					// (it will be accessible via intent extras)    
+					$data = array('message' => trim(preg_replace('/\s\s+/', ' ', $out_message)));		//remove newlines and double spaces
+					
+					
+					//Check this is an atomjump.com message
+					if(strpos($message_forum_name, "ajps_") !== false) {
+						$aj_forum = str_replace("ajps_", "", $message_forum_name);
+						$out_message .= " <a href='http://" . $aj_forum . ".atomjump.com'>" . $aj_forum . "@</a>";
+					
+					}
+					
 					$ids = array($row['var_notification_id']);
 			
 					
