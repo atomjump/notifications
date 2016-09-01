@@ -21,7 +21,7 @@
   
     }
  
-	$start_path = $notification_config['serverPath'];
+	$start_path = $notifications_config['serverPath'];
 	$staging = $notifications_config['staging'];
 	
 	$notify = false;
