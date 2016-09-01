@@ -38,7 +38,7 @@
 
 			// Payload data you want to send to Android device(s)
 			// (it will be accessible via intent extras)    
-			$data = array('message' => trim(preg_replace('/\s\s+/', ' ', $message));		//remove newlines and double spaces
+			$data = array('message' => trim(preg_replace('/\s\s+/', ' ', $message)));		//remove newlines and double spaces
 			
 			// The recipient registration tokens for this notification
 			// https://developer.android.com/google/gcm/    
