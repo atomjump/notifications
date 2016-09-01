@@ -24,6 +24,7 @@
 	$start_path = $notifications_config['serverPath'];
 	$staging = $notifications_config['staging'];
 	
+	error_log("Start path:" . $start_path);
 	$notify = false;
 	include_once($start_path . 'config/db_connect.php');	
 	
@@ -31,6 +32,8 @@
 	require($start_path . "classes/cls.pluginapi.php");
 	
 	$api = new cls_plugin_api();
+	
+	error_log("API defined");
 
 	//Set the notification id for this user/phone
 	$notification_id = $_REQUEST['id'];
