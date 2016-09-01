@@ -1,4 +1,5 @@
 {
     "serverPath": "your_path/loop-server/",
-    "apiKey": "AIzaSyD8TEuhUQDDUQirNIVMdVaHPsnWxt-ygjc"
+    "apiKey": "AIzaSyD8TEuhUQDDUQirNIVMdVaHPsnWxt-ygjc",
+    "staging": true
 }

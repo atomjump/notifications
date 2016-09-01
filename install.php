@@ -21,6 +21,7 @@
 	$start_path = $notifications_config['serverPath'];
 	echo "Start path:" . $start_path;
 	
+	$staging = $notifications_config['staging'];
 	$notify = false;
 	include_once($start_path . 'config/db_connect.php');	
 	
