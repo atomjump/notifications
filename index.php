@@ -9,7 +9,7 @@
     {
     	public $notifications_config;
     	
-        public function on_message($message_forum_name, $message, $message_id, $sender_id, $recipient_id, $sender_name, $sender_email, $sender_phone)
+        public function on_message($message_forum_id, $message, $message_id, $sender_id, $recipient_id, $sender_name, $sender_email, $sender_phone, $message_forum_name)
         {
            	if(!isset($this->notifications_config)) {
 				//Get global plugin config - but only once
