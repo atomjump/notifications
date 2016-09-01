@@ -22,7 +22,7 @@
     }
 
 
-    class plugin_hide_aargh
+    class plugin_notifications
     {
         public function on_message($message_forum_name, $message, $message_id, $sender_id, $recipient_id, $sender_name, $sender_email, $sender_phone)
         {
@@ -68,7 +68,7 @@
 	{
 		// Insert real GCM API key from the Google APIs Console
 		// https://code.google.com/apis/console/        
-		$apiKey = $notifications_config['private_key_id'];
+		$apiKey = $notifications_config['apiKey'];
 
 		// Set POST request body
 		$post = array(

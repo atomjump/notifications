@@ -22,7 +22,7 @@
     }
  
 	$start_path = $notification_config['serverPath'];
-	
+	$staging = $notifications_config['staging'];
 	
 	$notify = false;
 	include_once($start_path . 'config/db_connect.php');	
