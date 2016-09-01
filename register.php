@@ -41,4 +41,5 @@
 	error_log("Update tbl_user:" . $sql);
 	$api->db_update("tbl_user", $sql);
 
+	echo "Updated";
 ?>
