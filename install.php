@@ -18,7 +18,7 @@
   
     }
  
-	$start_path = $notifications_config['serverPath'];
+	$start_path = $notifications_config['fileRoot'];
 	
 	
 	$notify = false;
