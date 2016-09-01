@@ -62,6 +62,15 @@
 						$out_message .= " <a href='http://" . $aj_forum . ".atomjump.com'>" . $aj_forum . "@</a>";
 					
 					}
+					if($message_forum_name == "test_feedback") {
+						//Special case the homepage
+						if($staging == true) {
+							$out_message .= " <a href='https://staging.atomjump.com'>AtomJump@</a>";
+						
+						} else {
+							$out_message .= " <a href='https://atomjump.com'>AtomJump@</a>";
+						}
+					}
 					
 					error_log("Sending message:" . $out_message);
 					
