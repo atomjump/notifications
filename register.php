@@ -34,6 +34,8 @@
 
 	//Set the notification id for this user/phone
 	$notification_id = $_REQUEST['id'];
-	$api->db_update("tbl_user", "var_notification_id = '" . $notification_id . "'  WHERE int_user_id = " . $_REQUEST['userid']);
+	$sql = "var_notification_id = '" . $notification_id . "'  WHERE int_user_id = " . $_REQUEST['userid'];
+	error_log("Update tbl_user:" . $sql);
+	$api->db_update("tbl_user", $sql);
 
 ?>
