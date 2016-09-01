@@ -23,12 +23,12 @@
 	$staging = $notifications_config['staging'];
 	$notify = false;
 	include_once($start_path . 'config/db_connect.php');	
-	echo "Start path:" . $start_path;
+	echo "Start path:" . $start_path . "\n";
 
 	
 	$define_classes_path = $start_path;     //This flag ensures we have access to the typical classes, before the cls.pluginapi.php is included
 	
-	echo "Classes path:" . $define_classes_path;
+	echo "Classes path:" . $define_classes_path . "\n";
 	
 	require($start_path . "classes/cls.pluginapi.php");
 	
@@ -37,7 +37,6 @@
 	//Insert a column into the user table - one registration id (likely android gcm or iphone)
 	$sql = "ALTER TABLE tbl_user ADD COLUMN `var_notification_id` varchar(255) DEFAULT NULL";
 	echo "Updating user table. SQL:" . $sql . "\n";
-	$api->db_query($sql);
 	$result = $api->db_select($sql);
 	echo "Completed.\n";
 	
