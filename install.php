@@ -19,12 +19,15 @@
     }
  
 	$start_path = $notifications_config['serverPath'];
-	
+	echo "Start path:" . $start_path;
 	
 	$notify = false;
 	include_once($start_path . 'config/db_connect.php');	
 	
 	$define_classes_path = $start_path;     //This flag ensures we have access to the typical classes, before the cls.pluginapi.php is included
+	
+	echo "Classes path:" . $define_classes_path;
+	
 	require($start_path . "classes/cls.pluginapi.php");
 	
 	$api = new cls_plugin_api();
