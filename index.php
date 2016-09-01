@@ -54,16 +54,21 @@
 					// Payload data you want to send to Android device(s)
 					$out_message = str_replace("\\r", "", $message);
 					$out_message = str_replace("\\n", "", $out_message);
-					// (it will be accessible via intent extras)    
-					$data = array('message' => trim(preg_replace('/\s\s+/', ' ', $out_message)));		//remove newlines and double spaces
 					
-					
+					error_log("Forum name:" . $message_forum_name);
 					//Check this is an atomjump.com message
 					if(strpos($message_forum_name, "ajps_") !== false) {
 						$aj_forum = str_replace("ajps_", "", $message_forum_name);
 						$out_message .= " <a href='http://" . $aj_forum . ".atomjump.com'>" . $aj_forum . "@</a>";
 					
 					}
+					
+					error_log("Sending message:" . $out_message);
+					
+					
+					// (it will be accessible via intent extras)    
+					$data = array('message' => trim(preg_replace('/\s\s+/', ' ', $out_message)));		//remove newlines and double spaces
+					
 					
 					$ids = array($row['var_notification_id']);
 			
