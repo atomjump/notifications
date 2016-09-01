@@ -68,7 +68,7 @@
 		{
 			// Insert real GCM API key from the Google APIs Console
 			// https://code.google.com/apis/console/        
-			$apiKey = $notifications_config['apiKey'];
+			$apiKey = $this->notifications_config['apiKey'];
 
 			// Set POST request body
 			$post = array(
