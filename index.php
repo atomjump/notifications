@@ -80,21 +80,23 @@
 					
 					// (it will be accessible via intent extras)    
 					//$data = array('message' => $out_message);		//remove newlines and double spaces
+					$ids = array($row['var_notification_id']);
+
 					
-					$data = array("priority" => "normal",
+					$data = array("to" => $ids,					//"priority" => "normal",
 								  "notification" => array(
 									"body" => $out_message,
 									"title" => "AtomJump Messaging",
 									"icon" => "new",
 								  ),
 								  "data" => array(
+								  	"message" => $out_message,
 									"link" => $out_link,
 									"forum" => $message_forum_name
 								  ));
 					
 					error_log("Sending message:" . $out_message . "  Outlink:" .  $out_link . "  Forum:" . $message_forum_name);
 					
-					$ids = array($row['var_notification_id']);
 			
 					
 					// Send push notification via Google Cloud Messaging. TODO: may need to run in a background process
