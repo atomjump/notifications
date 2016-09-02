@@ -56,28 +56,43 @@
 					$out_message = str_replace("\\n", "", $out_message);
 					
 					error_log("Forum name:" . $message_forum_name);
+					$out_link = "";
 					//Check this is an atomjump.com message
 					if(strpos($message_forum_name, "ajps_") !== false) {
 						$aj_forum = str_replace("ajps_", "", $message_forum_name);
-						$out_message .= " <a href='http://" . $aj_forum . ".atomjump.com'>" . $aj_forum . "@</a>";
+						$out_link = "<a href='http://" . $aj_forum . ".atomjump.com'>" . $aj_forum . "@</a>";
 					
 					}
 					if($message_forum_name == "test_feedback") {
 						//Special case the homepage
 						if($staging == true) {
-							$out_message .= " <a href='https://staging.atomjump.com'>AtomJump@</a>";
+							$out_link = "<a href='https://staging.atomjump.com'>AtomJump@</a>";
 						
 						} else {
-							$out_message .= " <a href='https://atomjump.com'>AtomJump@</a>";
+							$out_link = "<a href='https://atomjump.com'>AtomJump@</a>";
 						}
 					}
 					
-					error_log("Sending message:" . $out_message);
+					$out_message = trim(preg_replace('/\s\s+/', ' ', $out_message));
+					
+					
 					
 					
 					// (it will be accessible via intent extras)    
-					$data = array('message' => trim(preg_replace('/\s\s+/', ' ', $out_message)));		//remove newlines and double spaces
+					//$data = array('message' => $out_message);		//remove newlines and double spaces
 					
+					$data = array("priority" => "normal",
+								  "notification" => array(
+									"body" => $out_message,
+									"title" => "AtomJump Messaging",
+									"icon" => "new",
+								  ),
+								  "data" => array(
+									"link" => $out_link,
+									"forum" => $message_forum_name
+								  ));
+					
+					error_log("Sending message:" . $out_message . "  Outlink:" .  $out_link . "  Forum:" . $message_forum_name);
 					
 					$ids = array($row['var_notification_id']);
 			
