@@ -85,19 +85,19 @@
 					//$data = array('message' => $out_message);		//remove newlines and double spaces
 					$ids = array($row['var_notification_id']);
 
-					
+					//See https://github.com/phonegap/phonegap-plugin-push/blob/master/docs/PAYLOAD.md#images
 					$data = array(
 								  	"message" => $out_message,
-								  	"title" => "AtomJump Messaging " . $out_forum,
-									"link" => $out_link,
-									"forum" => $message_forum_name
+								  	"title" => "AtomJump Messaging - " . $out_forum,
+									"forum" => $message_forum_name,
+									"actions" => array(
+										array( "title" => "Visit forum",
+										        "callback" => $out_link, 
+										        "foreground" => false,
+										         "inline" => true)
+									)
 								  );
 								  
-								  /*"notification" => array(
-									"body" => $out_message,
-									"title" => "AtomJump Messaging",
-									"icon" => "new",
-								  ),*/
 					
 					error_log("Sending message:" . $out_message . "  Outlink:" .  $out_link . "  Forum:" . $message_forum_name);
 					
