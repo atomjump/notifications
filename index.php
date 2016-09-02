@@ -61,15 +61,18 @@
 					if(strpos($message_forum_name, "ajps_") !== false) {
 						$aj_forum = str_replace("ajps_", "", $message_forum_name);
 						$out_link = "<a href='http://" . $aj_forum . ".atomjump.com'>" . $aj_forum . "@</a>";
+						$out_forum = $aj_forum . "@";
 					
 					}
 					if($message_forum_name == "test_feedback") {
 						//Special case the homepage
 						if($staging == true) {
 							$out_link = "<a href='https://staging.atomjump.com'>AtomJump@</a>";
+							$out_forum = "AtomJump@";
 						
 						} else {
 							$out_link = "<a href='https://atomjump.com'>AtomJump@</a>";
+							$out_forum = "AtomJump@";
 						}
 					}
 					
@@ -85,7 +88,7 @@
 					
 					$data = array(
 								  	"message" => $out_message,
-								  	"title" => "AtomJump Messaging",
+								  	"title" => "AtomJump Messaging " . $out_forum,
 									"link" => $out_link,
 									"forum" => $message_forum_name
 								  );
