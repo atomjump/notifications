@@ -83,17 +83,18 @@
 					$ids = array($row['var_notification_id']);
 
 					
-					$data = array("to" => $ids,					//"priority" => "normal",
-								  "notification" => array(
+					$data = array(
+								  	"message" => $out_message,
+								  	"title" => "AtomJump Messaging",
+									"link" => $out_link,
+									"forum" => $message_forum_name
+								  );
+								  
+								  /*"notification" => array(
 									"body" => $out_message,
 									"title" => "AtomJump Messaging",
 									"icon" => "new",
-								  ),
-								  "data" => array(
-								  	"message" => $out_message,
-									"link" => $out_link,
-									"forum" => $message_forum_name
-								  ));
+								  ),*/
 					
 					error_log("Sending message:" . $out_message . "  Outlink:" .  $out_link . "  Forum:" . $message_forum_name);
 					
