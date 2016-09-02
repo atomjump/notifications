@@ -60,18 +60,19 @@
 					//Check this is an atomjump.com message
 					if(strpos($message_forum_name, "ajps_") !== false) {
 						$aj_forum = str_replace("ajps_", "", $message_forum_name);
-						$out_link = "<a href='http://" . $aj_forum . ".atomjump.com'>" . $aj_forum . "@</a>";
+						$out_link = "<a href='javascript:' onclick='window.open(\"http://" . $aj_forum . ".atomjump.com\", \"_system\")'>" . $aj_forum . "@</a>";
 						$out_forum = $aj_forum . "@";
 					
 					}
 					if($message_forum_name == "test_feedback") {
 						//Special case the homepage
 						if($staging == true) {
-							$out_link = "<a href='https://staging.atomjump.com'>AtomJump@</a>";
+							
+							$out_link = "<a href='javascript:' onclick='window.open(\"https://staging.atomjump.com\", \"_system\")'>AtomJump@</a>";
 							$out_forum = "AtomJump@";
 						
 						} else {
-							$out_link = "<a href='https://atomjump.com'>AtomJump@</a>";
+							$out_link = "<a href='javascript:' onclick='window.open(\"https://atomjump.com\", \"_system\")'>AtomJump@</a>";
 							$out_forum = "AtomJump@";
 						}
 					}
