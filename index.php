@@ -89,7 +89,7 @@
 					//See https://github.com/phonegap/phonegap-plugin-push/blob/master/docs/PAYLOAD.md#images
 					$data = array(
 								  	"message" => $out_message,
-								  	"title" => "AtomJump Messaging - " . $out_forum,
+								  	"title" => "AtomJump - " . $out_forum,
 									"forum" => $message_forum_name,
 									"info" => $out_link,
         							"content-available" => "1"
