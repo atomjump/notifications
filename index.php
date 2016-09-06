@@ -107,13 +107,13 @@
 					
 			
 					//Now start a parallel process that posts the msg        
-					$command = $help_is_coming_config['phpPath'] . " " . dirname(__FILE__) . "/send.php " . json_encode($data) . " " . json_encode($ids);
+					$command = $help_is_coming_config['phpPath'] . " " . dirname(__FILE__) . "/send.php " . urlencode($data) . " " . urlencode($ids);
 					global $staging;
 					if($staging == true) {
 						$command = $command . " staging";   //Ensure this works on a staging server  
 					}
 			
-					
+					error_log("Command " . $command);
 					$api->parallel_system_call($command, "linux");
 			
 					/* Old way - works:

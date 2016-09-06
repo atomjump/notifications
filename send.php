@@ -56,8 +56,10 @@
 
     }
     
-  
-  	sendPushNotification(json_decode($argv[1]), json_decode($argv[2]));
+    $data = urldecode($argv[1]);
+    $ids = urldecode($argv[2]);
+  	error_log("Data: " . $data . "\n\nIds: " . $ids);
+  	sendPushNotification($data, $ids);
   
   
     
