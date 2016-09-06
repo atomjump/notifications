@@ -108,6 +108,7 @@
 						//         false: the recipient has no verified app - will need to email.
 						error_log("Notification adding recipient:" . $recipient_id);
 						$ret_data = $in_data; 
+						$ret = false;
 						
 						$sql = "SELECT var_notification_id FROM tbl_user WHERE int_user_id = " . $recipient_id;
 						$result = $api->db_select($sql);
@@ -117,10 +118,7 @@
 								$ret_data->ids[] = $row['var_notification_id'];
 								error_log("Notification added recipient:" . json_encode($ret_data->ids));
 								$ret = true;
-							}
-						} else {
-						
-							$ret = false;
+							} 
 						}
 						
 									
