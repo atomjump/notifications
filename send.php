@@ -56,8 +56,8 @@
 
     }
     
-    $data = urldecode($argv[1]);
-    $ids = urldecode($argv[2]);
+    $data = json_decode(urldecode($argv[1]));
+    $ids = json_decode(urldecode($argv[2]));
   	error_log("Data: " . $data . "\n\nIds: " . $ids);
   	sendPushNotification($data, $ids);
   
