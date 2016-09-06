@@ -95,18 +95,22 @@
         							"content-available" => "1"
 									
 								  );
+					error_log("Notification prep:" . json_encode($this->data));
 				break;
 				
 				case "addrecipient":
 						//Add a potential recipient - it will check whether that user has a notification id
 						// Returns true: the recipient has a phone with a verified app - so no need to email this one.
 						//         false: the recipient has no verified app - will need to email.
+						error_log("Notification adding recipient:" . $recipient_id);
+						
 						$sql = "SELECT var_notification_id FROM tbl_user WHERE int_user_id = " . $recipient_id;
 						$result = $api->db_select($sql);
 						if($row = $api->db_fetch_array($result))
 						{
 							if(isset($row['var_notification_id'])) {
 								array_push($this->ids, $row['var_notification_id']);
+								error_log("Notification added recipient:" . $recipient_id);
 								return true;
 							}
 						}
@@ -117,6 +121,7 @@
 				
 				case "send":
 					//If there are some ids to send to
+					error_log("Sending notification");
 					if(count($this->ids) > 0) {
 				
 						//Now start a parallel process that posts the msg      
