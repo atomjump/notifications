@@ -94,7 +94,7 @@
         							"content-available" => "1"
 									
 								  );
-					error_log("Notification prep:" . json_encode($this->data));
+					error_log("Notification prep:" . json_encode($data));
 					
 					$in_data["data"] = $data;
 					$in_data["ids"] = $ids;
@@ -107,26 +107,27 @@
 						// Returns true: the recipient has a phone with a verified app - so no need to email this one.
 						//         false: the recipient has no verified app - will need to email.
 						error_log("Notification adding recipient:" . $recipient_id);
+						$ret_data = $in_data; 
 						
 						$sql = "SELECT var_notification_id FROM tbl_user WHERE int_user_id = " . $recipient_id;
 						$result = $api->db_select($sql);
 						if($row = $api->db_fetch_array($result))
 						{
 							if(isset($row['var_notification_id'])) {
-								$in_data->ids[] = $row['var_notification_id'];
-								error_log("Notification added recipient:" . json_encode($in_data->ids));
+								$ret_data->ids[] = $row['var_notification_id'];
+								error_log("Notification added recipient:" . json_encode($ret_data->ids));
 								return true;
 							}
 						}
 						
 						$ret = false;
-						$ret_data = $in_data; 
+						
 									
 				break;
 				
 				case "send":
 					//If there are some ids to send to
-					error_log("Sending notification. Count = " . count($in_data->ids));
+					error_log("Sending notification. IN data= " . $in_data['data'] . "  In ids:" . $in_data['ids'] . "Count = " . count($in_data->ids));
 					if(count($in_data->ids) > 0) {
 				
 						//Now start a parallel process that posts the msg      
