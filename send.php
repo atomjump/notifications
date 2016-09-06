@@ -58,7 +58,7 @@
     
     $data = json_decode(urldecode($argv[1]));
     $ids = json_decode(urldecode($argv[2]));
-  	error_log("Data: " . $data . "\n\nIds: " . $ids);
+  	error_log("Data: " . json_encode($data) . "\n\nIds: " . json_encode($ids));
   	sendPushNotification($data, $ids);
   
   
