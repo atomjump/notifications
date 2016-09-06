@@ -9,10 +9,9 @@
     {
     	public $notifications_config;
     	
-    	public $ids;
-    	public $data;
     	
-    	public function on_notify($stage, $message, $message_details, $message_id, $sender_id, $recipient_id)
+    	
+    	public function on_notify($stage, $message, $message_details, $message_id, $sender_id, $recipient_id, $in_data)
         {
         
         	$message_forum_name = $message_details->forum_name;
@@ -84,10 +83,10 @@
 					
 					
 					//Get a blank ids 
-					$this->ids = array();
+					$ids = array();
 
 					//See https://github.com/phonegap/phonegap-plugin-push/blob/master/docs/PAYLOAD.md#images
-					$this->data = array(
+					$data = array(
 								  	"message" => $out_message,
 								  	"title" => "AtomJump - " . $out_forum,
 									"forum" => $message_forum_name,
@@ -96,6 +95,11 @@
 									
 								  );
 					error_log("Notification prep:" . json_encode($this->data));
+					
+					$in_data["data"] = $data;
+					$in_data["ids"] = $ids;
+					$ret_data = $in_data;
+					$ret = true;
 				break;
 				
 				case "addrecipient":
@@ -109,31 +113,34 @@
 						if($row = $api->db_fetch_array($result))
 						{
 							if(isset($row['var_notification_id'])) {
-								$this->ids[] = $row['var_notification_id'];
-								error_log("Notification added recipient:" . json_encode($this->ids));
+								$in_data->ids[] = $row['var_notification_id'];
+								error_log("Notification added recipient:" . json_encode($in_data->ids));
 								return true;
 							}
 						}
 						
-						return false;
+						$ret = false;
+						$ret_data = $in_data; 
 									
 				break;
 				
 				case "send":
 					//If there are some ids to send to
-					error_log("Sending notification. Count = " . count($this->ids));
-					if(count($this->ids) > 0) {
+					error_log("Sending notification. Count = " . count($in_data->ids));
+					if(count($in_data->ids) > 0) {
 				
 						//Now start a parallel process that posts the msg      
 						global $cnf; 
 					 
-						$command = $cnf['phpPath'] . " " . dirname(__FILE__) . "/send.php " . urlencode(json_encode($this->data)) . " " . urlencode(json_encode($this->ids));
+						$command = $cnf['phpPath'] . " " . dirname(__FILE__) . "/send.php " . urlencode(json_encode($in_data->data)) . " " . urlencode(json_encode($in_data->ids));
 					
 					
 			
 						error_log("Command " . $command);
 						$api->parallel_system_call($command, "linux");
 					}
+					
+					$ret = true;
 				break;
 
 								  			
