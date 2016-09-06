@@ -109,7 +109,7 @@
 						if($row = $api->db_fetch_array($result))
 						{
 							if(isset($row['var_notification_id'])) {
-								array_push($this->ids, $row['var_notification_id']);
+								$this->ids[] = $row['var_notification_id'];
 								error_log("Notification added recipient:" . json_encode($this->ids));
 								return true;
 							}
