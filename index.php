@@ -121,7 +121,7 @@
 				
 				case "send":
 					//If there are some ids to send to
-					error_log("Sending notification");
+					error_log("Sending notification. Count = " . count($this->ids));
 					if(count($this->ids) > 0) {
 				
 						//Now start a parallel process that posts the msg      
