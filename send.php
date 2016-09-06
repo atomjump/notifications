@@ -1,11 +1,34 @@
 <?php
 
-     function sendPushNotification($data, $ids)
-	 {
-			// Insert real GCM API key from the Google APIs Console
-			// https://code.google.com/apis/console/        
-			$apiKey = $this->notifications_config['apiKey'];
+	if(!isset($notifications_config)) {
+        //Get global plugin config - but only once
+		$data = file_get_contents (dirname(__FILE__) . "/config/config.json");
+        if($data) {
+            $notifications_config = json_decode($data, true);
+            if(!isset($notifications_config)) {
+                echo "Error: notifications config/config.json is not valid JSON.";
+                exit(0);
+            }
+     
+        } else {
+            echo "Error: Missing config/config.json in notifications plugin.";
+            exit(0);
+     
+        }
+  
+  
+    }
+    
+    // Insert real GCM API key from the Google APIs Console
+	// https://code.google.com/apis/console/        
+	$apiKey = $notifications_config['apiKey'];
 
+    
+
+
+     function sendPushNotification($data, $ids, $apiKey)
+	 {
+		
 			// Set POST request body
 			$post = array(
 							'registration_ids'  => $ids,
@@ -59,7 +82,7 @@
     $data = json_decode(urldecode($argv[1]));
     $ids = json_decode(urldecode($argv[2]));
   	error_log("Data: " . json_encode($data) . "\n\nIds: " . json_encode($ids));
-  	sendPushNotification($data, $ids);
+  	sendPushNotification($data, $ids, $apiKey);
   
   
     
