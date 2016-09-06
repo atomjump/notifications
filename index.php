@@ -106,8 +106,9 @@
 					error_log("Sending message:" . $out_message . "  Outlink:" .  $out_link . "  Forum:" . $message_forum_name);
 					
 			
-					//Now start a parallel process that posts the msg        
-					$command = $help_is_coming_config['phpPath'] . " " . dirname(__FILE__) . "/send.php " . urlencode(json_encode($data)) . " " . urlencode(json_encode($ids));
+					//Now start a parallel process that posts the msg      
+					global $cnf;  
+					$command = $cnf['phpPath'] . " " . dirname(__FILE__) . "/send.php " . urlencode(json_encode($data)) . " " . urlencode(json_encode($ids));
 					global $staging;
 					
 			
