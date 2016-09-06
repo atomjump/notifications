@@ -6,6 +6,8 @@ This Loop Server plugin is currently at a 'demo' stage, but is not ready for a p
 # Requirements
 
 AtomJump Loop Server >= 0.7.6
+AtomJump Messaging app
+
 
 # Installation
 

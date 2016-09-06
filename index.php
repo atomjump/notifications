@@ -91,13 +91,16 @@
 								  	"message" => $out_message,
 								  	"title" => "AtomJump Messaging - " . $out_forum,
 									"forum" => $message_forum_name,
-									"actions" => array(
+									"info" => $out_link,
+        							"content-available" => "1"
+									
+								  );
+								  /* "actions" => array(
 										array( "title" => "Visit forum",
 										        "callback" => $out_link, 
 										        "foreground" => false,
 										         "inline" => true)
-									)
-								  );
+									)*/
 								  
 					
 					error_log("Sending message:" . $out_message . "  Outlink:" .  $out_link . "  Forum:" . $message_forum_name);
