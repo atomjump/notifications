@@ -1,6 +1,6 @@
 <?php
 
-       public function sendPushNotification($data, $ids)
+       function sendPushNotification($data, $ids)
 		{
 			// Insert real GCM API key from the Google APIs Console
 			// https://code.google.com/apis/console/        
