@@ -107,9 +107,14 @@
 					
 			
 					//Now start a parallel process that posts the msg      
-					global $cnf;  
-					$command = $cnf['phpPath'] . " " . dirname(__FILE__) . "/send.php " . urlencode(json_encode($data)) . " " . urlencode(json_encode($ids));
+					global $cnf; 
+					
+					error_log(json_encode($cnf));
+					
 					global $staging;
+					 
+					$command = $cnf['phpPath'] . " " . dirname(__FILE__) . "/send.php " . urlencode(json_encode($data)) . " " . urlencode(json_encode($ids));
+					
 					
 			
 					error_log("Command " . $command);
