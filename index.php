@@ -106,9 +106,20 @@
 					error_log("Sending message:" . $out_message . "  Outlink:" .  $out_link . "  Forum:" . $message_forum_name);
 					
 			
+					//Now start a parallel process that posts the msg        
+					$command = $help_is_coming_config['phpPath'] . " " . dirname(__FILE__) . "/send.php " . json_encode($data) . " " . json_encode($ids);
+					global $staging;
+					if($staging == true) {
+						$command = $command . " staging";   //Ensure this works on a staging server  
+					}
+			
 					
+					$api->parallel_system_call($command, "linux");
+			
+					/* Old way - works:
 					// Send push notification via Google Cloud Messaging. TODO: may need to run in a background process
 					$this->sendPushNotification($data, $ids);
+					*/
 				}
 			}			
 
