@@ -140,6 +140,7 @@
 						$api->parallel_system_call($command, "linux");
 					}
 					
+					$ret_data = $in_data; 
 					$ret = true;
 				break;
 
@@ -259,7 +260,7 @@
 			}			
 			*/
 
-            return true;
+            return array($ret, $ret_data);
 
         }
         
