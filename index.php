@@ -9,6 +9,134 @@
     {
     	public $notifications_config;
     	
+    	public $ids;
+    	public $data;
+    	
+    	public function on_notify($stage, $message, $message_details, $message_id, $sender_id, $recipient_id)
+        {
+        
+        	$message_forum_name = $message_details->forum_name;
+        	
+        	/* 				$message_details = array("observe_message" => $observe_message,
+										 "observe_url" => $observe_url,
+										 "forum_message" => $layer_message,
+										 "forum_name" => $layer_name,
+										 "remove_message" => $remove_message,
+										 "remove_url" => $remove_url);
+										 */
+        
+        
+           	if(!isset($this->notifications_config)) {
+				//Get global plugin config - but only once
+				$data = file_get_contents (dirname(__FILE__) . "/config/config.json");
+				if($data) {
+					$this->notifications_config = json_decode($data, true);
+					if(!isset($this->notifications_config)) {
+						error_log("Error: notifications config/config.json is not valid JSON.");
+						exit(0);
+					}
+	 
+				} else {
+					error_log("Error: Missing config/config.json in notifications plugin.");
+					exit(0);
+	 
+				}
+  
+  
+			}
+            
+
+            $api = new cls_plugin_api();
+
+
+			switch($stage)
+			{
+			
+				case "init":
+					// Prep the message
+					
+					// Payload data you want to send to Android device(s)
+					$out_message = str_replace("\\r", "", $message);
+					$out_message = str_replace("\\n", "", $out_message);
+					
+					$out_link = "";
+					//Check this is an atomjump.com message
+					if(strpos($message_forum_name, "ajps_") !== false) {
+						$aj_forum = str_replace("ajps_", "", $message_forum_name);
+						$out_link = "window.open(\"http://" . $aj_forum . ".atomjump.com\", \"_system\")";
+						$out_forum = $aj_forum . "@";
+					
+					}
+					if($message_forum_name == "test_feedback") {
+						//Special case the homepage
+						if($this->notifications_config['staging'] == true) {
+							
+							$out_link = "window.open(\"https://staging.atomjump.com\", \"_system\")";
+							$out_forum = "AtomJump@";
+						
+						} else {
+							$out_link = "window.open(\"https://atomjump.com\", \"_system\")";
+							$out_forum = "AtomJump@";
+						}
+					}
+					
+					$out_message = trim(preg_replace('/\s\s+/', ' ', $out_message));
+					
+					
+					//Get a blank ids 
+					$this->ids = array();
+
+					//See https://github.com/phonegap/phonegap-plugin-push/blob/master/docs/PAYLOAD.md#images
+					$this->data = array(
+								  	"message" => $out_message,
+								  	"title" => "AtomJump - " . $out_forum,
+									"forum" => $message_forum_name,
+									"info" => $out_link,
+        							"content-available" => "1"
+									
+								  );
+				break;
+				
+				case "addrecipient":
+						//Add a potential recipient - it will check whether that user has a notification id
+						// Returns true: the recipient has a phone with a verified app - so no need to email this one.
+						//         false: the recipient has no verified app - will need to email.
+						$sql = "SELECT var_notification_id FROM tbl_user WHERE int_user_id = " . $recipient_id;
+						$result = $api->db_select($sql);
+						if($row = $api->db_fetch_array($result))
+						{
+							if(isset($row['var_notification_id'])) {
+								array_push($this->ids, $row['var_notification_id']);
+								return true;
+							}
+						}
+						
+						return false;
+									
+				break;
+				
+				case "send":
+					//If there are some ids to send to
+					if(count($this->ids) > 0) {
+				
+						//Now start a parallel process that posts the msg      
+						global $cnf; 
+					 
+						$command = $cnf['phpPath'] . " " . dirname(__FILE__) . "/send.php " . urlencode(json_encode($this->data)) . " " . urlencode(json_encode($this->ids));
+					
+					
+			
+						error_log("Command " . $command);
+						$api->parallel_system_call($command, "linux");
+					}
+				break;
+
+								  			
+			}
+
+    	
+    	
+    	/* Old way:
         public function on_message($message_forum_id, $message, $message_id, $sender_id, $recipient_id, $sender_name, $sender_email, $sender_phone, $message_forum_name)
         {
            	if(!isset($this->notifications_config)) {
@@ -95,12 +223,7 @@
         							"content-available" => "1"
 									
 								  );
-								  /* "actions" => array(
-										array( "title" => "Visit forum",
-										        "callback" => $out_link, 
-										        "foreground" => false,
-										         "inline" => true)
-									)*/
+								 
 								  
 					
 					error_log("Sending message:" . $out_message . "  Outlink:" .  $out_link . "  Forum:" . $message_forum_name);
@@ -120,72 +243,15 @@
 					error_log("Command " . $command);
 					$api->parallel_system_call($command, "linux");
 			
-					/* Old way - works:
-					// Send push notification via Google Cloud Messaging. TODO: may need to run in a background process
-					$this->sendPushNotification($data, $ids);
-					*/
 				}
 			}			
-
+			*/
 
             return true;
 
         }
         
         
-        public function sendPushNotification($data, $ids)
-		{
-			// Insert real GCM API key from the Google APIs Console
-			// https://code.google.com/apis/console/        
-			$apiKey = $this->notifications_config['apiKey'];
-
-			// Set POST request body
-			$post = array(
-							'registration_ids'  => $ids,
-							'data'              => $data,
-						 );
-
-			// Set CURL request headers 
-			$headers = array( 
-								'Authorization: key=' . $apiKey,
-								'Content-Type: application/json'
-							);
-
-			// Initialize curl handle       
-			$ch = curl_init();
-
-			// Set URL to GCM push endpoint     
-			curl_setopt($ch, CURLOPT_URL, 'https://android.googleapis.com/gcm/send');
-
-			// Set request method to POST       
-			curl_setopt($ch, CURLOPT_POST, true);
-
-			// Set custom request headers       
-			curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-
-			// Get the response back as string instead of printing it       
-			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-
-			// Set JSON post data
-			curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($post));
-
-			// Actually send the request    
-			$result = curl_exec($ch);
-
-			// Handle errors
-			if (curl_errno($ch))
-			{
-				error_log('GCM error: ' . curl_error($ch));
-			}
-
-			// Close curl handle
-			curl_close($ch);
-
-			// Debug GCM response       
-			error_log($result);
-			
-			return;
-		}
 
     }
 
