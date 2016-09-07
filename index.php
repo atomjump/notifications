@@ -115,8 +115,8 @@
 						if($row = $api->db_fetch_array($result))
 						{
 							if(isset($row['var_notification_id'])) {
-								$ret_data->ids[] = $row['var_notification_id'];
-								error_log("Notification added recipient:" . json_encode($ret_data->ids));
+								$ret_data['ids'][] = $row['var_notification_id'];
+								error_log("Notification added recipient:" . json_encode($ret_data['ids']));
 								$ret = true;
 							} 
 						}
@@ -127,12 +127,12 @@
 				case "send":
 					//If there are some ids to send to
 					error_log("Sending notification. IN data= " . $in_data['data'] . "  In ids:" . $in_data['ids'] . "Count = " . count($in_data->ids));
-					if(count($in_data->ids) > 0) {
+					if(count($in_data['ids']) > 0) {
 				
 						//Now start a parallel process that posts the msg      
 						global $cnf; 
 					 
-						$command = $cnf['phpPath'] . " " . dirname(__FILE__) . "/send.php " . urlencode(json_encode($in_data->data)) . " " . urlencode(json_encode($in_data->ids));
+						$command = $cnf['phpPath'] . " " . dirname(__FILE__) . "/send.php " . urlencode(json_encode($in_data['data'])) . " " . urlencode(json_encode($in_data['ids']));
 					
 					
 			
