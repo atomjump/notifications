@@ -141,7 +141,6 @@
 				
 				case "send":
 					//If there are some ids to send to
-					error_log("Sending notification. IN data= " . $in_data['data'] . "  In ids:" . $in_data['ids'] . "Count = " . count($in_data->ids));
 					if(count($in_data['ids']) > 0) {
 				
 						//Now start a parallel process that posts the msg      
@@ -163,117 +162,6 @@
 			}
 
     	
-    	
-    	/* Old way:
-        public function on_message($message_forum_id, $message, $message_id, $sender_id, $recipient_id, $sender_name, $sender_email, $sender_phone, $message_forum_name)
-        {
-           	if(!isset($this->notifications_config)) {
-				//Get global plugin config - but only once
-				$data = file_get_contents (dirname(__FILE__) . "/config/config.json");
-				if($data) {
-					$this->notifications_config = json_decode($data, true);
-					if(!isset($this->notifications_config)) {
-						error_log("Error: notifications config/config.json is not valid JSON.");
-						exit(0);
-					}
-	 
-				} else {
-					error_log("Error: Missing config/config.json in notifications plugin.");
-					exit(0);
-	 
-				}
-  
-  
-			}
-            
-            
-            //Do your thing in here. Here is a sample.
-            $api = new cls_plugin_api();
-
-
-
-			
-			
-			// The recipient registration tokens for this notification
-			// https://developer.android.com/google/gcm/    
-				//Get the notification id of the logged user
-			$sql = "SELECT var_notification_id FROM tbl_user WHERE int_user_id = " . $recipient_id;
-			error_log("SQL:" . $sql);
-			$result = $api->db_select($sql);
-			if($row = $api->db_fetch_array($result))
-			{
-				error_log("Notification id:" . $row['var_notification_id']);
-				if(isset($row['var_notification_id'])) {
-					
-					//Confirmed we want to send a message
-					
-					// Payload data you want to send to Android device(s)
-					$out_message = str_replace("\\r", "", $message);
-					$out_message = str_replace("\\n", "", $out_message);
-					
-					error_log("Forum name:" . $message_forum_name);
-					$out_link = "";
-					//Check this is an atomjump.com message
-					if(strpos($message_forum_name, "ajps_") !== false) {
-						$aj_forum = str_replace("ajps_", "", $message_forum_name);
-						$out_link = "window.open(\"http://" . $aj_forum . ".atomjump.com\", \"_system\")";
-						$out_forum = $aj_forum . "@";
-					
-					}
-					if($message_forum_name == "test_feedback") {
-						//Special case the homepage
-						if($this->notifications_config['staging'] == true) {
-							
-							$out_link = "window.open(\"https://staging.atomjump.com\", \"_system\")";
-							$out_forum = "AtomJump@";
-						
-						} else {
-							$out_link = "window.open(\"https://atomjump.com\", \"_system\")";
-							$out_forum = "AtomJump@";
-						}
-					}
-					
-					$out_message = trim(preg_replace('/\s\s+/', ' ', $out_message));
-					
-					
-					
-					
-					// (it will be accessible via intent extras)    
-					//$data = array('message' => $out_message);		//remove newlines and double spaces
-					$ids = array($row['var_notification_id']);
-
-					//See https://github.com/phonegap/phonegap-plugin-push/blob/master/docs/PAYLOAD.md#images
-					$data = array(
-								  	"message" => $out_message,
-								  	"title" => "AtomJump - " . $out_forum,
-									"forum" => $message_forum_name,
-									"info" => $out_link,
-        							"content-available" => "1"
-									
-								  );
-								 
-								  
-					
-					error_log("Sending message:" . $out_message . "  Outlink:" .  $out_link . "  Forum:" . $message_forum_name);
-					
-			
-					//Now start a parallel process that posts the msg      
-					global $cnf; 
-					
-					error_log(json_encode($cnf));
-					
-					global $staging;
-					 
-					$command = $cnf['phpPath'] . " " . dirname(__FILE__) . "/send.php " . urlencode(json_encode($data)) . " " . urlencode(json_encode($ids));
-					
-					
-			
-					error_log("Command " . $command);
-					$api->parallel_system_call($command, "linux");
-			
-				}
-			}			
-			*/
 
             return array($ret, $ret_data);
 
