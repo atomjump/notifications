@@ -62,7 +62,7 @@
 					//Check this is an atomjump.com message
 					if(strpos($message_forum_name, "ajps_") !== false) {
 						$aj_forum = str_replace("ajps_", "", $message_forum_name);
-						$out_link = "window.open(\"http://" . $aj_forum . ".atomjump.com\", \"_system\")";
+						$out_link = "http://" . $aj_forum . ".atomjump.com";
 						$out_forum = $aj_forum . "@";
 					
 					}
@@ -70,11 +70,11 @@
 						//Special case the homepage
 						if($this->notifications_config['staging'] == true) {
 							
-							$out_link = "window.open(\"https://staging.atomjump.com\", \"_system\")";
+							$out_link = "https://staging.atomjump.com";
 							$out_forum = "AtomJump@";
 						
 						} else {
-							$out_link = "window.open(\"https://atomjump.com\", \"_system\")";
+							$out_link = "https://atomjump.com";
 							$out_forum = "AtomJump@";
 						}
 					}
@@ -89,8 +89,12 @@
 					$data = array(
 								  	"message" => $out_message,
 								  	"title" => "AtomJump - " . $out_forum,
-									"forum" => $message_forum_name,
-									"info" => $out_link,
+									"forumName" => $message_forum_name,
+									"forumMessage" => $message_details['forum_message'],
+									"observeUrl" => $out_link,
+									"observeMessage" => $message_details['observe_message'],
+									"removeUrl" => $message_details['remove_url'],
+									"removeMessage" => $message_details['remove_message'],
         							"content-available" => "1"
 									
 								  );
