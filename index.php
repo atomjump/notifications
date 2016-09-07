@@ -2,7 +2,7 @@
 
  include_once("classes/cls.pluginapi.php");
 
-
+	
 
 
     class plugin_notifications
@@ -10,6 +10,12 @@
     	public $notifications_config;
     	
     	
+    	public function null_to_blank_string($val)
+    	{
+    		if(is_null($val)) return "";
+    		return $val;
+    	
+    	}
     	
     	public function on_notify($stage, $message, $message_details, $message_id, $sender_id, $recipient_id, $in_data)
         {
@@ -89,12 +95,12 @@
 					$data = array(
 								  	"message" => $out_message,
 								  	"title" => "AtomJump - " . $out_forum,
-									"forumName" => $message_forum_name,
-									"forumMessage" => $message_details['forum_message'],
-									"observeUrl" => $out_link,
-									"observeMessage" => $message_details['observe_message'],
-									"removeUrl" => $message_details['remove_url'],
-									"removeMessage" => $message_details['remove_message'],
+									"forumName" => $this->null_to_blank_string($message_forum_name),
+									"forumMessage" => $this->null_to_blank_string($message_details['forum_message']),
+									"observeUrl" => $this->null_to_blank_string($out_link),
+									"observeMessage" => $this->null_to_blank_string($message_details['observe_message']),
+									"removeUrl" => $this->null_to_blank_string($message_details['remove_url']),
+									"removeMessage" => $this->null_to_blank_string($message_details['remove_message']),
         							"content-available" => "1"
 									
 								  );
