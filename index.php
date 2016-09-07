@@ -14,7 +14,7 @@
     	public function on_notify($stage, $message, $message_details, $message_id, $sender_id, $recipient_id, $in_data)
         {
         
-        	$message_forum_name = $message_details->forum_name;
+        	$message_forum_name = $message_details['forum_name'];
         	
         	/* 				$message_details = array("observe_message" => $observe_message,
 										 "observe_url" => $observe_url,
