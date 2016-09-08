@@ -104,7 +104,6 @@
         							"content-available" => "1"
 									
 								  );
-					error_log("Notification prep:" . json_encode($data));
 					
 					$in_data["data"] = $data;
 					$in_data["ids"] = $ids;
@@ -118,7 +117,6 @@
 						//         false: the recipient has no verified app - will need to email.
 						if($sender_id != $recipient_id) {
 							//Don't send to our own user
-							error_log("Notification adding recipient:" . $recipient_id);
 							$ret_data = $in_data; 
 							$ret = false;
 						
@@ -148,10 +146,6 @@
 						global $cnf; 
 					 
 						$command = $cnf['phpPath'] . " " . dirname(__FILE__) . "/send.php " . urlencode(json_encode($in_data['data'])) . " " . urlencode(json_encode($in_data['ids']));
-					
-					
-			
-						error_log("Command " . $command);
 						$api->parallel_system_call($command, "linux");
 					}
 					
