@@ -1,11 +1,11 @@
 # notifications
 Send notifications to the iPhone/Android AtomJump messaging app
 
-This Loop Server plugin is currently at a 'demo' stage, but is not ready for a public release.
+This Loop Server plugin is currently in a 'Beta' stage, and is not intended in production environments yet.
 
 # Requirements
 
-AtomJump Loop Server >= 0.7.6
+AtomJump Loop Server >= 0.8.0
 AtomJump Messaging app
 
 
@@ -22,7 +22,7 @@ nano config/config.json								[enter your own parameters. serverPath is your Lo
 php install.php
 ```
 
-At the user end, the app at https://github.com/atomjump/messaging needs to be installed (this can be built in build.phonegap.com)
+At the user end, the Android/iPhone app at https://github.com/atomjump/messaging needs to be installed (this can be built in build.phonegap.com, but will soon be published on the Play stores)
 
 
 
