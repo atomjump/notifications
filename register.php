@@ -24,7 +24,6 @@
 	$start_path = $notifications_config['serverPath'];
 	$staging = $notifications_config['staging'];
 	
-	error_log("Start path:" . $start_path);
 	$notify = false;
 	include_once($start_path . 'config/db_connect.php');	
 	
@@ -33,12 +32,13 @@
 	
 	$api = new cls_plugin_api();
 	
-	error_log("API defined");
-
 	//Set the notification id for this user/phone
-	$notification_id = $_REQUEST['id'];
-	$sql = "var_notification_id = '" . $notification_id . "'  WHERE int_user_id = " . $_REQUEST['userid'];
-	error_log("Update tbl_user:" . $sql);
+	if($_REQUEST['id'] == "") {
+		$notification_id = "NULL";
+	} else {
+		$notification_id = "'" . $_REQUEST['id'] . "'";
+	}
+	$sql = "var_notification_id = " . $notification_id . "  WHERE int_user_id = " . $_REQUEST['userid'];
 	$api->db_update("tbl_user", $sql);
 
 	echo "Updated";
