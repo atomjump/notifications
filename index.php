@@ -126,7 +126,6 @@
 							{
 								if(isset($row['var_notification_id'])) {
 									$ret_data['ids'][] = $row['var_notification_id'];
-									error_log("Notification added recipient:" . json_encode($ret_data['ids']));
 									$ret = true;
 								} 
 							}
