@@ -87,6 +87,15 @@
 					
 					$out_message = trim(preg_replace('/\s\s+/', ' ', $out_message));
 					
+					//Fill in an image in the message if there is an emoticon
+					$image = "";
+					preg_match('/https?:\/\/[^ ]+?(?:\.jpg|\.png)/', $message, $matches);
+					if($matches[0]) {
+						$image = $matches[0];
+					}
+					
+					
+					
 					
 					//Get a blank ids 
 					$ids = array();
@@ -104,6 +113,12 @@
         							"content-available" => "1"
 									
 								  );
+								  
+					if($image != "") {
+						//Optionally append an emoticon or image to that.
+						$data['image'] = $image;
+					
+					}
 					
 					$in_data["data"] = $data;
 					$in_data["ids"] = $ids;
