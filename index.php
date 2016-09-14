@@ -92,7 +92,7 @@
 					$image = "";
 					preg_match('/https?:\/\/[^ ]+?(?:\.jpg|\.png)/', $message, $matches);
 					if($matches[0]) {
-						error_log("Found image:" . $image);
+						error_log("Found image:" . $matches[0]);
 						$image = $matches[0];
 					}
 					$out_message = strip_tags($out_message);
