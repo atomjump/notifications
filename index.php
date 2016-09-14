@@ -97,7 +97,6 @@
 					}
 					$out_message = strip_tags($out_message);
 					$out_message = trim(preg_replace('/\s\s+/', ' ', $out_message));		//Remove any spaces either side
-					$out_message = "test";		//TESTING IN
 					
 					
 					
@@ -120,7 +119,7 @@
 								  
 					if($image != "") {
 						//Optionally append an emoticon or image to that.
-						//TESTING OUT$data['image'] = $image;
+						$data['image'] = $image;
 					
 					}
 					
