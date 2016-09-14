@@ -64,6 +64,7 @@
 					$out_message = str_replace("\\r", "", $message);
 					$out_message = str_replace("\\n", "", $out_message);
 					
+					
 					$out_link = "";
 					//Check this is an atomjump.com message
 					if(strpos($message_forum_name, "ajps_") !== false) {
@@ -91,8 +92,10 @@
 					$image = "";
 					preg_match('/https?:\/\/[^ ]+?(?:\.jpg|\.png)/', $message, $matches);
 					if($matches[0]) {
+						error_log("Found image:" . $image);
 						$image = $matches[0];
 					}
+					$out_message = strip_tags($out_message);
 					
 					
 					
@@ -119,6 +122,7 @@
 						$data['image'] = $image;
 					
 					}
+					
 					
 					$in_data["data"] = $data;
 					$in_data["ids"] = $ids;
