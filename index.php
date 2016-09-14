@@ -119,7 +119,7 @@
 								  
 					if($image != "") {
 						//Optionally append an emoticon or image to that.
-						$data['image'] = $image;
+						//TESTING OUT$data['image'] = $image;
 					
 					}
 					
