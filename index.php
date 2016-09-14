@@ -86,7 +86,7 @@
 						}
 					}
 					
-					$out_message = trim(preg_replace('/\s\s+/', ' ', $out_message));
+					
 					
 					//Fill in an image in the message if there is an emoticon
 					$image = "";
@@ -96,6 +96,7 @@
 						$image = $matches[0];
 					}
 					$out_message = strip_tags($out_message);
+					$out_message = trim(preg_replace('/\s\s+/', ' ', $out_message));		//Remove any spaces either side
 					
 					
 					
