@@ -7,11 +7,13 @@
             $notifications_config = json_decode($data, true);
             if(!isset($notifications_config)) {
                 echo "Error: notifications config/config.json is not valid JSON.";
+                error_log("Error: notifications config/config.json is not valid JSON.");
                 exit(0);
             }
      
         } else {
             echo "Error: Missing config/config.json in notifications plugin.";
+            error_log("Error: Missing config/config.json in notifications plugin.");
             exit(0);
      
         }
