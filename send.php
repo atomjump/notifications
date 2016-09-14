@@ -1,10 +1,11 @@
 <?php
 
+	
 	if(!isset($notifications_config)) {
         //Get global plugin config - but only once
-		$data = file_get_contents (dirname(__FILE__) . "/config/config.json");
-        if($data) {
-            $notifications_config = json_decode($data, true);
+		$config_data = file_get_contents (dirname(__FILE__) . "/config/config.json");
+        if($config_data) {
+            $notifications_config = json_decode($config_data, true);
             if(!isset($notifications_config)) {
                 echo "Error: notifications config/config.json is not valid JSON.";
                 error_log("Error: notifications config/config.json is not valid JSON.");
