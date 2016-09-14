@@ -22,6 +22,8 @@
   
     }
     
+    error_log(json_encode($notifications_config));
+    
     // Insert real GCM API key from the Google APIs Console
 	// https://code.google.com/apis/console/        
 	$apiKey = $notifications_config['apiKey'];
