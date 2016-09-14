@@ -165,6 +165,7 @@
 						global $cnf; 
 					 
 						$command = $cnf['phpPath'] . " " . dirname(__FILE__) . "/send.php " . urlencode(json_encode($in_data['data'])) . " " . urlencode(json_encode($in_data['ids']));
+						error_log($command);
 						$api->parallel_system_call($command, "linux");
 					}
 					
