@@ -92,7 +92,6 @@
 					$image = "";
 					preg_match('/https?:\/\/[^ ]+?(?:\.jpg|\.png)/', $message, $matches);
 					if($matches[0]) {
-						error_log("Found image:" . $matches[0]);
 						$image = $matches[0];
 					}
 					$out_message = strip_tags($out_message);
@@ -164,8 +163,8 @@
 						global $cnf; 
 					 
 						$command = $cnf['phpPath'] . " " . dirname(__FILE__) . "/send.php " . urlencode(json_encode($in_data['data'])) . " " . urlencode(json_encode($in_data['ids']));
-						error_log($command);
 						$api->parallel_system_call($command, "linux");
+						
 					}
 					
 					$ret_data = $in_data; 

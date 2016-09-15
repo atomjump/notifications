@@ -22,7 +22,6 @@
   
     }
     
-    error_log(json_encode($notifications_config));
     
     // Insert real GCM API key from the Google APIs Console
 	// https://code.google.com/apis/console/        
@@ -86,7 +85,6 @@
     
     $data = json_decode(urldecode($argv[1]));
     $ids = json_decode(urldecode($argv[2]));
-  	error_log("Data: " . json_encode($data) . "\n\nIds: " . json_encode($ids));
   	sendPushNotification($data, $ids, $apiKey);
   
   
