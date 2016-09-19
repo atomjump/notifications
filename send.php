@@ -59,6 +59,9 @@
 							'registration_ids'  => $android_ids,
 							'data'              => $data['android'],
 						 );
+			
+			error_log("About to post:" . $post);
+
 
 			// Set CURL request headers 
 			$headers = array( 
