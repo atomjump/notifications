@@ -60,7 +60,7 @@
 							'data'              => $data['android'],
 						 );
 			
-			echo "About to post:" . $post;
+			echo "About to post:" . json_encode($post);
 
 
 			// Set CURL request headers 
