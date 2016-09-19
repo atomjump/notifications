@@ -59,7 +59,7 @@
 			// Set POST request body
 			$post = array(
 							'registration_ids'  => $android_ids,
-							'data'              => $data['android'],
+							'data'              => $data->android,
 						 );
 			
 			echo "About to post:" . json_encode($post);
@@ -115,7 +115,7 @@
 				stream_context_set_option($ctx, 'ssl', 'local_cert', 'certs/aps.cert');		//pushcert.pem
 				stream_context_set_option($ctx, 'ssl', 'passphrase', $passphrase);
 				$fp = stream_socket_client('ssl://gateway.sandbox.push.apple.com:2195', $err, $errstr, 60, STREAM_CLIENT_CONNECT|STREAM_CLIENT_PERSISTENT, $ctx);
-				$body['aps'] = $data['ios'];		//Eg. array('alert' => $message,'sound' => 'default');
+				$body['aps'] = $data->ios;		//Eg. array('alert' => $message,'sound' => 'default');
 				$payload = json_encode($body);
 				$msg = chr(0) . pack('n', 32) . pack('H*', $deviceToken) . pack('n', strlen($payload)) . $payload;
 				$result = fwrite($fp, $msg, strlen($msg));
