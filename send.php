@@ -1,5 +1,6 @@
 <?php
 
+	echo "At the start";
 	
 	if(!isset($notifications_config)) {
         //Get global plugin config - but only once
