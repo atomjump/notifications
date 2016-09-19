@@ -124,11 +124,15 @@
 			return;
 	}
 
-    
+    echo "Hello 1";
     
     $data = json_decode(urldecode($argv[1]));
     $ids = json_decode(urldecode($argv[2]));
     $devices = json_decode(urldecode($argv[3]));
+
+
+    echo "Hello 2";
+
   	sendPushNotification($data, $ids, $apiKey, $devices);
   
   
