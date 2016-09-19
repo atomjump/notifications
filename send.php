@@ -39,7 +39,8 @@
 			$ios_ids = array();
 			
 			for($cnt = 0; $cnt < count($devices); $cnt++) {
-				switch($devices[$cnt]):
+				switch($devices[$cnt])
+				{
 				
 					case 'iOS':
 						$ios_ids[] = $ids[$cnt];
