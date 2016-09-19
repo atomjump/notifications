@@ -45,7 +45,7 @@
 		$device_type = "Android";			//Default to Android if unknown
 	}
 	
-	$sql = "var_notification_id = " . $notification_id . ", var_device_type = " . $device_type . " WHERE int_user_id = " . $_REQUEST['userid'];
+	$sql = "var_notification_id = " . $notification_id . ", var_device_type = '" . $device_type . "' WHERE int_user_id = " . $_REQUEST['userid'];
 	$api->db_update("tbl_user", $sql);
 
 	echo "Updated";
