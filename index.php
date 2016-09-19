@@ -192,7 +192,10 @@
 						//Now start a parallel process that posts the msg      
 						global $cnf; 
 					 
-						$command = $cnf['phpPath'] . " " . dirname(__FILE__) . "/send.php " . urlencode(json_encode($in_data['data'])) . " " . urlencode(json_encode($in_data['ids'])) . " " . urlencode(json_encode($in_data['device'])));
+						$command = $cnf['phpPath'] . " " . dirname(__FILE__) . "/send.php " . 
+												urlencode(json_encode($in_data['data'])) . " " .
+												urlencode(json_encode($in_data['ids'])) . " " .
+												urlencode(json_encode($in_data['device']));
 						$api->parallel_system_call($command, "linux");
 						
 					}
