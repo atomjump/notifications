@@ -1,6 +1,5 @@
 <?php
 
-	echo "At the start";
 	
 	if(!isset($notifications_config)) {
         //Get global plugin config - but only once
@@ -62,7 +61,6 @@
 							'data'              => $data->android,
 						 );
 			
-			echo "About to post:" . json_encode($post);
 
 
 			// Set CURL request headers 
@@ -112,7 +110,7 @@
 				$passphrase = 'apns';
 				//$message = 'test';										
 				$ctx = stream_context_create();
-				stream_context_set_option($ctx, 'ssl', 'local_cert', 'certs/aps.cert');		//pushcert.pem
+				stream_context_set_option($ctx, 'ssl', 'local_cert', 'certs/pushcert.pem');		//pushcert.pem
 				stream_context_set_option($ctx, 'ssl', 'passphrase', $passphrase);
 				$fp = stream_socket_client('ssl://gateway.sandbox.push.apple.com:2195', $err, $errstr, 60, STREAM_CLIENT_CONNECT|STREAM_CLIENT_PERSISTENT, $ctx);
 				$body['aps'] = $data->ios;		//Eg. array('alert' => $message,'sound' => 'default');
@@ -126,14 +124,10 @@
 			return;
 	}
 
-    echo "Hello 1";
     
     $data = json_decode(urldecode($argv[1]));
     $ids = json_decode(urldecode($argv[2]));
     $devices = json_decode(urldecode($argv[3]));
-
-
-    echo "Hello 2";
 
   	sendPushNotification($data, $ids, $apiKey, $devices);
   
