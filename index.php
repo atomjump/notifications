@@ -125,8 +125,8 @@
 					
 					$ios_data = array(
 									"notification" => array(
-											"title": "AtomJump - " . $out_forum,
-											"body": $out_message
+											"title" => "AtomJump - " . $out_forum,
+											"body" => $out_message
 									),
 									"data" => array(
 										"forumName" => $this->null_to_blank_string($message_forum_name),
