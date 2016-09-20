@@ -124,7 +124,7 @@
 					
 					
 					$ios_data = array(
-									"alert": "Test background push",
+									"alert" => "Test background push",
 									"content-available" => 1,
 									"notification" => array(
 											"title" => "AtomJump - " . $out_forum,
