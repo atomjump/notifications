@@ -125,7 +125,7 @@
 					
 					$ios_data = array(
 									"notification" => array(
-											"alert" => $out_message,
+											"alert" => $out_message
 											
 									),
 									"data" => array(
@@ -135,11 +135,13 @@
 										"observeMessage" => $this->null_to_blank_string($message_details['observe_message']),
 										"removeUrl" => $this->null_to_blank_string($message_details['remove_url']),
 										"removeMessage" => $this->null_to_blank_string($message_details['remove_message']),
-										"content-available" => "1",
-										"title" => "AtomJump - " . $out_forum
+										"content-available" => "1"
 									
 									)
 								); 		  
+					
+					
+									//	"title" => "AtomJump - " . $out_forum
 					
 					if($image != "") {
 						//Optionally append an emoticon or image to that.
