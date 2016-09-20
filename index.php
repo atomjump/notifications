@@ -146,6 +146,10 @@
 					if($image != "") {
 						//Optionally append an emoticon or image to that.
 						$ios_data['data']['image'] = $image;
+						
+						//Also extend the alert with a note to say there is an image attached - we can't show the
+						//actual image in their popup
+						$ios_data['alert'] .= " [image]";
 					
 					}
 					
