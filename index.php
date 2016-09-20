@@ -103,7 +103,7 @@
 					$ids = array();
 
 					//See https://github.com/phonegap/phonegap-plugin-push/blob/master/docs/PAYLOAD.md#images
-					$data = array(
+					$android_data = array(
 								  	"message" => $out_message,
 								  	"title" => "AtomJump - " . $out_forum,
 									"forumName" => $this->null_to_blank_string($message_forum_name),
@@ -115,12 +115,48 @@
         							"content-available" => "1"
 									
 								  );
-								  
+					
 					if($image != "") {
 						//Optionally append an emoticon or image to that.
-						$data['image'] = $image;
+						$android_data['image'] = $image;
 					
 					}
+					
+					
+					$ios_data = array(
+									"alert" => $out_message,
+									"content-available" => 1,
+									"notification" => array(
+											"title" => "AtomJump - " . $out_forum
+									),
+									"data" => array(
+										"forumName" => $this->null_to_blank_string($message_forum_name),
+										"forumMessage" => $this->null_to_blank_string($message_details['forum_message']),
+										"observeUrl" => $this->null_to_blank_string($out_link),
+										"observeMessage" => $this->null_to_blank_string($message_details['observe_message']),
+										"removeUrl" => $this->null_to_blank_string($message_details['remove_url']),
+										"removeMessage" => $this->null_to_blank_string($message_details['remove_message'])										
+									
+									)
+								); 		  
+					
+					
+									//	"title" => "AtomJump - " . $out_forum
+					
+					if($image != "") {
+						//Optionally append an emoticon or image to that.
+						$ios_data['data']['image'] = $image;
+						
+						//Also extend the alert with a note to say there is an image attached - we can't show the
+						//actual image in their popup
+						$ios_data['alert'] .= " [image]";
+					
+					}
+					
+					//A combined version
+					$data = array("android" => $android_data,
+									"ios" => $ios_data);
+								  
 					
 					
 					$in_data["data"] = $data;
@@ -138,12 +174,13 @@
 							$ret_data = $in_data; 
 							$ret = false;
 						
-							$sql = "SELECT var_notification_id FROM tbl_user WHERE int_user_id = " . $recipient_id;
+							$sql = "SELECT var_notification_id, var_device_type FROM tbl_user WHERE int_user_id = " . $recipient_id;
 							$result = $api->db_select($sql);
 							if($row = $api->db_fetch_array($result))
 							{
 								if(isset($row['var_notification_id'])) {
 									$ret_data['ids'][] = $row['var_notification_id'];
+									$ret_data['device'][] = $row['var_device_type'];		//also store which device type to send to
 									$ret = true;
 								} 
 							}
@@ -162,7 +199,12 @@
 						//Now start a parallel process that posts the msg      
 						global $cnf; 
 					 
-						$command = $cnf['phpPath'] . " " . dirname(__FILE__) . "/send.php " . urlencode(json_encode($in_data['data'])) . " " . urlencode(json_encode($in_data['ids']));
+						$command = $cnf['phpPath'] . " " . dirname(__FILE__) . "/send.php " . 
+												urlencode(json_encode($in_data['data'])) . " " .
+												urlencode(json_encode($in_data['ids'])) . " " .
+												urlencode(json_encode($in_data['device']));
+												
+						error_log($command);						
 						$api->parallel_system_call($command, "linux");
 						
 					}

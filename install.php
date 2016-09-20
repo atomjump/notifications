@@ -35,9 +35,14 @@
 	$api = new cls_plugin_api();
 	
 	//Insert a column into the user table - one registration id (likely android gcm or iphone)
+	$sql = "ALTER TABLE tbl_user ADD COLUMN `var_device_type` varchar(50) DEFAULT NULL";
+	echo "Updating user table. SQL:" . $sql . "\n";
+	$result = $api->db_select($sql);
+
 	$sql = "ALTER TABLE tbl_user ADD COLUMN `var_notification_id` varchar(255) DEFAULT NULL";
 	echo "Updating user table. SQL:" . $sql . "\n";
 	$result = $api->db_select($sql);
+		
 	echo "Completed.\n";
 	
 
