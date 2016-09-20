@@ -125,6 +125,7 @@
 					
 					$ios_data = array(
 									"notification" => array(
+											"alert" => $out_message,
 											"title" => "AtomJump - " . $out_forum,
 											"body" => $out_message
 									),
