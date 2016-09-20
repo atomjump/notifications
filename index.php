@@ -124,9 +124,11 @@
 					
 					
 					$ios_data = array(
+									"alert": "Test background push",
+									"content-available" => 1,
 									"notification" => array(
-											"alert" => $out_message,
-											"content-available" => "1"											
+											"title" => "AtomJump - " . $out_forum,
+											"body" => $out_message,									
 									),
 									"data" => array(
 										"forumName" => $this->null_to_blank_string($message_forum_name),
