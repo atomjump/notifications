@@ -127,8 +127,7 @@
 									"alert" => $out_message,
 									"content-available" => 1,
 									"notification" => array(
-											"title" => "AtomJump - " . $out_forum,
-											"body" => $out_message								
+											"title" => "AtomJump - " . $out_forum
 									),
 									"data" => array(
 										"forumName" => $this->null_to_blank_string($message_forum_name),
