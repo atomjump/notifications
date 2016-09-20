@@ -125,9 +125,8 @@
 					
 					$ios_data = array(
 									"notification" => array(
-											"alert" => $out_message,
-											"title" => "AtomJump - " . $out_forum,
-											"body" => $out_message
+											"alert" => $out_message
+											
 									),
 									"data" => array(
 										"forumName" => $this->null_to_blank_string($message_forum_name),
@@ -137,7 +136,8 @@
 										"removeUrl" => $this->null_to_blank_string($message_details['remove_url']),
 										"removeMessage" => $this->null_to_blank_string($message_details['remove_message']),
 										"content-available" => "1",
-										
+										"title" => "AtomJump - " . $out_forum,
+										"body" => $out_message
 									
 									)
 								); 		  
