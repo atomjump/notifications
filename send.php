@@ -114,7 +114,7 @@
 				$passphrase = 'apns';
 				//$message = 'test';										
 				$ctx = stream_context_create();
-				stream_context_set_option($ctx, 'ssl', 'local_cert', 'pushcert.pem');		//pushcert.pem
+				stream_context_set_option($ctx, 'ssl', 'local_cert', dirname(__FILE__) . '/pushcert.pem');		//pushcert.pem
 				stream_context_set_option($ctx, 'ssl', 'passphrase', $passphrase);
 				$fp = stream_socket_client('ssl://gateway.push.apple.com:2195', $err, $errstr, 60, STREAM_CLIENT_CONNECT|STREAM_CLIENT_PERSISTENT, $ctx);
 				$body['aps'] = $data->ios;		//Eg. array('alert' => $message,'sound' => 'default');
