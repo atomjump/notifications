@@ -124,11 +124,11 @@
 					
 					
 					$ios_data = array(
-									"alert" => "Test background push",
+									"alert" => $out_message,
 									"content-available" => 1,
 									"notification" => array(
 											"title" => "AtomJump - " . $out_forum,
-											"body" => $out_message,									
+											"body" => $out_message								
 									),
 									"data" => array(
 										"forumName" => $this->null_to_blank_string($message_forum_name),
@@ -136,8 +136,7 @@
 										"observeUrl" => $this->null_to_blank_string($out_link),
 										"observeMessage" => $this->null_to_blank_string($message_details['observe_message']),
 										"removeUrl" => $this->null_to_blank_string($message_details['remove_url']),
-										"removeMessage" => $this->null_to_blank_string($message_details['remove_message']),
-										
+										"removeMessage" => $this->null_to_blank_string($message_details['remove_message'])										
 									
 									)
 								); 		  
