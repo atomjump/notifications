@@ -55,52 +55,55 @@
 		
 			//Now process Android messages
 		
-			// Set POST request body
-			$post = array(
-							'registration_ids'  => $android_ids,
-							'data'              => $data->android,
-						 );
+			if(count($android_ids) > 0) {
+		
+				// Set POST request body
+				$post = array(
+								'registration_ids'  => $android_ids,
+								'data'              => $data->android,
+							 );
 			
 
 
-			// Set CURL request headers 
-			$headers = array( 
-								'Authorization: key=' . $apiKey,
-								'Content-Type: application/json'
-							);
+				// Set CURL request headers 
+				$headers = array( 
+									'Authorization: key=' . $apiKey,
+									'Content-Type: application/json'
+								);
 
-			// Initialize curl handle       
-			$ch = curl_init();
+				// Initialize curl handle       
+				$ch = curl_init();
 
-			// Set URL to GCM push endpoint     
-			curl_setopt($ch, CURLOPT_URL, 'https://android.googleapis.com/gcm/send');
+				// Set URL to GCM push endpoint     
+				curl_setopt($ch, CURLOPT_URL, 'https://android.googleapis.com/gcm/send');
 
-			// Set request method to POST       
-			curl_setopt($ch, CURLOPT_POST, true);
+				// Set request method to POST       
+				curl_setopt($ch, CURLOPT_POST, true);
 
-			// Set custom request headers       
-			curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+				// Set custom request headers       
+				curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
-			// Get the response back as string instead of printing it       
-			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+				// Get the response back as string instead of printing it       
+				curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
-			// Set JSON post data
-			curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($post));
+				// Set JSON post data
+				curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($post));
 
-			// Actually send the request    
-			$result = curl_exec($ch);
+				// Actually send the request    
+				$result = curl_exec($ch);
 
-			// Handle errors
-			if (curl_errno($ch))
-			{
-				error_log('GCM error: ' . curl_error($ch));
+				// Handle errors
+				if (curl_errno($ch))
+				{
+					error_log('GCM error: ' . curl_error($ch));
+				}
+
+				// Close curl handle
+				curl_close($ch);
+
+				// Debug GCM response       
+				error_log($result);
 			}
-
-			// Close curl handle
-			curl_close($ch);
-
-			// Debug GCM response       
-			error_log($result);
 			
 			
 			
@@ -111,9 +114,9 @@
 				$passphrase = 'apns';
 				//$message = 'test';										
 				$ctx = stream_context_create();
-				stream_context_set_option($ctx, 'ssl', 'local_cert', 'certs/pushcert.pem');		//pushcert.pem
+				stream_context_set_option($ctx, 'ssl', 'local_cert', 'pushcert.pem');		//pushcert.pem
 				stream_context_set_option($ctx, 'ssl', 'passphrase', $passphrase);
-				$fp = stream_socket_client('ssl://gateway.sandbox.push.apple.com:2195', $err, $errstr, 60, STREAM_CLIENT_CONNECT|STREAM_CLIENT_PERSISTENT, $ctx);
+				$fp = stream_socket_client('ssl://gateway.push.apple.com:2195', $err, $errstr, 60, STREAM_CLIENT_CONNECT|STREAM_CLIENT_PERSISTENT, $ctx);
 				$body['aps'] = $data->ios;		//Eg. array('alert' => $message,'sound' => 'default');
 				$payload = json_encode($body);
 				$msg = chr(0) . pack('n', 32) . pack('H*', $deviceToken) . pack('n', strlen($payload)) . $payload;
