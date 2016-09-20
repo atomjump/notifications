@@ -100,9 +100,6 @@
 
 				// Close curl handle
 				curl_close($ch);
-
-				// Debug GCM response       
-				error_log($result);
 			}
 			
 			
