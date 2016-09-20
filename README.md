@@ -22,7 +22,7 @@ nano config/config.json								[enter your own parameters. serverPath is your Lo
 php install.php
 ```
 
-At the user end, the Android/iPhone app at https://github.com/atomjump/messaging needs to be installed (this can be built in build.phonegap.com, which is available on the Android and iPhone app-stores as 'AtomJump Messaging')
+At the user end, the Android/iPhone app at https://github.com/atomjump/messaging needs to be installed (this can be built in build.phonegap.com, or this is available on the Android and iPhone app-stores as 'AtomJump Messaging')
 
 
 
