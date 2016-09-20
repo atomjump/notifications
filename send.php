@@ -110,6 +110,8 @@
 			//Now process iOS messages, one at a time - not sure if can do a group send 
 			//http://stackoverflow.com/questions/21250510/generate-pem-file-used-to-setup-apple-push-notification
 			for($cnt = 0; $cnt < count($ios_ids); $cnt++) {
+				//See this for future ref: http://codular.com/sending-ios-push-notifications-with-php
+			
 				$deviceToken = $ios_ids[$cnt];	//e.g. '29954cd9ace7a7c29f66918e62e8a18522619c5cabae08972da6cd4273fe874c';
 				$passphrase = 'apns';
 				//$message = 'test';										
