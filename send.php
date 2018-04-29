@@ -75,7 +75,7 @@
 				$ch = curl_init();
 
 				// Set URL to GCM push endpoint     
-				curl_setopt($ch, CURLOPT_URL, 'https://android.googleapis.com/gcm/send');
+				curl_setopt($ch, CURLOPT_URL, 'https://fcm.googleapis.com/fcm/send');
 
 				// Set request method to POST       
 				curl_setopt($ch, CURLOPT_POST, true);
@@ -95,7 +95,7 @@
 				// Handle errors
 				if (curl_errno($ch))
 				{
-					error_log('GCM error: ' . curl_error($ch));
+					error_log('FCM error: ' . curl_error($ch));
 				}
 
 				// Close curl handle
