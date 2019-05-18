@@ -25,9 +25,17 @@ php install.php
 At the user end, the Android/iPhone app at https://github.com/atomjump/messaging needs to be installed (this can be built in build.phonegap.com, or this is available on the Android and iPhone app-stores as 'AtomJump Messaging')
 
 
+# Certificate Updates
+
+You will **need to update** your installation to a new version during the one month period, **1 March 2020 to 31 March 2020**. This is since the iPhone notification requires an updated certificate, once per year. We will update the certificate at the start of the month, and the certificate will end at the end of the month.
+
+Please **log this in your own personal calendar** for a reminder, since the software will not automatically notify you when the certificate runs out.
+
 
 # TODO
 
 * Handle multiple devices per user (probably as a json array inside the same database field)
 * Time-slots for accepting messages
 * Multiple messages from the same forum can be grouped
+* iPhone pictures
+* Automatic certificate updates
