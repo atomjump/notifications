@@ -18,7 +18,10 @@ cd plugins
 git clone https://github.com/atomjump/notifications.git
 cd notifications
 cp config/configORIGINAL.json config/config.json
-nano config/config.json								[enter your own parameters. serverPath is your Loop Server file path. apiKey is the Google GCM apiKey. staging is true/false for which Loop Server config to use.]
+nano config/config.json								[enter your own parameters:
+					serverPath is your Loop Server file path.
+					apiKey is the Google GCM apiKey.
+					staging is true/false for which Loop Server config to use.]
 php install.php
 ```
 
