@@ -1,4 +1,13 @@
 <?php
+	function trim_trailing_slash_local($str) {
+        return rtrim($str, "/");
+    }
+    
+    function add_trailing_slash_local($str) {
+        //Remove and then add
+        return rtrim($str, "/") . '/';
+    }
+    
 	if(!isset($notifications_config)) {
         //Get global plugin config - but only once
 		$data = file_get_contents (dirname(__FILE__) . "/config/config.json");
@@ -18,7 +27,7 @@
   
     }
  
-	$start_path = $notifications_config['serverPath'];
+	$start_path = add_trailing_slash_local($notifications_config['serverPath']);
 	
 	$staging = $notifications_config['staging'];
 	$notify = false;

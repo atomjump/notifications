@@ -1,4 +1,13 @@
 <?php
+	function trim_trailing_slash_local($str) {
+        return rtrim($str, "/");
+    }
+    
+    function add_trailing_slash_local($str) {
+        //Remove and then add
+        return rtrim($str, "/") . '/';
+    }
+
 
 	//Called by the AtomJump messaging app to register this particular user's phone
 	
@@ -21,7 +30,7 @@
   
     }
  
-	$start_path = $notifications_config['serverPath'];
+	$start_path = add_trailing_slash_local($notifications_config['serverPath']);
 	$staging = $notifications_config['staging'];
 	
 	$notify = false;
