@@ -65,7 +65,10 @@
 					$out_message = str_replace("\\n", "", $out_message);
 					
 					
-					$out_link = "";
+					//Default link
+					$out_link = $message_details['observe_url'];
+					
+					
 					//Check this is an atomjump.com message
 					if(strpos($message_forum_name, "ajps_") !== false) {
 						$aj_forum = str_replace("ajps_", "", $message_forum_name);
