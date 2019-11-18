@@ -38,7 +38,7 @@
             //Enter the HTML in here:
             ?>
                 <div>
-                   
+                    </br>
                     <div class="form-group">
 						
 						<input type="checkbox" name="useapp" <?php echo $app_html ?>> 
