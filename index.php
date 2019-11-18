@@ -52,8 +52,8 @@
                     		var password = $('#password-opt').val();
                     		var server = ajFeedback.server;
                     		var forumPass = $('#forumpass').val();
-                    		alert("App opening in here. Email: " + email + "  Forum:" + forum + " Password: " + password + " Server: " + server + " ForumPass:" + forumPass);
-                    		
+                    		//alert("App opening in here. Email: " + email + "  Forum:" + forum + " Password: " + password + " Server: " + server + " ForumPass:" + forumPass);
+                    		var url = "https://your_subdomain.page.link/?link=" + email + ":" + forum + ":" + password + ":" + server + ":" + forumPass + "&apn=com.atomjump.messaging";
                     	
                     	}
                     </script>
