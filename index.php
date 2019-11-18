@@ -41,7 +41,7 @@
                     </br>
                     <div class="form-group">
 						
-						Get popup notifications&nbsp;&nbsp;<a href="https://itunes.apple.com/us/app/atomjump-messaging/id1153387200?ls=1&mt=8">iOS</a>&nbsp;&nbsp;<a href="https://play.google.com/store/apps/details?id=com.atomjump.messaging">Android</a>
+						Get popup notifications&nbsp;&nbsp;<a target="_blank" href="https://itunes.apple.com/us/app/atomjump-messaging/id1153387200?ls=1&mt=8">iOS</a>&nbsp;&nbsp;<a target="_blank" href="https://play.google.com/store/apps/details?id=com.atomjump.messaging">Android</a>
 						
 						
 						<!--<input type="checkbox" name="useapp" id="useapp" <?php echo $app_html ?>> 
