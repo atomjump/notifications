@@ -40,10 +40,8 @@
                 <div>
                    
                     <div class="form-group">
-						<select name="useapp" class="form-control">
 						
-							<input type="checkbox" name="useapp" <?php echo $app_html ?>> 
-						</select>
+						<input type="checkbox" name="useapp" <?php echo $app_html ?>> 
 						Get popup notifications (Install / Open App)
 					</div>
                     
