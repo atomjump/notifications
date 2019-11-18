@@ -41,8 +41,11 @@
                     </br>
                     <div class="form-group">
 						
-						<input type="checkbox" name="useapp" id="useapp" <?php echo $app_html ?>> 
-						Get popup notifications (Install / Open App)
+						Get popup notifications&nbsp;&nbsp;<a href="https://itunes.apple.com/us/app/atomjump-messaging/id1153387200?ls=1&mt=8">iOS</a>&nbsp;&nbsp;<a href="https://play.google.com/store/apps/details?id=com.atomjump.messaging">Android</a>
+						
+						
+						<!--<input type="checkbox" name="useapp" id="useapp" <?php echo $app_html ?>> 
+						Get popup notifications (Install / Open App)-->
 					</div>
                     
                     <script>
@@ -53,7 +56,7 @@
                     		var server = ajFeedback.server;
                     		var forumPass = $('#forumpass').val();
                     		//alert("App opening in here. Email: " + email + "  Forum:" + forum + " Password: " + password + " Server: " + server + " ForumPass:" + forumPass);
-                    		var url = "https://your_subdomain.page.link/?link=" + email + ":" + forum + ":" + password + ":" + server + ":" + forumPass + "&apn=com.atomjump.messaging";
+                    		//TODO: var url = "https://your_subdomain.page.link/?link=" + email + ":" + forum + ":" + password + ":" + server + ":" + forumPass + "&apn=com.atomjump.messaging";
                     	
                     	}
                     </script>
