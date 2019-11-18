@@ -38,11 +38,14 @@
             //Enter the HTML in here:
             ?>
                 <div>
-                    <div>Get popup notifications (Install / Open App)</div>
-                    <select name="useapp" class="form-control">
-                        
-                        <input type="checkbox" name="useapp" <?php echo $app_html ?>> 
-                    </select>
+                   
+                    <div class="form-group">
+						<select name="useapp" class="form-control">
+						
+							<input type="checkbox" name="useapp" <?php echo $app_html ?>> 
+						</select>
+						Get popup notifications (Install / Open App)
+					</div>
                     
                     <script>
                     	function deepLinkApp() {
