@@ -79,10 +79,11 @@
                         $cookie_value = $full_request['useapp'];
                         setcookie($cookie_name, $cookie_value, time() + (365*3*60*60*24*1000), "/"); // 86400 = 1 day
                         
+                        /*
                         //Now refresh the current page
                         if($cookie_value != $old_useapp) {
                              return "RELOAD"; //This reloads the entire page
-                        }
+                        }*/
                     }
                 break;
             }
