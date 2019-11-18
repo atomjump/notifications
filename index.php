@@ -41,14 +41,14 @@
                     </br>
                     <div class="form-group">
 						
-						<input type="checkbox" name="useapp" <?php echo $app_html ?>> 
+						<input type="checkbox" name="useapp" id="useapp" <?php echo $app_html ?>> 
 						Get popup notifications (Install / Open App)
 					</div>
                     
                     <script>
                     	function deepLinkApp() {
                     		var email = $('#email-opt').val();
-                    		var forum = $('#passcode').val();
+                    		var forum = $('#passcode-hidden').val();
                     		var password = $('#password-opt').val();
                     		var server = ajFeedback.server;
                     		var forumPass = $('#forumpass').val();
