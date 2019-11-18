@@ -17,6 +17,83 @@
     	
     	}
     	
+    	
+    
+        public function on_more_settings()
+        {
+            global $msg;
+            
+            if(isset($_COOKIE['useapp'])) {
+                $use_app = $_COOKIE['useapp'];
+            } else {
+                $use_app = false;
+            }
+         
+         	if($use_app == true) {
+         		$app_html = "checked=\"checked\"";
+         	} else {
+         		$app_html = "";
+         	}
+         
+            //Enter the HTML in here:
+            ?>
+                <div>
+                    <div>Get popup notifications (Install / Open App)</div>
+                    <select name="useapp" class="form-control">
+                        
+                        <input type="checkbox" name="useapp" <?php echo $app_html ?>> 
+                    </select>
+                    
+                    <script>
+                    	function deepLinkApp() {
+                    		var email = $('#email-opt').val();
+                    		var forum = $('#passcode').val();
+                    		var password = $('#password-opt').val();
+                    		var server = ajFeedback.server;
+                    		var forumPass = $('#forumpass').val();
+                    		alert("App opening in here. Email: " + email + "  Forum:" + forum + " Password: " + password + " Server: " + server + " ForumPass:" + forumPass);
+                    		
+                    	
+                    	}
+                    </script>
+                </div>
+            
+            <?php
+            
+            return true;
+            
+        }
+        
+        public function on_save_settings($user_id, $full_request, $type)
+        {
+            //Do your thing in here. Here is a sample.
+            $api = new cls_plugin_api();
+            
+            switch($type) {
+                default:
+                    if(isset($full_request['useapp'])) {
+                        $old_useapp = $_COOKIE['useapp'];
+                        
+                        $cookie_name = "useapp";
+                        $cookie_value = $full_request['useapp'];
+                        setcookie($cookie_name, $cookie_value, time() + (365*3*60*60*24*1000), "/"); // 86400 = 1 day
+                        
+                        //Now refresh the current page
+                        if($cookie_value != $old_useapp) {
+                             return "RELOAD"; //This reloads the entire page
+                        }
+                    }
+                break;
+            }
+            
+            return true;        
+            
+        
+        }
+	
+    	
+    	
+    	
     	public function on_notify($stage, $message, $message_details, $message_id, $sender_id, $recipient_id, $in_data)
         {
         
