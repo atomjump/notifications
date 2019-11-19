@@ -42,13 +42,24 @@
                     <div class="form-group">
 						
 						Get popup notifications:&nbsp;&nbsp;<a target="_blank" href="https://itunes.apple.com/us/app/atomjump-messaging/id1153387200?ls=1&mt=8">iOS</a>&nbsp;&nbsp;<a target="_blank" href="https://play.google.com/store/apps/details?id=com.atomjump.messaging">Android</a>
-						
+						<div id="show-server-app-link" style="display: none;"></div>
 						
 						<!--<input type="checkbox" name="useapp" id="useapp" <?php echo $app_html ?>> 
 						Get popup notifications (Install / Open App)-->
 					</div>
                     
                     <script>
+                    	
+                    	if(ajFeedback.server && (ajFeedback.server != "https://atomjump.com/api")) {
+                    		var url = ajFeedback.server;                    		
+                    		var lastChar = url.substr(-1); // Selects the last character
+							if (lastChar != '/') {         // If the last character is not a slash
+							   url = url + '/';            // Append a slash to it.
+							}
+                    		var myText = "<span style='color: #555;'>Please use the 'Private Server' " + url + " in your app login screen.</span>";
+                    		$('#show-server-app-link').html(myText);
+                    	}
+                    
                     	function deepLinkApp() {
                     		var email = $('#email-opt').val();
                     		var forum = $('#passcode-hidden').val();
