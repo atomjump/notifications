@@ -56,7 +56,7 @@
 							if (lastChar != '/') {         // If the last character is not a slash
 							   url = url + '/';            // Append a slash to it.
 							}
-                    		var myText = "<span style='color: #AAA;'>Note: Please use the 'Private Server'</span></br><span style='color: #888;'>" + url + "</span><br/><span style='color: #AAA;'>in your app login screen.</span>";
+                    		var myText = "<span style='color: #BBB;'>Note: Please use the 'Private Server'</span></br><span style='color: #AAA;'>" + url + "</span><br/><span style='color: #BBB;'>in your app login screen.</span>";
                     		$('#show-server-app-link').html(myText);
                     		$('#show-server-app-link').show();
                     	}
