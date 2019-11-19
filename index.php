@@ -58,6 +58,7 @@
 							}
                     		var myText = "<span style='color: #555;'>Please use the 'Private Server' " + url + " in your app login screen.</span>";
                     		$('#show-server-app-link').html(myText);
+                    		$('#show-server-app-link').show();
                     	}
                     
                     	function deepLinkApp() {
