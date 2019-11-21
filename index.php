@@ -56,10 +56,10 @@
          		$app_html = "";
          	}
          	
-         	$get_notifications_msg = $this->notifications_config['msg'][$lang]['getPopupNotifications'];
+         	$get_notifications_msg = $this->notifications_config['msgs'][$lang]['getPopupNotifications'];
          	$ios_link = $this->notifications_config['iosAppLink'];
          	$android_link = $this->notifications_config['androidAppLink'];
-         	$private_server_note = $this->notifications_config['msg'][$lang]['privateServerNote'];
+         	$private_server_note = $this->notifications_config['msgs'][$lang]['privateServerNote'];
          
             //Enter the HTML in here:
             ?>
