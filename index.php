@@ -21,7 +21,28 @@
     
         public function on_more_settings()
         {
+        
             global $msg;
+            global $lang;
+       
+       		if(!isset($this->notifications_config)) {
+				//Get global plugin config - but only once
+				$data = file_get_contents (dirname(__FILE__) . "/config/config.json");
+				if($data) {
+					$this->notifications_config = json_decode($data, true);
+					if(!isset($this->notifications_config)) {
+						error_log("Error: notifications config/config.json is not valid JSON.");
+						exit(0);
+					}
+	 
+				} else {
+					error_log("Error: Missing config/config.json in notifications plugin.");
+					exit(0);
+	 
+				}
+			}
+       
+       
             
             if(isset($_COOKIE['useapp'])) {
                 $use_app = $_COOKIE['useapp'];
@@ -34,6 +55,11 @@
          	} else {
          		$app_html = "";
          	}
+         	
+         	$get_notifications_msg = $this->notifications_config['msg'][$lang]['getPopupNotifications'];
+         	$ios_link = $this->notifications_config['iosAppLink'];
+         	$android_link = $this->notifications_config['androidAppLink'];
+         	$private_server_note = $this->notifications_config['msg'][$lang]['privateServerNote'];
          
             //Enter the HTML in here:
             ?>
@@ -41,10 +67,10 @@
                     </br>
                     <div class="form-group">
 						
-						Get popup notifications:&nbsp;&nbsp;<a target="_blank" href="https://itunes.apple.com/us/app/atomjump-messaging/id1153387200?ls=1&mt=8">iOS</a>&nbsp;&nbsp;<a target="_blank" href="https://play.google.com/store/apps/details?id=com.atomjump.messaging">Android</a>
+						<?php echo $get_notifications_msg ?>&nbsp;&nbsp;<a target="_blank" href="https://itunes.apple.com/us/app/atomjump-messaging/id1153387200?ls=1&mt=8">iOS</a>&nbsp;&nbsp;<a target="_blank" href="https://play.google.com/store/apps/details?id=com.atomjump.messaging">Android</a>
 						<div id="show-server-app-link" style="display: none;"></div>
 						
-						<!--<input type="checkbox" name="useapp" id="useapp" <?php echo $app_html ?>> 
+						<!-- Future: <input type="checkbox" name="useapp" id="useapp" <?php echo $app_html ?>> 
 						Get popup notifications (Install / Open App)-->
 					</div>
                     
@@ -56,7 +82,7 @@
 							if (lastChar != '/') {         // If the last character is not a slash
 							   url = url + '/';            // Append a slash to it.
 							}
-                    		var myText = "<span style='color: #BBB;'>Note: Please set the 'Private Server' in your app login screen as:</span></br><span style='color: #AAA;'>" + url + "</span>";
+                    		var myText = "<span style='color: #BBB;'><?php echo $private_server_note; ?></span></br><span style='color: #AAA;'>" + url + "</span>";
                     		$('#show-server-app-link').html(myText);
                     		$('#show-server-app-link').show();
                     	}
@@ -66,9 +92,8 @@
                     		var forum = $('#passcode-hidden').val();
                     		var password = $('#password-opt').val();
                     		var server = ajFeedback.server;
-                    		var forumPass = $('#forumpass').val();
-                    		//alert("App opening in here. Email: " + email + "  Forum:" + forum + " Password: " + password + " Server: " + server + " ForumPass:" + forumPass);
-                    		//TODO: var url = "https://your_subdomain.page.link/?link=" + email + ":" + forum + ":" + password + ":" + server + ":" + forumPass + "&apn=com.atomjump.messaging";
+                    		var forumPass = $('#forumpass').val();		//Note: this may need to be entered in the app.
+                    		//TODO Open app as a deep link with e.g.: var url = "https://your_subdomain.page.link/?link=" + email + ":" + forum + ":" + password + ":" + server + "&apn=com.atomjump.messaging";
                     	
                     	}
                     </script>
@@ -94,11 +119,6 @@
                         $cookie_value = $full_request['useapp'];
                         setcookie($cookie_name, $cookie_value, time() + (365*3*60*60*24*1000), "/"); // 86400 = 1 day
                         
-                        /*
-                        //Now refresh the current page
-                        if($cookie_value != $old_useapp) {
-                             return "RELOAD"; //This reloads the entire page
-                        }*/
                     }
                 break;
             }
@@ -140,8 +160,6 @@
 					exit(0);
 	 
 				}
-  
-  
 			}
             
 
@@ -237,9 +255,7 @@
 									)
 								); 		  
 					
-					
-									//	"title" => "AtomJump - " . $out_forum
-					
+										
 					if($image != "") {
 						//Optionally append an emoticon or image to that.
 						$ios_data['data']['image'] = $image;

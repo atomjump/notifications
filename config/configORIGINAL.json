@@ -1,5 +1,21 @@
 {
     "serverPath": "your_path/loop-server/",
     "apiKey": "AIzaSyD8TEuhUQDDUQirNIVMdVaHPsnWxt-ygjc",
-    "staging": true
+    "staging": true,
+    "iosAppLink": "https://itunes.apple.com/us/app/atomjump-messaging/id1153387200?ls=1&mt=8",
+    "androidAppLink": "https://play.google.com/store/apps/details?id=com.atomjump.messaging",
+    "msgs": {
+        "en":{
+        	"getPopupNotifications": "Get popup notifications:",
+        	"privateServerNote": "Note: Please set the 'Private Server' in your app login screen as:"
+        },
+        "es":{
+        	"getPopupNotifications": "Recibe notificaciones emergentes:",
+        	"privateServerNote": "Nota: Configure el 'Servidor privado' en la pantalla de inicio de sesión de su aplicación como:"
+        },
+        "pt": {
+        	"getPopupNotifications": "Receba notificações pop-up:",
+        	"privateServerNote": "Nota: Defina o 'Servidor privado' na tela de login do seu aplicativo como:"
+        }
+    }
 }
