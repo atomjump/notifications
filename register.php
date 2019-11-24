@@ -54,6 +54,18 @@
 		$device_type = "Android";			//Default to Android if unknown
 	}
 	
+	if(isset($_REQUEST['userid'])) {
+		$user_id = $_REQUEST['userid'];
+	} else {
+		//Get from the session variable
+		if(isset($_SESSION['logged-user'])) {
+			$user_id = $_SESSION['logged-user'];
+		} else {
+			echo "Sorry, please login on the messaging forum, and try again.";
+			return;
+		}
+	}
+	
 	$sql = "var_notification_id = " . $notification_id . ", var_device_type = '" . $device_type . "' WHERE int_user_id = " . $_REQUEST['userid'];
 	$api->db_update("tbl_user", $sql);
 
