@@ -256,40 +256,17 @@
 				/* ipad */
 				@media screen and (max-device-width: 1024px) and (min-device-width: 768px) {
 
-				.cpy {
-					position: relative;
-					right: 10px;
-					bottom: 10px;
-					float: right;
-					margin-right: 20px;
-					z-index: 20;
+					.cpy {
+						position: relative;
+						right: 10px;
+						bottom: 10px;
+						float: right;
+						margin-right: 20px;
+						z-index: 20;
 
-				}
+					}
 
-				 	<?php if($include_image) { ?>
-
-						.wrapper{
-							background: transparent !important;
-
-						}
-
-
-						html {
-							background-color: transparent !important;
-							background-image: url('<?php echo $image ?>');
-
-							background-position: center center !important;
-							background-repeat: no-repeat;
-							 background-attachment: scroll; /* Don't have a fixe background image */
-							-webkit-background-size: cover;
-							-moz-background-size: cover;
-							-o-background-size: cover;
-							background-size: cover !important;
-							height: 100%;
-							min-height:100%;
-
-						}
-					<?php } ?>
+	
 				}
 
 				/* Samsung S4 */
