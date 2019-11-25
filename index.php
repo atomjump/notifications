@@ -67,7 +67,7 @@
                     </br>
                     <div class="form-group">
 						
-						<?php echo $get_notifications_msg ?>&nbsp;&nbsp;<a target="_blank" href="https://itunes.apple.com/us/app/atomjump-messaging/id1153387200?ls=1&mt=8">iOS</a>&nbsp;&nbsp;<a target="_blank" href="https://play.google.com/store/apps/details?id=com.atomjump.messaging">Android</a>
+						<?php echo $get_notifications_msg ?>&nbsp;&nbsp;<a target="_parent" href="https://itunes.apple.com/us/app/atomjump-messaging/id1153387200?ls=1&mt=8">iOS</a>&nbsp;&nbsp;<a target="_blank" href="https://play.google.com/store/apps/details?id=com.atomjump.messaging">Android</a>
 						<div id="show-server-app-link" style="display: none;"></div>
 						
 						<!-- Future: <input type="checkbox" name="useapp" id="useapp" <?php echo $app_html ?>> 
