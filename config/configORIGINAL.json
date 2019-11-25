@@ -17,19 +17,19 @@
         "es":{
         	"getPopupNotifications": "Recibe notificaciones emergentes:",
         	"privateServerNote": "Nota: Configure el 'Servidor privado' en la pantalla de inicio de sesión de su aplicación como:",
-        	"notLoggedIn": "Sorry, please login to your messaging forum and try again.",
-        	"backHome": "Back to Home",
-        	"appDeregistered": "Your app is now deregistered to this server. You will only receive email notifications.",
-        	"deregister": "Deregister (go back to email notifications)",
-        	"appRegistered": "Your app is now registered to this server and email:"
+        	"notLoggedIn": "Lo sentimos, ingrese a su foro de mensajes e intente nuevamente.",
+        	"backHome": "De vuelta a casa",
+        	"appDeregistered": "Su aplicación ahora está anulada en este servidor. Solo recibirá notificaciones por correo electrónico.",
+        	"deregister": "Darse de baja (usar notificaciones por correo electrónico)",
+        	"appRegistered": "Su aplicación ahora está registrada en este servidor con el correo electrónico "
         },
         "pt": {
         	"getPopupNotifications": "Receba notificações pop-up:",
         	"privateServerNote": "Nota: Defina o 'Servidor privado' na tela de login do seu aplicativo como:",
-        	"notLoggedIn": "Sorry, please login to your messaging forum and try again.",
-        	"backHome": "Back to Home",
-        	"appDeregistered": "Your app is now deregistered to this server. You will only receive email notifications.",
-        	"deregister": "Deregister (go back to email notifications)",
+        	"notLoggedIn": "Desculpe, faça login no seu fórum de mensagens e tente novamente.",
+        	"backHome": "Voltar à página inicial",
+        	"appDeregistered": "Seu aplicativo agora está cancelado o registro neste servidor. Você receberá apenas notificações por email.",
+        	"deregister": "Cancelar registro (usar notificações por email)",
         	"appRegistered": "Your app is now registered to this server and email:"
         }
     }
