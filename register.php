@@ -62,14 +62,30 @@
 			$user_id = $_SESSION['logged-user'];
 		} 
 	}
+
+	global $msg;
+	global $cnf;
+	global $lang;
+	
+	$follow_on_link = "https://atomjump.com";
+	if($cnf['serviceHome']) {
+		$follow_on_link = $cnf['serviceHome'];
+	}
+	
+	
 	
 	if($user_id == "") {
-		echo "Sorry, please login to your messaging forum and try again.";
+		echo "Sorry, please login to your messaging forum and try again.  <a href='" . $follow_on_link . "'>Back to Home</a>";
 		exit(0);
 	}
+	
+	$unregister_link = "register.php?userid=" . $user_id . "&id=&devicetype=";
+
 	
 	$sql = "var_notification_id = " . $notification_id . ", var_device_type = '" . $device_type . "' WHERE int_user_id = " . $user_id;
 	$api->db_update("tbl_user", $sql);
 
-	echo "Updated";
+
+
+	echo "Your app is now registered to this server. <a href='" . $unregister_link . "'>Deregister (go back to email notifications)</a> <a href='" . $follow_on_link . "'>Back to Home</a>";
 ?>
