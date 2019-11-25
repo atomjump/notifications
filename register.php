@@ -68,7 +68,7 @@
 		exit(0);
 	}
 	
-	$sql = "var_notification_id = " . $notification_id . ", var_device_type = '" . $device_type . "' WHERE int_user_id = " . $userid;
+	$sql = "var_notification_id = " . $notification_id . ", var_device_type = '" . $device_type . "' WHERE int_user_id = " . $user_id;
 	$api->db_update("tbl_user", $sql);
 
 	echo "Updated";
