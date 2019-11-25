@@ -205,7 +205,7 @@
 				}
 
 				.cpy {
-						position: fixed;
+						position: relative;
 						right: 10px;
 						bottom: 10px;
 						float: right;
@@ -316,7 +316,7 @@
 					}
 
 					.cpy {
-						position: fixed;
+						position: relative;
 						right: 10px;
 						bottom: 10px;
 						float: right;
