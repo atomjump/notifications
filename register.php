@@ -58,7 +58,7 @@
 		$user_id = $_REQUEST['userid'];
 	} else {
 		//Get from the session variable
-		if(isset($_SESSION['logged-user'])) {
+		if(isset($_SESSION['logged-user']) && ($_SESSION['logged-user'] != "")) {
 			$user_id = $_SESSION['logged-user'];
 		} else {
 			echo "Sorry, please login on the messaging forum, and try again.";
