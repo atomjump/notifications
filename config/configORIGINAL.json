@@ -8,6 +8,11 @@
         "en":{
         	"getPopupNotifications": "Get popup notifications:",
         	"privateServerNote": "Note: Please set the 'Private Server' in your app login screen as:"
+        	"": "Sorry, please login to your messaging forum and try again.",
+        	"": "Back to Home",
+        	"": "Your app is now deregistered to this server. You will only receive email notifications.",
+        	"": "Deregister (go back to email notifications)",
+        	"": "Your app is now registered to this server"
         },
         "es":{
         	"getPopupNotifications": "Recibe notificaciones emergentes:",

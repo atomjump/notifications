@@ -60,12 +60,18 @@
 		//Get from the session variable
 		if(isset($_SESSION['logged-user']) && ($_SESSION['logged-user'] != "")) {
 			$user_id = $_SESSION['logged-user'];
+			
 		} 
 	}
 
 	global $msg;
 	global $cnf;
 	global $lang;
+	
+	//User's email for display purposes only.
+	if(isset($_SESSION['logged-email']) && ($_SESSION['logged-email'] != "")) {
+			$user_email = $_SESSION['logged-email'];
+	} 
 	
 	$follow_on_link = "https://atomjump.com";
 	if($cnf['serviceHome']) {
@@ -89,7 +95,7 @@
 	if($_REQUEST['id'] == "") {
 			echo "Your app is now deregistered to this server. You will only receive email notifications.  <a href='" . $follow_on_link . "'>Back to Home</a>";
 	} else {
-			echo "Your app is now registered to this server  [logged user : ". $user_id ."]. <a href='" . $unregister_link . "'>Deregister (go back to email notifications)</a> <a href='" . $follow_on_link . "'>Back to Home</a>";
+			echo "Your app is now registered to this server  [". $user_email ."]. <a href='" . $unregister_link . "'>Deregister (go back to email notifications)</a> <a href='" . $follow_on_link . "'>Back to Home</a>";
 	}
 
 ?>
