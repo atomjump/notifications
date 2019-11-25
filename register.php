@@ -389,11 +389,11 @@
                 <div class="col-md-2">
                 </div>
                  <div class="col-md-8">
-                    
-
-                    
                  </div>
                 <div class="col-md-2">
+                	<p align="right"><a href="https://atomjump.com/smart.php">Learn More</a></p>
+					<p align="right" style="color: #aaa;"><b>Local Server Install</b></p>
+					<p align="right" style="color: #aaa;"><small>&copy; <?php echo date('Y'); ?> <?php echo $msg['msgs'][$lang]['copyright'] ?></small></p>
                 </div>
             </div>
 		<br/><br/><br/><br/>
@@ -401,11 +401,6 @@
 		</div>
 
 
-			<div class="cpy">
-				<p align="right"><a href="https://atomjump.com/smart.php">Learn More</a></p>
-				<p align="right" style="color: #aaa;"><b>Local Server Install</b></p>
-				<p align="right" style="color: #aaa;"><small>&copy; <?php echo date('Y'); ?> <?php echo $msg['msgs'][$lang]['copyright'] ?></small></p>
-			</div>
 
 		<div id="comment-holder"></div><!-- holds the popup comments. Can be anywhere between the <body> tags -->
 
