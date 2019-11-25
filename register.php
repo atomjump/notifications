@@ -60,10 +60,12 @@
 		//Get from the session variable
 		if(isset($_SESSION['logged-user']) && ($_SESSION['logged-user'] != "")) {
 			$user_id = $_SESSION['logged-user'];
-		} else {
-			echo "Sorry, please login on the messaging forum, and try again.";
-			exit(0);
-		}
+		} 
+	}
+	
+	if($user_id == "") {
+		echo "Sorry, please login to your messaging forum and try again.";
+		exit(0);
 	}
 	
 	$sql = "var_notification_id = " . $notification_id . ", var_device_type = '" . $device_type . "' WHERE int_user_id = " . $userid;
