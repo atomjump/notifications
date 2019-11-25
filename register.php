@@ -257,7 +257,7 @@
 				@media screen and (max-device-width: 1024px) and (min-device-width: 768px) {
 
 				.cpy {
-					position: fixed;
+					position: relative;
 					right: 10px;
 					bottom: 10px;
 					float: right;
