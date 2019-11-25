@@ -22,6 +22,7 @@ nano config/config.json								[enter your own parameters:
 					serverPath is your Loop Server file path.
 					apiKey is the Google GCM apiKey.
 					staging is true/false for which Loop Server config to use.]
+cp pushcertSAMPLE.pem pushcert.pem				[You will need your own Apple push certicate in here]
 php install.php
 ```
 
@@ -30,8 +31,7 @@ At the user end, the Android/iPhone app at https://github.com/atomjump/messaging
 
 # Certificate Updates
 
-You will **need to update** your installation to a new version during the one month period, **1 March 2020 to 31 March 2020**. This is since the iPhone notification requires an updated certificate, once per year. We will update the certificate at the start of the month, and the certificate will end at the end of the month.
-
+You will **need to update** your installation once a year when your Apple push notification certificate runs out.
 Please **log this in your own personal calendar** for a reminder, since the software will not automatically notify you when the certificate runs out.
 
 
@@ -40,5 +40,5 @@ Please **log this in your own personal calendar** for a reminder, since the soft
 * Handle multiple devices per user (probably as a json array inside the same database field)
 * Time-slots for accepting messages
 * Multiple messages from the same forum can be grouped
-* iPhone pictures
+* iPhone pictures in the popup
 * Automatic certificate updates
