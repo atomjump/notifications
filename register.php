@@ -81,7 +81,7 @@
 	
 	
 	if($user_id == "") {
-		echo "Sorry, please login to your messaging forum and try again.  <a href='" . $follow_on_link . "'>Back to Home</a>";
+		echo $notifications_config['msgs'][$lang]['notLoggedIn'] . " <a href='" . $follow_on_link . "'>" . $notifications_config['msgs'][$lang]['backHome'] ."</a>";
 		exit(0);
 	}
 	
@@ -93,9 +93,9 @@
 
 
 	if($_REQUEST['id'] == "") {
-			echo "Your app is now deregistered to this server. You will only receive email notifications.  <a href='" . $follow_on_link . "'>Back to Home</a>";
+			echo $notifications_config['msgs'][$lang]['appDeregistered'] . " <a href='" . $follow_on_link . "'>" . $notifications_config['msgs'][$lang]['backHome'] ."</a>";
 	} else {
-			echo "Your app is now registered to this server  [". $user_email ."]. <a href='" . $unregister_link . "'>Deregister (go back to email notifications)</a> <a href='" . $follow_on_link . "'>Back to Home</a>";
+			echo $notifications_config['msgs'][$lang]['appRegistered'] . $user_email .". <a href='" . $unregister_link . "'>" . $notifications_config['msgs'][$lang]['deregister'] ."</a> <a href='" . $follow_on_link . "'>" . $notifications_config['msgs'][$lang]['backHome'] ."</a>";
 	}
 
 ?>
