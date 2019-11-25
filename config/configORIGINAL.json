@@ -11,8 +11,8 @@
         	"notLoggedIn": "Sorry, please login to your messaging forum and try again.",
         	"backHome": "Back to Home",
         	"appDeregistered": "Your app is now deregistered to this server. You will only receive email notifications.",
-        	"deregister": "Deregister (go back to email notifications)",
-        	"appRegistered": "Your app is now registered to this server and email:"
+        	"deregister": "Deregister (use email notifications)",
+        	"appRegistered": "Your app is now registered to this server with the email "
         },
         "es":{
         	"getPopupNotifications": "Recibe notificaciones emergentes:",
