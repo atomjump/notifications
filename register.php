@@ -373,21 +373,23 @@
 			<br/>
 		</div>
    		
-		<div class="row">
-			<div class="col-md-2">
-			</div>
-			 <div class="col-md-8">
-					<h3 align="center" style="color: #aaa;"><?php echo $main_message ?></h3>
+   		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-2">
+				</div>
+				 <div class="col-md-8">
+						<h3 align="center" style="color: #aaa;"><?php echo $main_message ?></h3>
 				
-					<a class="button" href='<?php echo $first_button ?>'><?php echo $first_button_wording ?></a>
+						<a class="button" href='<?php echo $first_button ?>'><?php echo $first_button_wording ?></a>
 
-					<?php if($second_button) { ?>
-						<a class="button" href='<?php echo $second_button ?>'><?php echo $second_button_wording ?></a>
-					<?php } ?>
+						<?php if($second_button) { ?>
+							<a class="button" href='<?php echo $second_button ?>'><?php echo $second_button_wording ?></a>
+						<?php } ?>
 
 			 
-			 </div>
-			<div class="col-md-2">
+				 </div>
+				<div class="col-md-2">
+				</div>
 			</div>
 		</div>
 		
