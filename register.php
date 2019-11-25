@@ -195,13 +195,6 @@
     				filter: alpha(opacity=90); /* For IE8 and earlier */
         		}
 
-			   .subs {
-					position: fixed;
-					bottom: 10px;
-					float: left;
-					margin-left: 20px;
-					z-index: 20;
-			   }
 
 			   .share {
 					position: fixed;
@@ -400,19 +393,16 @@
 		    <div id="logo-wrapper" class="looplogo">
 				<img class="saver-hideable" src="https://atomjump.com/wp/wp-content/uploads/2018/12/speech-bubble-start-1.png" id="bg" alt="">
 				<br/>
-				<p align="center">Your AtomJump Messaging server is running!<br/> You should now configure a '<a href="https://github.com/atomjump/loop#loop">web service connector client</a>' to start messaging from this server.</p>
+				<h3 align="center" style="color: #aaa;"><?php echo $main_message ?></h3>
+                     	
+				<a class="button" href='<?php echo $first_button ?>'><?php echo $first_button_wording ?></a>
+
+				<?php if($second_button) { ?>
+					<a class="button" href='<?php echo $second_button ?>'><?php echo $second_button_wording ?></a>
+				<?php } ?>
+                    		
 
 			</div>
-		</div>
-
-
-
-
-
-
-
-		<div class="subs">
-  				<a href="https://github.com/atomjump/loop-server/releases" title="Download Software"><img  border="0" src="https://atomjump.com/images/loopdownload.svg" width="80" height="80"></a>
 		</div>
 
 		
@@ -421,19 +411,7 @@
                 <div class="col-md-2">
                 </div>
                  <div class="col-md-8">
-                    <h3 align="center" style="color: #aaa;">
-                    		<?php echo $main_message ?>
-                    		
-                       		
-                        
-                    </h3>
-                     	
-						<a class="button" href='<?php echo $first_button ?>'><?php echo $first_button_wording ?></a>
-		
-                    	<?php if($second_button) { ?>
-                    		<a class="button" href='<?php echo $second_button ?>'><?php echo $second_button_wording ?></a>
-                    	<?php } ?>
-                    		
+                    
 
                     
                  </div>
