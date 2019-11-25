@@ -380,10 +380,10 @@
 				 <div class="col-md-8">
 						<h3 align="center" style="color: #aaa;"><?php echo $main_message ?></h3>
 				
-						<a class="button" href='<?php echo $first_button ?>'><?php echo $first_button_wording ?></a>
+						<a class="btn btn-primary" href='<?php echo $first_button ?>'><?php echo $first_button_wording ?></a>
 
 						<?php if($second_button) { ?>
-							<a class="button" href='<?php echo $second_button ?>'><?php echo $second_button_wording ?></a>
+							<a class="btn btn-primary" href='<?php echo $second_button ?>'><?php echo $second_button_wording ?></a>
 						<?php } ?>
 
 			 
