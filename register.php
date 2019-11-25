@@ -374,15 +374,25 @@
 
 			</div>
 			<br/>
-			<h3 align="center" style="color: #aaa;"><?php echo $main_message ?></h3>
-					
-			<a class="button" href='<?php echo $first_button ?>'><?php echo $first_button_wording ?></a>
-
-			<?php if($second_button) { ?>
-				<a class="button" href='<?php echo $second_button ?>'><?php echo $second_button_wording ?></a>
-			<?php } ?>
 		</div>
+   		<div class="container-fluid darkoverlay" id="mydarkoverlay">
+            <div class="row">
+                <div class="col-md-2">
+                </div>
+                 <div class="col-md-8">
+                 		<h3 align="center" style="color: #aaa;"><?php echo $main_message ?></h3>
+					
+						<a class="button" href='<?php echo $first_button ?>'><?php echo $first_button_wording ?></a>
 
+						<?php if($second_button) { ?>
+							<a class="button" href='<?php echo $second_button ?>'><?php echo $second_button_wording ?></a>
+						<?php } ?>
+
+                 
+                 </div>
+                <div class="col-md-2">
+                </div>
+            </div>
 		
     	<div class="container-fluid darkoverlay" id="mydarkoverlay">
             <div class="row">
@@ -392,7 +402,6 @@
                  </div>
                 <div class="col-md-2">
                 	<p align="right"><a href="https://atomjump.com/smart.php">Learn More</a></p>
-					<p align="right" style="color: #aaa;"><b>Local Server Install</b></p>
 					<p align="right" style="color: #aaa;"><small>&copy; <?php echo date('Y'); ?> <?php echo $msg['msgs'][$lang]['copyright'] ?></small></p>
                 </div>
             </div>
