@@ -54,7 +54,7 @@
 		$device_type = "Android";			//Default to Android if unknown
 	}
 	
-	if(isset($_REQUEST['userid'])) {
+	if(isset($_REQUEST['userid']) && ($_REQUEST['userid'] != "")) {
 		$user_id = $_REQUEST['userid'];
 	} else {
 		//Get from the session variable
