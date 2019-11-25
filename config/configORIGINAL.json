@@ -7,7 +7,7 @@
     "msgs": {
         "en":{
         	"getPopupNotifications": "Get popup notifications:",
-        	"privateServerNote": "Note: Please set the 'Private Server' in your app login screen as:"
+        	"privateServerNote": "Note: Please set the 'Private Server' in your app login screen as:",
         	"notLoggedIn": "Sorry, please login to your messaging forum and try again.",
         	"backHome": "Back to Home",
         	"appDeregistered": "Your app is now deregistered to this server. You will only receive email notifications.",
