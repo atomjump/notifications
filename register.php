@@ -80,9 +80,8 @@
 	
 	
 	
-	if($user_id == "") {
+	if(($user_id == "")||($user_email == "")) {
 		//A blank user id
-		//echo $notifications_config['msgs'][$lang]['notLoggedIn'] . " <a href='" . $follow_on_link . "'>" . $notifications_config['msgs'][$lang]['backHome'] ."</a>";
 		$main_message = $notifications_config['msgs'][$lang]['notLoggedIn'];
 		$first_button = $follow_on_link;
 		$first_button_wording = $notifications_config['msgs'][$lang]['backHome'];
@@ -99,7 +98,6 @@
 
 		if($_REQUEST['id'] == "") {
 			 //App has been deregistered
-			 //echo $notifications_config['msgs'][$lang]['appDeregistered'] . " <a href='" . $follow_on_link . "'>" . $notifications_config['msgs'][$lang]['backHome'] ."</a>";
 			 $main_message = $notifications_config['msgs'][$lang]['appDeregistered'];
 			 $first_button = $follow_on_link;
 			 $first_button_wording = $notifications_config['msgs'][$lang]['backHome'];
@@ -107,7 +105,6 @@
 			 $second_button_wording = "";	
 		} else {
 			 //App is registered
-			 //echo $notifications_config['msgs'][$lang]['appRegistered'] . $user_email .". <a href='" . $unregister_link . "'>" . $notifications_config['msgs'][$lang]['deregister'] ."</a> <a href='" . $follow_on_link . "'>" . $notifications_config['msgs'][$lang]['backHome'] ."</a>";
 			 if($user_email == "") {
 			 	$user_email = "[none]";
 			 }
