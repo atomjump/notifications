@@ -89,7 +89,7 @@
 	if($_REQUEST['id'] == "") {
 			echo "Your app is now deregistered to this server. You will only receive email notifications.  <a href='" . $follow_on_link . "'>Back to Home</a>";
 	} else {
-			echo "Your app is now registered to this server. <a href='" . $unregister_link . "'>Deregister (go back to email notifications)</a> <a href='" . $follow_on_link . "'>Back to Home</a>";
+			echo "Your app is now registered to this server  [logged user : ". $user_id ."]. <a href='" . $unregister_link . "'>Deregister (go back to email notifications)</a> <a href='" . $follow_on_link . "'>Back to Home</a>";
 	}
 
 ?>
