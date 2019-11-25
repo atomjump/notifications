@@ -369,17 +369,18 @@
 		<div>
 		    <div id="logo-wrapper" class="looplogo">
 				<img class="saver-hideable" src="https://atomjump.com/wp/wp-content/uploads/2018/12/speech-bubble-start-1.png" id="bg" alt="">
-				<br/>
-				<h3 align="center" style="color: #aaa;"><?php echo $main_message ?></h3>
-                     	
-				<a class="button" href='<?php echo $first_button ?>'><?php echo $first_button_wording ?></a>
-
-				<?php if($second_button) { ?>
-					<a class="button" href='<?php echo $second_button ?>'><?php echo $second_button_wording ?></a>
-				<?php } ?>
+				
                     		
 
 			</div>
+			<br/>
+			<h3 align="center" style="color: #aaa;"><?php echo $main_message ?></h3>
+					
+			<a class="button" href='<?php echo $first_button ?>'><?php echo $first_button_wording ?></a>
+
+			<?php if($second_button) { ?>
+				<a class="button" href='<?php echo $second_button ?>'><?php echo $second_button_wording ?></a>
+			<?php } ?>
 		</div>
 
 		
