@@ -213,9 +213,9 @@
 				}
 
 			
-				.cpy a:link, a:visited {
+				/*.cpy a:link, a:visited {
 					color: #888;
-				}
+				}*/
 
 
 
