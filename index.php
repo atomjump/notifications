@@ -184,7 +184,7 @@
 					//Check this is an atomjump.com message
 					if(strpos($message_forum_name, "ajps_") !== false) {
 						$aj_forum = str_replace("ajps_", "", $message_forum_name);
-						$out_link = "http://" . $aj_forum . ".atomjump.com/?autostart=true";
+						$out_link = "https://" . $aj_forum . ".atomjump.com/go/";
 						$out_forum = $aj_forum . "@";
 					
 					}
@@ -192,11 +192,11 @@
 						//Special case the homepage
 						if($this->notifications_config['staging'] == true) {
 							
-							$out_link = "https://staging.atomjump.com/?autostart=true";
+							$out_link = "https://staging.atomjump.com/go/";
 							$out_forum = "AtomJump@";
 						
 						} else {
-							$out_link = "https://atomjump.com/?autostart=true";
+							$out_link = "https://atomjump.com/go/";
 							$out_forum = "AtomJump@";
 						}
 					}
