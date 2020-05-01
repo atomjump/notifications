@@ -196,8 +196,13 @@
 							$out_forum = "AtomJump@";
 						
 						} else {
-							$out_link = "https://atomjump.com/go/";
-							$out_forum = "AtomJump@";
+							if(strpos($_SERVER["SERVER_NAME"], 'atomjump.org') !== false) {
+								$out_link = "https://atomjump.org/go/";
+								$out_forum = "AtomJump@";
+							} else {
+								$out_link = "https://atomjump.com/go/";
+								$out_forum = "AtomJump@";	
+							}
 						}
 					}
 					
