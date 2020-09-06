@@ -31,6 +31,114 @@
         	"appDeregistered": "Seu aplicativo agora está cancelado o registro neste servidor. Você receberá apenas notificações por email.",
         	"deregister": "Cancelar registro (usar notificações por email)",
         	"appRegistered": "Your app is now registered to this server and email:"
-        }
+        },
+    	"ch": {
+        	"getPopupNotifications": "获取弹出通知：",
+        	"privateServerNote": "注意：请在您的应用程序登录屏幕中将'Private Server'设置为：",
+			"notLoggedIn": "对不起，请登录到您的消息论坛，然后重试。:",
+			"backHome": "返回首页",
+			"appDeregistered": "您的应用程序现已注销到此服务器。您将仅收到电子邮件通知。",
+			"deregister": "取消注册（使用电子邮件通知）",
+			"appRegistered": "您的应用现已通过电子邮件注册到此服务器"
+        },
+         "cht": {
+        	"getPopupNotifications": "獲取彈出通知：",
+        	"privateServerNote": "注意：請在您的應用程序登錄屏幕中將'Private Server'設置為：",
+			"notLoggedIn": "對不起，請登錄到您的消息論壇，然後重試。",
+			"backHome": "返回首頁",
+			"appDeregistered": "您的應用程序現已註銷到此服務器。您將僅收到電子郵件通知。",
+			"deregister": "取消註冊（使用電子郵件通知）",
+			"appRegistered": "您的應用現已通過電子郵件註冊到此服務器"
+        },
+		"bg": {
+			"getPopupNotifications": "পপআপ বিজ্ঞপ্তি পান:",
+			"privateServerNote": "দ্রষ্টব্য: দয়া করে আপনার অ্যাপ্লিকেশন লগইন স্ক্রিনে 'ব্যক্তিগত সার্ভার' সেট করুন:",
+			"notLoggedIn": "দুঃখিত, দয়া করে আপনার বার্তা ফোরামে লগইন করুন এবং আবার চেষ্টা করুন",
+			"backHome": "বাড়ি ফিরে",
+			"appDeregistered": "আপনার অ্যাপ্লিকেশনটি এখন এই সার্ভারে নিবন্ধভুক্ত। আপনি কেবল ইমেল বিজ্ঞপ্তিগুলি পাবেন",
+			"deregister": "নিবন্ধন করুন (ইমেল বিজ্ঞপ্তি ব্যবহার করুন)",
+			"appRegistered": "আপনার অ্যাপ্লিকেশনটি এখন ইমেলের মাধ্যমে এই সার্ভারে নিবন্ধিত হয়েছে"	
+		},
+		"de": {
+			"getPopupNotifications": "Popup-Benachrichtigungen abrufen:",
+			"privateServerNote": "Hinweis: Bitte stellen Sie den 'Private Server' in Ihrem App-Anmeldebildschirm wie folgt ein:",
+			"notLoggedIn": "Bitte melden Sie sich in Ihrem Messaging-Forum an und versuchen Sie es erneut.",
+			"backHome": "Zurück nach Hause",
+			"appDeregistered": "Ihre App ist jetzt von diesem Server abgemeldet. Sie erhalten nur E-Mail-Benachrichtigungen.",
+			"Abmelden": "Abmelden (E-Mail-Benachrichtigungen verwenden)",
+			"appRegistered": "Ihre App ist jetzt mit der E-Mail auf diesem Server registriert."
+        },
+        "fr": {
+			"getPopupNotifications": "Recevez des notifications contextuelles:",
+			"privateServerNote": "Remarque: veuillez définir le 'serveur privé' sur l'écran de connexion de votre application comme suit:",
+			"notLoggedIn": "Désolé, veuillez vous connecter à votre forum de messagerie et réessayer.",
+			"backHome": "Retour à l'accueil",
+			"appDeregistered": "Votre application est désormais désinscrite sur ce serveur. Vous ne recevrez que des notifications par e-mail.",
+			"deregister": "Se désinscrire (utiliser les notifications par e-mail)",
+			"appRegistered": "Votre application est maintenant enregistrée sur ce serveur avec l'e-mail"
+        },
+        "hi": {
+			"getPopupNotifications": "पॉपअप सूचनाएं प्राप्त करें:",
+			"privateServerNote": "नोट: कृपया अपने निजी लॉगिन स्क्रीन में 'प्राइवेट सर्वर' को इस रूप में सेट करें:",
+			"notLoggedIn": "क्षमा करें, कृपया अपने मैसेजिंग फ़ोरम में लॉगिन करें और पुनः प्रयास करें।",
+			"backHome": "बैक टू होम",
+			"appDeregistered": "आपका ऐप अब इस सर्वर पर deregistered है। आपको केवल ईमेल सूचनाएं प्राप्त होंगी",
+			"deregister": "डेरेगिस्टर (ईमेल सूचनाओं का उपयोग करें)",
+			"appRegistered": "आपका ऐप अब ईमेल के साथ इस सर्वर पर पंजीकृत है"        
+        },
+        "in":  {
+			"getPopupNotifications": "Dapatkan notifikasi popup:",
+			"privateServerNote": "Catatan: Harap setel 'Server Pribadi' di layar login aplikasi Anda sebagai:",
+			"notLoggedIn": "Maaf, harap masuk ke forum perpesanan Anda dan coba lagi.",
+			"backHome": "Back to Home",
+			"appDeregistered": "Aplikasi Anda sekarang dibatalkan pendaftarannya ke server ini. Anda hanya akan menerima pemberitahuan email.",
+			"deregister": "Batalkan pendaftaran (gunakan pemberitahuan email)",
+			"appRegistered": "Aplikasi Anda sekarang terdaftar di server ini dengan email"
+        },
+        "it": {
+			"getPopupNotifications": "Ricevi notifiche popup:",
+			"privateServerNote": "Nota: imposta 'Server privato' nella schermata di accesso dell'app come:",
+			"notLoggedIn": "Spiacenti, accedi al tuo forum di messaggistica e riprova.",
+			"backHome": "Torna a casa",
+			"appDeregistered": "La tua app è stata annullata ora su questo server. Riceverai solo notifiche email.",
+			"deregister": "Deregister (utilizza notifiche email)",
+			"appRegistered": "La tua app è ora registrata su questo server con l'email"
+        },
+        "jp": {
+			"getPopupNotifications": "ポップアップ通知を取得：",
+			"privateServerNote": "注：アプリのログイン画面で「プライベートサーバー」を次のように設定してください：",
+			"notLoggedIn": "申し訳ありませんが、メッセージングフォーラムにログインして、もう一度お試しください。",
+			"backHome": "ホームに戻る",
+			"appDeregistered": "アプリはこのサーバーから登録解除されました。メール通知のみを受信します。",
+			"deregister": "登録解除（メール通知を使用）",
+			"appRegistered": "アプリがメールでこのサーバーに登録されました"
+        },
+        "ko": {
+			"getPopupNotifications": "팝업 알림 받기 :",
+			"privateServerNote": "참고 : 앱 로그인 화면에서 'Private Server'를 다음과 같이 설정하십시오.",
+			"notLoggedIn": "죄송합니다. 메시징 포럼에 로그인하고 다시 시도하십시오.",
+			"backHome": "홈으로",
+			"appDeregistered": "앱이 이제이 서버에서 등록 취소되었습니다. 이메일 알림 만 수신됩니다.",
+			"deregister": "등록 취소 (이메일 알림 사용)",
+			"appRegistered": "앱이 이제 이메일로이 서버에 등록되었습니다."
+        },
+        "pu": {
+			"getPopupNotifications": "ਪੌਪ-ਅਪ ਸੂਚਨਾਵਾਂ ਪ੍ਰਾਪਤ ਕਰੋ:",
+			"privateServerNote": "ਨੋਟ: ਕਿਰਪਾ ਕਰਕੇ ਆਪਣੀ ਐਪ ਲੌਗਿਨ ਸਕ੍ਰੀਨ ਵਿੱਚ 'ਪ੍ਰਾਈਵੇਟ ਸਰਵਰ' ਨੂੰ ਇਸ ਤਰ੍ਹਾਂ ਸੈੱਟ ਕਰੋ:",
+			"notLoggedIn": "ਮੁਆਫ ਕਰਨਾ, ਕਿਰਪਾ ਕਰਕੇ ਆਪਣੇ ਮੈਸੇਜਿੰਗ ਫੋਰਮ ਵਿੱਚ ਲੌਗਇਨ ਕਰੋ ਅਤੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।",
+			"backHome": "ਵਾਪਸ ਘਰ",
+			"appDeregistered": "ਤੁਹਾਡੀ ਐਪ ਹੁਣ ਇਸ ਸਰਵਰ ਨਾਲ ਦਰਜ ਕੀਤੀ ਗਈ ਹੈ. ਤੁਸੀਂ ਸਿਰਫ ਈਮੇਲ ਸੂਚਨਾ ਪ੍ਰਾਪਤ ਕਰੋਗੇ.",
+			"deregisterੋ": "ਡੀਰੀਜਿਸਟਰ ਕਰੋ (ਈਮੇਲ ਸੂਚਨਾਵਾਂ ਵਰਤੋ)",
+			"appRegistered": "ਤੁਹਾਡੀ ਐਪ ਹੁਣ ਇਸ ਸਰਵਰ ਨਾਲ ਈਮੇਲ ਨਾਲ ਰਜਿਸਟਰ ਹੋਈ ਹੈ"
+        },
+        "ru": {
+			"getPopupNotifications": "Получать всплывающие уведомления:",
+			"privateServerNote": "Примечание. Установите 'Частный сервер' на экране входа в приложение следующим образом:",
+			"notLoggedIn": "Извините, пожалуйста, войдите на свой форум обмена сообщениями и попробуйте еще раз.",
+			"backHome": "Вернуться домой",
+			"appDeregistered": "Ваше приложение снято с регистрации на этом сервере. Вы будете получать только уведомления по электронной почте.",
+			"deregister": "Отменить регистрацию (использовать уведомления по электронной почте)",
+			"appRegistered": "Ваше приложение теперь зарегистрировано на этом сервере по электронной почте"
+		}
     }
 }
