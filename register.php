@@ -75,7 +75,7 @@
 	
 	$follow_on_link = "https://atomjump.com";
 	if($cnf['serviceHome']) {
-		$follow_on_link = $cnf['serviceHome'];
+		$follow_on_link = add_subdomain_to_path($cnf['serviceHome']);
 	}
 	
 	
