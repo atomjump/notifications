@@ -33,21 +33,21 @@
         	"appRegistered": "Seu aplicativo agora está registrado neste servidor com o e-mail "
         },
         "ch": {
-        	"getPopupNotifications": "获取弹出通知：",
-        	"privateServerNote": "注意：请在您的应用程序登录屏幕中将'Private Server'设置为：",
+			"getPopupNotifications": "获取弹出通知：",
+			"privateServerNote": "注意：请在您的应用程序登录页面中，将'Private Server'设置为：",
 			"notLoggedIn": "对不起，请登录到您的消息论坛，然后重试。:",
 			"backHome": "返回首页",
-			"appDeregistered": "您的应用程序现已注销到此服务器。您将仅收到电子邮件通知。",
-			"deregister": "取消注册（使用电子邮件通知）",
+			"appDeregistered": "您的应用程序现已从此服务器注销。您将仅收到电子邮件通知。",
+			"deregister": "注销（使用电子邮件通知）",
 			"appRegistered": "您的应用现已通过电子邮件注册到此服务器"
         },
          "cht": {
-        	"getPopupNotifications": "獲取彈出通知：",
-        	"privateServerNote": "注意：請在您的應用程序登錄屏幕中將'Private Server'設置為：",
+			"getPopupNotifications": "獲取彈出通知：",
+			"privateServerNote": "註意：請在您的應用程序登錄頁面中，將'Private Server'設置為：",
 			"notLoggedIn": "對不起，請登錄到您的消息論壇，然後重試。",
 			"backHome": "返回首頁",
-			"appDeregistered": "您的應用程序現已註銷到此服務器。您將僅收到電子郵件通知。",
-			"deregister": "取消註冊（使用電子郵件通知）",
+			"appDeregistered": "您的應用程序現已從此服務器註銷。您將僅收到電子郵件通知。",
+			"deregister": "註銷（使用電子郵件通知）",
 			"appRegistered": "您的應用現已通過電子郵件註冊到此服務器"
         },
 		"bg": {
