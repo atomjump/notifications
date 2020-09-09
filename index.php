@@ -76,15 +76,21 @@
                     
                     <script>
                     	
-                    	if(ajFeedback.server && (ajFeedback.server != "https://atomjump.com/api") && (ajFeedback.server != "https://atomjump.com/api/")) {
-                    		var url = ajFeedback.server.toLowerCase();                    		
-                    		var lastChar = url.substr(-1); // Selects the last character
-							if (lastChar != '/') {         // If the last character is not a slash
-							   url = url + '/';            // Append a slash to it.
+                    	
+                    	if(ajFeedback.server) {
+                    		 
+                    		 var url = ajFeedback.server.toLowerCase();
+                    		 var lastChar = url.substr(-1); // Selects the last character
+							 if (lastChar != '/') {         // If the last character is not a slash
+								   url = url + '/';            // Append a slash to it.
+							 }
+                    		 if(url != "https://atomjump.com/api/") {
+                    		                    		
+								
+								var myText = "<span style='color: #BBB;'><?php echo $private_server_note; ?></span></br><span style='color: #AAA;'>" + url + "</span>";
+								$('#show-server-app-link').html(myText);
+								$('#show-server-app-link').show();
 							}
-                    		var myText = "<span style='color: #BBB;'><?php echo $private_server_note; ?></span></br><span style='color: #AAA;'>" + url + "</span>";
-                    		$('#show-server-app-link').html(myText);
-                    		$('#show-server-app-link').show();
                     	}
                     
                     	function deepLinkApp() {
