@@ -15,7 +15,7 @@ From within your Loop Server directory:
 
 ```
 cd plugins
-git clone https://github.com/atomjump/notifications.git
+git clone https://git.atomjump.com/notifications.git
 cd notifications
 cp config/configORIGINAL.json config/config.json
 nano config/config.json								[enter your own parameters:
@@ -26,7 +26,7 @@ cp pushcertSAMPLE.pem pushcert.pem				[You will need your own Apple push certica
 php install.php
 ```
 
-At the user end, the Android/iPhone app at https://github.com/atomjump/messaging needs to be installed (this can be built in build.phonegap.com, or this is available on the Android and iPhone app-stores as 'AtomJump Messaging')
+At the user end, the Android/iPhone app at https://src.atomjump.com/atomjump/messaging needs to be installed (this can be built in build.phonegap.com, or this is available on the Android and iPhone app-stores as 'AtomJump Messaging')
 
 
 # Certificate Updates
