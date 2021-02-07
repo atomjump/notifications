@@ -116,7 +116,7 @@
 		
 		if($has_been_confirmed != true) {
 			//User has not been confirmed. We will need to send a new confirmation email.
-			$main_message = $notifications_config['msgs'][$lang]['mustBeConfirmed'] . $user_email;
+			$main_message = $user_email . ": " . $notifications_config['msgs'][$lang]['mustBeConfirmed'];
 			$first_button = $follow_on_link;
 			$first_button_wording = $notifications_config['msgs'][$lang]['backHome'];
 			$second_button = "";
