@@ -76,7 +76,7 @@
                     </br>
                     <div class="form-group">
 						
-						<?php echo $get_notifications_msg ?>&nbsp;&nbsp;<a target="_parent" href="<?php echo $ios_link ?>">iOS</a>&nbsp;&nbsp;<a target="_blank" href="<?php echo $android_link ?>">Android</a>
+						<?php echo $get_notifications_msg ?>&nbsp;&nbsp;<a target="_parent" href="<?php echo $ios_link; ?>">iOS</a>&nbsp;&nbsp;<a target="_blank" href="<?php echo $android_link; ?>">Android</a>
 						<div id="show-server-app-link" style="display: none;"></div>
 						
 						<!-- Future: <input type="checkbox" name="useapp" id="useapp" <?php echo $app_html ?>> 
