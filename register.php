@@ -94,9 +94,7 @@
 		$second_button = "";
 		$second_button_wording = "";
 	} else {
-		//We probably have a user id, TODO if not, derive it from  the email.
-		
-		
+		//We have a user id		
 		$has_been_confirmed = false;
 		if($user_id) {
 			//Check if the user has been confirmed.
@@ -110,12 +108,13 @@
 				}
 			}
 		} else {
-			//TODO: get user_id from the email address.
-		
+			//This should never happen
+			die("Sorry, there was a problem getting the user ID.");	
+				
 		}
 		
 		if($has_been_confirmed != true) {
-			//User has not been confirmed. We will need to send a new confirmation email.
+			//User has not been confirmed (or doesn't exist). We will need to send a new confirmation email.
 			$main_message = $user_email . ": " . $notifications_config['msgs'][$lang]['mustBeConfirmed'];
 			$first_button = $follow_on_link;
 			$first_button_wording = $notifications_config['msgs'][$lang]['backHome'];
