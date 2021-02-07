@@ -94,18 +94,24 @@
 		$second_button = "";
 		$second_button_wording = "";
 	} else {
-		//We have a user id
+		//We probably have a user id, TODO if not, derive it from  the email.
 		
-		//Check if the user has been confirmed.
+		
 		$has_been_confirmed = false;
-		$sql = "SELECT * FROM tbl_user WHERE int_user_id = " . $user_id;
-		$result = $api->db_select($sql);
-		if($row = $api->db_fetch_array($result))
-		{
-			if($row['enm_confirmed'] == 'confirmed') {
-				//Yes this is a confirmed user.
-				$has_been_confirmed = true;
+		if($user_id) {
+			//Check if the user has been confirmed.
+			$sql = "SELECT * FROM tbl_user WHERE int_user_id = " . $user_id;
+			$result = $api->db_select($sql);
+			if($row = $api->db_fetch_array($result))
+			{
+				if($row['enm_confirmed'] == 'confirmed') {
+					//Yes this is a confirmed user.
+					$has_been_confirmed = true;
+				}
 			}
+		} else {
+			//TODO: get user_id from the email address.
+		
 		}
 		
 		if($has_been_confirmed != true) {
@@ -121,7 +127,7 @@
 			//We create a new confirmation code.
 			$confirm_code = md5(uniqid(rand())); 
 			
-			$sql = "UPDATE tbl_user SET var_confirmcode = '" . clean_data($confirm_code) . "')";
+			$sql = "UPDATE tbl_user SET var_confirmcode = '" . clean_data($confirm_code) . "' WHERE int_user_id = " . $user_id;
 			$result = dbquery($sql)  or die("Unable to execute query $sql " . dberror());
 			
 			$body_message = $msg['msgs'][$lang]['welcomeEmail']['pleaseClick'] . $root_server_url . "/link.php?d=" . $confirm_code . $msg['msgs'][$lang]['welcomeEmail']['confirm'] . str_replace('CUSTOMER_PRICE_PER_SMS_US_DOLLARS', CUSTOMER_PRICE_PER_SMS_US_DOLLARS, $msg['msgs'][$lang]['welcomeEmail']['setupSMS']) . str_replace('ROOT_SERVER_URL',$root_server_url, $msg['msgs'][$lang]['welcomeEmail']['questions']) . $msg['msgs'][$lang]['welcomeEmail']['regards'];
