@@ -57,8 +57,17 @@
          	}
          	
          	$get_notifications_msg = $this->notifications_config['msgs'][$lang]['getPopupNotifications'];
-         	$ios_link = $this->notifications_config['iosAppLink'];
-         	$android_link = $this->notifications_config['androidAppLink'];
+         	if(!$this->notifications_config['iosAppLink']) {
+         		$ios_link = "https://itunes.apple.com/us/app/atomjump-messaging/id1153387200?ls=1&mt=8";
+         	} else {
+         		$ios_link = $this->notifications_config['iosAppLink'];
+         	}
+         	
+         	if(!$this->notifications_config['androidAppLink']) {
+         		$android_link = "https://play.google.com/store/apps/details?id=org.atomjump.messaging";         
+         	} else {
+         		$android_link = $this->notifications_config['androidAppLink'];
+         	}
          	$private_server_note = $this->notifications_config['msgs'][$lang]['privateServerNote'];
          
             //Enter the HTML in here:
@@ -67,7 +76,7 @@
                     </br>
                     <div class="form-group">
 						
-						<?php echo $get_notifications_msg ?>&nbsp;&nbsp;<a target="_parent" href="https://itunes.apple.com/us/app/atomjump-messaging/id1153387200?ls=1&mt=8">iOS</a>&nbsp;&nbsp;<a target="_blank" href="https://play.google.com/store/apps/details?id=com.atomjump.messaging">Android</a>
+						<?php echo $get_notifications_msg ?>&nbsp;&nbsp;<a target="_parent" href="<?php echo $ios_link ?>">iOS</a>&nbsp;&nbsp;<a target="_blank" href="<?php echo $android_link ?>">Android</a>
 						<div id="show-server-app-link" style="display: none;"></div>
 						
 						<!-- Future: <input type="checkbox" name="useapp" id="useapp" <?php echo $app_html ?>> 

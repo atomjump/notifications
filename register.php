@@ -66,7 +66,10 @@
 
 	global $msg;
 	global $cnf;
-	global $lang;
+	global $lang;	
+	global $root_server_url;
+	
+	
 	
 	//User's email for display purposes only.
 	if(isset($_SESSION['logged-email']) && ($_SESSION['logged-email'] != "")) {
@@ -80,6 +83,9 @@
 	
 	
 	
+	
+	
+	
 	if(($user_id == "")||($user_email == "")) {
 		//A blank user id
 		$main_message = $notifications_config['msgs'][$lang]['notLoggedIn'];
@@ -88,31 +94,68 @@
 		$second_button = "";
 		$second_button_wording = "";
 	} else {
-	
-		$unregister_link = "register.php?userid=" . $user_id . "&id=&devicetype=";
-
-	
-		$sql = "var_notification_id = " . $notification_id . ", var_device_type = '" . $device_type . "' WHERE int_user_id = " . $user_id;
-		$api->db_update("tbl_user", $sql);
-
-
-		if($_REQUEST['id'] == "") {
-			 //App has been deregistered
-			 $main_message = $notifications_config['msgs'][$lang]['appDeregistered'];
-			 $first_button = $follow_on_link;
-			 $first_button_wording = $notifications_config['msgs'][$lang]['backHome'];
-			 $second_button = "";
-			 $second_button_wording = "";	
+		//We have a user id
+		
+		//Check if the user has been confirmed.
+		$has_been_confirmed = false;
+		$sql = "SELECT * FROM tbl_user WHERE int_user_id = " . $user_id;
+		$result = $api->db_select($sql);
+		if($row = $api->db_fetch_array($result))
+		{
+			if($row['enm_confirmed'] == 'confirmed') {
+				//Yes this is a confirmed user.
+				$has_been_confirmed = true;
+			}
+		}
+		
+		if($has_been_confirmed != true) {
+			//User has not been confirmed. We will need to send a new confirmation email.
+			$main_message = $notifications_config['msgs'][$lang]['mustBeConfirmed'] . $user_email;
+			$first_button = $follow_on_link;
+			$first_button_wording = $notifications_config['msgs'][$lang]['backHome'];
+			$second_button = "";
+			$second_button_wording = "";	
+		
+			//Send off another confirmation email
+			//This code is pretty similar to that in cls_ssshout.php new_user()
+			//We create a new confirmation code.
+			$confirm_code = md5(uniqid(rand())); 
+			
+			$sql = "UPDATE tbl_user SET var_confirmcode = '" . clean_data($confirm_code) . "')";
+			$result = dbquery($sql)  or die("Unable to execute query $sql " . dberror());
+			
+			$body_message = $msg['msgs'][$lang]['welcomeEmail']['pleaseClick'] . $root_server_url . "/link.php?d=" . $confirm_code . $msg['msgs'][$lang]['welcomeEmail']['confirm'] . str_replace('CUSTOMER_PRICE_PER_SMS_US_DOLLARS', CUSTOMER_PRICE_PER_SMS_US_DOLLARS, $msg['msgs'][$lang]['welcomeEmail']['setupSMS']) . str_replace('ROOT_SERVER_URL',$root_server_url, $msg['msgs'][$lang]['welcomeEmail']['questions']) . $msg['msgs'][$lang]['welcomeEmail']['regards'];
+			error_log($body_message);
+						
+			cc_mail_direct($email, $msg['msgs'][$lang]['welcomeEmail']['title'], $body_message, $cnf['email']['webmasterEmail']);
+		
 		} else {
-			 //App is registered
-			 if($user_email == "") {
-			 	$user_email = "[none]";
-			 }
-			 $main_message = $notifications_config['msgs'][$lang]['appRegistered'] . $user_email;
-			 $first_button = $unregister_link;
-			 $first_button_wording = $notifications_config['msgs'][$lang]['deregister'];
-			 $second_button = $follow_on_link;
-			 $second_button_wording = $notifications_config['msgs'][$lang]['backHome'];
+			//Has been confirmed
+			$unregister_link = "register.php?userid=" . $user_id . "&id=&devicetype=";
+
+	
+			$sql = "var_notification_id = " . $notification_id . ", var_device_type = '" . $device_type . "' WHERE int_user_id = " . $user_id;
+			$api->db_update("tbl_user", $sql);
+
+
+			if($_REQUEST['id'] == "") {
+				 //App has been deregistered
+				 $main_message = $notifications_config['msgs'][$lang]['appDeregistered'];
+				 $first_button = $follow_on_link;
+				 $first_button_wording = $notifications_config['msgs'][$lang]['backHome'];
+				 $second_button = "";
+				 $second_button_wording = "";	
+			} else {
+				 //App is registered
+				 if($user_email == "") {
+					$user_email = "[none]";
+				 }
+				 $main_message = $notifications_config['msgs'][$lang]['appRegistered'] . $user_email;
+				 $first_button = $unregister_link;
+				 $first_button_wording = $notifications_config['msgs'][$lang]['deregister'];
+				 $second_button = $follow_on_link;
+				 $second_button_wording = $notifications_config['msgs'][$lang]['backHome'];
+			}
 		}
 	}
 
