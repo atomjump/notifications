@@ -13,7 +13,8 @@
         	"backHome": "Back to Home",
         	"appDeregistered": "Your app is now deregistered to this server. You will only receive email notifications.",
         	"deregister": "Deregister (use email notifications)",
-        	"appRegistered": "Your app is now registered to this server with the email "
+        	"appRegistered": "Your app is now registered to this server with the email ",
+        	"mustBeConfirmed": "Sorry, you will need to click the link in your activation email before you can log in to your account. We have sent another email with this link. If you are having trouble receiving this email, please get in touch with us."
         },
         "es":{
         	"getPopupNotifications": "Recibe notificaciones emergentes:",
@@ -22,7 +23,8 @@
         	"backHome": "De vuelta a casa",
         	"appDeregistered": "Su aplicación ahora está anulada en este servidor. Solo recibirá notificaciones por correo electrónico.",
         	"deregister": "Darse de baja (usar notificaciones por correo electrónico)",
-        	"appRegistered": "Su aplicación ahora está registrada en este servidor con el correo electrónico "
+        	"appRegistered": "Su aplicación ahora está registrada en este servidor con el correo electrónico ",
+        	"mustBeConfirmed": "Lo sentimos, deberá hacer clic en el enlace en su correo electrónico de activación antes de poder iniciar sesión en su cuenta. Hemos enviado otro correo electrónico con este enlace. Si tiene problemas para recibir este correo electrónico, póngase en contacto con nos."
         },
         "pt": {
         	"getPopupNotifications": "Receba notificações pop-up:",
@@ -31,7 +33,8 @@
         	"backHome": "Voltar à página inicial",
         	"appDeregistered": "Seu aplicativo agora está cancelado o registro neste servidor. Você receberá apenas notificações por email.",
         	"deregister": "Cancelar registro (usar notificações por email)",
-        	"appRegistered": "Seu aplicativo agora está registrado neste servidor com o e-mail "
+        	"appRegistered": "Seu aplicativo agora está registrado neste servidor com o e-mail ",
+        	"mustBeConfirmed": "Desculpe, você precisará clicar no link em seu e-mail de ativação antes de fazer login em sua conta. Enviamos outro e-mail com este link. Se você estiver tendo problemas para receber este e-mail, entre em contato com nos." 
         },
         "ch": {
 			"getPopupNotifications": "获取弹出通知：",
@@ -40,7 +43,8 @@
 			"backHome": "返回首页",
 			"appDeregistered": "您的应用程序现已从此服务器注销。您将仅收到电子邮件通知。",
 			"deregister": "注销（使用电子邮件通知）",
-			"appRegistered": "您的应用现已通过电子邮件注册到此服务器"
+			"appRegistered": "您的应用现已通过电子邮件注册到此服务器",
+"mustBeConfirmed":"对不起，您需要先单击激活电子邮件中的链接，然后才能登录到您的帐户。我们已通过此链接发送了另一封电子邮件。如果您在接收此电子邮件时遇到问题，请与我们联系 我们。"
         },
          "cht": {
 			"getPopupNotifications": "獲取彈出通知：",
@@ -49,7 +53,7 @@
 			"backHome": "返回首頁",
 			"appDeregistered": "您的應用程序現已從此服務器註銷。您將僅收到電子郵件通知。",
 			"deregister": "註銷（使用電子郵件通知）",
-			"appRegistered": "您的應用現已通過電子郵件註冊到此服務器"
+			"appRegistered": "您的應用現已通過電子郵件註冊到此服務器",			"mustBeConfirmed":"對不起，您需要先單擊激活電子郵件中的鏈接，然後才能登錄到您的帳戶。我們已通過該鏈接發送了另一封電子郵件。如果您在接收此電子郵件時遇到問題，請與 我們。"
         },
 		"bg": {
 			"getPopupNotifications": "পপআপ বিজ্ঞপ্তি পান:",
@@ -58,7 +62,8 @@
 			"backHome": "বাড়ি ফিরে",
 			"appDeregistered": "আপনার অ্যাপ্লিকেশনটি এখন এই সার্ভারে নিবন্ধভুক্ত। আপনি কেবল ইমেল বিজ্ঞপ্তিগুলি পাবেন",
 			"deregister": "নিবন্ধন করুন (ইমেল বিজ্ঞপ্তি ব্যবহার করুন)",
-			"appRegistered": "আপনার অ্যাপ্লিকেশনটি এখন ইমেলের মাধ্যমে এই সার্ভারে নিবন্ধিত হয়েছে"	
+			"appRegistered": "আপনার অ্যাপ্লিকেশনটি এখন ইমেলের মাধ্যমে এই সার্ভারে নিবন্ধিত হয়েছে",
+			"mustBeConfirmed": "দুঃখিত, আপনি নিজের অ্যাকাউন্টে লগ ইন করার আগে আপনাকে আপনার অ্যাক্টিভেশন ইমেলের লিংকটি ক্লিক করতে হবে this আমরা এই লিঙ্কটি সহ আরও একটি ইমেল প্রেরণ করেছি this যদি আপনাকে এই ইমেলটি পেতে সমস্যা হয় তবে দয়া করে যোগাযোগ করুন please আমাদের."	
 		},
 		"de": {
 			"getPopupNotifications": "Popup-Benachrichtigungen abrufen:",
@@ -67,7 +72,8 @@
 			"backHome": "Zurück nach Hause",
 			"appDeregistered": "Ihre App ist jetzt von diesem Server abgemeldet. Sie erhalten nur E-Mail-Benachrichtigungen.",
 			"Abmelden": "Abmelden (E-Mail-Benachrichtigungen verwenden)",
-			"appRegistered": "Ihre App ist jetzt mit der E-Mail auf diesem Server registriert."
+			"appRegistered": "Ihre App ist jetzt mit der E-Mail auf diesem Server registriert.",
+			"mustBeConfirmed": "Entschuldigung, Sie müssen auf den Link in Ihrer Aktivierungs-E-Mail klicken, bevor Sie sich in Ihrem Konto anmelden können. Wir haben eine weitere E-Mail mit diesem Link gesendet. Wenn Sie Probleme beim Empfang dieser E-Mail haben, setzen Sie sich bitte mit uns in Verbindung uns."
         },
         "fr": {
 			"getPopupNotifications": "Recevez des notifications contextuelles:",
@@ -76,7 +82,8 @@
 			"backHome": "Retour à l'accueil",
 			"appDeregistered": "Votre application est désormais désinscrite sur ce serveur. Vous ne recevrez que des notifications par e-mail.",
 			"deregister": "Se désinscrire (utiliser les notifications par e-mail)",
-			"appRegistered": "Votre application est maintenant enregistrée sur ce serveur avec l'e-mail"
+			"appRegistered": "Votre application est maintenant enregistrée sur ce serveur avec l'e-mail",
+			"mustBeConfirmed": "Désolé, vous devrez cliquer sur le lien dans votre e-mail d'activation avant de pouvoir vous connecter à votre compte. Nous avons envoyé un autre e-mail contenant ce lien. Si vous ne parvenez pas à recevoir cet e-mail, veuillez contacter nous."
         },
         "hi": {
 			"getPopupNotifications": "पॉपअप सूचनाएं प्राप्त करें:",
@@ -85,7 +92,8 @@
 			"backHome": "बैक टू होम",
 			"appDeregistered": "आपका ऐप अब इस सर्वर पर विपंजीकृत है। आपको केवल ईमेल सूचनाएं प्राप्त होंगी",
 			"deregister": "डेरेगिस्टर (ईमेल सूचनाओं का उपयोग करें)",
-			"appRegistered": "आपका ऐप अब ईमेल के साथ इस सर्वर पर पंजीकृत है"        
+			"appRegistered": "आपका ऐप अब ईमेल के साथ इस सर्वर पर पंजीकृत है",
+			"mustBeConfirmed": "क्षमा करें, आपको अपने खाते में लॉग इन करने से पहले आपको अपने सक्रियण ईमेल में लिंक पर क्लिक करना होगा। हमने इस लिंक के साथ एक अन्य ईमेल भेजा है। यदि आपको यह ईमेल प्राप्त करने में समस्या हो रही है, तो कृपया संपर्क करें। हमें। "        
         },
         "in":  {
 			"getPopupNotifications": "Dapatkan notifikasi popup:",
@@ -94,7 +102,8 @@
 			"backHome": "Back to Home",
 			"appDeregistered": "Aplikasi Anda sekarang dibatalkan pendaftarannya ke server ini. Anda hanya akan menerima pemberitahuan email.",
 			"deregister": "Batalkan pendaftaran (gunakan pemberitahuan email)",
-			"appRegistered": "Aplikasi Anda sekarang terdaftar di server ini dengan email"
+			"appRegistered": "Aplikasi Anda sekarang terdaftar di server ini dengan email",
+			"mustBeConfirmed": "Maaf, Anda harus mengklik link di email aktivasi Anda sebelum Anda dapat login ke akun Anda. Kami telah mengirim email lain dengan tautan ini. Jika Anda mengalami masalah dalam menerima email ini, silakan hubungi kami."
         },
         "it": {
 			"getPopupNotifications": "Ricevi notifiche popup:",
@@ -103,7 +112,8 @@
 			"backHome": "Torna a casa",
 			"appDeregistered": "La tua app è stata annullata ora su questo server. Riceverai solo notifiche email.",
 			"deregister": "Deregister (utilizza notifiche email)",
-			"appRegistered": "La tua app è ora registrata su questo server con l'email"
+			"appRegistered": "La tua app è ora registrata su questo server con l'email",
+			"mustBeConfirmed": "Spiacenti, dovrai fare clic sul link nell'email di attivazione prima di poter accedere al tuo account. Abbiamo inviato un'altra email con questo link. Se hai problemi a ricevere questa email, ti preghiamo di metterti in contatto con noi."
         },
         "jp": {
 			"getPopupNotifications": "ポップアップ通知を取得：",
@@ -112,7 +122,8 @@
 			"backHome": "ホームに戻る",
 			"appDeregistered": "アプリはこのサーバーから登録解除されました。メール通知のみを受信します。",
 			"deregister": "登録解除（メール通知を使用）",
-			"appRegistered": "アプリがメールでこのサーバーに登録されました"
+			"appRegistered": "アプリがメールでこのサーバーに登録されました",
+			"mustBeConfirmed": "申し訳ありませんが、アカウントにログインする前に、アクティベーションメールのリンクをクリックする必要があります。このリンクを含む別のメールを送信しました。このメールの受信に問題がある場合は、にご連絡ください。 我ら。"
         },
         "ko": {
 			"getPopupNotifications": "팝업 알림 받기 :",
@@ -121,7 +132,8 @@
 			"backHome": "홈으로",
 			"appDeregistered": "앱이 이제이 서버에서 등록 취소되었습니다. 이메일 알림 만 수신됩니다.",
 			"deregister": "등록 취소 (이메일 알림 사용)",
-			"appRegistered": "앱이 이제 이메일로이 서버에 등록되었습니다."
+			"appRegistered": "앱이 이제 이메일로이 서버에 등록되었습니다.",
+			"mustBeConfirmed": "죄송합니다. 계정에 로그인하기 전에 활성화 이메일에있는 링크를 클릭해야합니다.이 링크가 포함 된 다른 이메일을 보냈습니다.이 이메일을받는 데 문제가있는 경우 다음 연락처로 문의하십시오. 우리." 
         },
         "pu": {
 			"getPopupNotifications": "ਪੌਪ-ਅਪ ਸੂਚਨਾਵਾਂ ਪ੍ਰਾਪਤ ਕਰੋ:",
@@ -130,7 +142,8 @@
 			"backHome": "ਵਾਪਸ ਘਰ",
 			"appDeregistered": "ਤੁਹਾਡੀ ਐਪ ਹੁਣ ਇਸ ਸਰਵਰ ਨਾਲ ਦਰਜ ਕੀਤੀ ਗਈ ਹੈ. ਤੁਸੀਂ ਸਿਰਫ ਈਮੇਲ ਸੂਚਨਾ ਪ੍ਰਾਪਤ ਕਰੋਗੇ.",
 			"deregisterੋ": "ਡੀਰੀਜਿਸਟਰ ਕਰੋ (ਈਮੇਲ ਸੂਚਨਾਵਾਂ ਵਰਤੋ)",
-			"appRegistered": "ਤੁਹਾਡੀ ਐਪ ਹੁਣ ਇਸ ਸਰਵਰ ਨਾਲ ਈਮੇਲ ਨਾਲ ਰਜਿਸਟਰ ਹੋਈ ਹੈ"
+			"appRegistered": "ਤੁਹਾਡੀ ਐਪ ਹੁਣ ਇਸ ਸਰਵਰ ਨਾਲ ਈਮੇਲ ਨਾਲ ਰਜਿਸਟਰ ਹੋਈ ਹੈ",
+			"mustBeConfirmed": "ਮੁਆਫ ਕਰਨਾ, ਤੁਹਾਨੂੰ ਆਪਣੇ ਐਕਟਿਵੇਸ਼ਨ ਈਮੇਲ ਦੇ ਲਿੰਕ ਤੇ ਕਲਿਕ ਕਰਨ ਦੀ ਜ਼ਰੂਰਤ ਹੋਏਗੀ ਇਸ ਤੋਂ ਪਹਿਲਾਂ ਕਿ ਤੁਸੀਂ ਆਪਣੇ ਖਾਤੇ ਵਿੱਚ ਲੌਗ ਇਨ ਕਰੋ. ਅਸੀਂ ਇਸ ਲਿੰਕ ਦੇ ਨਾਲ ਇੱਕ ਹੋਰ ਈਮੇਲ ਭੇਜੀ ਹੈ. ਜੇ ਤੁਹਾਨੂੰ ਇਹ ਈਮੇਲ ਪ੍ਰਾਪਤ ਕਰਨ ਵਿੱਚ ਮੁਸ਼ਕਲ ਆ ਰਹੀ ਹੈ, ਤਾਂ ਕਿਰਪਾ ਕਰਕੇ ਸੰਪਰਕ ਕਰੋ. ਸਾਨੂੰ."
         },
         "ru": {
 			"getPopupNotifications": "Получать всплывающие уведомления:",
@@ -139,7 +152,8 @@
 			"backHome": "Вернуться домой",
 			"appDeregistered": "Ваше приложение снято с регистрации на этом сервере. Вы будете получать только уведомления по электронной почте.",
 			"deregister": "Отменить регистрацию (использовать уведомления по электронной почте)",
-			"appRegistered": "Ваше приложение теперь зарегистрировано на этом сервере по электронной почте"
+			"appRegistered": "Ваше приложение теперь зарегистрировано на этом сервере по электронной почте",
+			"mustBeConfirmed": "Извините, вам нужно будет щелкнуть ссылку в электронном письме для активации, прежде чем вы сможете войти в свою учетную запись. Мы отправили еще одно электронное письмо с этой ссылкой. Если у вас возникли проблемы с получением этого письма, свяжитесь с нас."
 		}
 	}
 }
