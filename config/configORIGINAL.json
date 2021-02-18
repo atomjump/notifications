@@ -3,8 +3,33 @@
     "apiKey": "AIzaSyD8TEjhUQDDUQirNIVMdVaHPsnLxt-ygjc",
     "staging": true,
     "iosAppLink": "https://itunes.apple.com/us/app/atomjump-messaging/id1153387200?ls=1&mt=8",
-    "androidAppLinkHistoric": "https://play.google.com/store/apps/details?id=com.atomjump.messaging",
+    "androidAppLinkLegacy": "https://play.google.com/store/apps/details?id=com.atomjump.messaging",
     "androidAppLink": "https://play.google.com/store/apps/details?id=org.atomjump.messaging",
+    "atomjumpNotifications": {
+    	"serverPool": {
+    		"NZ": [
+				"https://your.medimageserver.nz.url1:5566",
+				"https://your.medimageserver.nz.url2:5566",
+				"https://your.medimageserver.nz.url3:5566"
+			],
+			"US": [
+				"https://your.medimageserver.us.url1:5566",
+				"https://your.medimageserver.us.url2:5566",
+				"https://your.medimageserver.us.url3:5566"
+			],
+			"Default": [
+				"https://your.medimageserver.url1:5566",
+				"https://your.medimageserver.url2:5566",
+				"https://your.medimageserver.url3:5566"
+			]
+    	],
+    	"countryServerResidingIn": {
+    		"NZ" : "New Zealand",
+    		"US" : "New Zealand",
+    		"Default": "New Zealand"    	
+    	}
+    	"notifyAdminWhenLoadAbove": 80    
+    },
     "msgs": {        
     	"en":{
         	"getPopupNotifications": "Get popup notifications:",

@@ -18,6 +18,11 @@
     	}
     	
     	
+    	public function atomjump_get_id()
+    	{
+    	//Example https://notification.pool.url:5566/pair?proxyServer=https://notification.pool.url:5566&style=private&customPairing=http://ajmessaging/api/plugins/notifications/genid.php"
+    	
+    	}
     
         public function on_more_settings()
         {
