@@ -57,7 +57,6 @@ $start_path = add_trailing_slash_local($notifications_config['serverPath']);
 $staging = $notifications_config['staging'];
 $notify = false;
 include_once($start_path . 'config/db_connect.php');	
-echo "Start path:" . $start_path . "\n";
 
 function preserve_qs() {
     if (empty($_SERVER['QUERY_STRING']) && strpos($_SERVER['REQUEST_URI'], "?") === false) {
