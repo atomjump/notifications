@@ -20,7 +20,20 @@
     	
     	public function atomjump_get_id()
     	{
-    	//Example https://notification.pool.url:5566/pair?proxyServer=https://notification.pool.url:5566&style=private&customPairing=http://ajmessaging/api/plugins/notifications/genid.php"
+    	/*Example 	
+    	
+    	Step 1. App requests a registration event
+    	Pair from this PHP script e.g:
+    	http://this.ajmessaging.url/api/plugins/notifications/genid.php?
+    	
+    	Step 2. Pair up the relevant 
+    	
+    	https://notification.pool.url:5566/pair?
+    		proxyServer=https://notification.pool.url:5566
+			&style=private
+			&customPairing=http://ajmessaging.url/api/plugins/notifications/genid.php?compare=[4 digit code]
+		*/
+
     	
     	}
     
