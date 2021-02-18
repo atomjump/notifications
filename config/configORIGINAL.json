@@ -6,6 +6,7 @@
     "androidAppLinkLegacy": "https://play.google.com/store/apps/details?id=com.atomjump.messaging",
     "androidAppLink": "https://play.google.com/store/apps/details?id=org.atomjump.messaging",
     "atomjumpNotifications": {
+    	"use": true,
     	"serverPool": {
     		"NZ": [
 				"https://your.medimageserver.nz.url1:5566",
