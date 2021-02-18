@@ -23,12 +23,24 @@
     	/*Example 	
     	
     	Step 1. App requests a registration event
+    	
     	Pair from this PHP script e.g:
-    	http://this.ajmessaging.url/api/plugins/notifications/genid.php?
+    	http://this.ajmessaging.url/api/plugins/notifications/genid.php?country=NZ
     	
-    	Step 2. Pair up the relevant 
+    	which will return e.g.
+    	2z2H HMEcfQQCufJmRPMX4C https://medimage-nz1.atomjump.com New%20Zealand 
     	
-    	https://notification.pool.url:5566/pair?
+    	
+    	If any other software needs it, we can request in the next couple of hours:
+    	
+    	https://medimage-pair.atomjump.com/med-genid.php?compare=2z2H
+    	
+    	which returns the pool server write script e.g.
+    	https://medimage-nz1.atomjump.com/write/HMEcfQQCufJmRPMX4C
+    	
+    	
+    	
+    	####A request to pair from the MedImage Server itself is not needed, as we already know where to write to, and read from. https://notification.pool.url:5566/pair?
     		proxyServer=https://notification.pool.url:5566
 			&style=private
 			&customPairing=http://ajmessaging.url/api/plugins/notifications/genid.php?compare=[4 digit code]

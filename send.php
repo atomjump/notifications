@@ -36,6 +36,7 @@
 			//First establish which ids are iphone and which are android
 			$android_ids = array();
 			$ios_ids = array();
+			$atomjump_ids = array();
 			
 			for($cnt = 0; $cnt < count($devices); $cnt++) {
 				switch($devices[$cnt])
@@ -43,6 +44,10 @@
 				
 					case 'iOS':
 						$ios_ids[] = $ids[$cnt];
+					break;
+					
+					case 'AtomJump':
+						$atomjump_ids[] = $ids[$cnt];
 					break;
 					
 					default:
@@ -123,6 +128,14 @@
 				fclose($fp);
 			}
 			
+			
+			if(count($atomjump_ids) > 0) {
+				//TODO: post the message as a .json file using a curl POST request multipart/form-data to the ID as the URL
+				for($cnt = 0; $cnt < count($atomjump_ids); $cnt++) {
+					$post_url = $atomjump_ids[$cnt];		//e.g. https://medimage-nz1.atomjump.com/write/HMEcfQQCufJmRPMX4C
+					$post_url = $post_url . "-message" . rand(1,999999) . ".json";	//So that the URL is called e.g. https://medimage-nz1.atomjump.com/write/HMEcfQQCufJmRPMX4C-message324456.json
+				}
+			}
 			
 			return;
 	}
