@@ -1,0 +1,21 @@
+{
+    "atomjumpNotifications": {
+    	"serverPoolLoad": {
+    		"NZ": {
+				"https://your.medimageserver.nz.url1:5566": 54,
+				"https://your.medimageserver.nz.url2:5566": 10,
+				"https://your.medimageserver.nz.url3:5566": 20
+			},
+			"US": {
+				"https://your.medimageserver.us.url1:5566": 90,
+				"https://your.medimageserver.us.url2:5566": 84,
+				"https://your.medimageserver.us.url3:5566": 78 
+			},
+			"Default": {
+				"https://your.medimageserver.url1:5566": 30,
+				"https://your.medimageserver.url2:5566": 59,
+				"https://your.medimageserver.url3:5566": 90
+			}
+    	}
+    }
+}
