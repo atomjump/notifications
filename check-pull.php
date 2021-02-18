@@ -39,7 +39,7 @@
 	
 	$notify = false;
 	
-	if(($notifications_config['atomjumpNotifications']) && (isset($notifications_config['atomjumpNotifications']['use'])) {
+	if(($notifications_config['atomjumpNotifications']) && (isset($notifications_config['atomjumpNotifications']['use']))) {
 		echo "true";
 	} else {
 		echo "false";
