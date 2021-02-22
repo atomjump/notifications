@@ -37,9 +37,7 @@
     function post_multipart($url, $filepath, $filename)
 	{
 		//From: https://blog.cpming.top/p/php-curl-post-multipart
-		
-    
- 
+
 		$postFields = array();
 
 		$postFields = [
@@ -69,7 +67,6 @@
 		$response = curl_exec($curl);
 		$errno = curl_errno($curl);
 		if ($errno) {
-			//echo "Error:" . $errno . "\n";
 			file_put_contents(__DIR__ . '/outgoing/error_log.txt', "Error:" . $errno . "\n", FILE_APPEND);	
 			return false;
 		}
@@ -192,7 +189,6 @@
 				//Post the message as a .json file using a curl POST request multipart/form-data to the ID as the URL
 				for($cnt = 0; $cnt < count($atomjump_ids); $cnt++) {
 					$url = $atomjump_ids[$cnt];		//e.g. https://medimage-nz1.atomjump.com/api/photo/#HMEcfQQCufJmRPMX4C
-					//echo "URL for AtomJump message=" . $url . "\n";		//TESTING
 					$filename = "message" . rand(1,999999) . ".json";
 					
 					
