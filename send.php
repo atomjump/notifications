@@ -49,7 +49,7 @@
 		$headers = array("Content-Type" => "multipart/form-data");
 
 	
-		print_r($postFields);
+		//TESTINGprint_r($postFields);
 
 		
 		$curl = curl_init();
@@ -67,7 +67,7 @@
 		$response = curl_exec($curl);
 		$errno = curl_errno($curl);
 		if ($errno) {
-			echo "Error:" . $errno . "\n";
+			//TESTINGecho "Error:" . $errno . "\n";
 			return false;
 		}
 		curl_close($curl);
@@ -182,14 +182,14 @@
 			
 			
 			if(count($atomjump_ids) > 0) {
-				error_log("Processing AtomJump IDs");			//TESTING
+				//TESTINGerror_log("Processing AtomJump IDs");			//TESTING
 				//Post the message as a .json file using a curl POST request multipart/form-data to the ID as the URL
 				for($cnt = 0; $cnt < count($atomjump_ids); $cnt++) {
 					$url = $atomjump_ids[$cnt];		//e.g. https://medimage-nz1.atomjump.com/api/photo/#HMEcfQQCufJmRPMX4C
 echo "URL for AtomJump message=" . $url . "\n";		//TESTING
 					$filename = "message" . rand(1,999999) . ".json";
 					
-					print_r($data->android);
+					//TESTINGprint_r($data->android);
 					
 					$post = array(
 								'data' => array(
@@ -212,15 +212,15 @@ echo "URL for AtomJump message=" . $url . "\n";		//TESTING
 						$post['data']['image'] = $data->android->image;
 					}
 					
-					print_r($post);
+					//TESTINGprint_r($post);
 					$data = json_encode($post);
 					
 					$arr = explode("#", $url);		//Get id after hash if there is one
-					print_r($arr);
+					//TESTINGprint_r($arr);
 					$post_url = trim_trailing_slash_local($arr[0]);	//E.g. https://medimage-nz1.atomjump.com/api/photo		(without trailing slash)
 	
 					$last = $arr[count($arr)-1];
-					echo "Folder: " . $last . "\n";		//TESTING
+					//TESTINGecho "Folder: " . $last . "\n";		//TESTING
 					$folder = __DIR__ . "/outgoing/" . $last . "/";
 					mkdir($folder);
 					
@@ -231,12 +231,12 @@ echo "URL for AtomJump message=" . $url . "\n";		//TESTING
 					file_put_contents($file, $data);
 
 					
-					echo "Data: " . $data . "  To URL:" . $post_url . "\n";	//TESTING
+					//TESTINGecho "Data: " . $data . "  To URL:" . $post_url . "\n";	//TESTING
 				
 					
 				
 					$resp = post_multipart($post_url, $file, $upload_filename, $data, $headers);
-					echo "Response: " . $resp . "\n";
+					//TESTINGecho "Response: " . $resp . "\n";
 					
 					//Then delete the created file:
 					unlink($filename);
