@@ -24,7 +24,7 @@
     
     
     
-    function post_multipart($url, $name, $data, $headers, $i=0)
+    function post_multipart($url, $name, $filename, $data)
 	{
 		//From: https://blog.cpming.top/p/php-curl-post-multipart
 		
@@ -34,7 +34,7 @@
 
 		$postFields['user'] = $data; //postdata
 
-		$postFields['file1'] = curl_file_create(realpath($name), "mime", $name);
+		$postFields['file1'] = curl_file_create($filename, "mime", $name);
 
 
 		$headers = array("Content-Type" => "multipart/form-data");
@@ -57,7 +57,7 @@
 		$response = curl_exec($curl);
 		$errno = curl_errno($curl);
 		if ($errno) {
-			echo "Error:" . $errno;
+			echo "Error:" . $errno . "\n";
 			return false;
 		}
 		curl_close($curl);
@@ -203,7 +203,7 @@ echo "URL for AtomJump message=" . $url . "\n";		//TESTING
 					
 					echo "Data: " . $data . "  To URL:" . $post_url . "\n";	//TESTING
 				
-					$resp = post_multipart($post_url, $filename, $data, $headers);
+					$resp = post_multipart($post_url, $filename, $file, $data, $headers);
 					echo "Response: " . $resp . "\n";
 					
 					//Then delete the created file:
