@@ -24,7 +24,7 @@
     
     
     
-    function post_multipart($url, $name, $filename, $data)
+    function post_multipart($url, $filepath, $filename, $data)
 	{
 		//From: https://blog.cpming.top/p/php-curl-post-multipart
 		
@@ -32,13 +32,15 @@
  
 		$postFields = array();
 
-		$postFields['user'] = $data; //postdata
-
-		$postFields['file1'] = curl_file_create($filename, "mime", $name);
+		$postFields = [
+			'name' => new \CurlFile($filepath, 'application/json', $filename)
+		];
+		
 
 
 		$headers = array("Content-Type" => "multipart/form-data");
 
+	
 		print_r($postFields);
 
 		
