@@ -193,24 +193,24 @@ echo "URL for AtomJump message=" . $url . "\n";		//TESTING
 					
 					$post = array(
 								'data' => array(
-									'message' => $data->android->message
+									'message' => $data->android->message,
+									'additionalData' => array(
+										'title' => $data->android->title,
+										'forumName' => $data->android->forumName,
+										'forumMessage' => $data->android->forumMessage,
+										'observeUrl' => $data->android->observeUrl,
+										'removeUrl' => $data->android->removeUrl,
+										'removeMessage' => $data->android->removeMessage,
+										'content-available' => $data->android->content-available
+									)
 								)
 							 );
 							 
-					/*  ,
-									'additionalData' => array(
-										'title' => $data->android['title'],
-										'forumName' => $data->android['forumName'],
-										'forumMessage' => $data->android['forumMessage'],
-										'observeUrl' => $data->android['observeUrl'],
-										'removeUrl' => $data->android['removeUrl'],
-										'removeMessage' => $data->android['removeMessage'],
-										'content-available' => $data->android['content-available']
-									) */
+					 
 							 
-					//if($data->android['image']) {
-					//	$post['data']['image'] = $data->android['image'];
-					//}
+					if($data->android->image) {
+						$post['data']['image'] = $data->android->image;
+					}
 					
 					print_r($post);
 					$data = json_encode($post);
