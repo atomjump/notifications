@@ -45,6 +45,22 @@
 	
 	$api = new cls_plugin_api();
 	
+	
+	
+	//Create an 'outgoing' atomjump messages folder which is broadly accessible
+	$parent_messages_folder = __DIR__ . "/outgoing/";
+	if(!file_exists($parent_messages_folder)) {
+		if(!mkdir($parent_messages_folder)) {
+			$msg = "Sorry, you could not create the outgoing messages folder " . $parent_messages_folder . ". You may need to: mkdir outgoing; chmod 777 outgoing; chown www-data:www-data outgoing  [or replace 'www-data' with your own Apache user]";
+			error_log($msg);
+			echo $msg;
+			exit(0);
+		} else {
+			exec("chmod 777 outgoing");
+		}
+	}
+	
+	
 	//Insert a column into the user table - one registration id (likely android gcm or iphone)
 	$sql = "ALTER TABLE tbl_user ADD COLUMN `var_device_type` varchar(50) DEFAULT NULL";
 	echo "Updating user table. SQL:" . $sql . "\n";
@@ -60,18 +76,7 @@
 	
 	
 	
-	//Create an 'outgoing' atomjump messages folder which is broadly accessible
-	$parent_messages_folder = __DIR__ . "/outgoing/";
-	if(!file_exists($parent_messages_folder)) {
-		if(!mkdir($parent_messages_folder)) {
-			$msg = "Sorry, you could not create the outgoing messages folder " . $parent_messages_folder . ". You may need to: mkdir outgoing; chmod 777 outgoing; chown www-data:www-data outgoing  [or replace 'www-data' with your own Apache user]";
-			error_log($msg);
-			echo $msg;
-			exit(0);
-		} else {
-			exec("chmod 777 outgoing");
-		}
-	}
+
 	
 		
 	echo "Completed.\n";
