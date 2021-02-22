@@ -189,9 +189,24 @@
 echo "URL for AtomJump message=" . $url . "\n";		//TESTING
 					$filename = "message" . rand(1,999999) . ".json";
 					
+					
 					$post = array(
-								'data' => $data->android,
+								'data' => {
+									'message'=> $data->android['message'],
+									'additionalData' => array(
+										'title' => $data->android['title'],
+										'forumName' => $data->android['forumName'],
+										'forumMessage' => $data->android['forumMessage'],
+										'observeUrl' => $data->android['observeUrl'],
+										'removeUrl' => $data->android['removeUrl'],
+										'removeMessage' => $data->android['removeMessage'],
+										'content-available' => $data->android['content-available']
+									)
+								)
 							 );
+					if($data->android['image']) {
+						$post['data']['image'] = $data->android['image'];
+					}
 					$data = json_encode($post);
 					
 					$arr = explode("#", $url);		//Get id after hash if there is one
@@ -208,11 +223,7 @@ echo "URL for AtomJump message=" . $url . "\n";		//TESTING
 					$file = $folder . $upload_filename;
 					
 					file_put_contents($file, $data);
-					/*if (function_exists('curl_file_create')) {
-						$data['avatar'] = curl_file_create($file);
-					} else {
-						$data['avatar'] = '@' . $file;
-					}*/
+
 					
 					echo "Data: " . $data . "  To URL:" . $post_url . "\n";	//TESTING
 				
