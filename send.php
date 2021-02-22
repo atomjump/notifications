@@ -48,7 +48,7 @@
 			CURLOPT_RETURNTRANSFER => true, // return the transfer as a string of the return value
 			CURLOPT_TIMEOUT => 2,   // The maximum number of seconds to allow cURL functions to execute.
 			CURLOPT_POST => true,   // This line must place before CURLOPT_POSTFIELDS
-			CURLOPT_POSTFIELDS => $postField // The full data to post
+			CURLOPT_POSTFIELDS => $postFields // The full data to post
 		));
 		// Set Header
 		if (!empty($headers)) {
