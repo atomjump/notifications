@@ -67,7 +67,7 @@
 		$response = curl_exec($curl);
 		$errno = curl_errno($curl);
 		if ($errno) {
-			//TESTINGecho "Error:" . $errno . "\n";
+			echo "Error:" . $errno . "\n";
 			return false;
 		}
 		curl_close($curl);
