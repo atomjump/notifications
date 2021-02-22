@@ -26,6 +26,7 @@
     
     function post_multipart($url, $data, $headers)
 	{
+		//From: https://blog.cpming.top/p/php-curl-post-multipart
 		$curl = curl_init();
 		curl_setopt_array($curl, array(
 			CURLOPT_URL => $url,
@@ -157,14 +158,21 @@
 			if(count($atomjump_ids) > 0) {
 				//Post the message as a .json file using a curl POST request multipart/form-data to the ID as the URL
 				for($cnt = 0; $cnt < count($atomjump_ids); $cnt++) {
-					$post_url = $atomjump_ids[$cnt];		//e.g. https://medimage-nz1.atomjump.com/api/photo/#HMEcfQQCufJmRPMX4C
-					$post_url = $post_url . "-message" . rand(1,999999) . ".json";	//So that the URL is called e.g. https://medimage-nz1.atomjump.com/write/HMEcfQQCufJmRPMX4C-message324456.json
+					$url = $atomjump_ids[$cnt];		//e.g. https://medimage-nz1.atomjump.com/api/photo/#HMEcfQQCufJmRPMX4C
+					$filename = "message" . rand(1,999999) . ".json";
+					$post_url = $url . "-" . $filename;	//So that the URL is called e.g. https://medimage-nz1.atomjump.com/write/HMEcfQQCufJmRPMX4C-message324456.json
 	
 	
 					$post = array(
 								'data' => $data->android,
 							 );
 					$data = json_encode($post);
+					
+					$arr = explode("#", $string, 2);		//Get id after hash if there is one
+					$last = $arr[count($arr)-1];
+					$folder = __DIR__ . "/outgoing/" . $last . "/";
+					mkdir($folder);
+					$file = $folder . $filename;
 					
 					if (function_exists('curl_file_create')) {
 						$data['avatar'] = curl_file_create($file);
@@ -177,6 +185,9 @@
 					$headers = ["User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36"];
 					$resp = post_multipart($post_url, $data, $headers);
 					error_log($resp);
+					
+					//Then delete the created file:
+					unlink($filename);
 				}
 			}
 			
