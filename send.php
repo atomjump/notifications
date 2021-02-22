@@ -41,7 +41,7 @@
 		$postFields = array();
 
 		$postFields = [
-			'name' => new \CurlFile($filepath, 'application/json', $filename)
+			'file1' => new \CurlFile($filepath, 'application/json', $filename)
 		];
 		
 
