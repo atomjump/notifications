@@ -24,12 +24,12 @@
     
     
     
-    function post_multipart($url, $filename, $data, $headers, $i=0)
+    function post_multipart($url, $name, $data, $headers, $i=0)
 	{
 		//From: https://blog.cpming.top/p/php-curl-post-multipart
 		
         $postField = array();
-        $tmpfile = $_FILES[$name]['tmp_name'][$i];
+         $tmpfile = $_FILES[$name]['tmp_name'][$i];
         $filename = basename($_FILES[$name]['name'][$i]);
         $postField['files'] =  curl_file_create($tmpfile, $_FILES[$name]['type'][$i], $filename);
         $headers = array("Content-Type" => "multipart/form-data");
@@ -41,7 +41,7 @@
 			CURLOPT_RETURNTRANSFER => true, // return the transfer as a string of the return value
 			CURLOPT_TIMEOUT => 2,   // The maximum number of seconds to allow cURL functions to execute.
 			CURLOPT_POST => true,   // This line must place before CURLOPT_POSTFIELDS
-			CURLOPT_POSTFIELDS => $data // The full data to post
+			CURLOPT_POSTFIELDS => $postField // The full data to post
 		));
 		// Set Header
 		if (!empty($headers)) {
