@@ -160,7 +160,7 @@
 				//Post the message as a .json file using a curl POST request multipart/form-data to the ID as the URL
 				for($cnt = 0; $cnt < count($atomjump_ids); $cnt++) {
 					$url = $atomjump_ids[$cnt];		//e.g. https://medimage-nz1.atomjump.com/api/photo/#HMEcfQQCufJmRPMX4C
-					error_log("URL for AtomJump message=" . $url);		//TESTING
+echo "URL for AtomJump message=" . $url . "\n";		//TESTING
 					$filename = "message" . rand(1,999999) . ".json";
 					$post_url = $url . "-" . $filename;	//So that the URL is called e.g. https://medimage-nz1.atomjump.com/write/HMEcfQQCufJmRPMX4C-message324456.json
 	
@@ -182,11 +182,11 @@
 						$data['avatar'] = '@' . $file;
 					}
 					
-					error_log("Data: " . $data . "  To URL:" . $post_url);
+					echo "Data: " . $data . "  To URL:" . $post_url . "\n";	//TESTING
 				
 					$headers = ["User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36"];
 					$resp = post_multipart($post_url, $data, $headers);
-					error_log($resp);
+					echo "Response: " . $resp . "\n";
 					
 					//Then delete the created file:
 					unlink($filename);
