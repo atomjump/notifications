@@ -1,7 +1,7 @@
 <?php
 
 
-	file_put_contents(__DIR__ . '/error_log.txt', "send.php is run", FILE_APPEND);			//TESTING
+	file_put_contents(__DIR__ . '/error_log.txt', "send.php is run\n", FILE_APPEND);			//TESTING
 	
 	
 	if(!isset($notifications_config)) {
@@ -184,7 +184,7 @@
 			}
 			
 			
-			file_put_contents(__DIR__ . 'error_log.txt', "AtomJump message count: " . count($atomjump_ids), FILE_APPEND);			//TESTING
+			file_put_contents(__DIR__ . '/error_log.txt', "AtomJump message count: " . count($atomjump_ids) . "\n", FILE_APPEND);			//TESTING
 			
 			if(count($atomjump_ids) > 0) {
 				//TESTINGerror_log("Processing AtomJump IDs");			//TESTING
