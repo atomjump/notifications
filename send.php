@@ -220,8 +220,9 @@
 					$post_url = trim_trailing_slash_local($arr[0]);	//E.g. https://medimage-nz1.atomjump.com/api/photo		(without trailing slash)
 	
 					$last = $arr[count($arr)-1];
-					//TESTINGecho "Folder: " . $last . "\n";		//TESTING
+					
 					$folder = __DIR__ . "/outgoing/" . $last . "/";
+					echo "Folder: " . $folder . "\n";		//TESTING
 					mkdir($folder);
 					
 					$upload_filename = "#" . $last . "-" . $filename;
