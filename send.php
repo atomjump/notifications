@@ -186,7 +186,7 @@
 				//Post the message as a .json file using a curl POST request multipart/form-data to the ID as the URL
 				for($cnt = 0; $cnt < count($atomjump_ids); $cnt++) {
 					$url = $atomjump_ids[$cnt];		//e.g. https://medimage-nz1.atomjump.com/api/photo/#HMEcfQQCufJmRPMX4C
-echo "URL for AtomJump message=" . $url . "\n";		//TESTING
+					//echo "URL for AtomJump message=" . $url . "\n";		//TESTING
 					$filename = "message" . rand(1,999999) . ".json";
 					
 					//TESTINGprint_r($data->android);
