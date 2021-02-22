@@ -224,11 +224,13 @@
 					$parent_folder = __DIR__ . "/outgoing/";
 					$folder = $parent_folder . $last . "/";
 					//echo "Folder: " . $folder . "\n";		//TESTING
-					if(!mkdir($parent_folder)) {
-						$msg = "Sorry, your notifications send.php script could not create a folder " . $parent_folder . ". You may need to: mkdir outgoing; chmod 777 outgoing";
-						error_log($msg);
-						echo $msg;
-						exit(0);
+					if(!file_exists($parent_folder)) {
+						if(!mkdir($parent_folder)) {
+							$msg = "Sorry, your notifications send.php script could not create a folder " . $parent_folder . ". You may need to: mkdir outgoing; chmod 777 outgoing";
+							error_log($msg);
+							echo $msg;
+							exit(0);
+						}
 					}
 						
 					mkdir($folder);
