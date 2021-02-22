@@ -209,6 +209,8 @@ echo "URL for AtomJump message=" . $url . "\n";		//TESTING
 					if($data->android['image']) {
 						$post['data']['image'] = $data->android['image'];
 					}
+					
+					print_r($post);
 					$data = json_encode($post);
 					
 					$arr = explode("#", $url);		//Get id after hash if there is one
