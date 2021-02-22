@@ -1,8 +1,7 @@
 <?php
 
 
-	file_put_contents(__DIR__ . '/error_log.txt', "send.php is run\n", FILE_APPEND);			//TESTING
-	
+
 	
 	if(!isset($notifications_config)) {
         //Get global plugin config - but only once
@@ -71,9 +70,12 @@
 		$errno = curl_errno($curl);
 		if ($errno) {
 			//echo "Error:" . $errno . "\n";
+			file_put_contents(__DIR__ . '/outgoing/error_log.txt', "Error:" . $errno . "\n", FILE_APPEND);	
 			return false;
 		}
 		curl_close($curl);
+		
+		file_put_contents(__DIR__ . '/outgoing/error_log.txt', "Success:" . $response . "\n", FILE_APPEND);	
 		return $response;
 	}
     
@@ -184,17 +186,15 @@
 			}
 			
 			
-			file_put_contents(__DIR__ . '/error_log.txt', "AtomJump message count: " . count($atomjump_ids) . "\n", FILE_APPEND);			//TESTING
+			
 			
 			if(count($atomjump_ids) > 0) {
-				//TESTINGerror_log("Processing AtomJump IDs");			//TESTING
 				//Post the message as a .json file using a curl POST request multipart/form-data to the ID as the URL
 				for($cnt = 0; $cnt < count($atomjump_ids); $cnt++) {
 					$url = $atomjump_ids[$cnt];		//e.g. https://medimage-nz1.atomjump.com/api/photo/#HMEcfQQCufJmRPMX4C
 					//echo "URL for AtomJump message=" . $url . "\n";		//TESTING
 					$filename = "message" . rand(1,999999) . ".json";
 					
-					//TESTINGprint_r($data->android);
 					
 					$post = array(
 								'data' => array(
@@ -217,18 +217,15 @@
 						$post['data']['image'] = $data->android->image;
 					}
 					
-					//TESTINGprint_r($post);
 					$data = json_encode($post);
 					
 					$arr = explode("#", $url);		//Get id after hash if there is one
-					//TESTINGprint_r($arr);
 					$post_url = trim_trailing_slash_local($arr[0]);	//E.g. https://medimage-nz1.atomjump.com/api/photo		(without trailing slash)
 	
 					$last = $arr[count($arr)-1];
 					
 					$parent_folder = __DIR__ . "/outgoing/";
 					$folder = $parent_folder . $last . "/";
-					//echo "Folder: " . $folder . "\n";		//TESTING
 					if(!file_exists($parent_folder)) {
 						if(!mkdir($parent_folder)) {
 							$msg = "Sorry, your notifications send.php script could not create a folder " . $parent_folder . ". You may need to: mkdir outgoing; chmod 777 outgoing";
@@ -246,13 +243,8 @@
 					
 					file_put_contents($file, $data);
 
-					
-					//TESTINGecho "Data: " . $data . "  To URL:" . $post_url . "\n";	//TESTING
-				
-					
 				
 					$resp = post_multipart($post_url, $file, $upload_filename);
-					//echo "Response: " . $resp . "\n";
 					
 					//Then delete the created file:
 					unlink($filename);
