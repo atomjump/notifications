@@ -156,9 +156,11 @@
 			
 			
 			if(count($atomjump_ids) > 0) {
+				error_log("Processing AtomJump IDs");			//TESTING
 				//Post the message as a .json file using a curl POST request multipart/form-data to the ID as the URL
 				for($cnt = 0; $cnt < count($atomjump_ids); $cnt++) {
 					$url = $atomjump_ids[$cnt];		//e.g. https://medimage-nz1.atomjump.com/api/photo/#HMEcfQQCufJmRPMX4C
+					error_log("URL for AtomJump message=" . $url);		//TESTING
 					$filename = "message" . rand(1,999999) . ".json";
 					$post_url = $url . "-" . $filename;	//So that the URL is called e.g. https://medimage-nz1.atomjump.com/write/HMEcfQQCufJmRPMX4C-message324456.json
 	
