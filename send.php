@@ -205,7 +205,7 @@ echo "URL for AtomJump message=" . $url . "\n";		//TESTING
 					
 					echo "Data: " . $data . "  To URL:" . $post_url . "\n";	//TESTING
 				
-					$upload_filename = "#" . $folder . "-" . $filename;
+					$upload_filename = "#" . $last . "-" . $filename;
 				
 					$resp = post_multipart($post_url, $file, $upload_filename, $data, $headers);
 					echo "Response: " . $resp . "\n";
