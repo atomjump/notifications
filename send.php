@@ -196,7 +196,7 @@ echo "URL for AtomJump message=" . $url . "\n";		//TESTING
 					echo "Data: " . $data . "  To URL:" . $post_url . "\n";	//TESTING
 				
 					$headers = ["User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36"];
-					$resp = post_multipart($post_url, $data, $headers);
+					$resp = post_multipart($post_url, $filename, $data, $headers);
 					echo "Response: " . $resp . "\n";
 					
 					//Then delete the created file:
