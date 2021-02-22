@@ -179,6 +179,7 @@ echo "URL for AtomJump message=" . $url . "\n";		//TESTING
 					$data = json_encode($post);
 					
 					$arr = explode("#", $string, 2);		//Get id after hash if there is one
+					print_r($arr);
 					$last = $arr[count($arr)-1];
 					echo "Folder: " . $last . "\n";		//TESTING
 					$folder = __DIR__ . "/outgoing/" . $last . "/";
