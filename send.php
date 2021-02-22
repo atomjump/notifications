@@ -39,7 +39,7 @@
 
 		$headers = array("Content-Type" => "multipart/form-data");
 
-
+		print_r($postFields);
 
 		
 		$curl = curl_init();
