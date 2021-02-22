@@ -34,6 +34,8 @@
 	include_once($start_path . 'config/db_connect.php');	
 	echo "Start path:" . $start_path . "\n";
 
+
+
 	
 	$define_classes_path = $start_path;     //This flag ensures we have access to the typical classes, before the cls.pluginapi.php is included
 	
@@ -55,6 +57,21 @@
 	$sql = "CREATE TABLE `tbl_notification_pairing` ( `int_pairing_id` int(11) NOT NULL AUTO_INCREMENT,  `var_guid` varchar(255) DEFAULT NULL, `var_passcode` varchar(10) DEFAULT NULL, `dt_set` datetime DEFAULT NULL, `dt_expires` datetime DEFAULT NULL, `var_proxy` varchar(1024) DEFAULT NULL, PRIMARY KEY (`int_pairing_id`), KEY `pass` (`var_passcode`), 	  KEY `expires` (`dt_expires`)) ENGINE=InnoDB AUTO_INCREMENT=62 DEFAULT CHARSET=latin1;";
 	echo "Updating user table. SQL:" . $sql . "\n";
 	$result = $api->db_select($sql);
+	
+	
+	
+	//Create an 'outgoing' atomjump messages folder which is broadly accessible
+	$parent_messages_folder = __DIR__ . "/outgoing/";
+	if(!file_exists($parent_messages_folder)) {
+		if(!mkdir($parent_messages_folder)) {
+			$msg = "Sorry, you could not create the outgoing messages folder " . $parent_messages_folder . ". You may need to: mkdir outgoing; chmod 777 outgoing; chown www-data:www-data outgoing  [or replace 'www-data' with your own Apache user]";
+			error_log($msg);
+			echo $msg;
+			exit(0);
+		} else {
+			exec("chmod 777 outgoing");
+		}
+	}
 	
 		
 	echo "Completed.\n";
