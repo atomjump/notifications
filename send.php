@@ -166,16 +166,17 @@
 							 );
 					$data = json_encode($post);
 					
-					
-					// php 5.5+ should use curl_file_create method
 					if (function_exists('curl_file_create')) {
 						$data['avatar'] = curl_file_create($file);
 					} else {
 						$data['avatar'] = '@' . $file;
 					}
-					$headers = ["User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36"];
-					echo post_multipart($post_url, $data, $headers);
 					
+					error_log("Data: " . $data . "  To URL:" . $post_url);
+				
+					$headers = ["User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36"];
+					$resp = post_multipart($post_url, $data, $headers);
+					error_log($resp);
 				}
 			}
 			
