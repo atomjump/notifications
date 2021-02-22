@@ -191,7 +191,7 @@ echo "URL for AtomJump message=" . $url . "\n";		//TESTING
 					
 					
 					$post = array(
-								'data' => {
+								'data' => array(
 									'message'=> $data->android['message'],
 									'additionalData' => array(
 										'title' => $data->android['title'],
@@ -204,6 +204,7 @@ echo "URL for AtomJump message=" . $url . "\n";		//TESTING
 									)
 								)
 							 );
+							 
 					if($data->android['image']) {
 						$post['data']['image'] = $data->android['image'];
 					}
