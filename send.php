@@ -34,7 +34,7 @@
 		return rtrim($str, "/") . '/';
 	}
     
-    function post_multipart($url, $filepath, $filename, $data)
+    function post_multipart($url, $filepath, $filename)
 	{
 		//From: https://blog.cpming.top/p/php-curl-post-multipart
 		
@@ -248,7 +248,7 @@
 				
 					
 				
-					$resp = post_multipart($post_url, $file, $upload_filename, $data, $headers);
+					$resp = post_multipart($post_url, $file, $upload_filename);
 					//echo "Response: " . $resp . "\n";
 					
 					//Then delete the created file:
