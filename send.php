@@ -202,7 +202,10 @@ echo "URL for AtomJump message=" . $url . "\n";		//TESTING
 					echo "Folder: " . $last . "\n";		//TESTING
 					$folder = __DIR__ . "/outgoing/" . $last . "/";
 					mkdir($folder);
-					$file = $folder . $filename;
+					
+					$upload_filename = "#" . $last . "-" . $filename;
+					
+					$file = $folder . $upload_filename;
 					
 					file_put_contents($file, $data);
 					/*if (function_exists('curl_file_create')) {
@@ -213,7 +216,7 @@ echo "URL for AtomJump message=" . $url . "\n";		//TESTING
 					
 					echo "Data: " . $data . "  To URL:" . $post_url . "\n";	//TESTING
 				
-					$upload_filename = "#" . $last . "-" . $filename;
+					
 				
 					$resp = post_multipart($post_url, $file, $upload_filename, $data, $headers);
 					echo "Response: " . $resp . "\n";
