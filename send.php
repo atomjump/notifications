@@ -193,7 +193,7 @@ echo "URL for AtomJump message=" . $url . "\n";		//TESTING
 					
 					$post = array(
 								'data' => array(
-									'message'=> $data->android['message']
+									'message' => $data->android['message']
 								)
 							 );
 							 
@@ -208,9 +208,9 @@ echo "URL for AtomJump message=" . $url . "\n";		//TESTING
 										'content-available' => $data->android['content-available']
 									) */
 							 
-					if($data->android['image']) {
-						$post['data']['image'] = $data->android['image'];
-					}
+					//if($data->android['image']) {
+					//	$post['data']['image'] = $data->android['image'];
+					//}
 					
 					print_r($post);
 					$data = json_encode($post);
