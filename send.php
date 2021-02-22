@@ -28,12 +28,19 @@
 	{
 		//From: https://blog.cpming.top/p/php-curl-post-multipart
 		
-        $postField = array();
-         $tmpfile = $_FILES[$name]['tmp_name'][$i];
-        $filename = basename($_FILES[$name]['name'][$i]);
-        $postField['files'] =  curl_file_create($tmpfile, $_FILES[$name]['type'][$i], $filename);
-        $headers = array("Content-Type" => "multipart/form-data");
+    
  
+		$postFields = array();
+
+		$postFields['user'] = $data; //postdata
+
+		$postFields['file1'] = curl_file_create(realpath($name), "mime", $name);
+
+
+		$headers = array("Content-Type" => "multipart/form-data");
+
+
+
 		
 		$curl = curl_init();
 		curl_setopt_array($curl, array(
@@ -170,9 +177,7 @@
 					$url = $atomjump_ids[$cnt];		//e.g. https://medimage-nz1.atomjump.com/api/photo/#HMEcfQQCufJmRPMX4C
 echo "URL for AtomJump message=" . $url . "\n";		//TESTING
 					$filename = "message" . rand(1,999999) . ".json";
-					$post_url = $url . "-" . $filename;	//So that the URL is called e.g. https://medimage-nz1.atomjump.com/write/HMEcfQQCufJmRPMX4C-message324456.json
-	
-	
+					
 					$post = array(
 								'data' => $data->android,
 							 );
@@ -180,6 +185,8 @@ echo "URL for AtomJump message=" . $url . "\n";		//TESTING
 					
 					$arr = explode("#", $url);		//Get id after hash if there is one
 					print_r($arr);
+					$post_url = $arr[0];	//E.g. https://medimage-nz1.atomjump.com/api/photo/
+	
 					$last = $arr[count($arr)-1];
 					echo "Folder: " . $last . "\n";		//TESTING
 					$folder = __DIR__ . "/outgoing/" . $last . "/";
@@ -195,7 +202,6 @@ echo "URL for AtomJump message=" . $url . "\n";		//TESTING
 					
 					echo "Data: " . $data . "  To URL:" . $post_url . "\n";	//TESTING
 				
-					$headers = ["User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36"];
 					$resp = post_multipart($post_url, $filename, $data, $headers);
 					echo "Response: " . $resp . "\n";
 					
