@@ -23,6 +23,31 @@
     }
     
     
+    
+    function post_multipart($url, $data, $headers)
+	{
+		$curl = curl_init();
+		curl_setopt_array($curl, array(
+			CURLOPT_URL => $url,
+			CURLOPT_RETURNTRANSFER => true, // return the transfer as a string of the return value
+			CURLOPT_TIMEOUT => 0,   // The maximum number of seconds to allow cURL functions to execute.
+			CURLOPT_POST => true,   // This line must place before CURLOPT_POSTFIELDS
+			CURLOPT_POSTFIELDS => $data // The full data to post
+		));
+		// Set Header
+		if (!empty($headers)) {
+			curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+		}
+		$response = curl_exec($curl);
+		$errno = curl_errno($curl);
+		if ($errno) {
+			return false;
+		}
+		curl_close($curl);
+		return $response;
+	}
+    
+    
     // Insert real GCM API key from the Google APIs Console
 	// https://code.google.com/apis/console/        
 	$apiKey = $notifications_config['apiKey'];
@@ -130,10 +155,27 @@
 			
 			
 			if(count($atomjump_ids) > 0) {
-				//TODO: post the message as a .json file using a curl POST request multipart/form-data to the ID as the URL
+				//Post the message as a .json file using a curl POST request multipart/form-data to the ID as the URL
 				for($cnt = 0; $cnt < count($atomjump_ids); $cnt++) {
-					$post_url = $atomjump_ids[$cnt];		//e.g. https://medimage-nz1.atomjump.com/write/HMEcfQQCufJmRPMX4C
+					$post_url = $atomjump_ids[$cnt];		//e.g. https://medimage-nz1.atomjump.com/api/photo/#HMEcfQQCufJmRPMX4C
 					$post_url = $post_url . "-message" . rand(1,999999) . ".json";	//So that the URL is called e.g. https://medimage-nz1.atomjump.com/write/HMEcfQQCufJmRPMX4C-message324456.json
+	
+	
+					$post = array(
+								'data' => $data->android,
+							 );
+					$data = json_encode($post);
+					
+					
+					// php 5.5+ should use curl_file_create method
+					if (function_exists('curl_file_create')) {
+						$data['avatar'] = curl_file_create($file);
+					} else {
+						$data['avatar'] = '@' . $file;
+					}
+					$headers = ["User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36"];
+					echo post_multipart($post_url, $data, $headers);
+					
 				}
 			}
 			
