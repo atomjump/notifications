@@ -39,7 +39,7 @@
 		curl_setopt_array($curl, array(
 			CURLOPT_URL => $url,
 			CURLOPT_RETURNTRANSFER => true, // return the transfer as a string of the return value
-			CURLOPT_TIMEOUT => 0,   // The maximum number of seconds to allow cURL functions to execute.
+			CURLOPT_TIMEOUT => 2,   // The maximum number of seconds to allow cURL functions to execute.
 			CURLOPT_POST => true,   // This line must place before CURLOPT_POSTFIELDS
 			CURLOPT_POSTFIELDS => $data // The full data to post
 		));
