@@ -67,7 +67,7 @@
 		$response = curl_exec($curl);
 		$errno = curl_errno($curl);
 		if ($errno) {
-			echo "Error:" . $errno . "\n";
+			//echo "Error:" . $errno . "\n";
 			return false;
 		}
 		curl_close($curl);
@@ -223,11 +223,12 @@
 					
 					$parent_folder = __DIR__ . "/outgoing/";
 					$folder = $parent_folder . $last . "/";
-					echo "Folder: " . $folder . "\n";		//TESTING
+					//echo "Folder: " . $folder . "\n";		//TESTING
 					if(!mkdir($parent_folder)) {
 						$msg = "Sorry, your notifications send.php script could not create a folder " . $parent_folder . ". You may need to: mkdir outgoing; chmod 777 outgoing";
 						error_log($msg);
 						echo $msg;
+						exit(0);
 					}
 						
 					mkdir($folder);
@@ -244,7 +245,7 @@
 					
 				
 					$resp = post_multipart($post_url, $file, $upload_filename, $data, $headers);
-					echo "Response: " . $resp . "\n";
+					//echo "Response: " . $resp . "\n";
 					
 					//Then delete the created file:
 					unlink($filename);
