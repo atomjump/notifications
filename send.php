@@ -193,7 +193,7 @@ echo "URL for AtomJump message=" . $url . "\n";		//TESTING
 					
 					$post = array(
 								'data' => array(
-									'message' => $data->android['message']
+									'message' => $data->android->message
 								)
 							 );
 							 
