@@ -236,7 +236,7 @@
 					
 				
 					$resp = post_multipart($post_url, $file, $upload_filename, $data, $headers);
-					//TESTINGecho "Response: " . $resp . "\n";
+					echo "Response: " . $resp . "\n";
 					
 					//Then delete the created file:
 					unlink($filename);
