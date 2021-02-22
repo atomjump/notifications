@@ -189,6 +189,7 @@
 echo "URL for AtomJump message=" . $url . "\n";		//TESTING
 					$filename = "message" . rand(1,999999) . ".json";
 					
+					print_r($data->android);
 					
 					$post = array(
 								'data' => array(
