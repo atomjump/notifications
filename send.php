@@ -1,5 +1,7 @@
 <?php
 
+
+	error_log("send.php is run"); 	//TESTING
 	
 	if(!isset($notifications_config)) {
         //Get global plugin config - but only once
@@ -180,7 +182,7 @@
 				fclose($fp);
 			}
 			
-			
+			error_log("AtomJump message count: " . count($atomjump_ids)); 	//TESTING
 			if(count($atomjump_ids) > 0) {
 				//TESTINGerror_log("Processing AtomJump IDs");			//TESTING
 				//Post the message as a .json file using a curl POST request multipart/form-data to the ID as the URL
