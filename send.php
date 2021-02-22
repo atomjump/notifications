@@ -51,7 +51,7 @@
 		$headers = array("Content-Type" => "multipart/form-data");
 
 	
-		//TESTINGprint_r($postFields);
+		print_r($postFields);		//TESTING
 
 		
 		$curl = curl_init();
