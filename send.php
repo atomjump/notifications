@@ -23,6 +23,14 @@
     }
     
     
+	function trim_trailing_slash_local($str) {
+		return rtrim($str, "/");
+	}
+
+	function add_trailing_slash_local($str) {
+		//Remove and then add
+		return rtrim($str, "/") . '/';
+	}
     
     function post_multipart($url, $filepath, $filename, $data)
 	{
@@ -188,7 +196,7 @@ echo "URL for AtomJump message=" . $url . "\n";		//TESTING
 					
 					$arr = explode("#", $url);		//Get id after hash if there is one
 					print_r($arr);
-					$post_url = $arr[0];	//E.g. https://medimage-nz1.atomjump.com/api/photo/
+					$post_url = trim_trailing_slash_local($arr[0]);	//E.g. https://medimage-nz1.atomjump.com/api/photo		(without trailing slash)
 	
 					$last = $arr[count($arr)-1];
 					echo "Folder: " . $last . "\n";		//TESTING
