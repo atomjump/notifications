@@ -24,9 +24,17 @@
     
     
     
-    function post_multipart($url, $data, $headers)
+    function post_multipart($url, $filename, $data, $headers, $i=0)
 	{
 		//From: https://blog.cpming.top/p/php-curl-post-multipart
+		
+        $postField = array();
+        $tmpfile = $_FILES[$name]['tmp_name'][$i];
+        $filename = basename($_FILES[$name]['name'][$i]);
+        $postField['files'] =  curl_file_create($tmpfile, $_FILES[$name]['type'][$i], $filename);
+        $headers = array("Content-Type" => "multipart/form-data");
+ 
+		
 		$curl = curl_init();
 		curl_setopt_array($curl, array(
 			CURLOPT_URL => $url,
@@ -172,15 +180,17 @@ echo "URL for AtomJump message=" . $url . "\n";		//TESTING
 					
 					$arr = explode("#", $string, 2);		//Get id after hash if there is one
 					$last = $arr[count($arr)-1];
+					echo "Folder: " . $last . "\n";		//TESTING
 					$folder = __DIR__ . "/outgoing/" . $last . "/";
 					mkdir($folder);
 					$file = $folder . $filename;
 					
-					if (function_exists('curl_file_create')) {
+					file_put_contents($file, $data);
+					/*if (function_exists('curl_file_create')) {
 						$data['avatar'] = curl_file_create($file);
 					} else {
 						$data['avatar'] = '@' . $file;
-					}
+					}*/
 					
 					echo "Data: " . $data . "  To URL:" . $post_url . "\n";	//TESTING
 				
