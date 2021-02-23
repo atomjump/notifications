@@ -337,8 +337,6 @@
 												urlencode(json_encode($in_data['data'])) . " " .
 												urlencode(json_encode($in_data['ids'])) . " " .
 												urlencode(json_encode($in_data['device']));
-						
-						error_log($command);	//TESTING					
 												
 						$api->parallel_system_call($command, "linux");
 						

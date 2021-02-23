@@ -199,10 +199,7 @@
 									)
 								)
 							 );
-					
-					
-					console.log(json_encode($post, JSON_PRETTY_PRINT));		//TESTING		 
-					 
+										 
 							 
 					if($data->android->image) {
 						$post['data']['image'] = $data->android->image;
