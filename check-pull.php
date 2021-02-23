@@ -39,10 +39,13 @@
 	
 	$notify = false;
 	
+	$arr = array();
 	if(($notifications_config['atomjumpNotifications']) && (isset($notifications_config['atomjumpNotifications']['use']))) {
-		echo "true";
+		$arr['response'] = "true";
 	} else {
-		echo "false";
+		$arr['response'] = "false";
 	}
+
+	echo $_GET['callback']."(".json_encode($arr).");";
 
 ?>
