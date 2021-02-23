@@ -43,14 +43,7 @@
 		$postFields = [
 			'file1' => new \CurlFile($filepath, 'application/json', $filename)
 		];
-		
-
-
 		$headers = array("Content-Type" => "multipart/form-data");
-
-	
-		print_r($postFields);		//TESTING
-
 		
 		$curl = curl_init();
 		curl_setopt_array($curl, array(
@@ -206,7 +199,9 @@
 									)
 								)
 							 );
-							 
+					
+					
+					console.log(json_encode($post, JSON_PRETTY_PRINT));		//TESTING		 
 					 
 							 
 					if($data->android->image) {
