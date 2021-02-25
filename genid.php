@@ -119,7 +119,7 @@ function get_least_load($server_pool, $country_code) {
 		$load_file_str = file_get_contents($load_file);
 		$load = json_decode($load_file_str);
 		if(isset($load)) {
-			$server_sorted_pool = $load['atomjumpNotifications']['countryServerResidingIn'][$country_code];
+			$server_sorted_pool = $load->atomjumpNotifications->countryServerResidingIn[$country_code];
 			if((isset($server_sorted_pool)) &&
 				(isset($server_sorted_pool[0]['url'])) ) {
 				return $server_sorted_pool[0]['url'];			
