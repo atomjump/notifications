@@ -113,10 +113,12 @@ function get_least_load($server_pool, $country_code) {
 	//Returns the preferred URL of the proxy MedImage server
 	
 	$load_file = __DIR__ . "/outgoings/load.json";
+	error_log("Checking load file " . $load_file);
 	if(file_exists($load_file)) {
+		error_log("File exists: " . $load_file);
 		$load_file_str = file_get_contents($load_file);
 		$load = json_decode($load_file_str);
-		if($load) {
+		if(isset($load)) {
 			if((isset($server_pool)) &&
 				(isset($server_pool[0]['url'])) ) {
 				return $server_pool[0]['url'];			
