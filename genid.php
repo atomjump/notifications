@@ -113,14 +113,11 @@ function get_least_load($server_pool, $country_code) {
 	//Returns the preferred URL of the proxy MedImage server
 	
 	$load_file = __DIR__ . "/outgoing/load.json";
-	error_log("Checking load file " . $load_file);
 	if(file_exists($load_file)) {
-		error_log("File exists: " . $load_file);
 		$load_file_str = file_get_contents($load_file);
 		$load = json_decode($load_file_str, true);
 		if(isset($load)) {
 			$server_sorted_pool = $load['atomjumpNotifications']['serverPoolLoad'][$country_code];
-			error_log(json_encode($server_sorted_pool));		//TESTING
 			if((isset($server_sorted_pool)) &&
 				(isset($server_sorted_pool[0]['url'])) ) {
 				return $server_sorted_pool[0]['url'];			
