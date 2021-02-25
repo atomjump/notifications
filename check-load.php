@@ -122,9 +122,22 @@
 	
 	if(count($warning_messages) > 0) {
 		//Send off an email to the system admin
-		$title = "Warning: New AtomJump Messaging notifications hardware needed";
+		$subject = "Warning: New AtomJump Messaging notifications hardware needed";
 		$msg = "You have server loads above the threshold for the AtomJump Messaging notification system.\n\nIndividual country warnings are below:\n\n" . json_encode($warning_messages, JSON_PRETTY_PRINT) . "\n\nA full load breakdown is below:\n\n" . $outfile_str;
-		//TODO send off email to AtomJump Messaging config sys admin
+		//Send off email to AtomJump Messaging config sys admin
+		
+		global $cnf;
+		if(isset($cnf['email']) && isset($cnf['email']['adminEmail'])) {
+			$to_email = $cnf['email']['adminEmail'];
+			if(isset($cnf['email']['noReplyEmail'])) {
+				$sender_email = $cnf['email']['noReplyEmail'];
+			} else {
+				$sender_email = $cnf['email']['adminEmail'];
+			}
+			
+			cc_mail_direct($to_email, $subject, $msg, $sender_email);
+		}
+		
 	}
 	
 	
