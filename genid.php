@@ -125,12 +125,31 @@ function preserve_qs() {
    
    if(isset($_REQUEST['country'])) {
    	$country_code = $_REQUEST['country'];
-   	if(isset($proxies_per_country[$country_code])) {
-   		$proxy = $proxies_per_country[$country_code];
+   	
+   	if(isset($notifications_config['atomjumpNotifications']) && isset($notifications_config['atomjumpNotifications']['serverPool'])) {
+   		if(isset($notifications_config['atomjumpNotifications']['serverPool'][$country_code]) {
+   			//Select the 1st option in the country. TODO - choose the least load option
+   			$proxy = $notifications_config['atomjumpNotifications']['serverPool'][$country_code][0];
+   		} else {
+   			if(isset($notifications_config['atomjumpNotifications']['serverPool']['Default']) {
+   				$proxy = $notifications_config['atomjumpNotifications']['serverPool']['Default'][0];
+   			} else {
+   				echo "noproxy";
+   			}
+   		}
    	}
    	
-   	if(isset($country_names[$country_code])) {
-   		$country_used = rawurlencode($country_names[$country_code]);		//raw so that spaces are not encoded as '+'
+   	if(isset($notifications_config['atomjumpNotifications']) && isset($notifications_config['atomjumpNotifications']['countryServerResidingIn'])) {
+   		
+   		if(isset($notifications_config['atomjumpNotifications']['countryServerResidingIn'][$country_code])) {
+   			$country_used = rawurlencode($notifications_config['atomjumpNotifications']['countryServerResidingIn'][$country_code]);		//raw so that spaces are not encoded as '+'
+   		} else {
+   			if(isset($notifications_config['atomjumpNotifications']['countryServerResidingIn']['Default'])) {
+   				$country_used = rawurlencode($notifications_config['atomjumpNotifications']['countryServerResidingIn']['Default']);
+   			} else {
+   				$country_used = rawurlencode("[Unknown - private]");
+   			}
+   		}
    	}
    		
    }
