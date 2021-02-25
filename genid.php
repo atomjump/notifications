@@ -121,19 +121,17 @@ function get_least_load($server_pool, $country_code) {
 				(isset($load['atomjumpNotifications']['serverPool'][$country_code][0]['load'])) ) {
 				return $load['atomjumpNotifications']['serverPool'][$country_code][0]['load'];			
 			} else {
-				echo "Warning: Sorry, the country code " . $country_code . " file is not correctly in the load file, using a random selection instead.";
+				error_log("Warning: Sorry, the country code " . $country_code . " file is not correctly in the load file, using a random selection instead.");
 			}
 		} else {
-			echo "Warning: Sorry, the " . $load_file . " file is not correct JSON, using a random selection instead.";
+			error_log("Warning: Sorry, the " . $load_file . " file is not correct JSON, using a random selection instead.");
 		}
 	} 
 	
-	error_log(json_encode($server_pool));		//TESTING
 	//Falling through, use a random selection from the config file
 	$random_top = count($server_pool);
 	
 	$selected = rand(1, $random_top);
-	error_log($selected);		//TESTING
 	return $server_pool[$selected-1];
 
 }
