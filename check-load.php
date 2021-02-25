@@ -99,7 +99,6 @@
 			
 			if(isset($notifications_config['atomjumpNotifications']['notifyAdminWhenLoadAbove'])) {
 				$threshold = $notifications_config['atomjumpNotifications']['notifyAdminWhenLoadAbove'];
-				$threshold = -1;			//TESTING
 				$least_server_load = $server_loads_arr[0]['load'] * 100.0;		//Turn into a percentage
 				if($least_server_load > $threshold) {
 					$msg = "* " . $country_code . ": the server with the least load in the country, " . $server_loads_arr[0]['url'] . ", has a load above the threshold " . $threshold . "% with a 15 minute average load of " . $least_server_load . "%.";
