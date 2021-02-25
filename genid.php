@@ -118,7 +118,7 @@ function get_least_load($server_pool, $country_code) {
 		$load = json_decode($load_file_str);
 		if($load) {
 			if((isset($server_pool)) &&
-				(isset($server_pool[0]['load'])) ) {
+				(isset($server_pool[0]['url'])) ) {
 				return $server_pool[0]['url'];			
 			} else {
 				error_log("Warning: Sorry, the country code " . $country_code . " file is not correctly in the load file, using a random selection instead.");
