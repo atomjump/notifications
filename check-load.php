@@ -123,14 +123,14 @@
 	
 	if(count($warning_messages) > 0) {
 		//Send off an email to the system admin
-		$subject = "TESTING Warning: New AtomJump Messaging notifications hardware needed";
+		$subject = "Warning: New AtomJump Messaging notifications hardware needed";
 		$warnings = "";
 		for($cnt = 0; $cnt < count($warning_messages); $cnt++) {
 			$warnings .= $warning_messages[$cnt] . "\n";
 		
 		}
 		
-		$msg = "You have server loads above the threshold for the AtomJump Messaging notification system.\n\nIndividual country warnings are below:\n\n" . $warnings . "\n\nA full load breakdown is below:\n\n" . $outfile_str;
+		$msg = "You have server loads above the threshold for the AtomJump Messaging notification system.\n\nIndividual country warnings are below:\n\n" . $warnings . "\n\nA full load breakdown, in JSON format, is below:\n\n" . $outfile_str;
 		//Send off email to AtomJump Messaging config sys admin
 		
 		echo "\n" . $msg;
