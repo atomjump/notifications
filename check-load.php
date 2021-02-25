@@ -130,7 +130,7 @@
 		
 		}
 		
-		$msg = "You have server loads above the threshold for the AtomJump Messaging notification system.\n\nIndividual country warnings are below:\n\n" . $warnings . "\n\nA full load breakdown, in JSON format, is below:\n\n" . $outfile_str;
+		$msg = "You have server loads above the threshold for the AtomJump Messaging notification system. We suggest that you buy new hardware and add it to your list of notification servers (see plugins/notifications/config/config.json).\n\nIndividual country warnings are below:\n\n" . $warnings . "\n\nA full load breakdown, in JSON format, is below:\n\n" . $outfile_str;
 		//Send off email to AtomJump Messaging config sys admin
 		
 		echo "\n" . $msg;
