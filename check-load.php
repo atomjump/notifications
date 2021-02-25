@@ -59,6 +59,8 @@
   	if(isset($notifications_config['atomjumpNotifications']) 
   		&& isset($notifications_config['atomjumpNotifications']['serverPool'])) {
 	
+		$warning_messages = array();
+	
 		foreach($notifications_config['atomjumpNotifications']['serverPool'] as $country_code => $country_servers) {
 			$output['atomjumpNotifications']['serverPoolLoad'][$country_code] = array();
 			echo $country_code . "\n";
@@ -93,6 +95,16 @@
 			array_multisort($load, SORT_ASC, $url, SORT_ASC, $server_loads_arr);
 			
 			$output['atomjumpNotifications']['serverPoolLoad'][$country_code] = $server_loads_arr;
+			
+			
+			if(isset($notifications_config['atomjumpNotifications']['notifyAdminWhenLoadAbove'])) {
+				$threshold = $notifications_config['atomjumpNotifications']['notifyAdminWhenLoadAbove'];
+				$least_server_load = $server_loads_arr[0]['load'] * 100.0;		//Turn into a percentage
+				if($least_server_load > $threshold) {
+					$msg = "For the country " . $country_code . " the MedImage server at " . $server_loads_arr[0]['url'] . " has a load above the threshold " . $threshold . "% with a 15 minute average load of " . $least_server_load "%.";
+					array_push($warning_messages,  $msg);
+				}
+			}
 		}
 	}
 	
@@ -101,12 +113,19 @@
 
 	
 	
-	//TODO: check on high load and warn admin email address 
-	
+
 	
 	
 	$outfile_str = json_encode($output, JSON_PRETTY_PRINT);
 	echo $outfile_str;
+	
+	
+	if(count($warning_messages) > 0) {
+		//Send off an email to the system admin
+		$title = "Warning: New AtomJump Messaging notifications hardware needed";
+		$msg = "You have server loads above the threshold for the AtomJump Messaging notification system.\n\nIndividual country warnings are below:\n\n" . json_encode($warning_messages, JSON_PRETTY_PRINT) . "\n\nA full load breakdown is below:\n\n" . $outfile_str;
+		//TODO send off email to AtomJump Messaging config sys admin
+	}
 	
 	
 	$parent_folder = __DIR__ . "/outgoing/";
