@@ -53,17 +53,47 @@
 	include_once($start_path . 'config/db_connect.php');
 	
 	echo "Checking server pool..\n";
+	
+	$output = array("atomjumpNotifications" => array("serverPoolLoad" => array()));
+	
   	if(isset($notifications_config['atomjumpNotifications']) 
   		&& isset($notifications_config['atomjumpNotifications']['serverPool'])) {
 	
-		foreach ($notifications_config['atomjumpNotifications']['serverPool'] as $country) {
-				if ($country->_visible == 1) {
-					echo $country;
-				}
+		foreach($notifications_config['atomjumpNotifications']['serverPool'] as $country_code => $country_servers) {
+			$output['atomjumpNotifications']['serverPoolLoad'][$country_code] = array();
+			echo $country_code . "\n";
+			for($cnt = 0; $cnt < count($country_servers); $cnt++) {
+				$server_url = $country_servers[$cnt];
+				
+				echo $server_url . "   Load:";
+				$load = file_get_contents($server_url . "/load/");
+				echo $load;
+				$json = "{ \"load\": " . $load . "}";
+				echo "  JSON: ". $json;
+				$load_array = json_decode($json);
+				echo "  15 minute load:" . $load_array->load[2];		//Use 15 minute average
+				echo "\n";
+				$server_output = array("url" => $server_url, "load" => $load_array->load[2]);
+				array_push($output['atomjumpNotifications']['serverPoolLoad'][$country_code],$server_output);
+			}
 		}
 	}
 	
-		
+	$outfile_str = json_encode($output, JSON_PRETTY_PRINT);
+	echo $outfile_str;
 	
+	
+	$parent_folder = __DIR__ . "/outgoing/";
+		
+	if(!file_exists($parent_folder)) {
+		if(!mkdir($parent_folder)) {
+			$msg = "Sorry, your notifications send.php script could not create a folder " . $parent_folder . ". You may need to: mkdir outgoing; chmod 777 outgoing";
+			error_log($msg);
+			echo $msg;
+			exit(0);
+		}
+	}
+		
+	file_put_contents($parent_folder . "load.json", $outfile_str);
 		
 ?>
