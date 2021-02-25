@@ -126,7 +126,7 @@
 		$subject = "TESTING Warning: New AtomJump Messaging notifications hardware needed";
 		$warnings = "";
 		for($cnt = 0; $cnt < count($warning_messages); $cnt++) {
-			$warnings .= $warning_messages . "\n";
+			$warnings .= $warning_messages[$cnt] . "\n";
 		
 		}
 		
