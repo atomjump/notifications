@@ -127,11 +127,11 @@ function preserve_qs() {
    	$country_code = $_REQUEST['country'];
    	
    	if(isset($notifications_config['atomjumpNotifications']) && isset($notifications_config['atomjumpNotifications']['serverPool'])) {
-   		if(isset($notifications_config['atomjumpNotifications']['serverPool'][$country_code]) {
+   		if(isset($notifications_config['atomjumpNotifications']['serverPool'][$country_code])) {
    			//Select the 1st option in the country. TODO - choose the least load option
    			$proxy = $notifications_config['atomjumpNotifications']['serverPool'][$country_code][0];
    		} else {
-   			if(isset($notifications_config['atomjumpNotifications']['serverPool']['Default']) {
+   			if(isset($notifications_config['atomjumpNotifications']['serverPool']['Default'])) {
    				$proxy = $notifications_config['atomjumpNotifications']['serverPool']['Default'][0];
    			} else {
    				echo "noproxy";
