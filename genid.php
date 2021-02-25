@@ -117,9 +117,9 @@ function get_least_load($server_pool, $country_code) {
 		$load_file_str = file_get_contents($load_file);
 		$load = json_decode($load_file_str);
 		if($load) {
-			if((isset($load['atomjumpNotifications']['serverPool'][$country_code])) &&
-				(isset($load['atomjumpNotifications']['serverPool'][$country_code][0]['load'])) ) {
-				return $load['atomjumpNotifications']['serverPool'][$country_code][0]['load'];			
+			if((isset($server_pool)) &&
+				(isset($server_pool[0]['load'])) ) {
+				return $server_pool[0]['url'];			
 			} else {
 				error_log("Warning: Sorry, the country code " . $country_code . " file is not correctly in the load file, using a random selection instead.");
 			}
@@ -161,12 +161,10 @@ function get_least_load($server_pool, $country_code) {
    	
    	if(isset($notifications_config['atomjumpNotifications']) && isset($notifications_config['atomjumpNotifications']['serverPool'])) {
    		if(isset($notifications_config['atomjumpNotifications']['serverPool'][$country_code])) {
-   			//Select the 1st option in the country. TODO - choose the least load option
-   			//OLD:$proxy = $notifications_config['atomjumpNotifications']['serverPool'][$country_code][0];
+   			//Select the 1st option in the country. choose the least load option
    			$proxy = get_least_load($notifications_config['atomjumpNotifications']['serverPool'][$country_code], $country_code);
    		} else {
    			if(isset($notifications_config['atomjumpNotifications']['serverPool']['Default'])) {
-   				//OLD:$proxy = $notifications_config['atomjumpNotifications']['serverPool']['Default'][0];
    				$proxy = get_least_load($notifications_config['atomjumpNotifications']['serverPool']['Default'], 'Default');
    			} else {
    				echo "noproxy";
