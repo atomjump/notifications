@@ -102,7 +102,7 @@
 				$threshold = -1;			//TESTING
 				$least_server_load = $server_loads_arr[0]['load'] * 100.0;		//Turn into a percentage
 				if($least_server_load > $threshold) {
-					$msg = "For the country " . $country_code . " the MedImage server at " . $server_loads_arr[0]['url'] . " has a load above the threshold " . $threshold . "% with a 15 minute average load of " . $least_server_load . "%.";
+					$msg = "* " . $country_code . ": the MedImage server with the least load, at " . $server_loads_arr[0]['url'] . " has a load above the threshold " . $threshold . "% with a 15 minute average load of " . $least_server_load . "%.";
 					array_push($warning_messages,  $msg);
 				}
 			}
