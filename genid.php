@@ -134,7 +134,7 @@ function get_least_load($server_pool, $country_code) {
 	
 	$selected = rand(1, $random_top);
 	error_log($selected);		//TESTING
-	return $server_pool[$selected];
+	return $server_pool[$selected-1];
 
 }
 
