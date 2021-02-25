@@ -99,9 +99,10 @@
 			
 			if(isset($notifications_config['atomjumpNotifications']['notifyAdminWhenLoadAbove'])) {
 				$threshold = $notifications_config['atomjumpNotifications']['notifyAdminWhenLoadAbove'];
+				$threshold = -1;			//TESTING
 				$least_server_load = $server_loads_arr[0]['load'] * 100.0;		//Turn into a percentage
 				if($least_server_load > $threshold) {
-					$msg = "For the country " . $country_code . " the MedImage server at " . $server_loads_arr[0]['url'] . " has a load above the threshold " . $threshold . "% with a 15 minute average load of " . $least_server_load "%.";
+					$msg = "For the country " . $country_code . " the MedImage server at " . $server_loads_arr[0]['url'] . " has a load above the threshold " . $threshold . "% with a 15 minute average load of " . $least_server_load . "%.";
 					array_push($warning_messages,  $msg);
 				}
 			}
@@ -120,11 +121,13 @@
 	echo $outfile_str;
 	
 	
-	if(count($warning_messages) > 0) {
+	if(count($warning_messages) > -1) {		//TESTING at > -1, usually > 0
 		//Send off an email to the system admin
-		$subject = "Warning: New AtomJump Messaging notifications hardware needed";
+		$subject = "TESTING Warning: New AtomJump Messaging notifications hardware needed";
 		$msg = "You have server loads above the threshold for the AtomJump Messaging notification system.\n\nIndividual country warnings are below:\n\n" . json_encode($warning_messages, JSON_PRETTY_PRINT) . "\n\nA full load breakdown is below:\n\n" . $outfile_str;
 		//Send off email to AtomJump Messaging config sys admin
+		
+		echo "\n" . $msg;
 		
 		global $cnf;
 		if(isset($cnf['email']) && isset($cnf['email']['adminEmail'])) {
@@ -134,6 +137,7 @@
 			} else {
 				$sender_email = $cnf['email']['adminEmail'];
 			}
+			
 			
 			cc_mail_direct($to_email, $subject, $msg, $sender_email);
 		}
