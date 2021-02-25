@@ -165,11 +165,11 @@ function get_least_load($server_pool, $country_code) {
    		if(isset($notifications_config['atomjumpNotifications']['serverPool'][$country_code])) {
    			//Select the 1st option in the country. TODO - choose the least load option
    			//OLD:$proxy = $notifications_config['atomjumpNotifications']['serverPool'][$country_code][0];
-   			$proxy = get_least_load($notifications_config['atomjumpNotifications']['serverPool'], $country_code);
+   			$proxy = get_least_load($notifications_config['atomjumpNotifications']['serverPool'][$country_code], $country_code);
    		} else {
    			if(isset($notifications_config['atomjumpNotifications']['serverPool']['Default'])) {
    				//OLD:$proxy = $notifications_config['atomjumpNotifications']['serverPool']['Default'][0];
-   				$proxy = get_least_load($notifications_config['atomjumpNotifications']['serverPool'], 'Default');
+   				$proxy = get_least_load($notifications_config['atomjumpNotifications']['serverPool']['Default'], 'Default');
    			} else {
    				echo "noproxy";
    			}
