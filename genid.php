@@ -102,6 +102,42 @@ function preserve_qs() {
     return "?" . $_SERVER['QUERY_STRING'];
 }
 
+function get_least_load($server_pool, $country_code) {
+	//Input 1: an array of country codes, with an array of servers on each one
+	//      2: a country code
+	//
+	//Check if there is an output file from check-load.php 'outgoings/load.json', and if so
+	//    use the least loaded server
+	//If not load checks have been done, select from the array list for this country at random
+	
+	//Returns the preferred URL of the proxy MedImage server
+	
+	$load_file = __DIR__ . "/outgoings/load.json";
+	if(file_exists($load_file)) {
+		$load_file_str = file_get_contents($load_file);
+		$load = json_decode($load_file_str);
+		if($load) {
+			if((isset($load['atomjumpNotifications']['serverPool'][$country_code])) &&
+				(isset($load['atomjumpNotifications']['serverPool'][$country_code][0]['load'])) ) {
+				return $load['atomjumpNotifications']['serverPool'][$country_code][0]['load'];			
+			} else {
+			
+				echo "Warning: Sorry, the country code " . $country_code . " file is not correctly in the load file, using a random selection instead.";
+			}
+		} else {
+			echo "Warning: Sorry, the " . $load_file . " file is not correct JSON, using a random selection instead.";
+		}
+	} 
+	
+	
+	//Falling through, use a random selection from the config file
+	$random_top = count($server_pool);
+	
+	$selected = rand(1, $random_top);
+	return $server_pool[$selected];
+
+}
+
 
 
 
@@ -128,10 +164,12 @@ function preserve_qs() {
    	if(isset($notifications_config['atomjumpNotifications']) && isset($notifications_config['atomjumpNotifications']['serverPool'])) {
    		if(isset($notifications_config['atomjumpNotifications']['serverPool'][$country_code])) {
    			//Select the 1st option in the country. TODO - choose the least load option
-   			$proxy = $notifications_config['atomjumpNotifications']['serverPool'][$country_code][0];
+   			//OLD:$proxy = $notifications_config['atomjumpNotifications']['serverPool'][$country_code][0];
+   			$proxy = get_least_load($notifications_config['atomjumpNotifications']['serverPool'], $country_code);
    		} else {
    			if(isset($notifications_config['atomjumpNotifications']['serverPool']['Default'])) {
-   				$proxy = $notifications_config['atomjumpNotifications']['serverPool']['Default'][0];
+   				//OLD:$proxy = $notifications_config['atomjumpNotifications']['serverPool']['Default'][0];
+   				$proxy = get_least_load($notifications_config['atomjumpNotifications']['serverPool'], 'Default');
    			} else {
    				echo "noproxy";
    			}

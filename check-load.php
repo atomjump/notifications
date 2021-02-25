@@ -49,7 +49,7 @@
 	$start_path = add_trailing_slash_local($notifications_config['serverPath']);
 
 	$staging = $notifications_config['staging'];
-	$notify = false;
+	$notify = true;
 	include_once($start_path . 'config/db_connect.php');
 	
 	echo "Checking server pool..\n";
@@ -76,8 +76,34 @@
 				$server_output = array("url" => $server_url, "load" => $load_array->load[2]);
 				array_push($output['atomjumpNotifications']['serverPoolLoad'][$country_code],$server_output);
 			}
+			
+			//Now sort from least load to highest within this country
+			// Obtain a list of columns. TODO: debug this.
+			
+			$server_loads_arr = $output['atomjumpNotifications']['serverPoolLoad'][$country_code];
+			$url = array();
+			$load = array();
+			foreach ($server_loads_arr as $key => $row) {
+				$url[$key]  = $row['url'];
+				$load[$key] = $row['load'];
+			}
+
+			// Sort the data with volume descending, edition ascending
+			// Add $data as the last parameter, to sort by the common key
+			array_multisort($load, SORT_ASC, $url, SORT_ASC, $server_loads_arr);
+			
+			$output['atomjumpNotifications']['serverPoolLoad'][$country_code] = $server_loads_arr;
 		}
 	}
+	
+	
+	
+
+	
+	
+	//TODO: check on high load and warn admin email address 
+	
+	
 	
 	$outfile_str = json_encode($output, JSON_PRETTY_PRINT);
 	echo $outfile_str;
