@@ -23,12 +23,12 @@
 				"https://your.medimageserver.url2:5566",
 				"https://your.medimageserver.url3:5566"
 			]
-    	],
+    	},
     	"countryServerResidingIn": {
     		"NZ" : "New Zealand",
     		"US" : "New Zealand",
     		"Default": "New Zealand"    	
-    	}
+    	},
     	"notifyAdminWhenLoadAbove": 80    
     },
     "msgs": {        
