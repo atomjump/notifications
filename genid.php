@@ -87,7 +87,6 @@ if(!isset($notifications_config)) {
 
 }
 
-include_once(__DIR__ . "/config/genid-config.php");  //TODO: upgrade this to the more flexible .json config.json format
 
 
 $start_path = add_trailing_slash_local($notifications_config['serverPath']);
