@@ -1,9 +1,11 @@
 <?php
 
+
+	//This is a cron script run once a day or so. E.g.
+	//sudo crontab -e  
+	//	0 0 * * *	/usr/bin/php /yourserverpath/plugins/notifications/check-load.php
 	/*
 	
-		This is a cron script run once a day or so.
-		
 		It will check through the pool of MedImage servers in config/config.json atomjumpNotifications.serverPool
 		and for each one get the load using the URL   medimageserver.url/load/
 		
@@ -13,7 +15,7 @@
 		which servers have the least load, and should become that app's stored URL for future checks.
 		
 		Export format in config/loadEXAMPLE.json
-		
+		Export file in outgoing/load.json
 	
 	*/
 
