@@ -37,6 +37,13 @@ In your config.json file you should switch 'atomjumpNotifications.use' to 'true'
 
 **Current Limitations**: Android app notifications will appear up to 30 seconds apart. iPhone app notifications will do the same, if the app is in the foreground on the phone. But otherwise messages may take up to 15 minutes or longer (this background iOS feature is in Beta, still).
 
+To configure multiple MedImage Proxy Servers, and be notified if the load on your notification servers is getting too high, you will need to add a cron job to your server to be run once per day:
+
+```
+sudo crontab -e  
+0 0 * * *	/usr/bin/php /yourserverpath/plugins/notifications/check-load.php
+```
+
 
 # Certificate Updates
 
