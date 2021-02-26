@@ -26,12 +26,21 @@ cp pushcertSAMPLE.pem pushcert.pem				[You will need your own Apple push certica
 php install.php
 ```
 
-At the user end, the Android/iPhone app at https://src.atomjump.com/atomjump/messaging needs to be installed (this can be built in build.phonegap.com, or this is available on the Android and iPhone app-stores as 'AtomJump Messaging')
+At the user end, the Android/iPhone app at https://src.atomjump.com/atomjump/messaging needs to be installed (this can be built with Cordova, or this is available on the Android and iPhone app-stores as 'AtomJump Messaging')
+
+
+# AtomJump's own notification system
+
+This notification system option does not depend on any certificates from Android or Apple, but instead lets you connect to one or more installations of the MedImage Proxy Server >= 1.8.1. More details are available here: http://medimage.co.nz/download/
+
+In your config.json file you should switch 'atomjumpNotifications.use' to 'true' to enable this type of notification system.
+
+**Current Limitations**: Android app notifications will appear up to 30 seconds apart. iPhone app notifications will do the same, if the app is in the foreground on the phone. But otherwise messages may take up to 15 minutes or longer (this background iOS feature is in Beta, still).
 
 
 # Certificate Updates
 
-You will **need to update** your installation once a year when your Apple push notification certificate runs out.
+You will **need to update** your installation once a year if you're using Apple push notifications as the certificate runs out.
 Please **log this in your own personal calendar** for a reminder, since the software will not automatically notify you when the certificate runs out.
 
 
@@ -39,6 +48,5 @@ Please **log this in your own personal calendar** for a reminder, since the soft
 
 * Handle multiple devices per user (probably as a json array inside the same database field)
 * Time-slots for accepting messages
-* Multiple messages from the same forum can be grouped
 * iPhone pictures in the popup
 * Automatic certificate updates
