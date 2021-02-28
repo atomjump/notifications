@@ -1,10 +1,18 @@
 {
     "serverPath": "your_path/loop-server/",
-    "apiKey": "AIzaSyD8TEjhUQDDUQirNIVMdVaHPsnLxt-ygjc",
+    "apiKey": "Android Legacy (No longer used). E.g. AIzaSyD8TEjhUQDDUQirNIVMdVaHPsnLxt-ygjc",
     "staging": true,
     "iosAppLink": "https://itunes.apple.com/us/app/atomjump-messaging/id1153387200?ls=1&mt=8",
     "androidAppLinkLegacy": "https://play.google.com/store/apps/details?id=com.atomjump.messaging",
     "androidAppLink": "https://play.google.com/store/apps/details?id=org.atomjump.messaging",
+    "androidNotifications": {
+    	"use": false,
+    	"apiKey": "AIzaSyD8TEjhUQDDUQirNIVMdVaHPsnLxt-ygjc"
+    },
+    "iosNotifications": {
+    	"use": false,
+    	"apiKeyFile": "pushcert.pem"    
+    }
     "atomjumpNotifications": {
     	"use": false,
     	"serverPool": {
