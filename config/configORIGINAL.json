@@ -44,8 +44,10 @@
     	"en":{
         	"getPopupNotifications": "Get popup notifications:",
         	"privateServerNote": "Note: Please set the 'Private Server' in your app login screen as:",
-        	"notLoggedIn": "Sorry, please login to your messaging forum and try again.",
+        	"notLoggedIn": "Sorry, please login to your messaging forum, by tapping above, and going to 'Settings'. Exit the forum, and then close this page, logout in the app, and try again.",
         	"backHome": "Back to Home",
+        	"openSetup": "Open Setup Forum",
+        	"returnToApp": "Return to App",
         	"appDeregistered": "Your app is now deregistered to this server. You will only receive email notifications.",
         	"deregister": "Deregister (use email notifications)",
         	"appRegistered": "Your app is now registered to this server with the email ",
