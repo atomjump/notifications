@@ -187,7 +187,7 @@
 				 if($user_email == "") {
 					$user_email = "[none]";
 				 }
-				 $main_message = $notifications_config['msgs'][$lang]['appRegistered'] . $user_email;
+				 $main_message = str_replace("[email]", $user_email,  $notifications_config['msgs'][$lang]['appRegistered']);
 				 $first_button = $unregister_link;
 				 $first_button_wording = $notifications_config['msgs'][$lang]['deregister'];
 				 $second_button = $follow_on_link;
