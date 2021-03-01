@@ -105,39 +105,40 @@
 			$use_atomjump = false;
 			
 			if(isset($notifications_config['androidNotifications']) && 
-    		   isset($notifications_config['androidNotifications']['use'])) {
-    			
-    				if($notifications_config['androidNotifications']['use'] == true) {
-    					$use_android = true;
-    				}
-    		} else {
-    			//Check legacy option exists
+			   isset($notifications_config['androidNotifications']['use'])) {
+			
+					if($notifications_config['androidNotifications']['use'] == true) {
+						$use_android = true;
+					}
+			} else {
+				//Check legacy option exists
 				if(isset($notifications_config['apiKey'])) {
 					//Use the legacy option
 					$use_android = true;
 				}
-    		}
-    		
-    		if(isset($notifications_config['iosNotifications']) && 
-    			isset($notifications_config['iosNotifications']['use'])) {
-    			
-    			if($notifications_config['iosNotifications']['use'] == true) {
-    				$use_ios = true;
-    			}
-    		} else {
-    			//Check legacy file exists
-    			if(file_exists(__DIR__ . "/pushcert.pem")) {
-    				$use_ios = true;
-    			}
-    		}
-    		
-    		if(isset($notifications_config['atomjumpNotifications']) && 
-    			isset($notifications_config['atomjumpNotifications']['use'])) {
-    			
-    			if($notifications_config['atomjumpNotifications']['use'] == true) {
-    				$use_atomjump = true;
-    			}
-    		}
+			}
+		
+			if(isset($notifications_config['iosNotifications']) && 
+				isset($notifications_config['iosNotifications']['use'])) {
+			
+				if($notifications_config['iosNotifications']['use'] == true) {
+					$use_ios = true;
+				}
+			} else {
+				//Check legacy file exists
+				if(file_exists(__DIR__ . "/pushcert.pem")) {
+					$use_ios = true;
+				}
+			}
+		
+			if(isset($notifications_config['atomjumpNotifications']) && 
+				isset($notifications_config['atomjumpNotifications']['use'])) {
+			
+				if($notifications_config['atomjumpNotifications']['use'] == true) {
+					$use_atomjump = true;
+				}
+			}
+			
     		
 			
 			
@@ -239,6 +240,7 @@
 			}
 			
 			
+			echo "Using atomjump:" . $use_atomjump;	//TESTING
 			
 		    if($use_atomjump == true) {	
 				if(count($atomjump_ids) > 0) {
