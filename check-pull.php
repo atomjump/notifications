@@ -90,7 +90,7 @@
 		$use_ios = false;
 		$use_atomjump = false;
 		
-		if(isset($notifications_config['androidNotifications'] && 
+		if(isset($notifications_config['androidNotifications']) && 
 		   isset($notifications_config['androidNotifications']['use'])) {
 			
 				if($notifications_config['androidNotifications']['use'] == true) {
@@ -104,7 +104,7 @@
 			}
 		}
 		
-		if(isset($notifications_config['iosNotifications'] && 
+		if(isset($notifications_config['iosNotifications']) && 
 			isset($notifications_config['iosNotifications']['use'])) {
 			
 			if($notifications_config['iosNotifications']['use'] == true) {
@@ -117,7 +117,7 @@
 			}
 		}
 		
-		if(isset($notifications_config['atomjumpNotifications'] && 
+		if(isset($notifications_config['atomjumpNotifications']) && 
 			isset($notifications_config['atomjumpNotifications']['use'])) {
 			
 			if($notifications_config['atomjumpNotifications']['use'] == true) {
