@@ -119,6 +119,7 @@
 		$main_message = $notifications_config['msgs'][$lang]['notLoggedIn'];
 		$first_button = $follow_on_link;
 		$first_button_wording = $notifications_config['msgs'][$lang]['backHome'];
+		$follow_on_link = "#comment-open-Setup";
 		$second_button = "";
 		$second_button_wording = "";
 	} else {
