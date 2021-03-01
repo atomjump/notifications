@@ -140,7 +140,6 @@
 			}
 			
 			
-			echo "Using android, ios, atomjump " .$use_android ."|" .$use_ios ."|" . $use_atomjump . " \n";		//TESTING
     		
 			
 			
@@ -242,7 +241,6 @@
 			}
 			
 			
-			echo "Using atomjump:" . $use_atomjump;	//TESTING
 			
 		    if($use_atomjump == true) {	
 				if(count($atomjump_ids) > 0) {
@@ -316,8 +314,6 @@
     $data = json_decode(urldecode($argv[1]));
     $ids = json_decode(urldecode($argv[2]));
     $devices = json_decode(urldecode($argv[3]));
-
-	echo "Starting\n";		//TESTING
 
   	sendPushNotification($data, $ids, $android_API_key, $devices, $notifications_config);
   
