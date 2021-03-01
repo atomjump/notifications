@@ -148,7 +148,7 @@
 		}
 	}
 
-
+	cors();
 
 	echo $_GET['callback']."(".json_encode($arr).");";
 
