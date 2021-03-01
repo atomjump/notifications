@@ -50,7 +50,7 @@
         	"returnToApp": "Return to App",
         	"appDeregistered": "Your app is now deregistered to this server. You will only receive email notifications.",
         	"deregister": "Deregister (use email notifications)",
-        	"appRegistered": "Your app is now registered to this server with the email [email]. Now go 'Back to AtomJump'.",
+        	"appRegistered": "Your app is now registered to this server with the email [email]. To return to the app tap <img src='img/chrome-back.png'> or <img src='img/iphone-back.png'> ",
         	"mustBeConfirmed": "Sorry, you will need to click the link in your activation email before you can log in to your account. We have sent another email with this link. If you are having trouble receiving this email, please get in touch with us."
         },
         "es":{
