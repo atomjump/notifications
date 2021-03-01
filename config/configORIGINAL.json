@@ -44,7 +44,7 @@
     	"en":{
         	"getPopupNotifications": "Get popup notifications:",
         	"privateServerNote": "Note: Please set the 'Private Server' in your app login screen as:",
-          	"notLoggedIn": "Please login<br/>1. Tap 'go' above, then <img src='../../images/settings.svg' width='16' height='16'><br/>2. Enter your email/password.</br>3. Close the forum <img src='../../images/close.svg' width='16' height='16'>, then tap <img src='img/chrome-back.png' height='30' width='24'> or <img src='img/iphone-back.png' width='147' height='21'><br/>4. Logout of the app, and pair again.",
+          	"notLoggedIn": "Please login<br/>1. Tap <img src='https://atomjump.com/wp/wp-content/uploads/2018/12/speech-bubble-start-1.png' width='16' height='16'>, then <img src='../../images/settings.svg' width='16' height='16'><br/>2. Enter your email/password.</br>3. Close the forum <img src='../../images/close.svg' width='16' height='16'>, then tap <img src='img/chrome-back.png' height='30' width='24'> or <img src='img/iphone-back.png' width='147' height='21'><br/>4. Logout of the app, and pair again.",
         	"backHome": "Messaging Home",
         	"openSetup": "Open Setup Forum",
         	"returnToApp": "Return to App",
