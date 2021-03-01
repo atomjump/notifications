@@ -73,7 +73,7 @@
     // Insert real GCM API key from the Google APIs Console
 	// https://code.google.com/apis/console/          
     //Check if the key has been set and is allowed
-    if(isset($notifications_config['androidNotifications'] && 
+    if(isset($notifications_config['androidNotifications']) && 
     	isset($notifications_config['androidNotifications']['use'])) {
     	
     	if($notifications_config['androidNotifications']['use'] == true) {
