@@ -143,6 +143,7 @@
 		
 		if($has_been_confirmed != true) {
 			//User has not been confirmed (or doesn't exist). We will need to send a new confirmation email.
+			$follow_on_link = "#comment-open-Setup";
 			$main_message = $user_email . ": " . $notifications_config['msgs'][$lang]['mustBeConfirmed'];
 			$first_button = $follow_on_link;
 			$first_button_wording = $notifications_config['msgs'][$lang]['backHome'];
@@ -240,6 +241,25 @@
 			<!-- For the dropdown autocomplete -->
 			<link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
 			<script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+
+
+			<script>
+					//Add your configuration here for AtomJump Feedback
+					var ajFeedback = {
+						"uniqueFeedbackId" : "Setup",	//Anything globally unique to your company/page, starting with 'apix-'	
+						"myMachineUser" : "192.104.113.117:8",			
+						"server":  "<?php echo $cnf['webRoot'] ?>",
+						"cssFeedback": "https://frontcdn.atomjump.com/atomjump-frontend/comments-1.0.4.css?ver=1",
+						"cssBootstrap": "https://frontcdn.atomjump.com/atomjump-frontend/bootstrap.min.css"
+					}
+			</script>
+			<script type="text/javascript" src="https://frontcdn.atomjump.com/atomjump-frontend/chat-1.0.9.js"></script>
+			<!--No svg support -->
+			<!--[if lt IE 9]>
+			  <script src="https://frontcdn.atomjump.com/atomjump-frontend/chat-1.0.7.js"></script>
+			<![endif]-->
+
+
 
 			<style>
 				h2 {
