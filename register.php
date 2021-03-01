@@ -120,7 +120,7 @@
 		$first_button = "#comment-open-Setup";
 		$first_button_wording = $notifications_config['msgs'][$lang]['openSetup'];
 		$follow_on_link = "#comment-open-Setup";
-		$second_button = "javascript: window.close();";
+		$second_button = "javascript: window.history.back();";
 		$second_button_wording = $notifications_config['msgs'][$lang]['returnToApp'];
 	} else {
 		//We have a user id		

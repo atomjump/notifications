@@ -44,7 +44,7 @@
     	"en":{
         	"getPopupNotifications": "Get popup notifications:",
         	"privateServerNote": "Note: Please set the 'Private Server' in your app login screen as:",
-        	"notLoggedIn": "Sorry, please login to your messaging forum, by tapping above, and going to 'Settings'. Exit the forum, and then close this page, logout in the app, and try again.",
+        	"notLoggedIn": "Sorry, please login to your messaging forum: 1. Tap above, tap 'Settings', and enter your email/password.</br>2. Exit the forum and tap 'Return to App'<br/>3. Logout in the app, and try pairing again.",
         	"backHome": "Back to Home",
         	"openSetup": "Open Setup Forum",
         	"returnToApp": "Return to App",
