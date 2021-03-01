@@ -219,6 +219,14 @@
 			
 			if($use_ios == true) {
 				//Now process iOS messages, one at a time - not sure if can do a group send 
+				
+				
+				if(isset($notifications_config['iosNotifications']) && 
+				   isset($notifications_config['iosNotifications']['apiKeyFile'])) {
+				 	$ios_key_file = __DIR__ . '/' . $notifications_config['iosNotifications']['apiKeyFile'];				   
+				} else {
+					$ios_key_file = dirname(__FILE__) . '/pushcert.pem'
+				}				
 				//http://stackoverflow.com/questions/21250510/generate-pem-file-used-to-setup-apple-push-notification
 				for($cnt = 0; $cnt < count($ios_ids); $cnt++) {
 					//See this for future ref: http://codular.com/sending-ios-push-notifications-with-php
@@ -227,7 +235,7 @@
 					$passphrase = 'apns';
 					//$message = 'test';										
 					$ctx = stream_context_create();
-					stream_context_set_option($ctx, 'ssl', 'local_cert', dirname(__FILE__) . '/pushcert.pem');		//pushcert.pem
+					stream_context_set_option($ctx, 'ssl', 'local_cert', $ios_key_file);		//pushcert.pem
 					stream_context_set_option($ctx, 'ssl', 'passphrase', $passphrase);
 					$fp = stream_socket_client('ssl://gateway.push.apple.com:2195', $err, $errstr, 60, STREAM_CLIENT_CONNECT|STREAM_CLIENT_PERSISTENT, $ctx);
 					$body['aps'] = $data->ios;		//Eg. array('alert' => $message,'sound' => 'default');

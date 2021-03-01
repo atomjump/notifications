@@ -3,6 +3,7 @@
     "apiKey": "Android Legacy (No longer used). E.g. AIzaSyD8TEjhUQDDUQirNIVMdVaHPsnLxt-ygjc",
     "staging": true,
     "iosAppLink": "https://itunes.apple.com/us/app/atomjump-messaging/id1153387200?ls=1&mt=8",
+    "streamingAppLink": "http://app-alpha.atomjump.com:8000",
     "androidAppLinkLegacy": "https://play.google.com/store/apps/details?id=com.atomjump.messaging",
     "androidAppLink": "https://play.google.com/store/apps/details?id=org.atomjump.messaging",
     "androidNotifications": {

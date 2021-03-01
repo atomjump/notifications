@@ -62,6 +62,44 @@
          		$ios_link = $this->notifications_config['iosAppLink'];
          	}
          	
+         	
+         	//Now check if can link to a full iOS app or whether we should link to the Streaming version
+         	$use_ios = false;
+         	$use_atomjump = false;
+         	
+         	if(isset($notifications_config['iosNotifications']) && 
+				isset($notifications_config['iosNotifications']['use'])) {
+			
+				if($notifications_config['iosNotifications']['use'] == true) {
+					$use_ios = true;
+				}
+			} else {
+				//Check legacy file exists
+				if(file_exists(__DIR__ . "/pushcert.pem")) {
+					$use_ios = true;
+				}
+			}
+         	
+         	if(isset($notifications_config['atomjumpNotifications']) && 
+				isset($notifications_config['atomjumpNotifications']['use'])) {
+			
+				if($notifications_config['atomjumpNotifications']['use'] == true) {
+					$use_atomjump = true;
+				}
+			}
+         	
+         	if(($use_atomjump == true)&&($use_ios == false)) {
+         		//Yes, change ios_link to the streaming link         	
+         		if(!$this->notifications_config['streamingAppLink']) {
+					$ios_link = "http://app-alpha.atomjump.com:8000";
+				} else {
+					$ios_link = $this->notifications_config['streamingAppLink'];
+				}
+         	
+         	}
+         	
+         	
+         	//Get the Android link         	
          	if(!$this->notifications_config['androidAppLink']) {
          		$android_link = "https://play.google.com/store/apps/details?id=org.atomjump.messaging";         
          	} else {
