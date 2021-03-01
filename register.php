@@ -240,8 +240,8 @@
 			<!-- Took from here 15 May 2014: http://ajax.googleapis.com/ajax/libs/jquery/1.9.1 -->
 
 			<!-- For the dropdown autocomplete -->
-			<link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
-			<script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+			<link rel="stylesheet" href="css/jquery-ui.css">
+			<script src="js/jquery-ui.js"></script>
 
 
 			<script>
