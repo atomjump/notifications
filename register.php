@@ -117,7 +117,7 @@
 	if(($user_id == "")||($user_email == "")) {
 		//A blank user id
 		$main_message = $notifications_config['msgs'][$lang]['notLoggedIn'];
-		$first_button = $follow_on_link;
+		$first_button = "#comment-open-Setup";
 		$first_button_wording = $notifications_config['msgs'][$lang]['openSetup'];
 		$follow_on_link = "#comment-open-Setup";
 		$second_button = "javascript: window.close();";
