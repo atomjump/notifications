@@ -110,7 +110,7 @@
 	}
 	
 	
-	
+	$center = "center";			//Default centering
 	
 	
 	
@@ -121,7 +121,8 @@
 		$first_button_wording = $notifications_config['msgs'][$lang]['openSetup'];
 		$follow_on_link = "#comment-open-Setup";
 		$second_button = "";	//"javascript: window.close()";
-		$second_button_wording = ""; //$notifications_config['msgs'][$lang]['returnToApp'];
+		$second_button_wording = ""; 
+		$center = "left";   //$notifications_config['msgs'][$lang]['returnToApp'];
 	} else {
 		//We have a user id		
 		$has_been_confirmed = false;
@@ -479,7 +480,7 @@
 				<div class="col-md-2">
 				</div>
 				 <div class="col-md-8">
-						<h3 align="center" style="color: #aaa;"><?php echo $main_message ?></h3>
+						<h3 align="<?php echo $center ?>" style="color: #aaa;"><?php echo $main_message ?></h3>
 				
 						<div class="form-row text-center">
     						<div class="col-12">
