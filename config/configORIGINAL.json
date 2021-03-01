@@ -44,7 +44,7 @@
     	"en":{
         	"getPopupNotifications": "Get popup notifications:",
         	"privateServerNote": "Note: Please set the 'Private Server' in your app login screen as:",
-        	"notLoggedIn": "Sorry, please login to your messaging forum: 1. Tap above, then 'Settings'<br/>2. Enter your email/password.</br>3. Close the forum, go 'Back to AtomJump'<br/>4. Logout in the app, and pair again.",
+        	"notLoggedIn": "Sorry, please login to your messaging forum:<br/>1. Tap above, then 'Settings'<br/>2. Enter your email/password.</br>3. Close the forum, go 'Back to AtomJump'<br/>4. Logout in the app, and pair again.",
         	"backHome": "Back to Home",
         	"openSetup": "Open Setup Forum",
         	"returnToApp": "Return to App",
