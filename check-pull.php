@@ -132,7 +132,7 @@
 				"ios" => $use_ios,
 				"android" => $use_android		
 			)		
-		)
+		);
 		
 		
 		
