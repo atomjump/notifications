@@ -44,13 +44,13 @@
     	"en":{
         	"getPopupNotifications": "Get popup notifications:",
         	"privateServerNote": "Note: Please set the 'Private Server' in your app login screen as:",
-          	"notLoggedIn": "Please login<br/>1. Tap 'go' above, then 'Settings'<br/>2. Enter your email/password.</br>3. Close the forum <img src='../../images/close.svg'>, tap <img src='img/chrome-back.png'> or <img src='img/iphone-back.png'><br/>4. Logout of the app, and pair again.",
+          	"notLoggedIn": "Please login<br/>1. Tap 'go' above, then 'Settings'<br/>2. Enter your email/password.</br>3. Close the forum <img src='../../images/close.svg'>, tap <img src='img/chrome-back.png' height='21' width='17'> or <img src='img/iphone-back.png'><br/>4. Logout of the app, and pair again.",
         	"backHome": "Back to Home",
         	"openSetup": "Open Setup Forum",
         	"returnToApp": "Return to App",
         	"appDeregistered": "Your app is now deregistered to this server. You will only receive email notifications.",
         	"deregister": "Deregister (use email notifications)",
-        	"appRegistered": "Your app is now registered to this server with the email [email]. To return to the app tap <img src='img/chrome-back.png' height='42' width=''> or <img src='img/iphone-back.png' height=''>",
+        	"appRegistered": "Your app is now registered to this server with the email [email]. To return to the app tap <img src='img/chrome-back.png' height='21' width='17'> or <img src='img/iphone-back.png' width='147' height='21'>",
         	"mustBeConfirmed": "Sorry, you will need to click the link in your activation email before you can log in to your account. We have sent another email with this link. If you are having trouble receiving this email, please get in touch with us."
         },
         "es":{
