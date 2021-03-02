@@ -197,6 +197,13 @@
 		}
 	}
 	
+	$subdomain = check_subdomain();
+	if($subdomain) {
+		$webroot = trim_trailing_slash(str_replace('[subdomain]',$subdomain,$cnf['webRoot']));
+	} else {
+		$webroot = trim_trailing_slash(str_replace('[subdomain]','',$cnf['webRoot']));
+	}
+	
 	
 	cors();
 
@@ -250,7 +257,7 @@
 					var ajFeedback = {
 						"uniqueFeedbackId" : "Setup",	//Anything globally unique to your company/page, starting with 'apix-'	
 						"myMachineUser" : "192.104.113.117:8",			
-						"server":  "<?php echo str_replace('[subdomain]','',$cnf['webRoot']); ?>",
+						"server":  "<?php $webroot ?>",
 						"cssFeedback": "css/comments-1.0.4.css?ver=1",
 						"cssBootstrap": "css/bootstrap.min.css"
 					}
