@@ -115,13 +115,15 @@
         },
         "fr": {
 			"getPopupNotifications": "Recevez des notifications contextuelles:",
-			"privateServerNote": "Remarque: veuillez définir le 'Private Server' sur l'écran de connexion de votre application comme suit:",
-			"notLoggedIn": "Désolé, veuillez vous connecter à votre forum de messagerie et réessayer.",
-			"backHome": "Retour à l'accueil",
-			"appDeregistered": "Votre application est désormais désinscrite sur ce serveur. Vous ne recevrez que des notifications par e-mail.",
+			"privateServerNote": "Remarque: veuillez définir le 'serveur privé' dans l'écran de connexion de votre application comme suit:",
+			"notLoggedIn": "<strong>Veuillez vous connecter</strong><br/>1. Appuyez sur <img src='https://atomjump.com/wp/wp-content/uploads/2018/12/speech-bubble-start-1.png ' width='30' height='30'>, puis <img src ='../../images/settings.svg' width='30' height='30'> <br/>2. Entrez votre adresse e-mail et votre mot de passe, enregistrez et appuyez sur <img src='../../images/ close.svg' width='16' height='16'>.</br>3. Revenir l'application en appuyant sur <img src='img/chrome-back.png' height='30' width='24'> ci-dessous ou <img src='img/iphone-back.png' width='147' height='21'> ci-dessus<br/>4. Déconnectez-vous de l'application et associez-la à nouveau.",
+			"backHome": "Messagerie Accueil",
+			"openSetup": "Ouvrir le forum de configuration",
+			"returnToApp": "Revenir à l'application",
+			"appDeregistered": "Votre application est désormais désinscrite sur ce serveur. Vous ne recevrez que des notifications par e-mail.</br></br>Pour revenir à l'application, appuyez sur <img src='img/chrome-back.png' height='30' width='24'> ci-dessous ou <img src='img/iphone-back.png' width='147' height='21'> ci-dessus.",
 			"deregister": "Se désinscrire (utiliser les notifications par e-mail)",
-			"appRegistered": "Votre application est maintenant enregistrée sur ce serveur avec l'e-mail",
-			"mustBeConfirmed": "Désolé, vous devrez cliquer sur le lien dans votre e-mail d'activation avant de pouvoir vous connecter à votre compte. Nous avons envoyé un autre e-mail contenant ce lien. Si vous ne parvenez pas à recevoir cet e-mail, veuillez contacter nous."
+			"appRegistered": "Votre application est maintenant enregistrée sur ce serveur avec l'e-mail [email].</br></br>Pour revenir à l'application, appuyez sur <img src='img/chrome-back.png' height='30' width='24'> ci-dessous ou <img src='img/iphone-back.png' width='147' height='21'> ci-dessus.",
+			"mustBeConfirmed": "Désolé, vous devrez cliquer sur le lien dans votre e-mail d'activation avant de pouvoir vous connecter à votre compte. Nous avons envoyé un autre e-mail contenant ce lien. Si vous ne parvenez pas à recevoir cet e-mail, veuillez contacter us.</br></br>Pour revenir à l'application, appuyez sur <img src='img/chrome-back.png' height='30' width='24'> ci-dessous ou <img src='img/iphone-back.png' width='147' height='21'> above."
         },
         "hi": {
 			"getPopupNotifications": "पॉपअप सूचनाएं प्राप्त करें:",
