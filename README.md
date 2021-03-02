@@ -44,6 +44,12 @@ sudo crontab -e
 0 0 * * *	/usr/bin/php /yourserverpath/plugins/notifications/check-load.php
 ```
 
+You may also need to manually add an outgoing folder that can be written to by the 'www-data' or Apache user:
+```
+sudo mkdir outgoing
+sudo chmod 777 outgoing
+```
+
 
 # Certificate Updates
 
