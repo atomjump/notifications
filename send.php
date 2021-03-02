@@ -225,7 +225,7 @@
 				   isset($notifications_config['iosNotifications']['apiKeyFile'])) {
 				 	$ios_key_file = __DIR__ . '/' . $notifications_config['iosNotifications']['apiKeyFile'];				   
 				} else {
-					$ios_key_file = dirname(__FILE__) . '/pushcert.pem'
+					$ios_key_file = dirname(__FILE__) . '/pushcert.pem';
 				}				
 				//http://stackoverflow.com/questions/21250510/generate-pem-file-used-to-setup-apple-push-notification
 				for($cnt = 0; $cnt < count($ios_ids); $cnt++) {
