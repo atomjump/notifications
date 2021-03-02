@@ -268,7 +268,7 @@
 											'observeUrl' => $data->android->observeUrl,
 											'removeUrl' => $data->android->removeUrl,
 											'removeMessage' => $data->android->removeMessage,
-											'content-available' => $data->android->content-available
+											'content-available' => $data->android->content->available
 										)
 									)
 								 );
@@ -308,7 +308,7 @@
 						$resp = post_multipart($post_url, $file, $upload_filename);
 					
 						//Then delete the created file:
-						unlink($filename);
+						unlink($file);
 					}
 				}
 			} else {
