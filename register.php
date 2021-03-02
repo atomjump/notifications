@@ -110,18 +110,19 @@
 	}
 	
 	
-	
+	$center = "center";			//Default centering
 	
 	
 	
 	if(($user_id == "")||($user_email == "")) {
 		//A blank user id
 		$main_message = $notifications_config['msgs'][$lang]['notLoggedIn'];
-		$first_button = $follow_on_link;
-		$first_button_wording = $notifications_config['msgs'][$lang]['backHome'];
+		$first_button = "#comment-open-Setup";
+		$first_button_wording = $notifications_config['msgs'][$lang]['openSetup'];
 		$follow_on_link = "#comment-open-Setup";
-		$second_button = "";
-		$second_button_wording = "";
+		$second_button = "";	//"javascript: window.close()";
+		$second_button_wording = ""; 
+		$center = "left";   //$notifications_config['msgs'][$lang]['returnToApp'];
 	} else {
 		//We have a user id		
 		$has_been_confirmed = false;
@@ -187,7 +188,7 @@
 				 if($user_email == "") {
 					$user_email = "[none]";
 				 }
-				 $main_message = $notifications_config['msgs'][$lang]['appRegistered'] . $user_email;
+				 $main_message = str_replace("[email]", $user_email,  $notifications_config['msgs'][$lang]['appRegistered']);
 				 $first_button = $unregister_link;
 				 $first_button_wording = $notifications_config['msgs'][$lang]['deregister'];
 				 $second_button = $follow_on_link;
@@ -479,7 +480,7 @@
 				<div class="col-md-2">
 				</div>
 				 <div class="col-md-8">
-						<h3 align="center" style="color: #aaa;"><?php echo $main_message ?></h3>
+						<h3 align="<?php echo $center ?>" style="color: #aaa;"><?php echo $main_message ?></h3>
 				
 						<div class="form-row text-center">
     						<div class="col-12">
