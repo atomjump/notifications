@@ -44,11 +44,11 @@
     	"en":{
         	"getPopupNotifications": "Get popup notifications:",
         	"privateServerNote": "Note: Please set the 'Private Server' in your app login screen as:",
-         	"notLoggedIn": "Please login<br/>1. Tap <img src='https://atomjump.com/wp/wp-content/uploads/2018/12/speech-bubble-start-1.png' width='30' height='30'>, then <img src='../../images/settings.svg' width='30' height='30'><br/>2. Enter your email and password, save, and tap <img src='../../images/close.svg' width='16' height='16'>.</br>3. Return to the app by tapping <img src='img/chrome-back.png' height='30' width='24'> below or <img src='img/iphone-back.png' width='147' height='21'> above<br/>4. Logout of the app, and pair again.",
+         	"notLoggedIn": "<strong>Please login</strong><br/>1. Tap <img src='https://atomjump.com/wp/wp-content/uploads/2018/12/speech-bubble-start-1.png' width='30' height='30'>, then <img src='../../images/settings.svg' width='30' height='30'><br/>2. Enter your email and password, save, and tap <img src='../../images/close.svg' width='16' height='16'>.</br>3. Return to the app by tapping <img src='img/chrome-back.png' height='30' width='24'> below or <img src='img/iphone-back.png' width='147' height='21'> above<br/>4. Logout of the app, and pair again.",
         	"backHome": "Messaging Home",
         	"openSetup": "Open Setup Forum",
         	"returnToApp": "Return to App",
-        	"appDeregistered": "Your app is now deregistered to this server. You will only receive email notifications.",
+        	"appDeregistered": "Your app is now deregistered to this server. You will only receive email notifications.</br></br> To return to the app tap <img src='img/chrome-back.png' height='30' width='24'> below or <img src='img/iphone-back.png' width='147' height='21'> above.",
         	"deregister": "Deregister (use email notifications)",
         	"appRegistered": "Your app is now registered to this server with the email [email].</br></br> To return to the app tap <img src='img/chrome-back.png' height='30' width='24'> below or <img src='img/iphone-back.png' width='147' height='21'> above.",
         	"mustBeConfirmed": "Sorry, you will need to click the link in your activation email before you can log in to your account. We have sent another email with this link. If you are having trouble receiving this email, please get in touch with us."
