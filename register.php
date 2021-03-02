@@ -199,9 +199,12 @@
 	
 	$subdomain = check_subdomain();
 	$webroot = trim_trailing_slash($cnf['webRoot']);
-	error_log($webroot);
-	if($subdomain) {
-		$webroot = trim_trailing_slash(str_replace('[subdomain]',$subdomain . "." ,$cnf['webRoot']));
+	error_log("Root:" . $webroot . "  subdomain:" . $subdomain);
+	
+	if(isset($subdomain)) {
+		$replace_with = $subdomain . ".";
+		error_log("Replace with:" . $replace_with);
+		$webroot = trim_trailing_slash(str_replace("[subdomain]", $replace_with,$webroot));
 	}
 	
 	
