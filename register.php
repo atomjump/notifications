@@ -207,6 +207,8 @@
 		$webroot = trim_trailing_slash(str_replace("[subdomain]", $replace_with,$webroot));
 	}
 	
+	error_log("Root is now:" . $webroot);
+	
 	
 	cors();
 
