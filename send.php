@@ -2,7 +2,7 @@
 	
 	//We are not going to display warnings, as this script will only be run if there
 	//is nothing returned on the command-line.
-	error_reporting(E_ERROR | E_PARSE);
+	//TESTING OUTerror_reporting(E_ERROR | E_PARSE);
 
 	
 	if(!isset($notifications_config)) {
@@ -270,17 +270,17 @@
 											'observeUrl' => $data->android->observeUrl,
 											'removeUrl' => $data->android->removeUrl,
 											'removeMessage' => $data->android->removeMessage,
-											'content-available' => $data->android->content->available
+											'contentAvailable' => $data->android->{'content-available'}
 										)
 									)
-								 );
-										 
+								 );		//Note: "content-available" is correct. That shouldn't be "content->available".
 							 
 						if($data->android->image) {
 							$post['data']['image'] = $data->android->image;
 						}
 					
-						$data = json_encode($post);
+						$output_data = json_encode($post);
+						echo $output_data;		//TESTING
 					
 						$arr = explode("#", $url);		//Get id after hash if there is one
 						$post_url = trim_trailing_slash_local($arr[0]);	//E.g. https://medimage-nz1.atomjump.com/api/photo		(without trailing slash)
@@ -306,7 +306,7 @@
 					
 						$file = $folder . $upload_filename;
 					
-						file_put_contents($file, $data);
+						file_put_contents($file, $output_data);
 
 				
 						$resp = post_multipart($post_url, $file, $upload_filename);
