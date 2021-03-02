@@ -1,6 +1,8 @@
 <?php
-
-
+	
+	//We are not going to display warnings, as this script will only be run if there
+	//is nothing returned on the command-line.
+	error_reporting(E_ERROR | E_PARSE);
 
 	
 	if(!isset($notifications_config)) {
@@ -296,7 +298,9 @@
 							}
 						}
 						
-						mkdir($folder);
+						if(!file_exists($folder)) {
+							mkdir($folder);
+						}
 					
 						$upload_filename = "#" . $last . "-" . $filename;
 					
