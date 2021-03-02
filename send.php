@@ -2,7 +2,7 @@
 	
 	//We are not going to display warnings, as this script will only be run if there
 	//is nothing returned on the command-line.
-	//TESTING OUTerror_reporting(E_ERROR | E_PARSE);
+	error_reporting(E_ERROR | E_PARSE);
 
 	
 	if(!isset($notifications_config)) {
@@ -280,7 +280,6 @@
 						}
 					
 						$output_data = json_encode($post);
-						echo $output_data;		//TESTING
 					
 						$arr = explode("#", $url);		//Get id after hash if there is one
 						$post_url = trim_trailing_slash_local($arr[0]);	//E.g. https://medimage-nz1.atomjump.com/api/photo		(without trailing slash)
