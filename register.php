@@ -198,14 +198,14 @@
 	}
 	
 	$subdomain = check_subdomain();
-	$webroot = trim_trailing_slash($cnf['webRoot']);
+	$webroot = trim_trailing_slash_local($cnf['webRoot']);
 	
-	if(isset($subdomain)) {
+	if((isset($subdomain))&&($subdomain != "")) {
 		$replace_with = $subdomain . ".";
-		$webroot = trim_trailing_slash(str_replace("[subdomain]", $replace_with,$webroot));
+		$webroot = trim_trailing_slash_local(str_replace("[subdomain]", $replace_with,$webroot));
 	} else {
-		$webroot = str_replace("[subdomain].", "",$webroot);		//Always remove this string if it exists
-	}
+		$webroot = str_replace("[subdomain]", "",$webroot);		//Always remove this string if it exists
+	}	
 	
 	
 	
