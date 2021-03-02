@@ -250,7 +250,7 @@
 					var ajFeedback = {
 						"uniqueFeedbackId" : "Setup",	//Anything globally unique to your company/page, starting with 'apix-'	
 						"myMachineUser" : "192.104.113.117:8",			
-						"server":  "<?php echo $cnf['webRoot'] ?>",
+						"server":  "<?php echo str_replace('[subdomain]','',$cnf['webRoot']); ?>",
 						"cssFeedback": "css/comments-1.0.4.css?ver=1",
 						"cssBootstrap": "css/bootstrap.min.css"
 					}
