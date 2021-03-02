@@ -204,7 +204,7 @@
 		$replace_with = $subdomain . ".";
 		$webroot = trim_trailing_slash(str_replace("[subdomain]", $replace_with,$webroot));
 	} else {
-		$webroot = str_replace("[subdomain]", "",$webroot);		//Always remove this string if it exists
+		$webroot = str_replace("[subdomain].", "",$webroot);		//Always remove this string if it exists
 	}
 	
 	
