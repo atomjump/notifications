@@ -73,7 +73,7 @@
 			"openSetup": "Fórum de configuração aberta",
 		   	"returnToApp": "Retornar ao aplicativo",
 			"appDeregistered": "Seu aplicativo foi cancelado neste servidor. Você receberá apenas notificações por e-mail.<br/><br/>Para retornar ao aplicativo, toque em <img src='img/iphone-back.png' width='147' height='21'> acima ou <img src='img/chrome-back.png' height='30' width='24'> abaixo.",
-			"cancelar registro": "Cancelar registro (usar notificações por e-mail)",
+			"deregister": "Cancelar registro (usar notificações por e-mail)",
 			"appRegistered": "Seu aplicativo agora está registrado neste servidor com o e-mail [e-mail].<br/><br/>Para retornar ao aplicativo, toque em <img src='img/iphone-back.png' width='147' height='21'> acima ou <img src='img/chrome-back.png' height='30' width='24'> abaixo.",
 			"mustBeConfirmed": "Desculpe, você precisará clicar no link em seu e-mail de ativação antes de fazer login em sua conta. Enviamos outro e-mail com este link. Se você estiver tendo problemas para receber este e-mail, entre em contato com us.<br/><br/>Para retornar ao aplicativo, toque em <img src='img/iphone-back.png' width='147' height='21'> acima ou <img src='img/chrome-back.png' height='30' width='24'> abaixo."
         },
@@ -119,9 +119,9 @@
 			 "notLoggedIn": "<strong>Pairing fehlgeschlagen. Bitte anmelden</strong><br/>1. Tippen Sie auf <img src='https://atomjump.com/wp/wp-content/uploads/2018/12/speech-bubble-start-1.png' width='30' height='30'>, dann <img src='../../images/settings.svg' width='30' height='30'><br/>2. Geben Sie Ihre E-Mail-Adresse und Ihr Passwort ein, speichern Sie und tippen Sie auf <img src='../../images/close.svg' width='16' height='16'>.<br/>3. Kehren Sie zur App zurück, indem Sie oben auf <img src='img/iphone-back.png' width='147' height='21'> oder <img src='img/chrome-back.png' height='30' width='24'> unten<br/>4. Melden Sie sich von der App ab und koppeln Sie erneut.",
 			"backHome": "Messaging Home",
 			"openSetup": "Öffnen Sie das Setup-Forum",
-			 "returnToApp": "Zurück zur App",
+			"returnToApp": "Zurück zur App",
 			"appDeregistered": "Ihre App ist jetzt von diesem Server abgemeldet. Sie erhalten nur E-Mail-Benachrichtigungen. <br/><br/> Um zur App zurückzukehren, tippen Sie auf <img src='img/iphone-back.png' width='147' height='21'> oben oder <img src='img/chrome-back.png' height='30' width='24'> unten.",
-			"Abmelden": "Abmelden (E-Mail-Benachrichtigungen verwenden)",
+			"deregister": "Abmelden (E-Mail-Benachrichtigungen verwenden)",
 			"appRegistered": "Ihre App ist jetzt mit der E-Mail [email] auf diesem Server registriert. <br/><br/> Um zur App zurückzukehren, tippen Sie auf <img src='img/iphone-back.png' width='147' height='21'> oben oder <img src='img/chrome-back.png' height='30' width='24'> unten.",
 			"mustBeConfirmed": "Entschuldigung, Sie müssen auf den Link in Ihrer Aktivierungs-E-Mail klicken, bevor Sie sich in Ihrem Konto anmelden können. Wir haben eine weitere E-Mail mit diesem Link gesendet. Wenn Sie Probleme beim Empfang dieser E-Mail haben, setzen Sie sich bitte mit uns in Verbindung us.<br/><br/>Um zur App zurückzukehren, tippen Sie oben auf <img src='img/iphone-back.png' width='147' height='21'> oder <img src='img/chrome-back.png' height='30' width='24'> unten."
         },
@@ -139,7 +139,7 @@
         },
         "hi": {
 			"getPopupNotifications": "पॉपअप सूचनाएं प्राप्त करें:",
-			"PrivateServerNote": "नोट: कृपया अपने एप्लिकेशन लॉगिन स्क्रीन में 'निजी सर्वर' को इस रूप में सेट करें:",
+			"privateServerNote": "नोट: कृपया अपने एप्लिकेशन लॉगिन स्क्रीन में 'निजी सर्वर' को इस रूप में सेट करें:",
 			 "notLoggedIn": "<strong>असफल होना। कृपया लॉग इन करें </ strong><br/>1. टैप करें <img src='https://atomjump.com/wp/wp-content/uploads/2018/12/speech-bubble-start-1.png' width='30' height='30'>, फिर <img src='../../images/settings.svg' width='30' height='30'><br/>2. अपना ईमेल और पासवर्ड दर्ज करें, सहेजें, और टैप करें <img src='../../images/close.svg' width='16' height='16'><br/>3. <img src='img/iphone-back.png' width='147' height='21'> ऊपर, या <img src='img/chrome-back.png' height='30' width='24'> नीचे<br/>4. एप्लिकेशन का लॉगआउट, और फिर से जोड़ी। ",
 			"backHome": "मैसेजिंग होम",
 			"openSetup": "ओपन सेटअप फोरम",
@@ -157,7 +157,7 @@
 			"openSetup": "Buka Forum Pengaturan",
 			"returnToApp": "Kembali ke Aplikasi",
 			"appDeregistered": "Aplikasi Anda sekarang dibatalkan pendaftarannya ke server ini. Anda hanya akan menerima notifikasi email.<br/><br/>Untuk kembali ke aplikasi, ketuk <img src='img/iphone-back.png' width='147' height='21'> di atas, atau <img src='img/chrome-back.png' height='30' width='24'> di bawah.",
-			"batalkan pendaftaran": "Batalkan pendaftaran (gunakan pemberitahuan email)",
+			"deregister": "Batalkan pendaftaran (gunakan pemberitahuan email)",
 			"appRegistered": "Aplikasi Anda sekarang terdaftar ke server ini dengan email [email].<br/><br/>Untuk kembali ke aplikasi, ketuk <img src='img/iphone-back.png' width='147' height='21'> di atas, atau <img src='img/chrome-back.png' height='30' width='24'> di bawah.",
 			"mustBeConfirmed": "Maaf, Anda harus mengeklik tautan di email aktivasi Anda sebelum Anda dapat masuk ke akun Anda. Kami telah mengirim email lain dengan tautan ini. Jika Anda mengalami masalah dalam menerima email ini, silakan hubungi us.<br/><br/>Untuk kembali ke aplikasi, ketuk <img src='img/iphone-back.png' width='147' height='21'> di atas, atau <img src='img/chrome-back.png' height='30' width='24'> di bawah."
         },
@@ -205,7 +205,7 @@
 			"openSetup": "ਓਪਨ ਸੈਟਅਪ ਫੋਰਮ",
 			"returnToApp": "ਐਪ ਤੇ ਵਾਪਸ",
 			"appDeregistered": "ਤੁਹਾਡੀ ਐਪ ਹੁਣ ਇਸ ਸਰਵਰ ਨਾਲ ਰਜਿਸਟਰਡ ਹੈ. ਤੁਸੀਂ ਸਿਰਫ ਈਮੇਲ ਨੋਟੀਫਿਕੇਸ਼ਨ ਪ੍ਰਾਪਤ ਕਰੋਗੇ.<br/><br/>ਐਪ ਤੇ ਵਾਪਸ ਜਾਣ ਲਈ <img src='img/iphone-back.png' width='147' height='21'> ਉੱਪਰ, ਜਾਂ <img src='img/chrome-back.png' height='30' width='24'> ਹੇਠਾਂ। ",
-			"deregisterੋ": "ਡੀਰੀਜਿਸਟਰ ਕਰੋ (ਈਮੇਲ ਸੂਚਨਾਵਾਂ ਵਰਤੋ)",
+			"deregister": "ਡੀਰੀਜਿਸਟਰ ਕਰੋ (ਈਮੇਲ ਸੂਚਨਾਵਾਂ ਵਰਤੋ)",
 			"appRegistered": "ਤੁਹਾਡੀ ਐਪ ਹੁਣ ਇਸ ਸਰਵਰ ਨਾਲ ਈਮੇਲ [email] ਨਾਲ ਰਜਿਸਟਰ ਕੀਤੀ ਗਈ ਹੈ.<br/><br/>ਐਪ ਤੇ ਵਾਪਸ ਜਾਣ ਲਈ <img src='img/iphone-back.png' width='147' height='21'> ਉੱਪਰ, ਜਾਂ <img src='img/chrome-back.png' height='30' width='24'> ਹੇਠਾਂ। ",
 			"mustBeConfirmed": "ਮੁਆਫ ਕਰਨਾ, ਤੁਹਾਨੂੰ ਆਪਣੇ ਅਕਾationਟਮੈਂਟ ਈਮੇਲ ਦੇ ਲਿੰਕ ਤੇ ਕਲਿਕ ਕਰਨ ਦੀ ਜ਼ਰੂਰਤ ਹੋਏਗੀ ਇਸ ਤੋਂ ਪਹਿਲਾਂ ਕਿ ਤੁਸੀਂ ਆਪਣੇ ਖਾਤੇ ਵਿੱਚ ਲੌਗ ਇਨ ਕਰੋ. ਅਸੀਂ ਇਸ ਲਿੰਕ ਦੇ ਨਾਲ ਇੱਕ ਹੋਰ ਈਮੇਲ ਭੇਜੀ ਹੈ. ਜੇ ਤੁਹਾਨੂੰ ਇਹ ਈਮੇਲ ਪ੍ਰਾਪਤ ਕਰਨ ਵਿੱਚ ਮੁਸ਼ਕਲ ਆ ਰਹੀ ਹੈ, ਤਾਂ ਕਿਰਪਾ ਕਰਕੇ ਸੰਪਰਕ ਕਰੋ. ਯੂ.<br/><br/>ਐਪ ਤੇ ਵਾਪਸ ਜਾਣ ਲਈ <img src='img/iphone-back.png' width='147' height='21'> ਉੱਪਰ, ਜਾਂ <img src='img/chrome-back.png' height='30' width='24'> ਹੇਠਾਂ. "
         },
