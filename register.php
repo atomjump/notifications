@@ -302,7 +302,7 @@
 
         		.darkoverlay {
         			position: relative;
-        			top: 200px;
+        			top: 100px;
         			width: 100%;
         			background-color: black;
         			opacity: 0.5;
