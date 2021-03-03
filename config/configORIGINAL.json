@@ -120,10 +120,10 @@
 			"backHome": "Messaging Home",
 			"openSetup": "Öffnen Sie das Setup-Forum",
 			 "returnToApp": "Zurück zur App",
-			"appDeregistered": "Ihre App ist jetzt von diesem Server abgemeldet. Sie erhalten nur E-Mail-Benachrichtigungen. </ br> </ br> Um zur App zurückzukehren, tippen Sie auf <img src='img/iphone-back.png' width='147' height='21'> oben oder <img src='img/chrome-back.png' height='30' width='24'> unten.",
+			"appDeregistered": "Ihre App ist jetzt von diesem Server abgemeldet. Sie erhalten nur E-Mail-Benachrichtigungen. <br/><br/> Um zur App zurückzukehren, tippen Sie auf <img src='img/iphone-back.png' width='147' height='21'> oben oder <img src='img/chrome-back.png' height='30' width='24'> unten.",
 			"Abmelden": "Abmelden (E-Mail-Benachrichtigungen verwenden)",
-			"appRegistered": "Ihre App ist jetzt mit der E-Mail [email] auf diesem Server registriert. </ br> </ br> Um zur App zurückzukehren, tippen Sie auf <img src='img/iphone-back.png' width='147' height='21'> oben oder <img src='img/chrome-back.png' height='30' width='24'> unten.",
-			"mustBeConfirmed": "Entschuldigung, Sie müssen auf den Link in Ihrer Aktivierungs-E-Mail klicken, bevor Sie sich in Ihrem Konto anmelden können. Wir haben eine weitere E-Mail mit diesem Link gesendet. Wenn Sie Probleme beim Empfang dieser E-Mail haben, setzen Sie sich bitte mit uns in Verbindung us.<br/><br/>Um zur App zurückzukehren, tippen Sie oben auf <img src='img/iphone-back.png' width='147' height='21'> oder <img src='img/chrome-back.png' height='30' width='24'> unten. "
+			"appRegistered": "Ihre App ist jetzt mit der E-Mail [email] auf diesem Server registriert. <br/><br/> Um zur App zurückzukehren, tippen Sie auf <img src='img/iphone-back.png' width='147' height='21'> oben oder <img src='img/chrome-back.png' height='30' width='24'> unten.",
+			"mustBeConfirmed": "Entschuldigung, Sie müssen auf den Link in Ihrer Aktivierungs-E-Mail klicken, bevor Sie sich in Ihrem Konto anmelden können. Wir haben eine weitere E-Mail mit diesem Link gesendet. Wenn Sie Probleme beim Empfang dieser E-Mail haben, setzen Sie sich bitte mit uns in Verbindung us.<br/><br/>Um zur App zurückzukehren, tippen Sie oben auf <img src='img/iphone-back.png' width='147' height='21'> oder <img src='img/chrome-back.png' height='30' width='24'> unten."
         },
         "fr": {
 			"getPopupNotifications": "Recevez des notifications contextuelles:",
@@ -132,7 +132,7 @@
 			"backHome": "Messagerie Accueil",
 			"openSetup": "Ouvrir le forum de configuration",
 			"returnToApp": "Revenir à l'application",
-			"appDeregistered": "Votre application est désormais désinscrite sur ce serveur. Vous ne recevrez que des notifications par e-mail.<br/><br/>Pour revenir à l'application, appuyez sur <img src='img/iphone-back.png' width='147' height='21'> ci-dessus, ou <img src='img/chrome-back.png' height='30' width='24'> ci-dessous. ",
+			"appDeregistered": "Votre application est désormais désinscrite sur ce serveur. Vous ne recevrez que des notifications par e-mail.<br/><br/>Pour revenir à l'application, appuyez sur <img src='img/iphone-back.png' width='147' height='21'> ci-dessus, ou <img src='img/chrome-back.png' height='30' width='24'> ci-dessous.",
 			"deregister": "Se désinscrire (utiliser les notifications par e-mail)",
 			"appRegistered": "Votre application est maintenant enregistrée sur ce serveur avec l'e-mail [email].<br/><br/>Pour revenir à l'application, appuyez sur <img src='img/iphone-back.png' width='147' height='21'> ci-dessus, ou <img src='img/chrome-back.png' height='30' width='24'> ci-dessous.",
 			"mustBeConfirmed": "Désolé, vous devrez cliquer sur le lien dans votre e-mail d'activation avant de pouvoir vous connecter à votre compte. Nous avons envoyé un autre e-mail contenant ce lien. Si vous ne parvenez pas à recevoir cet e-mail, veuillez contacter us.<br/><br/>Pour revenir à l'application, appuyez sur <img src='img/iphone-back.png' width='147' height='21'> ci-dessus, ou <img src='img/chrome-back.png' height='30' width='24'> below. " 
