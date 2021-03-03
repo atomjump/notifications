@@ -104,7 +104,7 @@
 		"bg": {
 			"getPopupNotifications": "পপআপ বিজ্ঞপ্তি পান:",
 			"privateServerNote": "দ্রষ্টব্য: দয়া করে আপনার অ্যাপ্লিকেশন লগইন স্ক্রিনে 'ব্যক্তিগত সার্ভার' সেট করুন:",
-			 "notLoggedIn": "<strong>জুটি করা অসফল হয়েছে Please <img src='https://atomjump.com/wp/wp-content/uploads/2018/12/speech-bubble-start-1.png' width='30' height='30'>, তারপরে <img src='../../images/settings.svg' width='30' height='30'><br/>২. আপনার ইমেল এবং পাসওয়ার্ড লিখুন, সংরক্ষণ করুন এবং <img src='../../images/close.svg' width='16' height='16'> আলতো চাপুন<br/><br/>3. । উপরে <img src='img/iphone-back.png' width='147' height='21'> এ, বা <img src='img/chrome-back.png' height='30' width='24'> এর নীচে<br/>4. অ্যাপ্লিকেশনটির লগআউট করুন এবং আবার জোড় করুন ",
+			 "notLoggedIn": "<strong>ব্যয় করা অসফল। দয়া করে লগইন করুন</strong><br/>1. <img src='https://atomjump.com/wp/wp-content/uploads/2018/12/speech-bubble-start-1.png' width='30' height='30'>, তারপরে <img src='../../images/settings.svg' width='30' height='30'><br/>২. আপনার ইমেল এবং পাসওয়ার্ড লিখুন, সংরক্ষণ করুন এবং <img src='../../images/close.svg' width='16' height='16'> আলতো চাপুন<br/><br/>3. । উপরে <img src='img/iphone-back.png' width='147' height='21'> এ, বা <img src='img/chrome-back.png' height='30' width='24'> এর নীচে<br/>4. অ্যাপ্লিকেশনটির লগআউট করুন এবং আবার জোড় করুন ",
 			"backHome": "মেসেজিং হোম",
 			"openSetup": "ওপেন সেটআপ ফোরাম",
 			"returnToApp": "অ্যাপটিতে ফিরে যান",
