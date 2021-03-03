@@ -68,47 +68,47 @@
         "pt": {
 			"getPopupNotifications": "Receba notificações pop-up:",
 			"privateServerNote": "Observação: defina o 'Servidor privado' na tela de login do seu aplicativo como:",
-			 "notLoggedIn": "<strong> Falha de emparelhamento. Faça login </strong> <br/> 1. Toque em <img src='https://atomjump.com/wp/wp-content/uploads/2018/12/speech-bubble-start-1.png' width='30' height='30'>, então <img src='../../images/settings.svg' width='30' height='30'> <br/> 2. Digite seu e-mail e senha, salve e toque em <img src='../../images/close.svg' width='16' height='16'>. </br> 3 . Retorne ao aplicativo tocando em <img src='img/iphone-back.png' width='147' height='21'> acima ou <img src='img/chrome-back.png' height='30' width='24'> abaixo <br/> 4. Saia do aplicativo e emparelhe novamente. ",
+			 "notLoggedIn": "<strong> Falha de emparelhamento. Faça login </strong> <br/> 1. Toque em <img src='https://atomjump.com/wp/wp-content/uploads/2018/12/speech-bubble-start-1.png' width='30' height='30'>, então <img src='../../images/settings.svg' width='30' height='30'> <br/> 2. Digite seu e-mail e senha, salve e toque em <img src='../../images/close.svg' width='16' height='16'>. </br> 3 . Retorne ao aplicativo tocando em <img src='img/iphone-back.png' width='147' height='21'> acima ou <img src='img/chrome-back.png' height='30' width='24'> abaixo <br/> 4. Saia do aplicativo e emparelhe novamente.",
 			"backHome": "Messaging Home",
 			"openSetup": "Open Setup Forum",
 		   	"returnToApp": "Retornar ao aplicativo",
-			"appDeregistered": "Seu aplicativo foi cancelado neste servidor. Você receberá apenas notificações por e-mail. </br> </br> Para retornar ao aplicativo, toque em <img src='img/iphone-back.png' width='147' height='21'> acima ou <img src='img/chrome-back.png' height='30' width='24'> abaixo. ",
+			"appDeregistered": "Seu aplicativo foi cancelado neste servidor. Você receberá apenas notificações por e-mail.</br></br> Para retornar ao aplicativo, toque em <img src='img/iphone-back.png' width='147' height='21'> acima ou <img src='img/chrome-back.png' height='30' width='24'> abaixo.",
 			"cancelar registro": "Cancelar registro (usar notificações por e-mail)",
-			"appRegistered": "Seu aplicativo agora está registrado neste servidor com o e-mail [e-mail]. </br> </br> Para retornar ao aplicativo, toque em <img src='img/iphone-back.png' width='147' height='21'> acima ou <img src='img/chrome-back.png' height='30' width='24'> abaixo. ",
-			"mustBeConfirmed": "Desculpe, você precisará clicar no link em seu e-mail de ativação antes de fazer login em sua conta. Enviamos outro e-mail com este link. Se você estiver tendo problemas para receber este e-mail, entre em contato com us. </br> </br> Para retornar ao aplicativo, toque em <img src='img/iphone-back.png' width='147' height='21'> acima ou <img src='img/chrome-back.png' height='30' width='24'> abaixo. "
+			"appRegistered": "Seu aplicativo agora está registrado neste servidor com o e-mail [e-mail]. </br></br> Para retornar ao aplicativo, toque em <img src='img/iphone-back.png' width='147' height='21'> acima ou <img src='img/chrome-back.png' height='30' width='24'> abaixo.",
+			"mustBeConfirmed": "Desculpe, você precisará clicar no link em seu e-mail de ativação antes de fazer login em sua conta. Enviamos outro e-mail com este link. Se você estiver tendo problemas para receber este e-mail, entre em contato com us. </br> </br> Para retornar ao aplicativo, toque em <img src='img/iphone-back.png' width='147' height='21'> acima ou <img src='img/chrome-back.png' height='30' width='24'> abaixo."
         },
         "ch": {
 			"getPopupNotifications":"获取弹出通知：",
 			"privateServerNote":"注意：请在您的应用程序登录屏幕中将'Private Server'设置为：",
-			 "notLoggedIn":" <strong>配对失败。请登录</ strong> <br/> 1.点击<img src='https://atomjump.com/wp/wp-content/uploads/2018/12/speech-bubble-start-1.png' width='30' height='30'>，然后<img src='../../images/settings.svg' width='30' height='30'> <br/> 2.输入您的电子邮件和密码，保存，然后点击<img src='../../images/close.svg' width='16' height='16'>。</br> 3通过点击上方的<img src='img/iphone-back.png' width='147' height='21'>或点击<img src='img/chrome-back.png' height='30' width='24'>下面<br/> 4.注销该应用，然后再次配对。",
+			 "notLoggedIn":" <strong>配对失败。请登录</strong> <br/> 1.点击<img src='https://atomjump.com/wp/wp-content/uploads/2018/12/speech-bubble-start-1.png' width='30' height='30'>，然后<img src='../../images/settings.svg' width='30' height='30'><br/> 2.输入您的电子邮件和密码，保存，然后点击<img src='../../images/close.svg' width='16' height='16'>。</br> 3.通过点击上方的<img src='img/iphone-back.png' width='147' height='21'>或点击<img src='img/chrome-back.png' height='30' width='24'>下面<br/> 4.注销该应用，然后再次配对。",
 			"backHome":"消息传递家",
 			"openSetup":" Open Setup Forum",
 			"returnToApp":"返回到应用",
-			"appDeregistered":"您的应用程序现已注销到该服务器。您将仅收到电子邮件通知。</br> </br>要返回到该应用程序，请点击<img src='img/iphone-back.png' width='147' height='21'>，或下方为<img src='img/chrome-back.png' height='30' width='24'>。",
+			"appDeregistered":"您的应用程序现已注销到该服务器。您将仅收到电子邮件通知。</br></br>要返回到该应用程序，请点击<img src='img/iphone-back.png' width='147' height='21'>，或下方为<img src='img/chrome-back.png' height='30' width='24'>。",
 			"deregister":"取消注册（使用电子邮件通知）",
 			"appRegistered":"您的应用程序现已通过电子邮件[email]注册到此服务器。</br> </br>要返回到该应用程序，请点击<img src='img/iphone-back.png' width='147' height='21'>，或下方<img src='img/chrome-back.png' height='30' width='24'>。",
-			"mustBeConfirmed":"对不起，您需要先单击激活电子邮件中的链接，然后才能登录到您的帐户。我们已经通过该链接发送了另一封电子邮件。如果您在接收此电子邮件时遇到问题，请与我们联系我们。</br> </br>要返回到应用程序，请点击上方的<img src='img/iphone-back.png' width='147' height='21'>，或点击<img src='img/chrome-back.png' height='30' width='24'>下面。"
+			"mustBeConfirmed":"对不起，您需要先单击激活电子邮件中的链接，然后才能登录到您的帐户。我们已经通过该链接发送了另一封电子邮件。如果您在接收此电子邮件时遇到问题，请与我们联系我们。</br></br>要返回到应用程序，请点击上方的<img src='img/iphone-back.png' width='147' height='21'>，或点击<img src='img/chrome-back.png' height='30' width='24'>下面。"
         },
          "cht": {
 			"getPopupNotifications":"獲取彈出通知：",
 			"privateServerNote":"注意：請在您的應用程序登錄屏幕中將'Private Server'設置為：",
-			 "notLoggedIn":" <strong>配對失敗。請登錄</ strong> <br/> 1.點擊<img src='https://atomjump.com/wp/wp-content/uploads/2018/12/speech-bubble-start-1.png' width='30' height='30'>，然後<img src='../../images/settings.svg' width='30' height='30'> <br/> 2.輸入您的電子郵件和密碼，保存，然後點擊<img src='../../images/close.svg' width='16' height='16'>。</br> 3通過點擊上方的<img src='img/iphone-back.png' width='147' height='21'>或點擊<img src='img/chrome-back.png' height='30' width='24'>下面<br/> 4.註銷該應用，然後再次配對。",
+			 "notLoggedIn":" <strong>配對失敗。請登錄</ strong> <br/> 1.點擊<img src='https://atomjump.com/wp/wp-content/uploads/2018/12/speech-bubble-start-1.png' width='30' height='30'>，然後<img src='../../images/settings.svg' width='30' height='30'> <br/> 2.輸入您的電子郵件和密碼，保存，然後點擊<img src='../../images/close.svg' width='16' height='16'>。</br> 3.通過點擊上方的<img src='img/iphone-back.png' width='147' height='21'>或點擊<img src='img/chrome-back.png' height='30' width='24'>下面<br/> 4.註銷該應用，然後再次配對。",
 			"backHome":"消息傳遞家",
 			"openSetup":" Open Setup Forum",
 		   "returnToApp":"返回到應用",
-			"appDeregistered":"您的應用程序現已註銷到該服務器。您將僅收到電子郵件通知。</br> </br>要返回到該應用程序，請點擊<img src='img/iphone-back.png' width='147' height='21'>，或下方為<img src='img/chrome-back.png' height='30' width='24'>。",
+			"appDeregistered":"您的應用程序現已註銷到該服務器。您將僅收到電子郵件通知。</br></br>要返回到該應用程序，請點擊<img src='img/iphone-back.png' width='147' height='21'>，或下方為<img src='img/chrome-back.png' height='30' width='24'>。",
 			"deregister":"取消註冊（使用電子郵件通知）",
 			"appRegistered":"您的應用程序現已通過電子郵件[email]註冊到此服務器。</br> </br>要返回到該應用程序，請點擊<img src='img/iphone-back.png' width='147' height='21'>，或下方<img src='img/chrome-back.png' height='30' width='24'>。",
-			"mustBeConfirmed":"對不起，您需要先單擊激活電子郵件中的鏈接，然後才能登錄到您的帳戶。我們已經通過該鏈接發送了另一封電子郵件。如果您在接收此電子郵件時遇到問題，請與我們聯繫我們。</br> </br>要返回到應用程序，請點擊上方的<img src='img/iphone-back.png' width='147' height='21'>，或點擊<img src='img/chrome-back.png' height='30' width='24'>下面。"        
+			"mustBeConfirmed":"對不起，您需要先單擊激活電子郵件中的鏈接，然後才能登錄到您的帳戶。我們已經通過該鏈接發送了另一封電子郵件。如果您在接收此電子郵件時遇到問題，請與我們聯繫我們。</br></br>要返回到應用程序，請點擊上方的<img src='img/iphone-back.png' width='147' height='21'>，或點擊<img src='img/chrome-back.png' height='30' width='24'>下面。"        
         },
 		"bg": {
 			"getPopupNotifications": "পপআপ বিজ্ঞপ্তি পান:",
 			"privateServerNote": "দ্রষ্টব্য: দয়া করে আপনার অ্যাপ্লিকেশন লগইন স্ক্রিনে 'ব্যক্তিগত সার্ভার' সেট করুন:",
-			 "notLoggedIn": "<strong> জুটি করা অসফল হয়েছে Please -bubble-start-1.png 'প্রস্থ = '30' উচ্চতা = '30 '>, তারপরে <img src =' .. / .. / চিত্র / সেটিংস.এসভিজি 'প্রস্থ = '30' উচ্চতা = '30 '> <br/> ২. আপনার ইমেল এবং পাসওয়ার্ড লিখুন, সংরক্ষণ করুন এবং <img src='../../images/close.svg' width='16' height='16'> আলতো চাপুন </ </ বি>> 3 । উপরে <img src='img/iphone-back.png' width='147' height='21'> এ, বা <img src='img/chrome-back.png' height='30' width='24'> এর নীচে <br/> 4. অ্যাপ্লিকেশনটির লগআউট করুন এবং আবার জোড় করুন ",
+			 "notLoggedIn": "<strong> জুটি করা অসফল হয়েছে Please <img src='https://atomjump.com/wp/wp-content/uploads/2018/12/speech-bubble-start-1.png' width='30' height='30'>, তারপরে <img src='../../images/settings.svg' width='30' height='30'> <br/> ২. আপনার ইমেল এবং পাসওয়ার্ড লিখুন, সংরক্ষণ করুন এবং <img src='../../images/close.svg' width='16' height='16'> আলতো চাপুন </br></br> বি>> 3. । উপরে <img src='img/iphone-back.png' width='147' height='21'> এ, বা <img src='img/chrome-back.png' height='30' width='24'> এর নীচে <br/> 4. অ্যাপ্লিকেশনটির লগআউট করুন এবং আবার জোড় করুন ",
 			"backHome": "মেসেজিং হোম",
 			"openSetup": "ওপেন সেটআপ ফোরাম",
 			"returnToApp": "অ্যাপটিতে ফিরে যান",
-			"appDeregistered": "আপনার অ্যাপ্লিকেশনটি এখন এই সার্ভারে নিবন্ধভুক্ত। আপনি কেবল ইমেল বিজ্ঞপ্তিগুলি পাবেন </ </ BR> </ b> অ্যাপটিতে ফিরে আসতে <img src='img/iphone-back.png' width='147' height='21'> উপরে, বা <img src='img/chrome-back.png' height='30' width='24'> নীচে ",
+			"appDeregistered": "আপনার অ্যাপ্লিকেশনটি এখন এই সার্ভারে নিবন্ধভুক্ত। আপনি কেবল ইমেল বিজ্ঞপ্তিগুলি পাবেন </br></br> অ্যাপটিতে ফিরে আসতে <img src='img/iphone-back.png' width='147' height='21'> উপরে, বা <img src='img/chrome-back.png' height='30' width='24'> নীচে ",
 			"deregister": "নিবন্ধন করুন (ইমেল বিজ্ঞপ্তি ব্যবহার করুন)",
 			"appRegistered": "আপনার অ্যাপ্লিকেশনটি এখন এই সার্ভারে ইমেল [email] সহ নিবন্ধিত হয়েছে </br></br> অ্যাপটিতে ফিরে আসতে <img src='img/iphone-back.png' width='147' height='21'> উপরে, বা <img src='img/chrome-back.png' height='30' width='24'> নীচে ",
 			"mustBeConfirmed": "দুঃখিত, আপনি নিজের অ্যাকাউন্টে লগ ইন করার আগে আপনাকে আপনার অ্যাক্টিভেশন ইমেলের লিংকটি ক্লিক করতে হবে this আমরা এই লিঙ্কটি সহ আরও একটি ইমেল প্রেরণ করেছি this যদি আপনাকে এই ইমেলটি পেতে সমস্যা হয় তবে দয়া করে যোগাযোগ করুন please আমাদের </ </ b> </ b> অ্যাপটিতে ফিরে আসতে <img src='img/iphone-back.png' width='147' height='21'> উপরে, বা <img src='img/chrome-back.png' height='30' width='24'> নীচে। "
