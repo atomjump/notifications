@@ -489,7 +489,7 @@
 		<div>
 			
 		    <div id="logo-wrapper" class="looplogo comment-open">
-					<img class="saver-hideable" src="https://atomjump.com/wp/wp-content/uploads/2018/12/speech-bubble-start-1.png" id="bg" alt=""  width="600" height="600">
+					<img class="saver-hideable" src="https://atomjump.com/wp/wp-content/uploads/2018/12/speech-bubble-start-1.png" id="bg" alt="">
 			</div>
 		</div>
    		
