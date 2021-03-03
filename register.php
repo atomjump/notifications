@@ -481,11 +481,11 @@
 		
 
 		<div>
+			<a href="<?php echo $follow_on_link ?>" style="width:600px; height:600px;">
 		    <div id="logo-wrapper" class="looplogo">
-				<a href="<?php echo $follow_on_link ?>" style="width:600px; height:600px;">
 					<img class="saver-hideable" src="https://atomjump.com/wp/wp-content/uploads/2018/12/speech-bubble-start-1.png" id="bg" alt=""  width="600" height="600">
-				</a>
 			</div>
+			</a>
 		</div>
    		
    		<div class="container-fluid">
