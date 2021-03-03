@@ -1,6 +1,8 @@
 <?php
-
-
+	
+	//We are not going to display warnings, as this script will only be run if there
+	//is nothing returned on the command-line.
+	error_reporting(E_ERROR | E_PARSE);
 
 	
 	if(!isset($notifications_config)) {
@@ -225,7 +227,7 @@
 				   isset($notifications_config['iosNotifications']['apiKeyFile'])) {
 				 	$ios_key_file = __DIR__ . '/' . $notifications_config['iosNotifications']['apiKeyFile'];				   
 				} else {
-					$ios_key_file = dirname(__FILE__) . '/pushcert.pem'
+					$ios_key_file = dirname(__FILE__) . '/pushcert.pem';
 				}				
 				//http://stackoverflow.com/questions/21250510/generate-pem-file-used-to-setup-apple-push-notification
 				for($cnt = 0; $cnt < count($ios_ids); $cnt++) {
@@ -268,17 +270,16 @@
 											'observeUrl' => $data->android->observeUrl,
 											'removeUrl' => $data->android->removeUrl,
 											'removeMessage' => $data->android->removeMessage,
-											'content-available' => $data->android->content-available
+											'contentAvailable' => $data->android->{'content-available'}
 										)
 									)
-								 );
-										 
+								 );		//Note: "content-available" is correct. That shouldn't be "content->available".
 							 
 						if($data->android->image) {
 							$post['data']['image'] = $data->android->image;
 						}
 					
-						$data = json_encode($post);
+						$output_data = json_encode($post);
 					
 						$arr = explode("#", $url);		//Get id after hash if there is one
 						$post_url = trim_trailing_slash_local($arr[0]);	//E.g. https://medimage-nz1.atomjump.com/api/photo		(without trailing slash)
@@ -296,19 +297,21 @@
 							}
 						}
 						
-						mkdir($folder);
+						if(!file_exists($folder)) {
+							mkdir($folder);
+						}
 					
 						$upload_filename = "#" . $last . "-" . $filename;
 					
 						$file = $folder . $upload_filename;
 					
-						file_put_contents($file, $data);
+						file_put_contents($file, $output_data);
 
 				
 						$resp = post_multipart($post_url, $file, $upload_filename);
 					
 						//Then delete the created file:
-						unlink($filename);
+						unlink($file);
 					}
 				}
 			} else {
