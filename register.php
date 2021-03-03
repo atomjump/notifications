@@ -309,6 +309,10 @@
     				filter: alpha(opacity=50); /* For IE8 and earlier */
     				z-index: 1;
         		}
+        		
+        		.infront {
+        			z-index: 100;
+        		}
 
 
 			   .share {
@@ -488,7 +492,7 @@
 			</div>
 		</div>
    		
-   		<div class="container-fluid">
+   		<div class="container-fluid infront">
 			<div class="row justify-content-center">
 				<div class="col-md-2">
 				</div>
