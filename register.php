@@ -104,6 +104,7 @@
 			$user_email = $_SESSION['logged-email'];
 	} 
 	
+	//The $follow_on_link is the default location to go to next. The large messaging icon now always opens a setup messaging window.
 	$follow_on_link = "https://atomjump.com";
 	if($cnf['serviceHome']) {
 		$follow_on_link = add_subdomain_to_path($cnf['serviceHome']);
@@ -301,12 +302,18 @@
 
 
         		.darkoverlay {
-        			position: absolute;
-        			top: 800px;
+        			position: relative;
+        			top: 100px;
         			width: 100%;
         			background-color: black;
-        			opacity: 0.9;
-    				filter: alpha(opacity=90); /* For IE8 and earlier */
+        			opacity: 0.5;
+    				filter: alpha(opacity=50); /* For IE8 and earlier */
+    				z-index: 1;
+        		}
+        		
+        		.infront {
+        			z-index: 100;
+        			position: relative;	/* Trying this */
         		}
 
 
@@ -480,13 +487,13 @@
 
 		
 
-		<div>
-		    <div id="logo-wrapper" class="looplogo">
-				<a href="<?php echo $follow_on_link ?>"><img class="saver-hideable" src="https://atomjump.com/wp/wp-content/uploads/2018/12/speech-bubble-start-1.png" id="bg" alt="" width="600" height="600"></a>
+		<div>			
+		    <div id="logo-wrapper" class="looplogo comment-open">
+					<img class="saver-hideable" src="https://atomjump.com/wp/wp-content/uploads/2018/12/speech-bubble-start-1.png" id="bg" alt="">
 			</div>
 		</div>
    		
-   		<div class="container-fluid">
+   		<div class="container-fluid infront">
 			<div class="row justify-content-center">
 				<div class="col-md-2">
 				</div>
