@@ -56,7 +56,7 @@
         "es":{
 			"getPopupNotifications": "Recibir notificaciones emergentes:",
 			"privateServerNote": "Nota: configure el 'Servidor privado' en la pantalla de inicio de sesión de su aplicación como:",
-			"notLoggedIn": "<strong>Emparejamiento fallido. Inicie sesión</strong><br/>1. Toque <img src='https://atomjump.com/wp/wp-content/uploads/2018/12/speech-bubble-start-1.png' width='30' height='30'>, luego <img src='../../images/settings.svg' width='30' height='30'><br/>2. Ingrese su correo electrónico y contraseña, guárdelos y presione <img src='../../images/close.svg' width='16' height='16'>.<br/>3 . Regrese a la aplicación tocando <img src='img/iphone-back.png' width='147' height='21'> arriba, o <img src='img/chrome-back.png' height='30' width='24'> below<br/>4. Cierra la sesión de la aplicación y vuelve a sincronizar. ",
+			"notLoggedIn": "<strong>Emparejamiento fallido. Inicie sesión</strong><br/>1. Toque <img src='https://atomjump.com/wp/wp-content/uploads/2018/12/speech-bubble-start-1.png' width='30' height='30'>, luego <img src='../../images/settings.svg' width='30' height='30'><br/>2. Ingrese su correo electrónico y contraseña, guárdelos y presione <img src='../../images/close.svg' width='16' height='16'>.<br/>3. Regrese a la aplicación tocando <img src='img/iphone-back.png' width='147' height='21'> arriba, o <img src='img/chrome-back.png' height='30' width='24'> below<br/>4. Cierra la sesión de la aplicación y vuelve a sincronizar. ",
 			"backHome": "Inicio de mensajes",
 			"openSetup": "Abrir foro de instalación",
 			"returnToApp": "Volver a la aplicación",
@@ -68,7 +68,7 @@
         "pt": {
 			"getPopupNotifications": "Receba notificações pop-up:",
 			"privateServerNote": "Observação: defina o 'Servidor privado' na tela de login do seu aplicativo como:",
-			 "notLoggedIn": "<strong>Falha de emparelhamento. Faça login</strong><br/>1. Toque em <img src='https://atomjump.com/wp/wp-content/uploads/2018/12/speech-bubble-start-1.png' width='30' height='30'>, então <img src='../../images/settings.svg' width='30' height='30'><br/>2. Digite seu e-mail e senha, salve e toque em <img src='../../images/close.svg' width='16' height='16'>.<br/>3 . Retorne ao aplicativo tocando em <img src='img/iphone-back.png' width='147' height='21'> acima ou <img src='img/chrome-back.png' height='30' width='24'> abaixo<br/>4. Saia do aplicativo e emparelhe novamente.",
+			 "notLoggedIn": "<strong>Falha de emparelhamento. Faça login</strong><br/>1. Toque em <img src='https://atomjump.com/wp/wp-content/uploads/2018/12/speech-bubble-start-1.png' width='30' height='30'>, então <img src='../../images/settings.svg' width='30' height='30'><br/>2. Digite seu e-mail e senha, salve e toque em <img src='../../images/close.svg' width='16' height='16'>.<br/>3. Retorne ao aplicativo tocando em <img src='img/iphone-back.png' width='147' height='21'> acima ou <img src='img/chrome-back.png' height='30' width='24'> abaixo<br/>4. Saia do aplicativo e emparelhe novamente.",
 			"backHome": "Página inicial de mensagens",
 			"openSetup": "Fórum de configuração aberta",
 		   	"returnToApp": "Retornar ao aplicativo",
@@ -92,7 +92,7 @@
          "cht": {
 			"getPopupNotifications":"獲取彈出通知：",
 			"privateServerNote":"注意：請在您的應用程序登錄屏幕中將'Private Server'設置為：",
-			 "notLoggedIn":" <strong>配對失敗。請登錄</ strong><br/>1.點擊<img src='https://atomjump.com/wp/wp-content/uploads/2018/12/speech-bubble-start-1.png' width='30' height='30'>，然後<img src='../../images/settings.svg' width='30' height='30'><br/>2.輸入您的電子郵件和密碼，保存，然後點擊<img src='../../images/close.svg' width='16' height='16'>。<br/>3.通過點擊上方的<img src='img/iphone-back.png' width='147' height='21'>或點擊<img src='img/chrome-back.png' height='30' width='24'>下面<br/>4.註銷該應用，然後再次配對。",
+			 "notLoggedIn":" <strong>配對失敗。請登錄</strong><br/>1.點擊<img src='https://atomjump.com/wp/wp-content/uploads/2018/12/speech-bubble-start-1.png' width='30' height='30'>，然後<img src='../../images/settings.svg' width='30' height='30'><br/>2.輸入您的電子郵件和密碼，保存，然後點擊<img src='../../images/close.svg' width='16' height='16'>。<br/>3.通過點擊上方的<img src='img/iphone-back.png' width='147' height='21'>或點擊<img src='img/chrome-back.png' height='30' width='24'>下面<br/>4.註銷該應用，然後再次配對。",
 			"backHome":"消息傳遞家",
 			"openSetup":"打開安裝論壇",
 		   "returnToApp":"返回到應用",
@@ -104,7 +104,7 @@
 		"bg": {
 			"getPopupNotifications": "পপআপ বিজ্ঞপ্তি পান:",
 			"privateServerNote": "দ্রষ্টব্য: দয়া করে আপনার অ্যাপ্লিকেশন লগইন স্ক্রিনে 'ব্যক্তিগত সার্ভার' সেট করুন:",
-			 "notLoggedIn": "<strong>ব্যয় করা অসফল। দয়া করে লগইন করুন</strong><br/>1. <img src='https://atomjump.com/wp/wp-content/uploads/2018/12/speech-bubble-start-1.png' width='30' height='30'>, তারপরে <img src='../../images/settings.svg' width='30' height='30'><br/>২. আপনার ইমেল এবং পাসওয়ার্ড লিখুন, সংরক্ষণ করুন এবং <img src='../../images/close.svg' width='16' height='16'> আলতো চাপুন<br/><br/>3. । উপরে <img src='img/iphone-back.png' width='147' height='21'> এ, বা <img src='img/chrome-back.png' height='30' width='24'> এর নীচে<br/>4. অ্যাপ্লিকেশনটির লগআউট করুন এবং আবার জোড় করুন ",
+			 "notLoggedIn": "<strong>ব্যয় করা অসফল। দয়া করে লগইন করুন</strong><br/>1. <img src='https://atomjump.com/wp/wp-content/uploads/2018/12/speech-bubble-start-1.png' width='30' height='30'>, তারপরে <img src='../../images/settings.svg' width='30' height='30'><br/>২. আপনার ইমেল এবং পাসওয়ার্ড লিখুন, সংরক্ষণ করুন এবং <img src='../../images/close.svg' width='16' height='16'> আলতো চাপুন<br/>3. । উপরে <img src='img/iphone-back.png' width='147' height='21'> এ, বা <img src='img/chrome-back.png' height='30' width='24'> এর নীচে<br/>4. অ্যাপ্লিকেশনটির লগআউট করুন এবং আবার জোড় করুন ",
 			"backHome": "মেসেজিং হোম",
 			"openSetup": "ওপেন সেটআপ ফোরাম",
 			"returnToApp": "অ্যাপটিতে ফিরে যান",
@@ -140,7 +140,7 @@
         "hi": {
 			"getPopupNotifications": "पॉपअप सूचनाएं प्राप्त करें:",
 			"PrivateServerNote": "नोट: कृपया अपने एप्लिकेशन लॉगिन स्क्रीन में 'निजी सर्वर' को इस रूप में सेट करें:",
-			 "notLoggedIn": "<strong>असफल होना। कृपया लॉग इन करें </ strong><br/>1. टैप करें <img src='https://atomjump.com/wp/wp-content/uploads/2018/12/speech-bubble-start-1.png' width='30' height='30'>, फिर <img src =' .. / .. / छवियाँ / सेटिंग्स.svg 'चौड़ाई = '30' ऊँचाई = '30 '><br/>2. अपना ईमेल और पासवर्ड दर्ज करें, सहेजें, और टैप करें <img src='../../images/close.svg' width='16' height='16'><br/>3. <img src='img/iphone-back.png' width='147' height='21'> ऊपर, या <img src='img/chrome-back.png' height='30' width='24'> नीचे<br/>4. एप्लिकेशन का लॉगआउट, और फिर से जोड़ी। ",
+			 "notLoggedIn": "<strong>असफल होना। कृपया लॉग इन करें </ strong><br/>1. टैप करें <img src='https://atomjump.com/wp/wp-content/uploads/2018/12/speech-bubble-start-1.png' width='30' height='30'>, फिर <img src='../../images/settings.svg' width='30' height='30'><br/>2. अपना ईमेल और पासवर्ड दर्ज करें, सहेजें, और टैप करें <img src='../../images/close.svg' width='16' height='16'><br/>3. <img src='img/iphone-back.png' width='147' height='21'> ऊपर, या <img src='img/chrome-back.png' height='30' width='24'> नीचे<br/>4. एप्लिकेशन का लॉगआउट, और फिर से जोड़ी। ",
 			"backHome": "मैसेजिंग होम",
 			"openSetup": "ओपन सेटअप फोरम",
 			"returnToApp": "ऐप पर लौटें",
@@ -152,7 +152,7 @@
         "in":  {
 			"getPopupNotifications": "Dapatkan pemberitahuan munculan:",
 			"privateServerNote": "Catatan: Harap setel 'Server Pribadi' di layar login aplikasi Anda sebagai:",
-			 "notLoggedIn": "<strong>Penyandingan Tidak Berhasil. Harap masuk</strong><br/>1. Ketuk <img src='https://atomjump.com/wp/wp-content/uploads/2018/12/speech-bubble-start-1.png' width='30' height='30'>, lalu <img src='../../images/settings.svg' width='30' height='30'><br/>2. Masukkan email dan sandi Anda, simpan, dan ketuk <img src='../../images/close.svg' width='16' height='16'>.<br/>3 . Kembali ke aplikasi dengan mengetuk <img src='img/iphone-back.png' width='147' height='21'> di atas, atau <img src='img/chrome-back.png' height='30' width='24'> di bawah<br/>4. Keluar dari aplikasi, dan sandingkan lagi.",
+			 "notLoggedIn": "<strong>Penyandingan Tidak Berhasil. Harap masuk</strong><br/>1. Ketuk <img src='https://atomjump.com/wp/wp-content/uploads/2018/12/speech-bubble-start-1.png' width='30' height='30'>, lalu <img src='../../images/settings.svg' width='30' height='30'><br/>2. Masukkan email dan sandi Anda, simpan, dan ketuk <img src='../../images/close.svg' width='16' height='16'>.<br/>3. Kembali ke aplikasi dengan mengetuk <img src='img/iphone-back.png' width='147' height='21'> di atas, atau <img src='img/chrome-back.png' height='30' width='24'> di bawah<br/>4. Keluar dari aplikasi, dan sandingkan lagi.",
 			"backHome": "Beranda Pesan",
 			"openSetup": "Buka Forum Pengaturan",
 			"returnToApp": "Kembali ke Aplikasi",
