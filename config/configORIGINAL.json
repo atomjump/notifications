@@ -135,7 +135,7 @@
 			"appDeregistered": "Votre application est désormais désinscrite sur ce serveur. Vous ne recevrez que des notifications par e-mail.<br/><br/>Pour revenir à l'application, appuyez sur <img src='img/iphone-back.png' width='147' height='21'> ci-dessus, ou <img src='img/chrome-back.png' height='30' width='24'> ci-dessous.",
 			"deregister": "Se désinscrire (utiliser les notifications par e-mail)",
 			"appRegistered": "Votre application est maintenant enregistrée sur ce serveur avec l'e-mail [email].<br/><br/>Pour revenir à l'application, appuyez sur <img src='img/iphone-back.png' width='147' height='21'> ci-dessus, ou <img src='img/chrome-back.png' height='30' width='24'> ci-dessous.",
-			"mustBeConfirmed": "Désolé, vous devrez cliquer sur le lien dans votre e-mail d'activation avant de pouvoir vous connecter à votre compte. Nous avons envoyé un autre e-mail contenant ce lien. Si vous ne parvenez pas à recevoir cet e-mail, veuillez contacter us.<br/><br/>Pour revenir à l'application, appuyez sur <img src='img/iphone-back.png' width='147' height='21'> ci-dessus, ou <img src='img/chrome-back.png' height='30' width='24'> below. " 
+			"mustBeConfirmed": "Désolé, vous devrez cliquer sur le lien dans votre e-mail d'activation avant de pouvoir vous connecter à votre compte. Nous avons envoyé un autre e-mail contenant ce lien. Si vous ne parvenez pas à recevoir cet e-mail, veuillez contacter us.<br/><br/>Pour revenir à l'application, appuyez sur <img src='img/iphone-back.png' width='147' height='21'> ci-dessus, ou <img src='img/chrome-back.png' height='30' width='24'> below." 
         },
         "hi": {
 			"getPopupNotifications": "पॉपअप सूचनाएं प्राप्त करें:",
@@ -144,7 +144,7 @@
 			"backHome": "मैसेजिंग होम",
 			"openSetup": "ओपन सेटअप फोरम",
 			"returnToApp": "ऐप पर लौटें",
-			"appDeregistered": "आपका ऐप अब इस सर्वर पर deregistered है। आपको केवल ईमेल सूचनाएं प्राप्त होंगी। email<br/>ऐप टैप पर लौटने के लिए <img src='img/iphone-back.png' width='147' height='21'> ऊपर, या <img src='img/chrome-back.png' height='30' width='24'> नीचे। ",
+			"appDeregistered": "आपका ऐप अब इस सर्वर पर deregistered है। आपको केवल ईमेल सूचनाएं प्राप्त होंगी। email<br/><br/>ऐप टैप पर लौटने के लिए <img src='img/iphone-back.png' width='147' height='21'> ऊपर, या <img src='img/chrome-back.png' height='30' width='24'> नीचे। ",
 			"deregister": "Deregister (ईमेल सूचनाओं का उपयोग करें)",
 			"appRegistered": "आपका ऐप अब ईमेल [email] के साथ इस सर्वर पर पंजीकृत है<br/><br/>वेबब्राउज़ ऐप टैप पर लौटने के लिए <img src='img/iphone-back.png' width='147' height='21'> ऊपर, या <img src='img/chrome-back.png' height='30' width='24'> नीचे। ",
 			"mustBeConfirmed": "क्षमा करें, आपको अपने खाते में लॉग इन करने से पहले आपको अपने सक्रियण ईमेल में लिंक पर क्लिक करना होगा। हमने इस लिंक के साथ एक और ईमेल भेजा है। यदि आपको यह ईमेल प्राप्त करने में समस्या हो रही है, तो कृपया संपर्क करें। हमें .<br/><br/>ऐप टैप पर लौटने के लिए <img src='img/iphone-back.png' width='147' height='21'> ऊपर, या <img src='img/chrome-back.png' height='30' width='24'> नीचे। "
@@ -159,7 +159,7 @@
 			"appDeregistered": "Aplikasi Anda sekarang dibatalkan pendaftarannya ke server ini. Anda hanya akan menerima notifikasi email.<br/><br/>Untuk kembali ke aplikasi, ketuk <img src='img/iphone-back.png' width='147' height='21'> di atas, atau <img src='img/chrome-back.png' height='30' width='24'> di bawah.",
 			"batalkan pendaftaran": "Batalkan pendaftaran (gunakan pemberitahuan email)",
 			"appRegistered": "Aplikasi Anda sekarang terdaftar ke server ini dengan email [email].<br/><br/>Untuk kembali ke aplikasi, ketuk <img src='img/iphone-back.png' width='147' height='21'> di atas, atau <img src='img/chrome-back.png' height='30' width='24'> di bawah.",
-			"mustBeConfirmed": "Maaf, Anda harus mengeklik tautan di email aktivasi Anda sebelum Anda dapat masuk ke akun Anda. Kami telah mengirim email lain dengan tautan ini. Jika Anda mengalami masalah dalam menerima email ini, silakan hubungi us.<br/><br/>Untuk kembali ke aplikasi, ketuk <img src='img/iphone-back.png' width='147' height='21'> di atas, atau <img src='img/chrome-back.png' height='30' width='24'> di bawah. "
+			"mustBeConfirmed": "Maaf, Anda harus mengeklik tautan di email aktivasi Anda sebelum Anda dapat masuk ke akun Anda. Kami telah mengirim email lain dengan tautan ini. Jika Anda mengalami masalah dalam menerima email ini, silakan hubungi us.<br/><br/>Untuk kembali ke aplikasi, ketuk <img src='img/iphone-back.png' width='147' height='21'> di atas, atau <img src='img/chrome-back.png' height='30' width='24'> di bawah."
         },
         "it": {
 			"getPopupNotifications": "Ricevi notifiche popup:",
