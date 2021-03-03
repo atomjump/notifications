@@ -312,6 +312,7 @@
         		
         		.infront {
         			z-index: 100;
+        			position: relative;	/* Trying this */
         		}
 
 
