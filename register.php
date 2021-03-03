@@ -307,6 +307,7 @@
         			background-color: black;
         			opacity: 0.5;
     				filter: alpha(opacity=50); /* For IE8 and earlier */
+    				z-index: 1;
         		}
 
 
