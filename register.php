@@ -305,8 +305,8 @@
         			top: 800px;
         			width: 100%;
         			background-color: black;
-        			opacity: 0.9;
-    				filter: alpha(opacity=90); /* For IE8 and earlier */
+        			opacity: 0.5;
+    				filter: alpha(opacity=50); /* For IE8 and earlier */
         		}
 
 
