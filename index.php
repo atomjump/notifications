@@ -67,10 +67,10 @@
          	$use_ios = false;
          	$use_atomjump = false;
          	
-         	if(isset($notifications_config['iosNotifications']) && 
-				isset($notifications_config['iosNotifications']['use'])) {
+         	if(isset($this->notifications_config['iosNotifications']) && 
+				isset($this->notifications_config['iosNotifications']['use'])) {
 			
-				if($notifications_config['iosNotifications']['use'] == true) {
+				if($this->notifications_config['iosNotifications']['use'] == true) {
 					$use_ios = true;
 				}
 			} else {
@@ -80,10 +80,10 @@
 				}
 			}
          	
-         	if(isset($notifications_config['atomjumpNotifications']) && 
-				isset($notifications_config['atomjumpNotifications']['use'])) {
+         	if(isset($this->notifications_config['atomjumpNotifications']) && 
+				isset($this->notifications_config['atomjumpNotifications']['use'])) {
 			
-				if($notifications_config['atomjumpNotifications']['use'] == true) {
+				if($this->notifications_config['atomjumpNotifications']['use'] == true) {
 					$use_atomjump = true;
 				}
 			}
