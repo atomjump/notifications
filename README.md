@@ -47,7 +47,7 @@ sudo crontab -e
 and another cron-job to clear out any unused, empty, folders, which can be run once per week. Note: This is still undergoing testing (use with caution):
 ```
 sudo crontab -e 
-5 8 * * 0    find /yourserverpath/plugins/notifications/outgoing/ -empty -type d -delete
+5 8 * * 0    /usr/bin/find /yourserverpath/plugins/notifications/outgoing/ -empty -type d -delete
 ```
 
 You may also need to manually add an outgoing folder that can be written to by the 'www-data' or Apache user:
