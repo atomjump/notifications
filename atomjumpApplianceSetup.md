@@ -86,7 +86,6 @@ sudo cp /jet/www/default/vendor/atomjump/loop-server/plugins/notifications/confi
 
 ## Email will need to be set up to confirm you account
 
-E.g.
 
 ### Worth getting the latest loop-server, for nicer link
 
