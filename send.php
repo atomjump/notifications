@@ -256,7 +256,7 @@
 				if(count($atomjump_ids) > 0) {
 					//Post the message as a .json file using a curl POST request multipart/form-data to the ID as the URL
 					for($cnt = 0; $cnt < count($atomjump_ids); $cnt++) {
-						$url = $atomjump_ids[$cnt];		//e.g. https://medimage-nz1.atomjump.com/api/photo/#HMEcfQQCufJmRPMX4C
+						$url = urldecode($atomjump_ids[$cnt]);		//e.g. https://medimage-nz1.atomjump.com/api/photo/#HMEcfQQCufJmRPMX4C
 						$filename = "message" . rand(1,999999) . ".json";
 					
 					
@@ -280,7 +280,7 @@
 						}
 					
 						$output_data = json_encode($post);
-					
+						
 						$arr = explode("#", $url);		//Get id after hash if there is one
 						$post_url = trim_trailing_slash_local($arr[0]);	//E.g. https://medimage-nz1.atomjump.com/api/photo		(without trailing slash)
 	
@@ -307,7 +307,6 @@
 					
 						file_put_contents($file, $output_data);
 
-				
 						$resp = post_multipart($post_url, $file, $upload_filename);
 					
 						//Then delete the created file:
