@@ -1,6 +1,7 @@
 # Setup Notifications for version AtomJump Appliance 0.8.0
 
-This is a 1st draft, but it has been confirmed to work.
+This is a 1st draft, but it has been confirmed to work. Please replace 127.0.0.1 with your own IP address
+of the server, or domain, below.
 
 
 ## MedImage Install Steps
@@ -70,16 +71,25 @@ sudo cp /jet/www/default/vendor/atomjump/loop-server/plugins/notifications/confi
 ```
 "serverPath": "\/jet\/www\/default\/vendor\/atomjump\/loop-server\/",
 "streamingAppLink": "http:\/\/127.0.0.1:8000",
+"androidNotifications": {
+	"use": false,
+	"apiKey": ""
+},
+"iosNotifications": {
+	"use": false,
+	"apiKeyFile": ""    
+},
 "atomjumpNotifications": {
 	"use": true,
 	"serverPool": {
 		"Default": [
 			"http:\/\/127.0.0.1:5566"
 		]
-	},
-	"countryServerResidingIn": {
-		"Default": "New Zealand"	
-	}
+},
+
+"countryServerResidingIn": {
+	"Default": "New Zealand"	
+}
 ```	
 
 	
