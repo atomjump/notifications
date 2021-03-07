@@ -44,13 +44,19 @@ sudo crontab -e
 0 0 * * *	/usr/bin/php /yourserverpath/plugins/notifications/check-load.php
 ```
 
-and another cron-job to clear out any unused, empty, folders, which can be run once per week. Note: This is still undergoing testing (use with caution):
+and some other cron-jobs to clear out any unused, empty, folders, which can be run once per week. Note: This is still undergoing testing (use with caution):
 ```
 sudo crontab -e 
 5 8 * * 0    /usr/bin/find /yourserverpath/plugins/notifications/outgoing/ -empty -type d -delete
 ```
 
-You may also need to manually add an outgoing folder that can be written to by the 'www-data' or Apache user:
+On the server holding the MedImage Server software, you can do something similar. Note: This is still undergoing testing (use with caution):
+```
+sudo crontab -e 
+5 8 * * 0    /usr/bin/find $(npm prefix -global)/lib/node_modules/medimage/photos -empty -type d -delete
+```
+
+You may also need to manually add an outgoing folder in the notifications plugin directory that can be written to by the 'www-data' or Apache user:
 ```
 sudo mkdir outgoing
 sudo chmod 777 outgoing
