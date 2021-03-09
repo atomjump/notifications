@@ -68,7 +68,7 @@
 			"appRegistered": "Su aplicación ahora está registrada en este servidor con el correo electrónico [email].<br/><br/>Para volver a la aplicación, toque <img src='img/iphone-back.png' width='147' height='21'> arriba, o <img src='img/chrome-back.png' height='30' width='24'> abajo. ",
 			"mustBeConfirmed": "Lo sentimos, deberá hacer clic en el enlace en su correo electrónico de activación antes de poder iniciar sesión en su cuenta. Hemos enviado otro correo electrónico con este enlace. Si tiene problemas para recibir este correo electrónico, póngase en contacto con us.<br/><br/>Para volver a la aplicación, toque <img src='img/iphone-back.png' width='147' height='21'> arriba, o <img src='img/chrome-back.png' height='30' width='24'> below. ",
 			"signUp": "Registrarse",
-         	"orSignIn": "O <a href='#comment-open-Setup'> inicie sesión </a>.",
+         	"orSignIn": "O <a href='#comment-open-Setup'>inicie sesión</a>.",
          	"signAndPair": "Registrarse y emparejar"
         },
         "pt": {
@@ -83,7 +83,7 @@
 			"appRegistered": "Seu aplicativo agora está registrado neste servidor com o e-mail [e-mail].<br/><br/>Para retornar ao aplicativo, toque em <img src='img/iphone-back.png' width='147' height='21'> acima ou <img src='img/chrome-back.png' height='30' width='24'> abaixo.",
 			"mustBeConfirmed": "Desculpe, você precisará clicar no link em seu e-mail de ativação antes de fazer login em sua conta. Enviamos outro e-mail com este link. Se você estiver tendo problemas para receber este e-mail, entre em contato com us.<br/><br/>Para retornar ao aplicativo, toque em <img src='img/iphone-back.png' width='147' height='21'> acima ou <img src='img/chrome-back.png' height='30' width='24'> abaixo.",
 			"signUp": "Registar-se",
-         	"orSignIn": "Ou <a href='#comment-open-Setup'> faça login </a>.",
+         	"orSignIn": "Ou <a href='#comment-open-Setup'>faça login</a>.",
          	"signAndPair": "Inscreva-se e pareie"
         },
         "ch": {
@@ -128,7 +128,7 @@
 			"appRegistered": "আপনার অ্যাপ্লিকেশনটি এখন এই সার্ভারে ইমেল [email] সহ নিবন্ধিত হয়েছে<br/><br/>অ্যাপটিতে ফিরে আসতে <img src='img/iphone-back.png' width='147' height='21'> উপরে, বা <img src='img/chrome-back.png' height='30' width='24'> নীচে ",
 			"mustBeConfirmed": "দুঃখিত, আপনি নিজের অ্যাকাউন্টে লগ ইন করার আগে আপনাকে আপনার অ্যাক্টিভেশন ইমেলের লিংকটি ক্লিক করতে হবে this আমরা এই লিঙ্কটি সহ আরও একটি ইমেল প্রেরণ করেছি this যদি আপনাকে এই ইমেলটি পেতে সমস্যা হয় তবে দয়া করে যোগাযোগ করুন please আমাদের </ </ b> </ b> অ্যাপটিতে ফিরে আসতে <img src='img/iphone-back.png' width='147' height='21'> উপরে, বা <img src='img/chrome-back.png' height='30' width='24'> নীচে। ",
 			"signUp": "সাইন আপ",
-         	"orSignIn": "বা <a href='#comment-open-Setup'> সাইন ইন </a>,"
+         	"orSignIn": "বা <a href='#comment-open-Setup'>সাইন ইন</a>,"
          	"signAndPair": "সাইন আপ এবং জুড়ি"
         },
 		"de": {
@@ -143,7 +143,7 @@
 			"appRegistered": "Ihre App ist jetzt mit der E-Mail [email] auf diesem Server registriert. <br/><br/> Um zur App zurückzukehren, tippen Sie auf <img src='img/iphone-back.png' width='147' height='21'> oben oder <img src='img/chrome-back.png' height='30' width='24'> unten.",
 			"mustBeConfirmed": "Entschuldigung, Sie müssen auf den Link in Ihrer Aktivierungs-E-Mail klicken, bevor Sie sich in Ihrem Konto anmelden können. Wir haben eine weitere E-Mail mit diesem Link gesendet. Wenn Sie Probleme beim Empfang dieser E-Mail haben, setzen Sie sich bitte mit uns in Verbindung us.<br/><br/>Um zur App zurückzukehren, tippen Sie oben auf <img src='img/iphone-back.png' width='147' height='21'> oder <img src='img/chrome-back.png' height='30' width='24'> unten.",
 			"signUp": "Anmelden",
-         	"orSignIn": "Oder <a href='#comment-open-Setup'> anmelden </a>.",
+         	"orSignIn": "Oder <a href='#comment-open-Setup'>anmelden</a>.",
          	"signAndPair": "Anmelden und koppeln" 
         },
         "fr": {
@@ -158,7 +158,7 @@
 			"appRegistered": "Votre application est maintenant enregistrée sur ce serveur avec l'e-mail [email].<br/><br/>Pour revenir à l'application, appuyez sur <img src='img/iphone-back.png' width='147' height='21'> ci-dessus, ou <img src='img/chrome-back.png' height='30' width='24'> ci-dessous.",
 			"mustBeConfirmed": "Désolé, vous devrez cliquer sur le lien dans votre e-mail d'activation avant de pouvoir vous connecter à votre compte. Nous avons envoyé un autre e-mail contenant ce lien. Si vous ne parvenez pas à recevoir cet e-mail, veuillez contacter us.<br/><br/>Pour revenir à l'application, appuyez sur <img src='img/iphone-back.png' width='147' height='21'> ci-dessus, ou <img src='img/chrome-back.png' height='30' width='24'> below.",
 			"signUp": "Inscription",
-         	"orSignIn": "Ou <a href='#comment-open-Setup'> connectez-vous </a>.",
+         	"orSignIn": "Ou <a href='#comment-open-Setup'>connectez-vous</a>.",
          	"signAndPair": "Inscription et association" 
         },
         "hi": {
@@ -173,7 +173,7 @@
 			"appRegistered": "आपका ऐप अब ईमेल [email] के साथ इस सर्वर पर पंजीकृत है<br/><br/>वेबब्राउज़ ऐप टैप पर लौटने के लिए <img src='img/iphone-back.png' width='147' height='21'> ऊपर, या <img src='img/chrome-back.png' height='30' width='24'> नीचे। ",
 			"mustBeConfirmed": "क्षमा करें, आपको अपने खाते में लॉग इन करने से पहले आपको अपने सक्रियण ईमेल में लिंक पर क्लिक करना होगा। हमने इस लिंक के साथ एक और ईमेल भेजा है। यदि आपको यह ईमेल प्राप्त करने में समस्या हो रही है, तो कृपया संपर्क करें। हमें .<br/><br/>ऐप टैप पर लौटने के लिए <img src='img/iphone-back.png' width='147' height='21'> ऊपर, या <img src='img/chrome-back.png' height='30' width='24'> नीचे। ",
 			"signUp" : "साइन अप करें",
-         	"orSignIn": "या <a href='#comment-open-Setup'> साइन इन </a>, में।"
+         	"orSignIn": "या <a href='#comment-open-Setup'>साइन इन</a>, में।"
          	"signAndPair": "साइन अप और जोड़ी"
         },
         "in":  {
@@ -188,7 +188,7 @@
 			"appRegistered": "Aplikasi Anda sekarang terdaftar ke server ini dengan email [email].<br/><br/>Untuk kembali ke aplikasi, ketuk <img src='img/iphone-back.png' width='147' height='21'> di atas, atau <img src='img/chrome-back.png' height='30' width='24'> di bawah.",
 			"mustBeConfirmed": "Maaf, Anda harus mengeklik tautan di email aktivasi Anda sebelum Anda dapat masuk ke akun Anda. Kami telah mengirim email lain dengan tautan ini. Jika Anda mengalami masalah dalam menerima email ini, silakan hubungi us.<br/><br/>Untuk kembali ke aplikasi, ketuk <img src='img/iphone-back.png' width='147' height='21'> di atas, atau <img src='img/chrome-back.png' height='30' width='24'> di bawah.",
 			"signUp": "Daftar",
-         	"orSignIn": "Atau <a href='#comment-open-Setup'> masuk </a>.",
+         	"orSignIn": "Atau <a href='#comment-open-Setup'>masuk</a>.",
          	"signAndPair": "Daftar dan Sandingkan"
         },
         "it": {
@@ -203,7 +203,7 @@
 			"appRegistered": "La tua app è ora registrata su questo server con l'email [email].<br/><br/>Per tornare all'app tocca <img src='img/iphone-back.png' width='147' height='21'> sopra o <img src='img/chrome-back.png' height='30' width='24'> below.",
 			"mustBeConfirmed": "Spiacenti, dovrai fare clic sul link nell'email di attivazione prima di poter accedere al tuo account. Abbiamo inviato un'altra email con questo link. Se hai problemi a ricevere questa email, ti preghiamo di metterti in contatto con us.<br/><br/>Per tornare all'app, tocca <img src='img/iphone-back.png' width='147' height='21'> sopra o <img src='img/chrome-back.png' height='30' width='24'> below. ",
 			"signUp": "Registrati",
-         	"orSignIn": "Oppure <a href='#comment-open-Setup'> accedi </a>.",
+         	"orSignIn": "Oppure <a href='#comment-open-Setup'>accedi</a>.",
          	"signAndPair": "Registrati e accoppia"
         },
         "jp": {
@@ -218,7 +218,7 @@
 			"appRegistered": "アプリはメール[email]でこのサーバーに登録されました。<br/><br/>アプリに戻るには、<img src='img/iphone-back.png' width='147' height='21'>上、または<img src='img/chrome-back.png' height='30' width='24'>下。 ",
 			"mustBeConfirmed": "申し訳ありませんが、アカウントにログインする前に、アクティベーションメールのリンクをクリックする必要があります。このリンクを含む別のメールを送信しました。このメールの受信に問題がある場合は、にご連絡ください。<br/><br/>アプリに戻るには、上の<img src='img/iphone-back.png' width='147' height='21'>、または<img src='img/chrome-back.png' height='30' width='24'>以下。 ",
 			"signUp": "サインアップ",
-         	"orSignIn": "または<a href = '＃comment-open-Setup'>サインイン</a>。",
+         	"orSignIn": "または<a href='＃comment-open-Setup'>サインイン</a>。",
          	"signAndPair": "サインアップしてペアリング"
         },
         "ko": {
@@ -233,7 +233,7 @@
 			"appRegistered": "이제 앱이 이메일 [email]로이 서버에 등록되었습니다.<br/><br/>앱으로 돌아가려면 <img src='img/iphone-back.png' width='147' height='21'> 위 또는 <img src='img/chrome-back.png' height='30' width='24'> 아래. ",
 			"mustBeConfirmed": "죄송합니다. 계정에 로그인하기 전에 활성화 이메일에있는 링크를 클릭해야합니다.이 링크가 포함 된 다른 이메일을 보냈습니다.이 이메일을받는 데 문제가있는 경우 다음 연락처로 문의하십시오.<br/><br/>앱으로 돌아가려면 위의 <img src='img/iphone-back.png' width='147' height='21'> 또는 <img src='img/chrome-back.png' height='30' width='24'> below. ",
 			"signUp": "가입",
-        	"orSignIn": "또는 <a href='#comment-open-Setup'> 로그인 </a>.",
+        	"orSignIn": "또는 <a href='#comment-open-Setup'>로그인</a>.",
          	"signAndPair": "가입 및 페어링"
         },
         "pu": {
@@ -248,7 +248,7 @@
 			"appRegistered": "ਤੁਹਾਡੀ ਐਪ ਹੁਣ ਇਸ ਸਰਵਰ ਨਾਲ ਈਮੇਲ [email] ਨਾਲ ਰਜਿਸਟਰ ਕੀਤੀ ਗਈ ਹੈ.<br/><br/>ਐਪ ਤੇ ਵਾਪਸ ਜਾਣ ਲਈ <img src='img/iphone-back.png' width='147' height='21'> ਉੱਪਰ, ਜਾਂ <img src='img/chrome-back.png' height='30' width='24'> ਹੇਠਾਂ। ",
 			"mustBeConfirmed": "ਮੁਆਫ ਕਰਨਾ, ਤੁਹਾਨੂੰ ਆਪਣੇ ਐਕਟਿਵੇਸ਼ਨ ਈਮੇਲ ਦੇ ਲਿੰਕ ਤੇ ਕਲਿਕ ਕਰਨ ਦੀ ਜ਼ਰੂਰਤ ਹੋਏਗੀ ਇਸ ਤੋਂ ਪਹਿਲਾਂ ਕਿ ਤੁਸੀਂ ਆਪਣੇ ਖਾਤੇ ਵਿੱਚ ਲੌਗ ਇਨ ਕਰੋ. ਅਸੀਂ ਇਸ ਲਿੰਕ ਦੇ ਨਾਲ ਇੱਕ ਹੋਰ ਈਮੇਲ ਭੇਜਿਆ ਹੈ. ਜੇ ਤੁਹਾਨੂੰ ਇਹ ਈਮੇਲ ਪ੍ਰਾਪਤ ਕਰਨ ਵਿੱਚ ਮੁਸ਼ਕਲ ਆ ਰਹੀ ਹੈ, ਕਿਰਪਾ ਕਰਕੇ ਸਾਡੇ ਨਾਲ ਸੰਪਰਕ ਕਰੋ.<br/><br/>ਐਪ ਤੇ ਵਾਪਸ ਜਾਣ ਲਈ <img src='img/iphone-back.png' width='147' height='21'> ਉੱਪਰ, ਜਾਂ <img src='img/chrome-back.png' height='30' width='24'> ਹੇਠਾਂ.",
 			"signUp": "ਸਾਈਨ ਅਪ",
-         	"orSignIn": "ਜਾਂ <a href='#comment-open-Setup'> ਸਾਈਨ ਇਨ ਕਰੋ </a>.",
+         	"orSignIn": "ਜਾਂ <a href='#comment-open-Setup'>ਸਾਈਨ ਇਨ ਕਰੋ</a>.",
          	"SignAndPair": "ਸਾਈਨ ਅਪ ਕਰੋ ਅਤੇ ਜੋੜਾ"
         },
         "ru": {
@@ -263,7 +263,7 @@
 			"appRegistered": "Ваше приложение теперь зарегистрировано на этом сервере с адресом электронной почты [email].<br/><br/>Чтобы вернуться в приложение, нажмите <img src='img/iphone-back.png' width='147' height='21'> вверху или <img src='img/chrome-back.png' height='30' width='24'> внизу. ",
 			"mustBeConfirmed": "Извините, вам нужно будет щелкнуть ссылку в электронном письме с активацией, прежде чем вы сможете войти в свою учетную запись. Мы отправили еще одно электронное письмо с этой ссылкой. Если у вас возникли проблемы с получением этого письма, свяжитесь с us.<br/><br/>Чтобы вернуться в приложение, нажмите <img src='img/iphone-back.png' width='147' height='21'> выше или <img src='img/chrome-back.png' height='30' width='24'> ниже. ",
 			"signUp": "Зарегистрироваться",
-         	"orSignIn": "Или <a href='#comment-open-Setup'> войдите </a>.",
+         	"orSignIn": "Или <a href='#comment-open-Setup'>войдите</a>.",
          	"signAndPair": "Зарегистрируйтесь и создайте пару"
         }
 	}
