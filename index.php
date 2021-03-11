@@ -23,6 +23,12 @@
         
             global $msg;
             global $lang;
+            global $screen_type;
+            
+            if(isset($screen_type) && ($screen_type == "signup")) {
+            	//We don't want to show this on the sign-up page
+            	return true;
+            }
        
        		if(!isset($this->notifications_config)) {
 				//Get global plugin config - but only once
