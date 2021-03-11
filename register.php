@@ -518,7 +518,9 @@
 
 
 				$(document).ready(function(){
-
+					$("#sign-and-pair-button").click(function() {
+						alert("Clicked");
+					});
 				});
 		</script>
 
@@ -531,7 +533,7 @@
 				<p><?php echo $notifications_config['msgs'][$lang]['orSignIn']; ?></p><br/><br/>
 				
 				<!-- Signup Form -->
-				<form id="options-frm" class="form" role="form" action="" onsubmit="$('#comment-messages').html('Please wait..'); return set_options_cookie();"  method="POST">
+				<form id="options-frm" class="form" role="form" action="" onsubmit="return set_options_cookie();"  method="POST">
 				 				 <input type="hidden" name="passcode" id="passcode-options-hidden" value="<?php echo $_REQUEST['uniqueFeedbackId'] ?>">
 				 				 <input type="hidden" name="general" id="general-options-hidden" value="<?php echo $_REQUEST['general'] ?>">
 				 				 <input type="hidden" name="date-owner-start" value="<?php echo $date_start ?>">
