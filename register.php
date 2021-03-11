@@ -68,6 +68,16 @@
 	require($start_path . "classes/cls.pluginapi.php");
 	
 	$api = new cls_plugin_api();
+
+	
+	//For plugins - language change in particular
+	require("classes/cls.layer.php");
+	require("classes/cls.ssshout.php");
+
+	$ly = new cls_layer();
+	$sh = new cls_ssshout();
+
+	
 	
 	//Set the notification id for this user/phone
 	if($_REQUEST['id'] == "") {
@@ -521,7 +531,7 @@
 			echo $msg['msgs'][$lang]['saveSettingsButton'];
 		} ?>'); } else { $('#email-modified').val('false'); $('#save-button').html('<?php echo $msg['msgs'][$lang]['saveSettingsButton'] ?>'); }" id="email-opt" name="email-opt" type="email" class="form-control" placeholder="<?php echo $msg['msgs'][$lang]['enterEmail'] ?>" autocomplete="false" value="<?php if(isset($_COOKIE['email'])) { echo urldecode($_COOKIE['email']); } else { echo ''; } ?>">
 								</div>
-								<div><a id="comment-show-password" href="javascript:"><?php echo $msg['msgs'][$lang]['more'] ?></a></div>
+								<!--<div><a id="comment-show-password" href="javascript:"><?php echo $msg['msgs'][$lang]['more'] ?></a></div>-->
 								<div id="comment-password-vis" style="">
 									<div  class="form-group">
 										<div><?php echo $msg['msgs'][$lang]['yourPassword'] ?> <a href="javascript:" onclick="$('#password-explain').slideToggle();" title="<?php echo $msg['msgs'][$lang]['yourPasswordReason'] ?>"><?php echo $msg['msgs'][$lang]['optional'] ?></a>, <a id='clear-password' href="javascript:" onclick="return clearPass();"><?php echo $msg['msgs'][$lang]['resetPasswordLink'] ?></a> <span id="password-explain" style="display: none; color: #f88374;"><?php echo $msg['msgs'][$lang]['yourPasswordReason'] ?> </span></div>
