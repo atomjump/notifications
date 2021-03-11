@@ -537,7 +537,7 @@
 								<!--<div><a id="comment-show-password" href="javascript:"><?php echo $msg['msgs'][$lang]['more'] ?></a></div>-->
 								<div id="comment-password-vis" style="">
 									<div  class="form-group">
-										<div><?php echo $msg['msgs'][$lang]['yourPassword'] ?> <?php echo $msg['msgs'][$lang]['resetPasswordLink'] ?></a> <span id="password-explain" style="display: none; color: #f88374;"><?php echo $msg['msgs'][$lang]['yourPasswordReason'] ?> </span></div>
+										<div><?php echo $msg['msgs'][$lang]['yourPassword'] ?> <a id='clear-password' href="javascript:" onclick="return clearPass();"><?php echo $msg['msgs'][$lang]['resetPasswordLink'] ?></a> <span id="password-explain" style="display: none; color: #f88374;"><?php echo $msg['msgs'][$lang]['yourPasswordReason'] ?> </span></div>
 						  				<input oninput="if(this.value.length > 0) { $('#save-button').html('<?php if($msg['msgs'][$lang]['loginSettingsButton']) {
 		 echo $msg['msgs'][$lang]['loginSettingsButton']; 
 		} else { 
