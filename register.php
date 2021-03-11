@@ -537,7 +537,7 @@
 				 				 <input type="hidden" name="date-owner-start" value="<?php echo $date_start ?>">
 				 				 <input type="hidden" id="email-modified" name="email_modified" value="false">
 				 				 <?php $sh->call_plugins_settings(null); //User added plugins here ?>								
-				 				 <button type="submit"  style="margin-bottom:3px;"><img src='img/re-sync.png' width='30' height='30'></button>
+				 				
 				 				 <a href="javascript:" onclick="return set_options_cookie();"><img src='img/re-sync.png' width='30' height='30'></a><br/>
 								 <div class="form-group">
 		 									<div><?php echo $msg['msgs'][$lang]['yourEmail'] ?></div>
