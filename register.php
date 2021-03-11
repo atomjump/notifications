@@ -522,7 +522,7 @@
 		} ?>'); } else { $('#email-modified').val('false'); $('#save-button').html('<?php echo $msg['msgs'][$lang]['saveSettingsButton'] ?>'); }" id="email-opt" name="email-opt" type="email" class="form-control" placeholder="<?php echo $msg['msgs'][$lang]['enterEmail'] ?>" autocomplete="false" value="<?php if(isset($_COOKIE['email'])) { echo urldecode($_COOKIE['email']); } else { echo ''; } ?>">
 								</div>
 								<div><a id="comment-show-password" href="javascript:"><?php echo $msg['msgs'][$lang]['more'] ?></a></div>
-								<div id="comment-password-vis" style="display: none;">
+								<div id="comment-password-vis" style="">
 									<div  class="form-group">
 										<div><?php echo $msg['msgs'][$lang]['yourPassword'] ?> <a href="javascript:" onclick="$('#password-explain').slideToggle();" title="<?php echo $msg['msgs'][$lang]['yourPasswordReason'] ?>"><?php echo $msg['msgs'][$lang]['optional'] ?></a>, <a id='clear-password' href="javascript:" onclick="return clearPass();"><?php echo $msg['msgs'][$lang]['resetPasswordLink'] ?></a> <span id="password-explain" style="display: none; color: #f88374;"><?php echo $msg['msgs'][$lang]['yourPasswordReason'] ?> </span></div>
 						  				<input oninput="if(this.value.length > 0) { $('#save-button').html('<?php if($msg['msgs'][$lang]['loginSettingsButton']) {
@@ -544,41 +544,8 @@
 						  					<a id="comment-user-code" href="javascript:"><?php echo $msg['msgs'][$lang]['advancedLink'] ?></a>
 						  			</div>
 						  			
-									<?php global $cnf;
-										 $admin_user_id = explode(":", $cnf['adminMachineUser']);
-						
-										 if(($_SESSION['logged-user'])&&($_SESSION['logged-user'] == $admin_user_id[1])) {
-										 	//Show a set forum password option, and group users form ?>
 										
-										 <div id="group-users-form" class="form-group" style="display:none;">
-											<div><?php echo $msg['msgs'][$lang]['privateOwners'] ?> <a href="javascript:" onclick="$('#users-explain').slideToggle();" title="<?php echo $msg['msgs'][$lang]['privateOwnersReason'] ?>"><?php echo $msg['msgs'][$lang]['optional'] ?></a>  <span id="users-explain" style="display: none;  color: #f88374;"><?php echo $msg['msgs'][$lang]['privateOwnersReasonExtended'] ?></span></div>
-											 <input  id="group-users" name="users" type="text" class="form-control" placeholder="<?php echo $msg['msgs'][$lang]['privateOwnersEnter'] ?>" value="">
-											  <div style="padding-top:10px;"><span style="color: red;" id="group-user-count"></span> <?php echo $msg['msgs'][$lang]['subscribers'] ?></div>
-										</div>
-										<div id="subscribers-limit-form" class="form-group" style="display:none;">
-											<div><?php echo $msg['msgs'][$lang]['limitSubscribers'] ?> <a href="javascript:" onclick="$('#subscribers-limit-explain').slideToggle();" title="<?php echo $msg['msgs'][$lang]['limitSubscribersReason'] ?>"><?php echo $msg['msgs'][$lang]['optional'] ?></a>  <span id="subscribers-limit-explain" style="display: none;  color: #f88374;"><?php echo $msg['msgs'][$lang]['limitSubscribersReasonExtended'] ?></span></div>
-											 <input  id="subscribers-limit" name="subscriberlimit" type="text" class="form-control" placeholder="<?php echo $msg['msgs'][$lang]['limitSubscribersEnter'] ?>" value="<?php if(($layer_info['var_subscribers_limit']) && ($layer_info['var_subscribers_limit'] != "")) { echo $layer_info['var_subscribers_limit']; } ?>">
-										</div>
-										<div id="set-forum-password-form" class="form-group" style="display:none;">
-											<div><?php echo $msg['msgs'][$lang]['setForumPass'] ?> <a href="javascript:" onclick="$('#forum-password-explain').slideToggle();" title="<?php echo $msg['msgs'][$lang]['setForumPassReason'] ?>"><?php echo $msg['msgs'][$lang]['optional'] ?></a>  <span id="forum-password-explain" style="display: none;  color: #f88374;"><?php echo $msg['msgs'][$lang]['setForumPassReasonExtended'] ?></span></div>
-											 <input  id="set-forum-password" name="setforumpassword" type="password" class="form-control" placeholder="<?php echo $msg['msgs'][$lang]['setForumPassEnter'] ?>" value="">
-											 <input type="hidden" id="forumpasscheck" name="forumpasscheck" value="">
-										</div>
-										<div id="set-forum-title-form" class="form-group" style="display:none;">
-											<div><?php echo $msg['msgs'][$lang]['setForumTitle'] ?> <a href="javascript:" onclick="$('#forum-title-explain').slideToggle();" title="<?php echo $msg['msgs'][$lang]['setForumTitleReason'] ?>"><?php echo $msg['msgs'][$lang]['optional'] ?></a>  <span id="forum-title-explain" style="display: none;  color: #f88374;"><?php echo $msg['msgs'][$lang]['setForumTitleReason']; ?></span></div>
-											 <input  id="set-forum-title" name="setforumtitle" type="text" class="form-control" value="<?php if(($layer_info['var_title']) && ($layer_info['var_title'] != "")) { echo $layer_info['var_title']; } ?>">
-										</div>
-									<?php } else { ?>
-							
-										<div id="group-users-form" class="form-group" style="display:none;">
-											<div style="padding-top:10px;"><span style="color: red;" id="group-user-count"></span> <?php echo $msg['msgs'][$lang]['subscribers'] ?></div>
-											<input  id="group-users" name="users" type="hidden" class="form-control" placeholder="<?php echo $msg['msgs'][$lang]['privateOwnersEnter'] ?>" value="">
-										</div>
-									 	<input  id="set-forum-password" name="setforumpassword" type="hidden" class="form-control" placeholder="<?php echo $msg['msgs'][$lang]['setForumPassEnter'] ?>" value="">
-									 	<input type="hidden" id="forumpasscheck" name="forumpasscheck" value="">
-									 	<input type="hidden" id="subscribers-limit" name="subscriberlimit"  class="form-control" placeholder="<?php echo $msg['msgs'][$lang]['limitSubscribersEnter'] ?>" value="">
-										
-									<?php } ?>
+									
 									<div id="user-id-show" class="form-group" style="display:none;">
 										<div style="color: red;" id="user-id-show-set"></div>
 						  			</div>
