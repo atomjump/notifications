@@ -553,7 +553,7 @@
 									
 								</div>
 								<div class="form-group">
-				 						<div><?php echo $msg['msgs'][$lang]['yourName'] ?> <?php echo $msg['msgs'][$lang]['optional'] ?></div>
+				 						<div><?php echo $msg['msgs'][$lang]['yourName'] ?> (<?php echo $msg['msgs'][$lang]['optional'] ?>)</div>
 							 			<input id="your-name-opt" name="your-name-opt" type="text" class="form-control" placeholder="<?php echo $msg['msgs'][$lang]['enterYourName'] ?>" autocomplete="false" value="<?php if(isset($_COOKIE['your_name'])) { echo urldecode($_COOKIE['your_name']); } else { echo ''; } ?>" >
 								</div>
 								<div class="form-group">
