@@ -117,7 +117,7 @@
 	
 	if(($user_id == "")||($user_email == "")) {
 		//A blank user id
-		$screen_type = "signup";
+		$screen_type = "signup";		//
 		$main_message = $notifications_config['msgs'][$lang]['notLoggedIn'];
 		$first_button = "#comment-open-Setup";
 		$first_button_wording = $notifications_config['msgs'][$lang]['openSetup'];
@@ -489,7 +489,7 @@
      	<div class="container-fluid infront">
 			<div class="row justify-content-center">
 				<div class="col-md-12">
-				Sign Up
+				<?php echo $notifications_config['msgs'][$lang]['signUp']; ?>
 				</div> 		
 			</div>
 		</div>
