@@ -560,7 +560,7 @@
 		 									<div style="display: none; color: red;" id="comment-messages"></div>
 								</div>
 								<br/>
-							 <button id="save-button" type="submit" class="btn btn-primary" style="margin-bottom:3px;"><?php echo $msg['msgs'][$lang]['saveSettingsButton'] ?></button>
+							 <button id="sign-and-pair-button" type="submit" class="btn btn-primary" style="margin-bottom:3px;"><?php echo echo $notifications_config['msgs'][$lang]['signAndPair']; ?></button>
 							<br/>
 							<br/>
 							 
