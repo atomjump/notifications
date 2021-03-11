@@ -521,6 +521,7 @@
 					$("#sign-and-pair-button").click(function() {
 						alert("Clicked");
 						$("#comment-messages").html("Please wait..");
+						$("#comment-messages").show();
 						alert("Clicked over");
 					});
 				});
