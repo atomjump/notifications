@@ -128,7 +128,7 @@
 			"appRegistered": "আপনার অ্যাপ্লিকেশনটি এখন এই সার্ভারে ইমেল [email] সহ নিবন্ধিত হয়েছে<br/><br/>অ্যাপটিতে ফিরে আসতে <img src='img/iphone-back.png' width='147' height='21'> উপরে, বা <img src='img/chrome-back.png' height='30' width='24'> নীচে ",
 			"mustBeConfirmed": "দুঃখিত, আপনি নিজের অ্যাকাউন্টে লগ ইন করার আগে আপনাকে আপনার অ্যাক্টিভেশন ইমেলের লিংকটি ক্লিক করতে হবে this আমরা এই লিঙ্কটি সহ আরও একটি ইমেল প্রেরণ করেছি this যদি আপনাকে এই ইমেলটি পেতে সমস্যা হয় তবে দয়া করে যোগাযোগ করুন please আমাদের </ </ b> </ b> অ্যাপটিতে ফিরে আসতে <img src='img/iphone-back.png' width='147' height='21'> উপরে, বা <img src='img/chrome-back.png' height='30' width='24'> নীচে। ",
 			"signUp": "সাইন আপ",
-         	"orSignIn": "বা <a href='#comment-open-Setup'>সাইন ইন</a>,"
+         	"orSignIn": "বা <a href='#comment-open-Setup'>সাইন ইন</a>,",
          	"signAndPair": "সাইন আপ এবং জুড়ি"
         },
 		"de": {
@@ -173,7 +173,7 @@
 			"appRegistered": "आपका ऐप अब ईमेल [email] के साथ इस सर्वर पर पंजीकृत है<br/><br/>वेबब्राउज़ ऐप टैप पर लौटने के लिए <img src='img/iphone-back.png' width='147' height='21'> ऊपर, या <img src='img/chrome-back.png' height='30' width='24'> नीचे। ",
 			"mustBeConfirmed": "क्षमा करें, आपको अपने खाते में लॉग इन करने से पहले आपको अपने सक्रियण ईमेल में लिंक पर क्लिक करना होगा। हमने इस लिंक के साथ एक और ईमेल भेजा है। यदि आपको यह ईमेल प्राप्त करने में समस्या हो रही है, तो कृपया संपर्क करें। हमें .<br/><br/>ऐप टैप पर लौटने के लिए <img src='img/iphone-back.png' width='147' height='21'> ऊपर, या <img src='img/chrome-back.png' height='30' width='24'> नीचे। ",
 			"signUp" : "साइन अप करें",
-         	"orSignIn": "या <a href='#comment-open-Setup'>साइन इन</a>, में।"
+         	"orSignIn": "या <a href='#comment-open-Setup'>साइन इन</a>, में।",
          	"signAndPair": "साइन अप और जोड़ी"
         },
         "in":  {
