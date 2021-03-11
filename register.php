@@ -112,11 +112,12 @@
 	
 	
 	$center = "center";			//Default centering
-	
+	$screen_type = "standard";	//Standard message page
 	
 	
 	if(($user_id == "")||($user_email == "")) {
 		//A blank user id
+		$screen_type = "signup";
 		$main_message = $notifications_config['msgs'][$lang]['notLoggedIn'];
 		$first_button = "#comment-open-Setup";
 		$first_button_wording = $notifications_config['msgs'][$lang]['openSetup'];
@@ -484,14 +485,24 @@
 		</script>
 
 		
-
-		
-
+		<?php if($screen_type == "signup") { ?>
+     	<div class="container-fluid infront">
+			<div class="row justify-content-center">
+				<div class="col-md-12">
+				Sign Up
+				</div> 		
+			</div>
+		</div>
+   		
+   		
+   		<?php } else { //A standard screen ?>
 		<div>			
 		    <div id="logo-wrapper" class="looplogo comment-open">
 					<img class="saver-hideable" src="https://atomjump.com/wp/wp-content/uploads/2018/12/speech-bubble-start-1.png" id="bg" alt="">
 			</div>
 		</div>
+   		
+
    		
    		<div class="container-fluid infront">
 			<div class="row justify-content-center">
@@ -532,7 +543,7 @@
         </div>
 		<br/><br/><br/><br/>
 
-		</div>
+		<!-- Needed? Seems to be straggling: </div>-->
 
 
 
