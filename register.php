@@ -520,6 +520,8 @@
 				$(document).ready(function(){
 					$("#sign-and-pair-button").click(function() {
 						alert("Clicked");
+						$("#comment-messages").html("Please wait..");
+						alert("Clicked over");
 					});
 				});
 		</script>
