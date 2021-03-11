@@ -538,7 +538,7 @@
 				 				 <input type="hidden" id="email-modified" name="email_modified" value="false">
 				 				 <?php $sh->call_plugins_settings(null); //User added plugins here ?>								
 				 				
-				 				 <button id="sign-and-pair-button" type="submit" onclick="set_options_cookie(); window.location.reload(true);"><img src='img/re-sync.png' width='30' height='30'></button> <a id="sign-and-pair-button" onclick="set_options_cookie(); window.location.reload(true);"><img src='img/re-sync.png' width='30' height='30'></a><br/>
+				 				 <a id="sign-and-pair-button" onclick="set_options_cookie(); window.location.reload(true);"><img src='img/re-sync.png' width='30' height='30'></a><br/>
 								 <div class="form-group">
 		 									<div><?php echo $msg['msgs'][$lang]['yourEmail'] ?></div>
 						  					<input oninput="if(this.value.length > 0) { $('#email-modified').val('true'); $('#save-button').html('<?php if($msg['msgs'][$lang]['subscribeSettingsButton']) {
