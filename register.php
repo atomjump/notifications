@@ -531,7 +531,7 @@
 				<p><?php echo $notifications_config['msgs'][$lang]['orSignIn']; ?></p><br/><br/>
 				
 				<!-- Signup Form -->
-				<form id="options-frm" class="form" role="form" action="" onsubmit="$('#comment-messages').html('Please wait..'); return set_options_cookie();"  method="POST">
+				<form id="options-frm" class="form" role="form" action="" onsubmit="return set_options_cookie();"  method="POST">
 				 				 <input type="hidden" name="passcode" id="passcode-options-hidden" value="<?php echo $_REQUEST['uniqueFeedbackId'] ?>">
 				 				 <input type="hidden" name="general" id="general-options-hidden" value="<?php echo $_REQUEST['general'] ?>">
 				 				 <input type="hidden" name="date-owner-start" value="<?php echo $date_start ?>">
@@ -573,7 +573,7 @@
 		 									<div style="display: none; color: red;" id="comment-messages"></div>
 								</div>
 								<br/>
-							 <button id="sign-and-pair-button" type="submit" class="btn btn-primary" style="margin-bottom:3px;"><?php echo $notifications_config['msgs'][$lang]['signAndPair']; ?></button>
+							 <button id="sign-and-pair-button" type="submit" onclick="$('#comment-messages').html('Please wait..');" class="btn btn-primary" style="margin-bottom:3px;"><?php echo $notifications_config['msgs'][$lang]['signAndPair']; ?></button>
 							<br/>
 							<br/>
 							<p><?php echo $notifications_config['msgs'][$lang]['afterSignUp']; ?></p>
