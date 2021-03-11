@@ -544,7 +544,7 @@
 		<br/><br/><br/><br/>
 
 		<!-- Needed? Seems to be straggling: </div>-->
-
+		<?php } ?>
 
 
 		<div id="comment-holder"></div><!-- holds the popup comments. Can be anywhere between the <body> tags -->
