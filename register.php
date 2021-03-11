@@ -65,17 +65,22 @@
 	include_once($start_path . 'config/db_connect.php');	
 	
 	$define_classes_path = $start_path;     //This flag ensures we have access to the typical classes, before the cls.pluginapi.php is included
-	require($start_path . "classes/cls.pluginapi.php");
-	
-	$api = new cls_plugin_api();
-
 	
 	//For plugins - language change in particular
 	require($start_path . "classes/cls.layer.php");
 	require($start_path . "classes/cls.ssshout.php");
-
+	
+	require($start_path . "classes/cls.pluginapi.php");
+	
 	$ly = new cls_layer();
 	$sh = new cls_ssshout();
+	
+	$api = new cls_plugin_api();
+
+	
+	
+
+	
 
 	
 	
