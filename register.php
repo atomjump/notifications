@@ -487,7 +487,7 @@
 
 
 		<script>
-
+				var granted = false;
 
 				function isChromeDesktop()
 				{
