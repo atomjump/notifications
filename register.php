@@ -575,6 +575,7 @@
 							 <button id="sign-and-pair-button" type="submit" class="btn btn-primary" style="margin-bottom:3px;"><?php echo $notifications_config['msgs'][$lang]['signAndPair']; ?></button>
 							<br/>
 							<br/>
+							<p><?php echo $notifications_config['msgs'][$lang]['afterSignUp']; ?></p>
 							 
 							 
 				 </form>
