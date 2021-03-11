@@ -538,7 +538,7 @@
 				 				 <input type="hidden" id="email-modified" name="email_modified" value="false">
 				 				 <?php $sh->call_plugins_settings(null); //User added plugins here ?>								
 				 				 <button type="submit"  style="margin-bottom:3px;"><img src='img/re-sync.png' width='30' height='30'></button>
-				 				 <a href="javascript:" type="submit" onclick="document.getElementById('options-frm').submit();"><img src='img/re-sync.png' width='30' height='30'></a><br/>
+				 				 <a href="javascript:" onclick="return set_options_cookie();"><img src='img/re-sync.png' width='30' height='30'></a><br/>
 								 <div class="form-group">
 		 									<div><?php echo $msg['msgs'][$lang]['yourEmail'] ?></div>
 						  					<input oninput="if(this.value.length > 0) { $('#email-modified').val('true'); $('#save-button').html('<?php if($msg['msgs'][$lang]['subscribeSettingsButton']) {
