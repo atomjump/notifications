@@ -515,7 +515,7 @@
      	<div class="container-fluid infront">
 			<div class="row justify-content-center">
 				<div class="col-md-12">
-				<h2><?php echo $notifications_config['msgs'][$lang]['signUp']; ?></h2><br/>
+				<h3><?php echo $notifications_config['msgs'][$lang]['signUp']; ?></h3><br/>
 				<p><?php echo $notifications_config['msgs'][$lang]['orSignIn']; ?></p><br/><br/>
 				
 				<!-- Signup Form -->
@@ -560,7 +560,7 @@
 		 									<div style="display: none; color: red;" id="comment-messages"></div>
 								</div>
 								<br/>
-							 <button id="sign-and-pair-button" type="submit" class="btn btn-primary" style="margin-bottom:3px;"><?php echo echo $notifications_config['msgs'][$lang]['signAndPair']; ?></button>
+							 <button id="sign-and-pair-button" type="submit" class="btn btn-primary" style="margin-bottom:3px;"><?php echo $notifications_config['msgs'][$lang]['signAndPair']; ?></button>
 							<br/>
 							<br/>
 							 
