@@ -489,7 +489,8 @@
      	<div class="container-fluid infront">
 			<div class="row justify-content-center">
 				<div class="col-md-12">
-				<?php echo $notifications_config['msgs'][$lang]['signUp']; ?>
+				<?php echo $notifications_config['msgs'][$lang]['signUp']; ?><br/>
+				<?php echo $notifications_config['msgs'][$lang]['orSignIn']; ?>
 				</div> 		
 			</div>
 		</div>
