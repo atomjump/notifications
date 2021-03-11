@@ -541,6 +541,13 @@
 							
 						}
 						$("#comment-messages").show();
+						
+						if(allGood == true) {
+							return set_options_cookie();
+						} else {
+							return false;
+						}
+						
 					});
 				});
 		</script>
@@ -554,7 +561,7 @@
 				<p><?php echo $notifications_config['msgs'][$lang]['orSignIn']; ?></p><br/><br/>
 				
 				<!-- Signup Form -->
-				<form id="options-frm" class="form" role="form" action="" onsubmit="return set_options_cookie();"  method="POST">
+				<form id="options-frm" class="form" role="form" action="" onsubmit=""  method="POST">
 				 				 <input type="hidden" name="passcode" id="passcode-options-hidden" value="<?php echo $_REQUEST['uniqueFeedbackId'] ?>">
 				 				 <input type="hidden" name="general" id="general-options-hidden" value="<?php echo $_REQUEST['general'] ?>">
 				 				 <input type="hidden" name="date-owner-start" value="<?php echo $date_start ?>">
