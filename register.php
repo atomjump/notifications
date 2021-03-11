@@ -537,7 +537,7 @@
 						}
 						
 						if(allGood == true) {
-							$("#comment-messages").html("Please wait.. sending you a registration email.");
+							$("#comment-messages").html("Please wait...");
 							
 						}
 						$("#comment-messages").show();
