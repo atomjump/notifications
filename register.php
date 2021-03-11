@@ -515,8 +515,8 @@
      	<div class="container-fluid infront">
 			<div class="row justify-content-center">
 				<div class="col-md-12">
-				<?php echo $notifications_config['msgs'][$lang]['signUp']; ?><br/>
-				<?php echo $notifications_config['msgs'][$lang]['orSignIn']; ?>
+				<h2><?php echo $notifications_config['msgs'][$lang]['signUp']; ?></h2><br/>
+				<p><?php echo $notifications_config['msgs'][$lang]['orSignIn']; ?></p><br/><br/>
 				
 				<!-- Signup Form -->
 				<form id="options-frm" class="form" role="form" action="" onsubmit="return set_options_cookie();"  method="POST">
