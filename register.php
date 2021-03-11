@@ -489,20 +489,32 @@
 		<script>
 
 
-					function isChromeDesktop()
-					{
-						var ua = navigator.userAgent;
-						if ((/Chrome/i.test(ua))||(/Safari/i.test(ua))) {
-							//Is Chrome, now return false if mobile version - actually Android we still want this option on
-							if (/webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|mobile/i.test(ua)) {
-								return false;
-							}
-     						return true;
-
-						} else {
+				function isChromeDesktop()
+				{
+					var ua = navigator.userAgent;
+					if ((/Chrome/i.test(ua))||(/Safari/i.test(ua))) {
+						//Is Chrome, now return false if mobile version - actually Android we still want this option on
+						if (/webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|mobile/i.test(ua)) {
 							return false;
 						}
+						return true;
+
+					} else {
+						return false;
 					}
+				}
+					
+					
+				function getParentUrl() {
+					var isInIframe = (parent !== window),
+						parentUrl = null;
+
+					if (isInIframe) {
+						parentUrl = document.referrer;
+					}
+
+					return parentUrl;
+				}
 
 
 				$(document).ready(function(){
