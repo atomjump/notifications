@@ -71,8 +71,8 @@
 
 	
 	//For plugins - language change in particular
-	require("classes/cls.layer.php");
-	require("classes/cls.ssshout.php");
+	require($start_path . "classes/cls.layer.php");
+	require($start_path . "classes/cls.ssshout.php");
 
 	$ly = new cls_layer();
 	$sh = new cls_ssshout();
