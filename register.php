@@ -552,13 +552,6 @@
 										 <input  id="phone-opt" name="ph" type="hidden" placeholder="<?php echo $msg['msgs'][$lang]['enterMobile'] ?>" value="<?php if(isset($_COOKIE['phone'])) { echo urldecode($_COOKIE['phone']); } else { echo ''; } ?>">
 										 <?php } ?>
 									</div>
-										
-									<div style="float: right;">
-						  					<a id="comment-user-code" href="javascript:"><?php echo $msg['msgs'][$lang]['advancedLink'] ?></a>
-						  			</div>
-						  			
-										
-									
 									<div id="user-id-show" class="form-group" style="display:none;">
 										<div style="color: red;" id="user-id-show-set"></div>
 						  			</div>
