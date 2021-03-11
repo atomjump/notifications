@@ -519,10 +519,24 @@
 
 				$(document).ready(function(){
 					$("#sign-and-pair-button").click(function() {
-						alert("Clicked");
-						$("#comment-messages").html("Please wait..");
-						$("#comment-messages").show();
-						alert("Clicked over");
+						
+						var allGood = true;
+						if($("#email-opt").val() == '') {
+							$("#comment-messages").html("Please enter an email address.");
+							$("#comment-messages").show();
+							allGood = false;
+						}
+						
+						if($("#password-opt").val() == '') {
+							$("#comment-messages").html("Please enter a password.");
+							$("#comment-messages").show();
+							allGood = false;
+						}
+						
+						if(allGood == true) {
+							$("#comment-messages").html("Please wait.. sending you a registration email.");
+							$("#comment-messages").show();
+						}
 					});
 				});
 		</script>
