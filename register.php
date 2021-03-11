@@ -524,10 +524,8 @@
 				 				 <input type="hidden" name="general" id="general-options-hidden" value="<?php echo $_REQUEST['general'] ?>">
 				 				 <input type="hidden" name="date-owner-start" value="<?php echo $date_start ?>">
 				 				 <input type="hidden" id="email-modified" name="email_modified" value="false">
-				 				 <div class="form-group">
-				 						<div><?php echo $msg['msgs'][$lang]['yourName'] ?></div>
-							 			<input id="your-name-opt" name="your-name-opt" type="text" class="form-control" placeholder="<?php echo $msg['msgs'][$lang]['enterYourName'] ?>" autocomplete="false" value="<?php if(isset($_COOKIE['your_name'])) { echo urldecode($_COOKIE['your_name']); } else { echo ''; } ?>" >
-								</div>
+				 				 <?php $sh->call_plugins_settings(null); //User added plugins here ?>								
+				 				 
 								 <div class="form-group">
 		 									<div><?php echo $msg['msgs'][$lang]['yourEmail'] ?> <a href="javascript:" onclick="$('#email-explain').slideToggle();" title="<?php echo $msg['msgs'][$lang]['yourEmailReason'] ?>"><?php echo $msg['msgs'][$lang]['optional'] ?></a><span id="subscribe-button">, <?php echo $subscribe; ?></a></span> <span id="email-explain" style="display: none;  color: #f88374;"><?php echo $msg['msgs'][$lang]['yourEmailReason'] ?></span></div>
 						  					<input oninput="if(this.value.length > 0) { $('#email-modified').val('true'); $('#save-button').html('<?php if($msg['msgs'][$lang]['subscribeSettingsButton']) {
@@ -554,7 +552,7 @@
 										 <input  id="phone-opt" name="ph" type="hidden" placeholder="<?php echo $msg['msgs'][$lang]['enterMobile'] ?>" value="<?php if(isset($_COOKIE['phone'])) { echo urldecode($_COOKIE['phone']); } else { echo ''; } ?>">
 										 <?php } ?>
 									</div>
-									<?php $sh->call_plugins_settings(null); //User added plugins here ?>									
+										
 									<div style="float: right;">
 						  					<a id="comment-user-code" href="javascript:"><?php echo $msg['msgs'][$lang]['advancedLink'] ?></a>
 						  			</div>
@@ -567,15 +565,17 @@
 									
 								</div>
 								<div class="form-group">
+				 						<div><?php echo $msg['msgs'][$lang]['yourName'] ?></div>
+							 			<input id="your-name-opt" name="your-name-opt" type="text" class="form-control" placeholder="<?php echo $msg['msgs'][$lang]['enterYourName'] ?>" autocomplete="false" value="<?php if(isset($_COOKIE['your_name'])) { echo urldecode($_COOKIE['your_name']); } else { echo ''; } ?>" >
+								</div>
+								<div class="form-group">
 		 									<div style="display: none; color: red;" id="comment-messages"></div>
 								</div>
 								<br/>
 							 <button id="save-button" type="submit" class="btn btn-primary" style="margin-bottom:3px;"><?php echo $msg['msgs'][$lang]['saveSettingsButton'] ?></button>
 							<br/>
 							<br/>
-							 <div><?php echo $msg['msgs'][$lang]['tip'] ?></div>
-							 <br/>
-							 <div><?php echo $msg['msgs'][$lang]['getYourOwn'] ?></div>
+							 
 							 
 				 </form>
 				
