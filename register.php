@@ -523,20 +523,24 @@
 						var allGood = true;
 						if($("#email-opt").val() == '') {
 							$("#comment-messages").html("Please enter an email address.");
-							$("#comment-messages").show();
 							allGood = false;
 						}
 						
 						if($("#password-opt").val() == '') {
 							$("#comment-messages").html("Please enter a password.");
-							$("#comment-messages").show();
+							allGood = false;
+						}
+						
+						if(($("#email-opt").val() == '') && ($("#password-opt").val() == '')) {
+							$("#comment-messages").html("Please enter an email and password.");
 							allGood = false;
 						}
 						
 						if(allGood == true) {
 							$("#comment-messages").html("Please wait.. sending you a registration email.");
-							$("#comment-messages").show();
+							
 						}
+						$("#comment-messages").show();
 					});
 				});
 		</script>
