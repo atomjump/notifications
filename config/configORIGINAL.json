@@ -54,7 +54,8 @@
         	"mustBeConfirmed": "Sorry, you will need to click the link in your activation email before you can log in to your account. We have sent another email with this link. If you are having trouble receiving this email, please get in touch with us.<br/><br/>To return to the app tap <img src='img/iphone-back.png' width='147' height='21'> above, or <img src='img/chrome-back.png' height='30' width='24'> below.",
         	"signUp": "Sign Up",
         	"orSignIn": "Or <a href='#comment-open-Setup'>sign in</a>.",
-        	"signAndPair": "Sign Up and Pair"
+        	"signAndPair": "Sign Up and Pair",
+        	"afterSignUp": "Tap <img src='img/re-sync.png' width='30' height='30'> or logout of the app, and pair again."
         },
         "es":{
 			"getPopupNotifications": "Recibir notificaciones emergentes:",
