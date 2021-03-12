@@ -594,7 +594,7 @@
 						<span class="signuptitle"><?php echo $notifications_config['msgs'][$lang]['signUp']; ?></span></br>
 						<span><?php echo $notifications_config['msgs'][$lang]['orSignIn']; ?></span>
 					</span>
-					<span style="text-align:right; float: right; width: 50%;">
+					<span class="signuptitle-section" style="text-align:right; float: right; width: 50%;">
 						
 							<img src="img/logo80.png" width="50" height="50">
 
