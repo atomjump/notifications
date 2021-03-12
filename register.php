@@ -596,8 +596,6 @@
 					</span>
 				</div>
 				
-				<p><?php echo $notifications_config['msgs'][$lang]['orSignIn']; ?></p><br/><br/>
-				
 				<!-- Signup Form -->
 				<form id="options-frm" class="form" role="form" action="" onsubmit=""  method="POST">
 				 				 <input type="hidden" name="passcode" id="passcode-options-hidden" value="<?php echo $_REQUEST['uniqueFeedbackId'] ?>">
