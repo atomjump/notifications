@@ -306,6 +306,16 @@
 				h2 {
 					text-align: center;
 				}
+				
+				signuptitle {
+					font-size: 24px;
+					margin-top: 20px;
+					margin-bottom: 10px;
+					font-family: inherit;
+					font-weight: 500;
+					line-height: 1.1;
+					color: inherit;
+				} 
 
 				textarea:focus, input:focus, img:focus {
 					outline: 0;
@@ -460,6 +470,9 @@
 					height:100%;
 					z-index: -1;
 				}
+				
+				
+				
 
 
 
@@ -572,8 +585,7 @@
      	<div class="container-fluid infront">
 			<div class="row justify-content-center">
 				<div class="col-md-12">
-						<span><?php echo $notifications_config['msgs'][$lang]['signUp']; ?></span>
-						<h3><?php echo $notifications_config['msgs'][$lang]['signUp']; ?></h3>
+						<span class="signuptitle"><?php echo $notifications_config['msgs'][$lang]['signUp']; ?></span>
 						<span style="text-align:right; float: right;">
 							<img src="img/logo80.png" width="50" height="50">
 						</span>
