@@ -174,10 +174,10 @@
 			//User has not been confirmed (or doesn't exist). We will need to send a new confirmation email.
 			$follow_on_link = "#comment-open-Setup";
 			$main_message = $user_email . ": " . $notifications_config['msgs'][$lang]['mustBeConfirmed'];
-			$first_button = $follow_on_link;
-			$first_button_wording = $notifications_config['msgs'][$lang]['backHome'];
-			$second_button = "javascript:window.location.reload(true);";
-			$second_button_wording = $notifications_config['msgs'][$lang]['completePairing'];	
+			$first_button = "javascript:window.location.reload(true);";
+			$first_button_wording = $notifications_config['msgs'][$lang]['completePairing'];
+			$second_button = "";
+			$second_button_wording = "";	
 		
 			//Send off another confirmation email
 			//This code is pretty similar to that in cls_ssshout.php new_user()
