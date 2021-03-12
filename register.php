@@ -577,6 +577,7 @@
 				<div class="col-md-2" style="text-align:right; float: right;">
 					
 						<img src="img/logo80.png" width="50" height="50">
+						Test
 				</div>
 			</div>
 	
