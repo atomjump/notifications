@@ -316,6 +316,7 @@
 				} 
 				
 				.signuptitle-section {
+					position: relative;
 					margin-top: 20px;
 					margin-bottom: 30px;
 				}
