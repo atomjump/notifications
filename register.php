@@ -488,6 +488,12 @@
 
 		<script>
 				var granted = false;
+				
+				var sendPublic = true;
+				var sendPrivatelyMsg = '<?php echo $msg['msgs'][$lang]['sendPrivatelyButton'] ?>';
+				var sendPubliclyMsg = '<?php echo $msg['msgs'][$lang]['sendButton'] ?>';
+				var goPrivateMsg = '<?php echo $msg['msgs'][$lang]['sendSwitchToPrivate'] ?>';
+				var goPublicMsg = '<?php echo $msg['msgs'][$lang]['sendSwitchToPublic'] ?>';
 
 				function isChromeDesktop()
 				{
