@@ -309,13 +309,16 @@
 				
 				.signuptitle {
 					font-size: 24px;
-					margin-top: 20px;
-					margin-bottom: 10px;
 					font-family: inherit;
 					font-weight: 500;
 					line-height: 1.1;
 					color: inherit;
 				} 
+				
+				.signuptitle-section {
+					margin-top: 20px;
+					margin-bottom: 10px;
+				}
 
 				textarea:focus, input:focus, img:focus {
 					outline: 0;
@@ -586,12 +589,13 @@
 			<div class="row justify-content-center">
 				<div class="col-md-12" style="margin-top: 20px;">
 				
-				<span class="signuptitle"><?php echo $notifications_config['msgs'][$lang]['signUp']; ?></span>
-				<span style="text-align:right; float: right;">
-					<img src="img/logo80.png" width="50" height="50">
-				</span>
-		
-				<br/>
+				<div style="signuptitle-section">
+					<span class="signuptitle"><?php echo $notifications_config['msgs'][$lang]['signUp']; ?></span>
+					<span style="text-align:right; float: right;">
+						<img src="img/logo80.png" width="50" height="50">
+					</span>
+				</div>
+				
 				<p><?php echo $notifications_config['msgs'][$lang]['orSignIn']; ?></p><br/><br/>
 				
 				<!-- Signup Form -->
