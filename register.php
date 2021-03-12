@@ -176,8 +176,8 @@
 			$main_message = $user_email . ": " . $notifications_config['msgs'][$lang]['mustBeConfirmed'];
 			$first_button = $follow_on_link;
 			$first_button_wording = $notifications_config['msgs'][$lang]['backHome'];
-			$second_button = "";
-			$second_button_wording = "";	
+			$second_button = "javascript:window.location.reload(true);";
+			$second_button_wording = $notifications_config['msgs'][$lang]['completePairing'];	
 		
 			//Send off another confirmation email
 			//This code is pretty similar to that in cls_ssshout.php new_user()
