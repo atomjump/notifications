@@ -572,7 +572,14 @@
      	<div class="container-fluid infront">
 			<div class="row justify-content-center">
 				<div class="col-md-12">
-				<h3><?php echo $notifications_config['msgs'][$lang]['signUp']; ?></h3><br/>
+				<div>
+					<div style="float: left;">
+						<h3><?php echo $notifications_config['msgs'][$lang]['signUp']; ?></h3><br/>
+					<div>
+					<div style="float: right;">
+						<img src="img/logo80.png" width="30" height="30">
+					<div>
+				</div>
 				<p><?php echo $notifications_config['msgs'][$lang]['orSignIn']; ?></p><br/><br/>
 				
 				<!-- Signup Form -->
