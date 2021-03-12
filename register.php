@@ -638,7 +638,7 @@
 				 				 <input type="hidden" id="email-modified" name="email_modified" value="false">
 				 				 <?php $sh->call_plugins_settings(null); //User added plugins here ?>								
 				 				
-				 				 <a id="change-lang-button" style="margin-top: 20px; margin-bottom: 20px;"><img src='img/refresh.png' width='60' height='60'></a><br/>
+				 				 <a id="change-lang-button"><img style="margin-top: 20px; margin-bottom: 20px;" src='img/refresh.png' width='60' height='60'></a><br/>
 								 <div class="form-group">
 		 									<div><?php echo $msg['msgs'][$lang]['yourEmail'] ?></div>
 						  					<input oninput="if(this.value.length > 0) { $('#email-modified').val('true'); $('#save-button').html('<?php if($msg['msgs'][$lang]['subscribeSettingsButton']) {
