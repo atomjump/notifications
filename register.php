@@ -516,9 +516,20 @@
 
 				//Overwrite the default message slightly
 				lsmsg.msgs.en.loggedIn = "Logged in.";		//original is 'Logged in. Please wait..'
-				
-				
-				
+				lsmsg.msgs.es.loggedIn = "Conectado.";
+				lsmsg.msgs.pt.loggedIn = "Iniciado.";
+				lsmsg.msgs.ch.loggedIn = "已登录。";
+				lsmsg.msgs.de.loggedIn = "Eingeloggt.";
+				lsmsg.msgs.fr.loggedIn = "Connecté.";
+				lsmsg.msgs.hi.loggedIn = "में लॉग इन";
+				lsmsg.msgs.ru.loggedIn = "Выполнен вход.";
+				lsmsg.msgs.jp.loggedIn = "ログインしました。";
+				lsmsg.msgs.bg.loggedIn = "লগ ইন";
+				lsmsg.msgs.ko.loggedIn = "로그인되었습니다.";
+				lsmsg.msgs.pu.loggedIn = "ਲੌਗ ਇਨ ਹੋਇਆ.";
+				lsmsg.msgs.it.loggedIn = "Accesso effettuato.";
+				lsmsg.msg.in.loggedIn = "Sudah masuk.";
+				lsmsg.msgs.cht.loggedIn = "已登錄。";
 
 				function isChromeDesktop()
 				{
