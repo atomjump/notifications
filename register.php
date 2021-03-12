@@ -307,7 +307,7 @@
 					text-align: center;
 				}
 				
-				signuptitle {
+				.signuptitle {
 					font-size: 24px;
 					margin-top: 20px;
 					margin-bottom: 10px;
