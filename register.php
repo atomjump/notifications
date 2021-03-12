@@ -590,15 +590,15 @@
 				<div class="col-md-12" style="">
 				
 				<div class="signuptitle-section">
-					<div>
+					<span>
 						<span class="signuptitle"><?php echo $notifications_config['msgs'][$lang]['signUp']; ?></span></br>
 						<span><?php echo $notifications_config['msgs'][$lang]['orSignIn']; ?></span>
-					</div>
-					<div style="text-align:right; float: right;">
+					</span>
+					<span style="text-align:right; float: right;">
 						<span style="text-align:right; float: right;">
 							<img src="img/logo80.png" width="50" height="50">
 						</span>
-					</div>
+					</span>
 				</div>
 				
 				
