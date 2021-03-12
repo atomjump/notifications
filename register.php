@@ -570,11 +570,9 @@
 		
 		<?php if($screen_type == "signup") { ?>
      	<div class="container-fluid infront">
-			<div class="row justify-content-center">
+			<div class="row">
 				<div class="col-md-6">
-					<div style="text-align:left; float: left;">
-						<span style="front-size: 160%; font-weight: bold;"><?php echo $notifications_config['msgs'][$lang]['signUp']; ?></span><br/>
-					<div>
+						<h3><?php echo $notifications_config['msgs'][$lang]['signUp']; ?></h3>
 				<div>
 				<div class="col-md-6">
 					<div style="text-align:right; float: right;">
@@ -582,9 +580,9 @@
 					<div>
 				</div>
 			</div>
-		</div>
+	
 		
-		<div class="container-fluid infront">
+
 			<div class="row justify-content-center">
 				<div class="col-md-12">
 				
