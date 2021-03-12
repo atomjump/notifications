@@ -595,6 +595,7 @@
 						<img src="img/logo80.png" width="50" height="50">
 					</span>
 				</div>
+				<span><?php echo $notifications_config['msgs'][$lang]['orSignIn']; ?></span>
 				
 				<!-- Signup Form -->
 				<form id="options-frm" class="form" role="form" action="" onsubmit=""  method="POST">
