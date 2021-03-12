@@ -566,7 +566,7 @@
      	<div class="container-fluid infront">
 			<div class="row justify-content-center">
 				<div class="col-md-12">
-				<h3>1. <?php echo $notifications_config['msgs'][$lang]['signUp']; ?></h3><br/>
+				<span>1.</span><h3><?php echo $notifications_config['msgs'][$lang]['signUp']; ?></h3><br/>
 				<p><?php echo $notifications_config['msgs'][$lang]['orSignIn']; ?></p><br/><br/>
 				
 				<!-- Signup Form -->
