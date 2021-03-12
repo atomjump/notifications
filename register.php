@@ -522,22 +522,23 @@
 						
 						var allGood = true;
 						if($("#email-opt").val() == '') {
-							$("#comment-messages").html("Please enter an email address.");
+							$("#comment-messages").html("<?php echo $msg['msgs'][$lang]['enterEmail'] ?>");		//"Enter your email". Better would be: Please enter an email address.
 							allGood = false;
 						}
 						
 						if($("#password-opt").val() == '') {
-							$("#comment-messages").html("Please enter a password.");
+							$("#comment-messages").html("<?php echo $msg['msgs'][$lang]['enterPassword'] ?>");		//"Enter your password" Please enter a password.
+							
 							allGood = false;
 						}
 						
 						if(($("#email-opt").val() == '') && ($("#password-opt").val() == '')) {
-							$("#comment-messages").html("Please enter an email and password.");
+							$("#comment-messages").html("<?php echo $msg['msgs'][$lang]['enterEmail'] ?>"); //"Enter your email". Better would be: Please enter an email and password.
 							allGood = false;
 						}
 						
 						if(allGood == true) {
-							$("#comment-messages").html("Please wait...");
+							$("#comment-messages").html("<img src=\"img/ajax-loader.gif\" width=\"16\" height=\"16\">");
 							
 						}
 						$("#comment-messages").show();
@@ -620,7 +621,7 @@
    		<?php } else { //A standard screen ?>
 		<div>			
 		    <div id="logo-wrapper" class="looplogo comment-open">
-					<img class="saver-hideable" src="https://atomjump.com/wp/wp-content/uploads/2018/12/speech-bubble-start-1.png" id="bg" alt="">
+					<img class="saver-hideable" src="img/speech-bubble-start-1.png" id="bg" alt="">
 			</div>
 		</div>
    		
