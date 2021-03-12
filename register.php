@@ -316,7 +316,6 @@
 				} 
 				
 				.signuptitle-section {
-					position: relative;
 					margin-top: 20px;
 					margin-bottom: 10px;
 				}
@@ -588,9 +587,9 @@
 		<?php if($screen_type == "signup") { ?>
      	<div class="container-fluid infront">
 			<div class="row justify-content-center">
-				<div class="col-md-12" style="margin-top: 20px;">
+				<div class="col-md-12" style="">
 				
-				<div style="signuptitle-section">
+				<div class="signuptitle-section">
 					<span class="signuptitle"><?php echo $notifications_config['msgs'][$lang]['signUp']; ?></span>
 					<span style="text-align:right; float: right;">
 						<img src="img/logo80.png" width="50" height="50">
