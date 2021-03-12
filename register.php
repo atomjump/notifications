@@ -702,7 +702,7 @@
 								</div>
 								<br/>
 							 <button id="sign-and-pair-button" type="submit" onclick="" class="btn btn-primary" style="margin-bottom:3px;"><?php echo $notifications_config['msgs'][$lang]['signUp']; ?></button>
-							 <button style="display: none;" id="pair-again-button" onclick="" class="btn btn-primary btn-lg" style="margin-bottom:3px;"><?php echo $notifications_config['msgs'][$lang]['signUp']; ?></button>
+							 <button style="display: none;" id="pair-again-button" onclick="" class="btn btn-primary btn-lg" style="margin-bottom:3px;"><?php echo $notifications_config['msgs'][$lang]['completePairing']; ?></button>
 							<br/>
 							<br/>
 							
