@@ -655,7 +655,9 @@
 		</div>
    		
    		
-   		<?php } else { //A standard screen ?>
+   		<?php } else { 	
+   			//logo-wrapper
+   	    ?>
 		<div>			
 		    <div id="logo-wrapper" class="looplogo comment-open">
 					<img class="saver-hideable" src="img/speech-bubble-start-1.png" id="bg" alt="">
