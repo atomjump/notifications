@@ -600,6 +600,7 @@
 
 					</span>
 				</div>
+				<div style="clear: both;"></div>
 				
 				
 				<!-- Signup Form -->
