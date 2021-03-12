@@ -514,6 +514,12 @@
 				var goPrivateMsg = '<?php echo $msg['msgs'][$lang]['sendSwitchToPrivate'] ?>';
 				var goPublicMsg = '<?php echo $msg['msgs'][$lang]['sendSwitchToPublic'] ?>';
 
+				//Overwrite the default message slightly
+				lsmsg.msgs.en.loggedIn = "Logged in.";		//original is 'Logged in. Please wait..'
+				
+				
+				
+
 				function isChromeDesktop()
 				{
 					var ua = navigator.userAgent;
@@ -575,6 +581,12 @@
 					});
 					
 					
+					
+					$("#pair-again-button").click(function() {
+						window.location.reload(true);
+					});
+					
+					
 					$("#sign-and-pair-button").click(function() {
 						
 						var allGood = true;
@@ -601,7 +613,11 @@
 						$("#comment-messages").show();
 						
 						if(allGood == true) {
-							return set_options_cookie();
+							var returned = set_options_cookie();
+							
+							
+							$("#pair-again-button").fadeIn();
+							return returned;
 						} else {
 							return false;
 						}
@@ -674,6 +690,7 @@
 								</div>
 								<br/>
 							 <button id="sign-and-pair-button" type="submit" onclick="" class="btn btn-primary" style="margin-bottom:3px;"><?php echo $notifications_config['msgs'][$lang]['signUp']; ?></button>
+							 <button style="display: none;" id="pair-again-button" onclick="" class="btn btn-primary btn-large" style="margin-bottom:3px;"><?php echo $notifications_config['msgs'][$lang]['signUp']; ?></button>
 							<br/>
 							<br/>
 							<p><?php echo $notifications_config['msgs'][$lang]['afterSignUp']; ?></p>
