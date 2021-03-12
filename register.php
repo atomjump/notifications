@@ -317,7 +317,7 @@
 				
 				.signuptitle-section {
 					margin-top: 20px;
-					margin-bottom: 10px;
+					margin-bottom: 30px;
 				}
 
 				textarea:focus, input:focus, img:focus {
