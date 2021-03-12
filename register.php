@@ -615,8 +615,9 @@
 						if(allGood == true) {
 							var returned = set_options_cookie();
 							
-							
+							$("#sign-and-pair-button").hide();
 							$("#pair-again-button").fadeIn();
+							
 							return returned;
 						} else {
 							return false;
@@ -690,10 +691,10 @@
 								</div>
 								<br/>
 							 <button id="sign-and-pair-button" type="submit" onclick="" class="btn btn-primary" style="margin-bottom:3px;"><?php echo $notifications_config['msgs'][$lang]['signUp']; ?></button>
-							 <button style="display: none;" id="pair-again-button" onclick="" class="btn btn-primary btn-large" style="margin-bottom:3px;"><?php echo $notifications_config['msgs'][$lang]['signUp']; ?></button>
+							 <button style="display: none;" id="pair-again-button" onclick="" class="btn btn-primary btn-lg" style="margin-bottom:3px;"><?php echo $notifications_config['msgs'][$lang]['signUp']; ?></button>
 							<br/>
 							<br/>
-							<p><?php echo $notifications_config['msgs'][$lang]['afterSignUp']; ?></p>
+							
 							 
 							 
 				 </form>
