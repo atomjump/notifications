@@ -304,20 +304,7 @@
 
 			<style>
 			
-				html {
-				  /* default font-size is 16px - this is set in the default browser stylesheet */ 
-				  font-size: 40px; 
-				  font-weight: 400; 
-				  line-height: 1.5; 
-				} 
- 
-				/* Increase all font sizes on mobile */ 
-				@media (max-width: 767px) { 
-				  html { 
-					/* default is 1rem or 16px */ 
-					font-size: 40px; 
-				  } 
-				}
+				
 			
 				h2 {
 					text-align: center;
