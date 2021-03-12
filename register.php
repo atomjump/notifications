@@ -537,6 +537,29 @@
 
 					return parentUrl;
 				}
+				
+				
+				function clearPass()
+				{
+					var ur = "clear-pass.php";
+				
+					var email = $('#email-opt').val();
+					if(email != '') {
+						ur = ur + '?email=' + email;
+					
+						//Also save this cookie
+						document.cookie = 'email=' + encodeURIComponent(email) + '; path=/; expires=' + cookieOffset() + ';';
+					}
+				
+			
+					 $.get(ur, function(response) { 
+						 
+						   $('#clear-password').html(response);
+					   
+					 });
+				  
+					 return false;
+				 }
 
 
 				$(document).ready(function(){
