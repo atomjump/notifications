@@ -573,7 +573,7 @@
 			<div class="row justify-content-center">
 				<div class="col-md-12">
 						<span><?php echo $notifications_config['msgs'][$lang]['signUp']; ?></span>
-				
+						<h3><?php echo $notifications_config['msgs'][$lang]['signUp']; ?></h3>
 						<span style="text-align:right; float: right;">
 							<img src="img/logo80.png" width="50" height="50">
 						</span>
