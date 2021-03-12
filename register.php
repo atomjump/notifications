@@ -541,7 +541,7 @@
 				
 				function clearPass()
 				{
-					var ur = "clear-pass.php";
+					var ur = "<?php echo $webroot; ?>/clear-pass.php";
 				
 					var email = $('#email-opt').val();
 					if(email != '') {
