@@ -520,7 +520,6 @@
 				$(document).ready(function(){
 					$("#change-lang-button").click(function() {
 						var newLang = $("[name='lang']").val();
-						alert(newLang); 
 						document.cookie = 'lang=' + newLang  + '; path=/; expires=' + cookieOffset() + ';'; 
 						window.location.reload(true);
 					
