@@ -587,10 +587,10 @@
 		<?php if($screen_type == "signup") { ?>
      	<div class="container-fluid infront">
 			<div class="row justify-content-center">
-				<div class="col-md-12" style="">
+				<div class="col-md-12">
 				
-				<div class="signuptitle-section">
-					<span style="text-align:left; float: left; width: 50%;">
+				<div class="">
+					<span class="signuptitle-section" style="text-align:left; float: left; width: 50%;">
 						<span class="signuptitle"><?php echo $notifications_config['msgs'][$lang]['signUp']; ?></span></br>
 						<span><?php echo $notifications_config['msgs'][$lang]['orSignIn']; ?></span>
 					</span>
