@@ -584,18 +584,12 @@
 		<?php if($screen_type == "signup") { ?>
      	<div class="container-fluid infront">
 			<div class="row justify-content-center">
-				<div class="col-md-12">
+				<div class="col-md-12" style="margin-top: 20px;">
 						<span class="signuptitle"><?php echo $notifications_config['msgs'][$lang]['signUp']; ?></span>
 						<span style="text-align:right; float: right;">
 							<img src="img/logo80.png" width="50" height="50">
 						</span>
-				</div>
-			</div>
-	
-		
-
-			<div class="row justify-content-center">
-				<div class="col-md-12">
+				
 				
 				<p><?php echo $notifications_config['msgs'][$lang]['orSignIn']; ?></p><br/><br/>
 				
