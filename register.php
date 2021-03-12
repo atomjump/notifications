@@ -571,13 +571,12 @@
 		<?php if($screen_type == "signup") { ?>
      	<div class="container-fluid infront">
 			<div class="row justify-content-center">
-				<div class="col-md-10">
-						<h3><?php echo $notifications_config['msgs'][$lang]['signUp']; ?></h3>
-				<div>
-				<div class="col-md-2" style="text-align:right; float: right;">
-					
-						<img src="img/logo80.png" width="50" height="50">
-						Test
+				<div class="col-md-12">
+						<span><?php echo $notifications_config['msgs'][$lang]['signUp']; ?></span>
+				
+						<span style="text-align:right; float: right;">
+							<img src="img/logo80.png" width="50" height="50">
+						</span>
 				</div>
 			</div>
 	
