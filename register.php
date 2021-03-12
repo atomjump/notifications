@@ -572,11 +572,11 @@
      	<div class="container-fluid infront">
 			<div class="row justify-content-center">
 				<div class="col-md-8">
-						<span><?php echo $notifications_config['msgs'][$lang]['signUp']; ?></span>
+						<h3><?php echo $notifications_config['msgs'][$lang]['signUp']; ?></h3>
 				<div>
 				<div class="col-md-4" style="text-align:right; float: right;">
 					
-						<img src="img/logo80.png" width="30" height="30">
+						<img src="img/logo80.png" width="50" height="50">
 				</div>
 			</div>
 	
