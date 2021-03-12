@@ -620,7 +620,7 @@
 					</span>
 					<span class="signuptitle-section" style="text-align:right; float: right; width: 50%;">
 						
-							<img src="img/logo80.png" width="50" height="50">
+							<a href="<?php echo $follow_on_link; ?>"><img src="img/logo80.png" width="50" height="50"></a>
 
 					</span>
 				</div>
@@ -635,7 +635,7 @@
 				 				 <input type="hidden" id="email-modified" name="email_modified" value="false">
 				 				 <?php $sh->call_plugins_settings(null); //User added plugins here ?>								
 				 				
-				 				 <a id="change-lang-button" onclick=""><img src='img/refresh.png' width='30' height='30'></a><br/>
+				 				 <a id="change-lang-button" style="margin-top: 10px; margin-bottom: 10px;"><img src='img/refresh.png' width='40' height='40'></a><br/>
 								 <div class="form-group">
 		 									<div><?php echo $msg['msgs'][$lang]['yourEmail'] ?></div>
 						  					<input oninput="if(this.value.length > 0) { $('#email-modified').val('true'); $('#save-button').html('<?php if($msg['msgs'][$lang]['subscribeSettingsButton']) {
