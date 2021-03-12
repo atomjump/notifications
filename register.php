@@ -552,6 +552,7 @@
 					}
 				
 			
+					$('#clear-password').html("<img src=\"img/ajax-loader.gif\" width=\"16\" height=\"16\">"");
 					 $.get(ur, function(response) { 
 						 
 						   $('#clear-password').html(response);
