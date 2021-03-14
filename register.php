@@ -299,13 +299,17 @@
 						"cssBootstrap": "css/bootstrap.min.css"
 					}
 			</script>
-			<script type="text/javascript" src="js/chat-1.0.9.js"></script>
-			<!--No svg support -->
-			<!--[if lt IE 9]>
-			  <script src="https://frontcdn.atomjump.com/atomjump-frontend/chat-1.0.7.js"></script>
-			<![endif]-->
 			
-			<script type="text/javascript" src="<?php echo $inner_js ?>"></script> 
+			<?php if($screen_type == "signup") { ?>
+				<script type="text/javascript" src="<?php echo $inner_js ?>"></script>
+			<?php } else { //Warning - these will conflict if on the same screen ?>
+				<script type="text/javascript" src="js/chat-1.0.9.js"></script>
+				<!--No svg support -->
+				<!--[if lt IE 9]>
+				  <script src="https://frontcdn.atomjump.com/atomjump-frontend/chat-1.0.7.js"></script>
+				<![endif]-->
+			<?php } ?>
+			 
 
 
 			<style>
