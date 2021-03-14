@@ -275,7 +275,7 @@
 			<![endif]-->
 
 			<!-- Include your version of jQuery here.  This is version 1.9.1 which is tested with AtomJump Feedback. -->
-			<script type="text/javascript" src="<?php echo $webroot ?>js/jquery-1.11.0.min.js"></script>
+			<script type="text/javascript" src="<?php echo $webroot ?>/js/jquery-1.11.0.min.js"></script>
 			<!-- Took from here 15 May 2014: http://ajax.googleapis.com/ajax/libs/jquery/1.9.1 -->
 
 			<!-- For the dropdown autocomplete -->
@@ -299,7 +299,7 @@
 			  <script src="https://frontcdn.atomjump.com/atomjump-frontend/chat-1.0.7.js"></script>
 			<![endif]-->
 			
-			<script type="text/javascript" src="<?php echo $webroot . $chat_inner_js_filename ?>"></script> 
+			<script type="text/javascript" src="<?php echo $webroot . "/" . $chat_inner_js_filename ?>"></script> 
 
 
 			<style>
