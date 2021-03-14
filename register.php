@@ -147,7 +147,7 @@
 			$inner_js = trim_trailing_slash_local($webroot) . $chat_inner_js_filename;
 	} else {
 		//The default version
-		$chat_inner_js_filename = "js/chat-inner-1.3.30.js";			//Use the local version from the plugin
+		$chat_inner_js_filename = "js/chat-inner-1.3.31.js";			//Use the local version from the plugin
 		$inner_js = $chat_inner_js_filename;
 	}
 		
