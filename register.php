@@ -150,8 +150,11 @@
 		$chat_inner_js_filename = "js/chat-inner-1.3.31.js";			//Use the local version from the plugin
 		$inner_js = $chat_inner_js_filename;
 	}
-		
 	
+	//TEMPORARY TEST	
+	$chat_inner_js_filename = "js/chat-inner-1.3.31.js";			//Use the local version from the plugin
+	$inner_js = $chat_inner_js_filename;
+	//TEMPORARY TEST ENDS	
 	
 	
 	if(($user_id == "")||($user_email == "")) {
