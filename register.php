@@ -632,7 +632,7 @@
 						if(allGood == true) {
 							var returned = set_options_cookie();
 							
-							$("#sign-and-pair-button").hide();
+							//$("#sign-and-pair-button").hide();
 							$("#pair-again-button").fadeIn();
 							
 							return returned;
