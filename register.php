@@ -130,6 +130,30 @@
 	$screen_type = "standard";	//Standard message page
 	
 	
+	$subdomain = check_subdomain();
+	$webroot = trim_trailing_slash_local($cnf['webRoot']);
+	
+	if((isset($subdomain))&&($subdomain != "")) {
+		$replace_with = $subdomain . ".";
+		$webroot = trim_trailing_slash_local(str_replace("[subdomain]", $replace_with,$webroot));
+	} else {
+		$webroot = str_replace("[subdomain]", "",$webroot);		//Always remove this string if it exists
+	}		
+	
+	if(isset($cnf['chatInnerJSFilename']) &&
+	  (file_exists(add_trailing_slash_local($cnf['fileRoot']) . $cnf['chatInnerJSFilename'])
+	  ) {
+			$chat_inner_js_filename = $cnf['chatInnerJSFilename'];
+			$inner_js = trim_trailing_slash_local($webroot) . $chat_inner_js_filename;
+	} else {
+		//The default version
+		$chat_inner_js_filename = "js/chat-inner-1.3.30.js";			//Use the local version from the plugin
+		$inner_js = $chat_inner_js_filename;
+	}
+		
+	
+	
+	
 	if(($user_id == "")||($user_email == "")) {
 		//A blank user id
 		$screen_type = "signup";		//
@@ -140,15 +164,6 @@
 		$second_button = "";	//"javascript: window.close()";
 		$second_button_wording = ""; 
 		$center = "left";   //$notifications_config['msgs'][$lang]['returnToApp'];
-		
-		if(isset($cnf['chatInnerJSFilename']) && (file_exists(__DIR__ . $cnf['chatInnerJSFilename']))) {
-			$chat_inner_js_filename = $cnf['chatInnerJSFilename'];
-		} else {
-			//The default version
-			$chat_inner_js_filename = "/js/chat-inner-1.3.30.js";			//This should be updated when the Javascript file
-																			//is updated. And you should 'git mv' the file to the
-																			//new version number.
-		}
 		
 	} else {
 		//We have a user id		
@@ -224,15 +239,7 @@
 		}
 	}
 	
-	$subdomain = check_subdomain();
-	$webroot = trim_trailing_slash_local($cnf['webRoot']);
-	
-	if((isset($subdomain))&&($subdomain != "")) {
-		$replace_with = $subdomain . ".";
-		$webroot = trim_trailing_slash_local(str_replace("[subdomain]", $replace_with,$webroot));
-	} else {
-		$webroot = str_replace("[subdomain]", "",$webroot);		//Always remove this string if it exists
-	}	
+
 	
 	
 	
@@ -298,7 +305,7 @@
 			  <script src="https://frontcdn.atomjump.com/atomjump-frontend/chat-1.0.7.js"></script>
 			<![endif]-->
 			
-			<script type="text/javascript" src="<?php echo $webroot . "/" . $chat_inner_js_filename ?>"></script> 
+			<script type="text/javascript" src="<?php echo $inner_js ?>"></script> 
 
 
 			<style>
