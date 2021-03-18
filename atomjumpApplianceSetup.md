@@ -85,6 +85,7 @@ sudo cp /jet/www/default/vendor/atomjump/loop-server/plugins/notifications/confi
 		"Default": [
 			"http:\/\/127.0.0.1:5566"
 		]
+	}
 },
 
 "countryServerResidingIn": {
