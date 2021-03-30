@@ -164,7 +164,7 @@
 		$center = "left";   //$notifications_config['msgs'][$lang]['returnToApp'];
 		
 		
-		if($_REQUEST['id'] == "") {
+		/*Not sure about this case: if($_REQUEST['id'] == "") {
 				 //App has been deregistered
 				 $screen_type = "standard";
 				 $main_message = $notifications_config['msgs'][$lang]['appDeregistered'];
@@ -172,7 +172,7 @@
 				 $first_button_wording = $notifications_config['msgs'][$lang]['backHome'];
 				 $second_button = "";
 				 $second_button_wording = "";
-		}
+		}*/
 		
 	} else {
 		//We have a user id		
@@ -614,9 +614,7 @@
 				  }
 					
 				  if(hash) {
-				  	 alert(hash[0]);		//TESTING
 				  	 if(hash[0] == '?') hash = '&' + hash.substring(1);
-					alert(hash);
 				 	 window.location = url + pathname + '?application_refresh=' + (Math.random() * 100000) + hash;
 				  } else {
 				  	window.location.reload(true);
