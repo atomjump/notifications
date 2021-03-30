@@ -615,7 +615,8 @@
 					
 				  if(hash) {
 				  	 alert(hash[0]);		//TESTING
-				  	 if(hash[0] == '?') hash[0] = '&';
+				  	 if(hash[0] == '?') hash = '&' + hash.split('?')[0];
+					alert(hash);
 				 	 window.location = url + pathname + '?application_refresh=' + (Math.random() * 100000) + hash;
 				  } else {
 				  	window.location.reload(true);
