@@ -589,20 +589,29 @@
 				  
 					 return false;
 				 }
+				 
+				 function refresh() {
+				  var url = location.origin;
+				  var pathname = location.pathname;
+				  var hash = location.hash;
+
+				  window.location = url + pathname + '?application_refresh=' + (Math.random() * 100000) + hash;
+				}
 
 
 				$(document).ready(function(){
 					$("#change-lang-button").click(function() {
 						var newLang = $("[name='lang']").val();
 						document.cookie = 'lang=' + newLang  + '; path=/; expires=' + cookieOffset() + ';'; 
-						window.location.reload(true);
-					
+						//Works on all platforms except iphones: window.location.reload(true);
+						refresh();
 					});
 					
 					
 					
 					$("#pair-again-button").click(function() {
-						window.location.reload(true);
+						//Works on all platforms except iphones: window.location.reload(true);
+						refresh();
 					});
 					
 					
