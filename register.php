@@ -614,6 +614,7 @@
 				  }
 					
 				  if(hash) {
+				  	 if(hash[0] == '?') hash[0] = '&';
 				 	 window.location = url + pathname + '?application_refresh=' + (Math.random() * 100000) + hash;
 				  } else {
 				  	window.location.reload(true);
