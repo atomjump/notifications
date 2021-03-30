@@ -591,11 +591,22 @@
 				 }
 				 
 				 function refresh() {
-				  var url = location.origin;
-				  var pathname = location.pathname;
-				  var hash = location.hash;
-
-				  window.location = url + pathname + '?application_refresh=' + (Math.random() * 100000) + hash;
+				  var hash = null;
+				  var url = window.location.origin;
+				  var pathname = window.location.pathname;
+				  if(window.location.search) {
+				  		hash = window.location.search;
+				  } else {
+				  		if(window.location.hash) {
+				  	 		hash = window.location.hash;
+				  	 	}
+				  }
+					
+				  if(hash) {
+				 	 window.location = url + pathname + '?application_refresh=' + (Math.random() * 100000) + hash;
+				  } else {
+				  	window.location.reload(true);
+				  }
 				}
 
 
