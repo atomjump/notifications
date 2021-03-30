@@ -164,7 +164,7 @@
 		$center = "left";   //$notifications_config['msgs'][$lang]['returnToApp'];
 		
 		//If there is no notification ID, we don't want users to sign up.
-		//This happens after a logout button is pushed.
+		//This happens after a logout button is pushed, but we have not yet signed up.
 		if($_REQUEST['id'] == "") {
 				 //App has been deregistered
 				 $screen_type = "standard";
@@ -173,6 +173,7 @@
 				 $first_button_wording = $notifications_config['msgs'][$lang]['backHome'];
 				 $second_button = "";
 				 $second_button_wording = "";
+
 		}
 		
 	} else {
