@@ -166,6 +166,7 @@
 		
 		if($_REQUEST['id'] == "") {
 				 //App has been deregistered
+				 $screen_type = "standard";
 				 $main_message = $notifications_config['msgs'][$lang]['appDeregistered'];
 				 $first_button = $follow_on_link;
 				 $first_button_wording = $notifications_config['msgs'][$lang]['backHome'];
