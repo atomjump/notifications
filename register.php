@@ -163,6 +163,16 @@
 		$second_button_wording = ""; 
 		$center = "left";   //$notifications_config['msgs'][$lang]['returnToApp'];
 		
+		
+		if($_REQUEST['id'] == "") {
+				 //App has been deregistered
+				 $main_message = $notifications_config['msgs'][$lang]['appDeregistered'];
+				 $first_button = $follow_on_link;
+				 $first_button_wording = $notifications_config['msgs'][$lang]['backHome'];
+				 $second_button = "";
+				 $second_button_wording = "";
+		}
+		
 	} else {
 		//We have a user id		
 		$has_been_confirmed = false;
