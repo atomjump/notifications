@@ -112,7 +112,7 @@
 		 $email = urldecode($_COOKIE['email']); 
 	} else {  
 		if(isset($_REQUEST['email'])) { 
-			$email = echo urldecode($_REQUEST['email']);
+			$email = urldecode($_REQUEST['email']);
 		} else {
 			$email = '';		//Leave blank for user input
 		}
