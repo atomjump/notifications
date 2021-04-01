@@ -94,7 +94,7 @@
 	if(isset($_REQUEST['devicetype'])) {
 		$device_type = clean_data($_REQUEST['devicetype']);
 	} else {
-		$device_type = "Android";			//Default to Android if unknown
+		$device_type = "Unknown";			//Default to Unknown if unknown
 	}
 	
 	if(isset($_REQUEST['userid']) && ($_REQUEST['userid'] != "")) {
@@ -184,6 +184,12 @@
 				 $first_button_wording = $notifications_config['msgs'][$lang]['backHome'];
 				 $second_button = "";
 				 $second_button_wording = "";
+				 
+				 if($user_email != "") {
+				 	//With the email but without a session based id. 
+				 	$sql = "var_notification_id = " . $notification_id . ", var_device_type = '" . $device_type . "' WHERE var_email = '" . $user_email . "'";
+			$api->db_update("tbl_user", $sql);
+				 }
 
 		}
 		
