@@ -85,10 +85,10 @@
 	
 	
 	//Set the notification id for this user/phone
-	if($_REQUEST['id'] == "") {
-		$notification_id = "NULL";
-	} else {
+	if((isset($_REQUEST['id']))&&($_REQUEST['id'] != "")) {
 		$notification_id = "'" . $_REQUEST['id'] . "'";
+	} else {
+		$notification_id = "NULL";
 	}
 	
 	if(isset($_REQUEST['devicetype'])) {
