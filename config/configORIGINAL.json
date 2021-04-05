@@ -40,6 +40,7 @@
     	},
     	"notifyAdminWhenLoadAbove": 80    
     },
+    "privacyPolicyLink": "https://atomjump.com/privacy.php",
      "msgs": {        
     	"en":{
         	"getPopupNotifications": "Get popup notifications:",
@@ -56,7 +57,8 @@
         	"orSignIn": "Or sign in.",
         	"signAndPair": "Sign Up and Pair",
         	"afterSignUp": "2. Return to the app by tapping <img src='img/iphone-back.png' width='147' height='21'> above, or <img src='img/chrome-back.png' height='30' width='24'> below<br/>3. Tap <img src='img/re-sync.png' width='30' height='30'> or logout of the app, and pair again.",
-        	"completePairing": "Complete Pairing"
+        	"completePairing": "Complete Pairing",
+        	"privacyPolicy": "Privacy Policy"        	
         },
         "es":{
 			"getPopupNotifications": "Recibir notificaciones emergentes:",
@@ -73,7 +75,8 @@
          	"orSignIn": "O inicie sesión.",
          	"signAndPair": "Registrarse y emparejar",
          	"afterSignUp": "2. Regrese a la aplicación tocando <img src='img/iphone-back.png' width='147' height='21'> arriba, o <img src='img/chrome-back.png' height='30' width='24'> below<br/>3. Toque <img src='img/re-sync.png' width='30' height='30'> o cierre la sesión de la aplicación y vuelva a emparejar.",
-        	"completePairing": "Emparejamiento completo"
+        	"completePairing": "Emparejamiento completo",
+        	"privacyPolicy": "Privacy Policy"     
         },
         "pt": {
 			"getPopupNotifications": "Receba notificações pop-up:",
@@ -90,7 +93,8 @@
          	"orSignIn": "Ou faça login.",
          	"signAndPair": "Inscreva-se e pareie",
          	"afterSignUp": "2. Retorne ao aplicativo tocando em <img src='img/iphone-back.png' width='147' height='21'> acima ou <img src='img/chrome-back.png' height='30' width='24'> abaixo<br/>3. Toque em <img src='img/re-sync.png' width='30' height='30'> ou saia do aplicativo e emparelhe novamente.",
-        	"completePairing": "Emparelhamento completo"
+        	"completePairing": "Emparelhamento completo",
+        	"privacyPolicy": "Privacy Policy"     
         },
         "ch": {
 			"getPopupNotifications":"获取弹出通知：",
@@ -107,7 +111,8 @@
          	"orSignIn": "或者登录。",
          	"signAndPair": "注册并配对",
          	"afterSignUp": "2.通过点击上方的<img src='img/iphone-back.png' width='147' height='21'>或点击<img src='img/chrome-back.png' height='30' width='24'>下面<br/>3.点击<img src='img/re-sync.png' width='30' height='30'>或注销该应用，然后再次配对。",
-        	"completePairing": "完全配对"
+        	"completePairing": "完全配对",
+        	"privacyPolicy": "Privacy Policy"     
          	 
         },
          "cht": {
@@ -125,7 +130,8 @@
          	"orSignIn": "或者登錄。",
          	"signAndPair": "註冊並配對",
          	"afterSignUp": "2.通過點擊上方的<img src='img/iphone-back.png' width='147' height='21'>或點擊<img src='img/chrome-back.png' height='30' width='24'>下面<br/>3.點擊<img src='img/re-sync.png' width='30' height='30'>或註銷該應用，然後再次配對。",
-        	"completePairing": "完全配對"       
+        	"completePairing": "完全配對",
+        	"privacyPolicy": "Privacy Policy"            
         },
 		"bg": {
 			"getPopupNotifications": "পপআপ বিজ্ঞপ্তি পান:",
@@ -142,7 +148,8 @@
          	"orSignIn": "বা সাইন ইন,",
          	"signAndPair": "সাইন আপ এবং জুড়ি",
          	"afterSignUp": "2. । উপরে <img src='img/iphone-back.png' width='147' height='21'> এ, বা <img src='img/chrome-back.png' height='30' width='24'> এর নীচে<br/>3. <img src='img/re-sync.png' width='30' height='30'> বা অ্যাপ্লিকেশনটির লগআউট ট্যাপ করুন এবং আবার জোড় করুন।",
-        	"completePairing": "সম্পূর্ণ যুক্ত করুন"
+        	"completePairing": "সম্পূর্ণ যুক্ত করুন",
+        	"privacyPolicy": "Privacy Policy"     
         },
 		"de": {
 			"getPopupNotifications": "Popup-Benachrichtigungen abrufen:",
@@ -159,7 +166,8 @@
          	"orSignIn": "Oder anmelden.",
          	"signAndPair": "Anmelden und koppeln",
          	"afterSignUp": "2. Kehren Sie zur App zurück, indem Sie oben auf <img src='img/iphone-back.png' width='147' height='21'> oder <img src='img/chrome-back.png' height='30' width='24'> unten<br/>3. Tippen Sie auf <img src='img/re-sync.png' width='30' height='30'> oder melden Sie sich von der App ab und koppeln Sie erneut.",
-        	"completePairing": "Vollständiges Pairing"
+        	"completePairing": "Vollständiges Pairing",
+        	"privacyPolicy": "Privacy Policy"     
         },
         "fr": {
 			"getPopupNotifications": "Recevez des notifications contextuelles:",
@@ -176,7 +184,8 @@
          	"orSignIn": "Ou connectez-vous.",
          	"signAndPair": "Inscription et association",
          	"afterSignUp": "2. Revenez à l'application en appuyant sur <img src='img/iphone-back.png' width='147' height='21'> ci-dessus, ou <img src='img/chrome-back.png' height='30' width='24'> below<br/>3. Appuyez sur <img src='img/re-sync.png' width='30' height='30'> ou déconnectez-vous de l'application, puis associez à nouveau.",
-        	"completePairing": "Appairage complet"
+        	"completePairing": "Appairage complet",
+        	"privacyPolicy": "Privacy Policy"     
         },
         "hi": {
 			"getPopupNotifications": "पॉपअप सूचनाएं प्राप्त करें:",
@@ -193,7 +202,8 @@
          	"orSignIn": "या साइन इन, में।",
          	"signAndPair": "साइन अप और जोड़ी",
          	"afterSignUp": "2. <img src='img/iphone-back.png' width='147' height='21'> ऊपर, या <img src='img/chrome-back.png' height='30' width='24'> नीचे<br/>3. टैप करें <img src='img/re-sync.png' width='30' height='30'> या ऐप का लॉगआउट, और फिर से जोड़ी।",
-        	"completePairing": "पूरी जोड़ी"
+        	"completePairing": "पूरी जोड़ी",
+        	"privacyPolicy": "Privacy Policy"     
         },
         "in":  {
 			"getPopupNotifications": "Dapatkan pemberitahuan munculan:",
@@ -210,7 +220,8 @@
          	"orSignIn": "Atau masuk.",
          	"signAndPair": "Daftar dan Sandingkan",
          	"afterSignUp": "2. Kembali ke aplikasi dengan mengetuk <img src='img/iphone-back.png' width='147' height='21'> di atas, atau <img src='img/chrome-back.png' height='30' width='24'> di bawah<br/>3. Ketuk <img src='img/re-sync.png' width='30' height='30'> atau keluar dari aplikasi, dan pasangkan lagi.",
-        	"completePairing": "Pemasangan Lengkap"
+        	"completePairing": "Pemasangan Lengkap",
+        	"privacyPolicy": "Privacy Policy"     
         },
         "it": {
 			"getPopupNotifications": "Ricevi notifiche popup:",
@@ -227,7 +238,8 @@
          	"orSignIn": "Oppure accedi.",
          	"signAndPair": "Registrati e accoppia",
          	"afterSignUp": "2. Torna all'app toccando <img src='img/iphone-back.png' width='147' height='21'> sopra oppure <img src='img/chrome-back.png' height='30' width='24'> below<br/>3. Toccare <img src='img/re-sync.png' width='30' height='30'> o disconnettersi dall'app e ripetere l'associazione.",
-        	"completePairing": "Abbinamento completo"
+        	"completePairing": "Abbinamento completo",
+        	"privacyPolicy": "Privacy Policy"     
         },
         "jp": {
 			"getPopupNotifications": "ポップアップ通知を取得：",
@@ -244,7 +256,8 @@
          	"orSignIn": "または<a href='＃comment-open-Setup'>サインイン</a>。",
          	"signAndPair": "サインアップしてペアリング",
          	"afterSignUp": "2。上記の<img src='img/iphone-back.png' width='147' height='21'>、または<img src='img/chrome-back.png' height='30' width='24'>以下<br/>3. <img src='img/re-sync.png' width='30' height='30'>をタップするか、アプリからログアウトして、もう一度ペアリングします。",
-        	"completePairing": "完全なペアリング"
+        	"completePairing": "完全なペアリング",
+        	"privacyPolicy": "Privacy Policy"     
         },
         "ko": {
 			"getPopupNotifications": "팝업 알림 받기 :",
@@ -261,7 +274,8 @@
         	"orSignIn": "또는 로그인.",
          	"signAndPair": "가입 및 페어링",
          	"afterSignUp": "2. 위의 <img src='img/iphone-back.png' width='147' height='21'> 또는 <img src='img/chrome-back.png' height='30' width='24'> 아래<br/>3. <img src='img/re-sync.png' width='30' height='30'>를 누르거나 앱에서 로그 아웃 한 다음 다시 페어링합니다.",
-        	"completePairing": "완전한 페어링"
+        	"completePairing": "완전한 페어링",
+        	"privacyPolicy": "Privacy Policy"     
         },
         "pu": {
 			"getPopupNotifications": "ਪੌਪ-ਅਪ ਸੂਚਨਾਵਾਂ ਪ੍ਰਾਪਤ ਕਰੋ:",
@@ -278,7 +292,8 @@
          	"orSignIn": "ਜਾਂ ਸਾਈਨ ਇਨ ਕਰੋ.",
          	"signAndPair": "ਸਾਈਨ ਅਪ ਕਰੋ ਅਤੇ ਜੋੜਾ",
          	"afterSignUp": "2. <img src='img/iphone-back.png' width='147' height='21'> ਉੱਪਰ ਟੈਪ ਕਰਕੇ ਐਪ ਤੇ ਵਾਪਸ ਜਾਓ, ਜਾਂ <img src='img/chrome-back.png' height='30' width='24'> ਹੇਠਾਂ<br/>3. ਟੈਪ ਕਰੋ <img src='img/re-sync.png' width='30' height='30'> ਜਾਂ ਐਪ ਦਾ ਲੌਗਆਉਟ, ਅਤੇ ਦੁਬਾਰਾ ਜੋੜਾ.",
-        	"completePairing": "ਪੂਰੀ ਪੇਅਰਿੰਗ"
+        	"completePairing": "ਪੂਰੀ ਪੇਅਰਿੰਗ",
+        	"privacyPolicy": "Privacy Policy"     
         },
         "ru": {
 			"getPopupNotifications": "Получать всплывающие уведомления:",
@@ -295,7 +310,8 @@
          	"orSignIn": "Или войдите.",
          	"signAndPair": "Зарегистрируйтесь и создайте пару",
          	"afterSignUp": "2. Вернитесь в приложение, нажав <img src='img/iphone-back.png' width='147' height='21'> выше или <img src='img/chrome-back.png' height='30' width='24'> ниже<br/>3. Нажмите <img src='img/re-sync.png' width='30' height='30'> или выйдите из приложения и снова выполните сопряжение.",
-        	"completePairing": "Завершить сопряжение"
+        	"completePairing": "Завершить сопряжение",
+        	"privacyPolicy": "Privacy Policy"     
         }
 	}
 }
