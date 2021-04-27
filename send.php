@@ -332,7 +332,7 @@
 					// close connection
 					//for ($i = 0; $i < 4; $i++) {		//was 20 attempts.
 						$status = sendHTTP2Push($http2ch, $http2_server, $ios_key_file, $app_bundle_id, $payload, $deviceToken);
-						echo "Response from apple -> {$status}\n";
+						//echo "Response from apple -> {$status}\n";
 					//}
 					
 				}
