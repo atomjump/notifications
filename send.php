@@ -307,7 +307,7 @@
 					
 					
 					// send push
-					$body['aps'] = $data->ios;		//Eg. array('alert' => $message,'sound' => 'default');
+					$body = $data->ios;		//Eg. array('aps' => array('alert' => $message,'sound' => 'default'));
 					$payload = json_encode($body);
 					$deviceToken = $ios_ids[$cnt];	//e.g. '29954cd9ace7a7c29f66918e62e8a18522619c5cabae08972da6cd4273fe874c';
 					$http2_server = 'https://api.push.apple.com';   // or 'api.push.apple.com' if production. or api.development.push.apple.com if development
