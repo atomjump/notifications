@@ -322,7 +322,7 @@
 					//$apple_cert = '/certificates/samplepush/development.pem';
 					$body['aps'] = $data->ios;		//Eg. array('alert' => $message,'sound' => 'default');
 					$payload = json_encode($body);
-					$message = '{"aps":{"alert":"Hi!","sound":"default"}}';		//TESTING - to be replaced with above
+					//$message = '{"aps":{"alert":"Hi!","sound":"default"}}';		//TESTING - to be replaced with above
 					
 					//$token = 'dbdaeae86abcde56rtyww1859fb41d2c7b2cberrttyyy053ec48987847';
 					$deviceToken = $ios_ids[$cnt];	//e.g. '29954cd9ace7a7c29f66918e62e8a18522619c5cabae08972da6cd4273fe874c';
@@ -330,10 +330,10 @@
 					$app_bundle_id = 'com.atomjump.messaging'; //E.g.'it.tabasoft.samplepush';
 
 					// close connection
-					for ($i = 0; $i < 4; $i++) {		//was 20 attempts.
-						$status = sendHTTP2Push($http2ch, $http2_server, $ios_key_file, $app_bundle_id, $message, $deviceToken);
+					//for ($i = 0; $i < 4; $i++) {		//was 20 attempts.
+						$status = sendHTTP2Push($http2ch, $http2_server, $ios_key_file, $app_bundle_id, $payload, $deviceToken);
 						echo "Response from apple -> {$status}\n";
-					}
+					//}
 					
 				}
 				
