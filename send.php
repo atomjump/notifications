@@ -330,8 +330,8 @@
 					$app_bundle_id = 'com.atomjump.messaging'; //E.g.'it.tabasoft.samplepush';
 
 					// close connection
-					for ($i = 0; $i < 20; $i++) {
-						$status = sendHTTP2Push($http2ch, $http2_server, $ios_key_file, $app_bundle_id, $message, $token);
+					for ($i = 0; $i < 4; $i++) {		//was 20 attempts.
+						$status = sendHTTP2Push($http2ch, $http2_server, $ios_key_file, $app_bundle_id, $message, $deviceToken);
 						echo "Response from apple -> {$status}\n";
 					}
 					
