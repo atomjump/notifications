@@ -325,7 +325,7 @@
 										),
 										"sound" => "default"
 									),
-									"alert" => $out_message,
+									"message" => $out_message,
 									"notification" => array(
 											"title" => "AtomJump - " . $out_forum
 									),
