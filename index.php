@@ -301,7 +301,7 @@
 					}
 					
 					
-					$ios_data = array(
+					/*OLD:$ios_data = array(
 									"alert" => $out_message,
 									"content-available" => 1,
 									"notification" => array(
@@ -316,8 +316,29 @@
 										"removeMessage" => $this->null_to_blank_string($message_details['remove_message'])										
 									
 									)
-								); 		  
-					
+								); 	*/	  
+					$ios_data = array(
+									"aps" => array(
+										"alert" => $out_message,
+										"notification" => array(
+												"title" => "AtomJump - " . $out_forum
+										),
+										"sound" => "default"
+									),
+									"alert" => $out_message,
+									"notification" => array(
+											"title" => "AtomJump - " . $out_forum
+									),
+									"data" => array(
+										"forumName" => $this->null_to_blank_string($message_forum_name),
+										"forumMessage" => $this->null_to_blank_string($message_details['forum_message']),
+										"observeUrl" => $this->null_to_blank_string($out_link),
+										"observeMessage" => $this->null_to_blank_string($message_details['observe_message']),
+										"removeUrl" => $this->null_to_blank_string($message_details['remove_url']),
+										"removeMessage" => $this->null_to_blank_string($message_details['remove_message'])										
+									
+									)									
+								);
 										
 					if($image != "") {
 						//Optionally append an emoticon or image to that.

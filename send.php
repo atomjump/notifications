@@ -304,35 +304,19 @@
 				for($cnt = 0; $cnt < count($ios_ids); $cnt++) {
 					//See this for future ref: http://codular.com/sending-ios-push-notifications-with-php
 			
-					/*$deviceToken = $ios_ids[$cnt];	//e.g. '29954cd9ace7a7c29f66918e62e8a18522619c5cabae08972da6cd4273fe874c';
-					$passphrase = 'apns';
-					//$message = 'test';										
-					$ctx = stream_context_create();
-					stream_context_set_option($ctx, 'ssl', 'local_cert', $ios_key_file);		//pushcert.pem
-					stream_context_set_option($ctx, 'ssl', 'passphrase', $passphrase);
-					$fp = stream_socket_client('ssl://gateway.push.apple.com:2195', $err, $errstr, 60, STREAM_CLIENT_CONNECT|STREAM_CLIENT_PERSISTENT, $ctx);
-					$body['aps'] = $data->ios;		//Eg. array('alert' => $message,'sound' => 'default');
-					$payload = json_encode($body);
-					$msg = chr(0) . pack('n', 32) . pack('H*', $deviceToken) . pack('n', strlen($payload)) . $payload;
-					$result = fwrite($fp, $msg, strlen($msg));
-					fclose($fp);*/
 					
 					
 					// send push
-					//$apple_cert = '/certificates/samplepush/development.pem';
 					$body['aps'] = $data->ios;		//Eg. array('alert' => $message,'sound' => 'default');
 					$payload = json_encode($body);
-					//$message = '{"aps":{"alert":"Hi!","sound":"default"}}';		//TESTING - to be replaced with above
-					
-					//$token = 'dbdaeae86abcde56rtyww1859fb41d2c7b2cberrttyyy053ec48987847';
 					$deviceToken = $ios_ids[$cnt];	//e.g. '29954cd9ace7a7c29f66918e62e8a18522619c5cabae08972da6cd4273fe874c';
 					$http2_server = 'https://api.push.apple.com';   // or 'api.push.apple.com' if production. or api.development.push.apple.com if development
 					$app_bundle_id = 'com.atomjump.messaging'; //E.g.'it.tabasoft.samplepush';
 
 					// close connection
-					//for ($i = 0; $i < 4; $i++) {		//was 20 attempts.
+					//for ($i = 0; $i < 4; $i++) {		//was 20 attempts. Just leave to one attempt.
 						$status = sendHTTP2Push($http2ch, $http2_server, $ios_key_file, $app_bundle_id, $payload, $deviceToken);
-						//echo "Response from apple -> {$status}\n";
+						//echo "Response from apple -> {$status}\n";  //200 = success, 400 or something else = failure
 					//}
 					
 				}
