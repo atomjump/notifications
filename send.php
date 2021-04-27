@@ -92,6 +92,63 @@
     }
     
     
+		/**
+	 * @param $http2ch          the curl connection
+	 * @param $http2_server     the Apple server url
+	 * @param $apple_cert       the path to the certificate
+	 * @param $app_bundle_id    the app bundle id
+	 * @param $message          the payload to send (JSON)
+	 * @param $token            the token of the device
+	 * @return mixed            the status code (see https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/APNsProviderAPI.html#//apple_ref/doc/uid/TP40008194-CH101-SW18)
+	 */
+	function sendHTTP2Push($http2ch, $http2_server, $apple_cert, $app_bundle_id, $message, $token) {
+
+		$milliseconds = round(microtime(true) * 1000);
+
+		// url (endpoint)
+		$url = "{$http2_server}/3/device/{$token}";
+
+		// certificate
+		$cert = realpath($apple_cert);
+
+		// headers
+		$headers = array(
+			"apns-topic: {$app_bundle_id}",
+			"User-Agent: My Sender"
+		);
+
+		// other curl options
+		curl_setopt_array($http2ch, array(
+			CURLOPT_URL => "{$url}",
+			CURLOPT_PORT => 443,
+			CURLOPT_HTTPHEADER => $headers,
+			CURLOPT_POST => TRUE,
+			CURLOPT_POSTFIELDS => $message,
+			CURLOPT_RETURNTRANSFER => TRUE,
+			CURLOPT_TIMEOUT => 30,
+			CURLOPT_SSL_VERIFYPEER => false,
+			CURLOPT_SSLCERT => $cert,
+			CURLOPT_HEADER => 1
+		));
+
+		// go...
+		$result = curl_exec($http2ch);
+		if ($result === FALSE) {
+			throw new Exception('Curl failed with error: ' . curl_error($http2ch));
+		}
+
+		// get respnse
+		$status = curl_getinfo($http2ch, CURLINFO_HTTP_CODE);
+
+		$duration = round(microtime(true) * 1000) - $milliseconds;
+
+	//    echo $duration;
+
+		return $status;
+	}
+
+    
+    
 
 
      function sendPushNotification($data, $ids, $android_API_key, $devices, $notifications_config)
@@ -228,12 +285,26 @@
 				 	$ios_key_file = __DIR__ . '/' . $notifications_config['iosNotifications']['apiKeyFile'];				   
 				} else {
 					$ios_key_file = dirname(__FILE__) . '/pushcert.pem';
-				}				
+				}	
+				
+				//See https://gist.github.com/valfer/18e1052bd4b160fed86e6cbb426bb9fc
+				// open connection
+				if (!defined('CURL_HTTP_VERSION_2_0')) {
+					define('CURL_HTTP_VERSION_2_0', 3);
+				}
+				$http2ch = curl_init();
+				curl_setopt($http2ch, CURLOPT_HTTP_VERSION, CURL_HTTP_VERSION_2_0);
+
+				
+
+				
+				
+							
 				//http://stackoverflow.com/questions/21250510/generate-pem-file-used-to-setup-apple-push-notification
 				for($cnt = 0; $cnt < count($ios_ids); $cnt++) {
 					//See this for future ref: http://codular.com/sending-ios-push-notifications-with-php
 			
-					$deviceToken = $ios_ids[$cnt];	//e.g. '29954cd9ace7a7c29f66918e62e8a18522619c5cabae08972da6cd4273fe874c';
+					/*$deviceToken = $ios_ids[$cnt];	//e.g. '29954cd9ace7a7c29f66918e62e8a18522619c5cabae08972da6cd4273fe874c';
 					$passphrase = 'apns';
 					//$message = 'test';										
 					$ctx = stream_context_create();
@@ -244,8 +315,30 @@
 					$payload = json_encode($body);
 					$msg = chr(0) . pack('n', 32) . pack('H*', $deviceToken) . pack('n', strlen($payload)) . $payload;
 					$result = fwrite($fp, $msg, strlen($msg));
-					fclose($fp);
+					fclose($fp);*/
+					
+					
+					// send push
+					//$apple_cert = '/certificates/samplepush/development.pem';
+					$body['aps'] = $data->ios;		//Eg. array('alert' => $message,'sound' => 'default');
+					$payload = json_encode($body);
+					$message = '{"aps":{"alert":"Hi!","sound":"default"}}';		//TESTING - to be replaced with above
+					
+					//$token = 'dbdaeae86abcde56rtyww1859fb41d2c7b2cberrttyyy053ec48987847';
+					$deviceToken = $ios_ids[$cnt];	//e.g. '29954cd9ace7a7c29f66918e62e8a18522619c5cabae08972da6cd4273fe874c';
+					$http2_server = 'https://api.push.apple.com';   // or 'api.push.apple.com' if production. or api.development.push.apple.com if development
+					$app_bundle_id = 'com.atomjump.messaging'; //E.g.'it.tabasoft.samplepush';
+
+					// close connection
+					for ($i = 0; $i < 20; $i++) {
+						$status = sendHTTP2Push($http2ch, $http2_server, $ios_key_file, $app_bundle_id, $message, $token);
+						echo "Response from apple -> {$status}\n";
+					}
+					
 				}
+				
+				
+				curl_close($http2ch);
 			} else {
 				error_log("Sorry, iOS notifications are not supported by the config.json file option.");
 			}
