@@ -330,12 +330,16 @@
 											"title" => "AtomJump - " . $out_forum
 									),
 									"data" => array(
-										"forumName" => $this->null_to_blank_string($message_forum_name),
-										"forumMessage" => $this->null_to_blank_string($message_details['forum_message']),
-										"observeUrl" => $this->null_to_blank_string($out_link),
-										"observeMessage" => $this->null_to_blank_string($message_details['observe_message']),
-										"removeUrl" => $this->null_to_blank_string($message_details['remove_url']),
-										"removeMessage" => $this->null_to_blank_string($message_details['remove_message'])										
+										"additionalData" => array(
+											"data" => array(
+												"forumName" => $this->null_to_blank_string($message_forum_name),
+												"forumMessage" => $this->null_to_blank_string($message_details['forum_message']),
+												"observeUrl" => $this->null_to_blank_string($out_link),
+												"observeMessage" => $this->null_to_blank_string($message_details['observe_message']),
+												"removeUrl" => $this->null_to_blank_string($message_details['remove_url']),
+												"removeMessage" => $this->null_to_blank_string($message_details['remove_message'])	
+											)
+										)							
 									
 									)									
 								);
