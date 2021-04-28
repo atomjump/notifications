@@ -328,27 +328,18 @@
 										"notification" => array(
 												"title" => "AtomJump - " . $out_forum
 										),
-										"sound" => "default",
-										"content-available" => 1
+										"sound" => "default"										
 									),
 									"notId" => $not_id,
-									"message" => $out_message,
-									"notification" => array(
-											"title" => "AtomJump - " . $out_forum
-									),
 									"data" => array(
-										"additionalData" => array(
-											"data" => array(
 												"forumName" => $this->null_to_blank_string($message_forum_name),
 												"forumMessage" => $this->null_to_blank_string($message_details['forum_message']),
 												"observeUrl" => $this->null_to_blank_string($out_link),
 												"observeMessage" => $this->null_to_blank_string($message_details['observe_message']),
 												"removeUrl" => $this->null_to_blank_string($message_details['remove_url']),
 												"removeMessage" => $this->null_to_blank_string($message_details['remove_message'])	
-											)
-										)							
-									
-									)									
+									),
+									"content-available" => 1									
 								);
 										
 					if($image != "") {
