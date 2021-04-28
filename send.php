@@ -287,6 +287,51 @@
 					$ios_key_file = dirname(__FILE__) . '/pushcert.pem';
 				}	
 				
+				// Set POST request body
+				$post = array(
+								'registration_ids'  => $ios_ids,
+								'data'              => $data->ios,
+							 );
+		
+
+
+				// Set CURL request headers 
+				$headers = array( 
+									'Authorization: key=' . $android_API_key,
+									'Content-Type: application/json'
+								);
+
+				// Initialize curl handle       
+				$ch = curl_init();
+
+				// Set URL to GCM push endpoint     
+				curl_setopt($ch, CURLOPT_URL, 'https://fcm.googleapis.com/fcm/send');
+
+				// Set request method to POST       
+				curl_setopt($ch, CURLOPT_POST, true);
+
+				// Set custom request headers       
+				curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+
+				// Get the response back as string instead of printing it       
+				curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+				// Set JSON post data
+				curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($post));
+
+				// Actually send the request    
+				$result = curl_exec($ch);
+
+				// Handle errors
+				if (curl_errno($ch))
+				{
+					error_log('FCM error: ' . curl_error($ch));
+				}
+
+				// Close curl handle
+				curl_close($ch);
+				
+				/*
 				//See https://gist.github.com/valfer/18e1052bd4b160fed86e6cbb426bb9fc
 				// open connection
 				if (!defined('CURL_HTTP_VERSION_2_0')) {
@@ -321,6 +366,8 @@
 				
 				
 				curl_close($http2ch);
+				
+				*/
 			} else {
 				error_log("Sorry, iOS notifications are not supported by the config.json file option.");
 			}
