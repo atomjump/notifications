@@ -316,15 +316,22 @@
 										"removeMessage" => $this->null_to_blank_string($message_details['remove_message'])										
 									
 									)
-								); 	*/	  
+								); 	*/
+								
+					//Note: 'content-available' and other notes are here: https://github.com/havesource/cordova-plugin-push/blob/master/docs/PAYLOAD.md#ios-behaviour	  
+					$not_id = rand(1,10000000);
+					
+					
 					$ios_data = array(
 									"aps" => array(
 										"alert" => $out_message,
 										"notification" => array(
 												"title" => "AtomJump - " . $out_forum
 										),
-										"sound" => "default"
+										"sound" => "default",
+										"content-available" => 1
 									),
+									"notId" => $not_id,
 									"message" => $out_message,
 									"notification" => array(
 											"title" => "AtomJump - " . $out_forum
