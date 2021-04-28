@@ -330,7 +330,7 @@
 												"title" => "AtomJump - " . $out_forum
 										),
 										"sound" => "default",
-										"badge" : 9,
+										"badge" => 9,
 										"data" => array(
 												"forumName" => $this->null_to_blank_string($message_forum_name),
 												"forumMessage" => $this->null_to_blank_string($message_details['forum_message']),
