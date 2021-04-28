@@ -321,14 +321,16 @@
 					//Note: 'content-available' and other notes are here: https://github.com/havesource/cordova-plugin-push/blob/master/docs/PAYLOAD.md#ios-behaviour	  
 					$not_id = rand(1,10000000);
 					
-					
+					//More details at: https://web-mystery.com/articles/how-make-apns-push-notifications-cordova-ios-application
 					$ios_data = array(
 									"aps" => array(
+										"content-available" => 1,
 										"alert" => $out_message,
 										"notification" => array(
 												"title" => "AtomJump - " . $out_forum
 										),
 										"sound" => "default",
+										"badge" : 9,
 										"data" => array(
 												"forumName" => $this->null_to_blank_string($message_forum_name),
 												"forumMessage" => $this->null_to_blank_string($message_details['forum_message']),
@@ -338,9 +340,7 @@
 												"removeMessage" => $this->null_to_blank_string($message_details['remove_message'])	
 										)										
 									),
-									"notId" => $not_id,
-									
-									"content-available" => 1									
+									"notId" => $not_id			
 								);
 										
 					if($image != "") {
