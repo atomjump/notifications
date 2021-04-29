@@ -300,36 +300,14 @@
 					
 					}
 					
-					
-					/*OLD:$ios_data = array(
-									"alert" => $out_message,
-									"content-available" => 1,
-									"notification" => array(
-											"title" => "AtomJump - " . $out_forum
-									),
-									"data" => array(
-										"forumName" => $this->null_to_blank_string($message_forum_name),
-										"forumMessage" => $this->null_to_blank_string($message_details['forum_message']),
-										"observeUrl" => $this->null_to_blank_string($out_link),
-										"observeMessage" => $this->null_to_blank_string($message_details['observe_message']),
-										"removeUrl" => $this->null_to_blank_string($message_details['remove_url']),
-										"removeMessage" => $this->null_to_blank_string($message_details['remove_message'])										
-									
-									)
-								); 	*/
+				
 								
 					//Note: 'content-available' and other notes are here: https://github.com/havesource/cordova-plugin-push/blob/master/docs/PAYLOAD.md#ios-behaviour	  
 					$not_id = rand(1,10000000);
 					
 					//More details at: https://web-mystery.com/articles/how-make-apns-push-notifications-cordova-ios-application
 					//and https://customer.io/docs/push-custom-payloads/#_
-					/*
-					"alert" => array(
-										  "title" => "AtomJump - " . $out_forum,
-										  "body" => $out_message
-										),
-										"sound" => "default",
-					*/
+
 					$ios_data = array(
 									"aps" => array(
 										"alert" => array(
@@ -357,7 +335,7 @@
 						
 						//Also extend the alert with a note to say there is an image attached - we can't show the
 						//actual image in their popup
-						$ios_data['alert'] .= " [image]";
+						$ios_data['aps']['alert']['body'] .= " [image]";
 					
 					}
 					
