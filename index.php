@@ -325,10 +325,10 @@
 					$ios_data = array(
 									"aps" => array(
 										"content-available" => 1,
-										"alert" : {
+										"alert" : array(
 										  "title" : "AtomJump - " . $out_forum,
 										  "body" : $out_message
-										},
+										),
 										"sound" => "default",
 										"data" => array(
 												"forumName" => $this->null_to_blank_string($message_forum_name),
