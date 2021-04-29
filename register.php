@@ -271,24 +271,27 @@
 		//If there is no notification ID, we don't want users to sign up.
 		//This happens after a logout button is pushed, but we have not yet signed up.
 		if($_REQUEST['id'] == "") {
-				 //App has been deregistered
-				 $screen_type = "standard";
-				 $main_message = $notifications_config['msgs'][$lang]['appDeregistered'];
-				 $first_button = $follow_on_link;
-				 $first_button_wording = $notifications_config['msgs'][$lang]['backHome'];
-				 $second_button = "";
-				 $second_button_wording = "";
 				 
-				 if($user_email != "") {
-				 	//With the email but without a session based id. 
-				 	
-				 	//Check this device is available on the server
-				 	$available = check_device_available($device_type, $notifications_config);
-				 	
-				 	if(is_null($available)) {
-				 		$sql = "var_notification_id = " . $notification_id . ", var_device_type = '" . $device_type . "' WHERE var_email = '" . $user_email . "'";
-						$api->db_update("tbl_user", $sql);
-					} else {
+				 //Check this device is available on the server
+				 $available = check_device_available($device_type, $notifications_config);
+				 
+				 if(is_null($available)) {	
+					 //App has been deregistered
+					 $screen_type = "standard";
+					 $main_message = $notifications_config['msgs'][$lang]['appDeregistered'];
+					 $first_button = $follow_on_link;
+					 $first_button_wording = $notifications_config['msgs'][$lang]['backHome'];
+					 $second_button = "";
+					 $second_button_wording = "";
+				 
+					 if($user_email != "") {
+						//With the email but without a session based id. 					
+						$sql = "var_notification_id = " . $notification_id . ", var_device_type = '" . $device_type . "' WHERE var_email = '" . $user_email . "'";
+							$api->db_update("tbl_user", $sql);
+					
+					 }
+				 
+				 } else {
 						 //Unavailable format - suggest switch apps to e.g. browser version
 						 $main_message = $available;
 						 $first_button = $follow_on_link;
@@ -296,8 +299,7 @@
 						 $second_button = "";
 						 $second_button_wording = "";	
 					
-					}
-				 }
+				}
 
 		}
 		
