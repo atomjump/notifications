@@ -332,6 +332,11 @@
 					*/
 					$ios_data = array(
 									"aps" => array(
+										"alert" => array(
+										  "title" => "AtomJump - " . $out_forum,
+										  "body" => $out_message
+										),
+										"sound" => "default",
 										"content-available" => 1,									
 									),	
 									"data" => array(
