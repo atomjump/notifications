@@ -326,8 +326,8 @@
 									"aps" => array(
 										"content-available" => 1,
 										"alert" => array(
-										  "title" : "AtomJump - " . $out_forum,
-										  "body" : $out_message
+										  "title" => "AtomJump - " . $out_forum,
+										  "body" => $out_message
 										),
 										"sound" => "default",
 										"data" => array(
