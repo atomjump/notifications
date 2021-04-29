@@ -338,7 +338,7 @@
 										),
 										"sound" => "default",
 										"content-available" => 1,
-										"category": "invite"									
+										"category" => "invite"									
 									),	
 									"data" => array(
 												"forumName" => $this->null_to_blank_string($message_forum_name),
