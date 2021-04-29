@@ -323,15 +323,16 @@
 					
 					//More details at: https://web-mystery.com/articles/how-make-apns-push-notifications-cordova-ios-application
 					//and https://customer.io/docs/push-custom-payloads/#_
-					$ios_data = array(
-									"aps" => array(
-										
-										"alert" => array(
+					/*
+					"alert" => array(
 										  "title" => "AtomJump - " . $out_forum,
 										  "body" => $out_message
 										),
 										"sound" => "default",
-										"content-available" => 0,									
+					*/
+					$ios_data = array(
+									"aps" => array(
+										"content-available" => 1,									
 									),	
 									"data" => array(
 												"forumName" => $this->null_to_blank_string($message_forum_name),
