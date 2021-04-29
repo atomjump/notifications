@@ -35,6 +35,94 @@
         //Remove and then add
         return rtrim($str, "/") . '/';
     }
+    
+    
+    //Get status of which notifications are supported
+	function check_device_available($device_type, $notifications_config) {
+		//Returns a blank string if it is supported, or a string which should be
+		//displayed, if not
+		global $lang;
+		
+		$use_android = false;
+		$use_ios = false;
+		$use_atomjump = false;
+	
+		if(isset($notifications_config['androidNotifications']) && 
+		   isset($notifications_config['androidNotifications']['use'])) {
+	
+				if($notifications_config['androidNotifications']['use'] == true) {
+					$use_android = true;
+				}
+		} else {
+			//Check legacy option exists
+			if(isset($notifications_config['apiKey'])) {
+				//Use the legacy option
+				$use_android = true;
+			}
+		}
+
+		if(isset($notifications_config['iosNotifications']) && 
+			isset($notifications_config['iosNotifications']['use'])) {
+	
+			if($notifications_config['iosNotifications']['use'] == true) {
+				$use_ios = true;
+			}
+		} else {
+			//Check legacy file exists
+			if(file_exists(__DIR__ . "/pushcert.pem")) {
+				$use_ios = true;
+			}
+		}
+
+		if(isset($notifications_config['atomjumpNotifications']) && 
+			isset($notifications_config['atomjumpNotifications']['use'])) {
+	
+			if($notifications_config['atomjumpNotifications']['use'] == true) {
+				$use_atomjump = true;
+			}
+		}
+		
+		$return_string = null;
+		
+		//Compare device requested, with what ther server supports
+		switch($device_type) {
+			case "iOS":
+				if($use_ios == true) {
+					//All good
+				} else {
+					$return_string = $notifications_config['msgs'][$lang]['wrongApp'];
+				}
+				
+			break;
+			
+			case "Android":
+				if($use_android == true) {
+					//All good
+				} else {
+					$return_string = $notifications_config['msgs'][$lang]['wrongApp'];
+				}
+			break;
+			
+			
+			case "AtomJump":
+				if($use_atomjump == true) {
+					//All good
+				} else {
+					$return_string = $notifications_config['msgs'][$lang]['wrongApp'];
+				}
+			break;	
+			
+			default:
+				$return_string = $notifications_config['msgs'][$lang]['wrongApp'];			
+			break;
+		
+		}
+		
+		//Swap in the streaming app link
+		$return_string = str_replace("[STREAMINGAPPLINK]", $notifications_config['streamingAppLink'], $return_string);
+		
+		return $return_string;
+	}
 
 
 	//Called by the AtomJump messaging app to register this particular user's phone
@@ -163,6 +251,12 @@
 	}
 	
 	
+	
+	
+
+	
+	
+	
 	if(($user_id == "")||($user_email == "")) {
 		//A blank user id
 		$screen_type = "signup";		//
@@ -187,8 +281,22 @@
 				 
 				 if($user_email != "") {
 				 	//With the email but without a session based id. 
-				 	$sql = "var_notification_id = " . $notification_id . ", var_device_type = '" . $device_type . "' WHERE var_email = '" . $user_email . "'";
-			$api->db_update("tbl_user", $sql);
+				 	
+				 	//Check this device is available on the server
+				 	$available = check_device_available($device_type, $notifications_config);
+				 	
+				 	if(is_null($available)) {
+				 		$sql = "var_notification_id = " . $notification_id . ", var_device_type = '" . $device_type . "' WHERE var_email = '" . $user_email . "'";
+						$api->db_update("tbl_user", $sql);
+					} else {
+						 //Unavailable format - suggest switch apps to e.g. browser version
+						 $main_message = $available;
+						 $first_button = $follow_on_link;
+						 $first_button_wording = $notifications_config['msgs'][$lang]['backHome'];
+						 $second_button = "";
+						 $second_button_wording = "";	
+					
+					}
 				 }
 
 		}
@@ -240,29 +348,39 @@
 		} else {
 			//Has been confirmed
 			$unregister_link = "register.php?userid=" . $user_id . "&id=&devicetype=";
-
+			
+			$available = check_device_available($device_type, $notifications_config);
+			if(is_null($available)) {
 	
-			$sql = "var_notification_id = " . $notification_id . ", var_device_type = '" . $device_type . "' WHERE int_user_id = " . $user_id;
-			$api->db_update("tbl_user", $sql);
+				$sql = "var_notification_id = " . $notification_id . ", var_device_type = '" . $device_type . "' WHERE int_user_id = " . $user_id;
+				$api->db_update("tbl_user", $sql);
+			
 
-
-			if($_REQUEST['id'] == "") {
-				 //App has been deregistered
-				 $main_message = $notifications_config['msgs'][$lang]['appDeregistered'];
+				if($_REQUEST['id'] == "") {
+					 //App has been deregistered
+					 $main_message = $notifications_config['msgs'][$lang]['appDeregistered'];
+					 $first_button = $follow_on_link;
+					 $first_button_wording = $notifications_config['msgs'][$lang]['backHome'];
+					 $second_button = "";
+					 $second_button_wording = "";	
+				} else {
+					 //App is registered
+					 if($user_email == "") {
+						$user_email = "[none]";
+					 }
+					 $main_message = str_replace("[email]", $user_email,  $notifications_config['msgs'][$lang]['appRegistered']);
+					 $first_button = $unregister_link;
+					 $first_button_wording = $notifications_config['msgs'][$lang]['deregister'];
+					 $second_button = $follow_on_link;
+					 $second_button_wording = $notifications_config['msgs'][$lang]['backHome'];
+				}
+			} else {
+				 //Unavailable format - suggest switch apps to e.g. browser version
+				 $main_message = $available;
 				 $first_button = $follow_on_link;
 				 $first_button_wording = $notifications_config['msgs'][$lang]['backHome'];
 				 $second_button = "";
 				 $second_button_wording = "";	
-			} else {
-				 //App is registered
-				 if($user_email == "") {
-					$user_email = "[none]";
-				 }
-				 $main_message = str_replace("[email]", $user_email,  $notifications_config['msgs'][$lang]['appRegistered']);
-				 $first_button = $unregister_link;
-				 $first_button_wording = $notifications_config['msgs'][$lang]['deregister'];
-				 $second_button = $follow_on_link;
-				 $second_button_wording = $notifications_config['msgs'][$lang]['backHome'];
 			}
 		}
 	}

@@ -3,7 +3,7 @@
     "apiKey": "Android Legacy (No longer used). E.g. AIzaSyD8TEjhUQDDUQirNIVMdVaHPsnLxt-ygjc",
     "staging": true,
     "iosAppLink": "https://itunes.apple.com/us/app/atomjump-messaging/id1153387200?ls=1&mt=8",
-    "streamingAppLink": "http://app-alpha.atomjump.com:8000",
+    "streamingAppLink": "https://app.atomjump.com",
     "androidAppLinkLegacy": "https://play.google.com/store/apps/details?id=com.atomjump.messaging",
     "androidAppLink": "https://play.google.com/store/apps/details?id=org.atomjump.messaging",
     "androidNotifications": {
@@ -58,7 +58,8 @@
         	"signAndPair": "Sign Up and Pair",
         	"afterSignUp": "2. Return to the app by tapping <img src='img/iphone-back.png' width='147' height='21'> above, or <img src='img/chrome-back.png' height='30' width='24'> below<br/>3. Tap <img src='img/re-sync.png' width='30' height='30'> or logout of the app, and pair again.",
         	"completePairing": "Complete Pairing",
-        	"privacyPolicy": "Privacy Policy"        	
+        	"privacyPolicy": "Privacy Policy",
+        	"wrongApp": "Sorry this server does not support your app's current messages style. Please try a different type of app e.g. the streaming <a target='_blank' href='[STREAMINGAPPLINK]'>browser app</a>."         	
         },
         "es":{
 			"getPopupNotifications": "Recibir notificaciones emergentes:",
@@ -76,7 +77,8 @@
          	"signAndPair": "Registrarse y emparejar",
          	"afterSignUp": "2. Regrese a la aplicación tocando <img src='img/iphone-back.png' width='147' height='21'> arriba, o <img src='img/chrome-back.png' height='30' width='24'> below<br/>3. Toque <img src='img/re-sync.png' width='30' height='30'> o cierre la sesión de la aplicación y vuelva a emparejar.",
         	"completePairing": "Emparejamiento completo",
-        	"privacyPolicy": "Política de privacidad"     
+        	"privacyPolicy": "Política de privacidad",
+        	"wrongApp": "Sorry this server does not support your app's current messages style. Please try a different type of app e.g. the streaming <a target='_blank' href='[STREAMINGAPPLINK]'>browser app</a>."      
         },
         "pt": {
 			"getPopupNotifications": "Receba notificações pop-up:",
@@ -94,7 +96,8 @@
          	"signAndPair": "Inscreva-se e pareie",
          	"afterSignUp": "2. Retorne ao aplicativo tocando em <img src='img/iphone-back.png' width='147' height='21'> acima ou <img src='img/chrome-back.png' height='30' width='24'> abaixo<br/>3. Toque em <img src='img/re-sync.png' width='30' height='30'> ou saia do aplicativo e emparelhe novamente.",
         	"completePairing": "Emparelhamento completo",
-        	"privacyPolicy": "Política de Privacidade"     
+        	"privacyPolicy": "Política de Privacidade",
+        	"wrongApp": "Sorry this server does not support your app's current messages style. Please try a different type of app e.g. the streaming <a target='_blank' href='[STREAMINGAPPLINK]'>browser app</a>."      
         },
         "ch": {
 			"getPopupNotifications":"获取弹出通知：",
@@ -112,8 +115,8 @@
          	"signAndPair": "注册并配对",
          	"afterSignUp": "2.通过点击上方的<img src='img/iphone-back.png' width='147' height='21'>或点击<img src='img/chrome-back.png' height='30' width='24'>下面<br/>3.点击<img src='img/re-sync.png' width='30' height='30'>或注销该应用，然后再次配对。",
         	"completePairing": "完全配对",
-        	"privacyPolicy": "隐私政策"     
-         	 
+        	"privacyPolicy": "隐私政策",
+        	"wrongApp": "Sorry this server does not support your app's current messages style. Please try a different type of app e.g. the streaming <a target='_blank' href='[STREAMINGAPPLINK]'>browser app</a>."          	 
         },
          "cht": {
 			"getPopupNotifications":"獲取彈出通知：",
@@ -131,7 +134,8 @@
          	"signAndPair": "註冊並配對",
          	"afterSignUp": "2.通過點擊上方的<img src='img/iphone-back.png' width='147' height='21'>或點擊<img src='img/chrome-back.png' height='30' width='24'>下面<br/>3.點擊<img src='img/re-sync.png' width='30' height='30'>或註銷該應用，然後再次配對。",
         	"completePairing": "完全配對",
-        	"privacyPolicy": "隱私政策"            
+        	"privacyPolicy": "隱私政策",
+        	"wrongApp": "Sorry this server does not support your app's current messages style. Please try a different type of app e.g. the streaming <a target='_blank' href='[STREAMINGAPPLINK]'>browser app</a>."             
         },
 		"bg": {
 			"getPopupNotifications": "পপআপ বিজ্ঞপ্তি পান:",
@@ -149,7 +153,8 @@
          	"signAndPair": "সাইন আপ এবং জুড়ি",
          	"afterSignUp": "2. । উপরে <img src='img/iphone-back.png' width='147' height='21'> এ, বা <img src='img/chrome-back.png' height='30' width='24'> এর নীচে<br/>3. <img src='img/re-sync.png' width='30' height='30'> বা অ্যাপ্লিকেশনটির লগআউট ট্যাপ করুন এবং আবার জোড় করুন।",
         	"completePairing": "সম্পূর্ণ যুক্ত করুন",
-        	"privacyPolicy": "গোপনীয়তা নীতি",   
+        	"privacyPolicy": "গোপনীয়তা নীতি",
+        	"wrongApp": "Sorry this server does not support your app's current messages style. Please try a different type of app e.g. the streaming <a target='_blank' href='[STREAMINGAPPLINK]'>browser app</a>."    
         },
 		"de": {
 			"getPopupNotifications": "Popup-Benachrichtigungen abrufen:",
@@ -167,7 +172,8 @@
          	"signAndPair": "Anmelden und koppeln",
          	"afterSignUp": "2. Kehren Sie zur App zurück, indem Sie oben auf <img src='img/iphone-back.png' width='147' height='21'> oder <img src='img/chrome-back.png' height='30' width='24'> unten<br/>3. Tippen Sie auf <img src='img/re-sync.png' width='30' height='30'> oder melden Sie sich von der App ab und koppeln Sie erneut.",
         	"completePairing": "Vollständiges Pairing",
-        	"privacyPolicy": "Datenschutz-Bestimmungen"     
+        	"privacyPolicy": "Datenschutz-Bestimmungen",
+        	"wrongApp": "Sorry this server does not support your app's current messages style. Please try a different type of app e.g. the streaming <a target='_blank' href='[STREAMINGAPPLINK]'>browser app</a>."      
         },
         "fr": {
 			"getPopupNotifications": "Recevez des notifications contextuelles:",
@@ -185,7 +191,8 @@
          	"signAndPair": "Inscription et association",
          	"afterSignUp": "2. Revenez à l'application en appuyant sur <img src='img/iphone-back.png' width='147' height='21'> ci-dessus, ou <img src='img/chrome-back.png' height='30' width='24'> below<br/>3. Appuyez sur <img src='img/re-sync.png' width='30' height='30'> ou déconnectez-vous de l'application, puis associez à nouveau.",
         	"completePairing": "Appairage complet",
-        	"privacyPolicy": "Politique de confidentialité"     
+        	"privacyPolicy": "Politique de confidentialité",
+        	"wrongApp": "Sorry this server does not support your app's current messages style. Please try a different type of app e.g. the streaming <a target='_blank' href='[STREAMINGAPPLINK]'>browser app</a>."      
         },
         "hi": {
 			"getPopupNotifications": "पॉपअप सूचनाएं प्राप्त करें:",
@@ -203,7 +210,8 @@
          	"signAndPair": "साइन अप और जोड़ी",
          	"afterSignUp": "2. <img src='img/iphone-back.png' width='147' height='21'> ऊपर, या <img src='img/chrome-back.png' height='30' width='24'> नीचे<br/>3. टैप करें <img src='img/re-sync.png' width='30' height='30'> या ऐप का लॉगआउट, और फिर से जोड़ी।",
         	"completePairing": "पूरी जोड़ी",
-        	"privacyPolicy": "गोपनीयता नीति",   
+        	"privacyPolicy": "गोपनीयता नीति",
+        	"wrongApp": "Sorry this server does not support your app's current messages style. Please try a different type of app e.g. the streaming <a target='_blank' href='[STREAMINGAPPLINK]'>browser app</a>."    
         },
         "in":  {
 			"getPopupNotifications": "Dapatkan pemberitahuan munculan:",
@@ -221,7 +229,8 @@
          	"signAndPair": "Daftar dan Sandingkan",
          	"afterSignUp": "2. Kembali ke aplikasi dengan mengetuk <img src='img/iphone-back.png' width='147' height='21'> di atas, atau <img src='img/chrome-back.png' height='30' width='24'> di bawah<br/>3. Ketuk <img src='img/re-sync.png' width='30' height='30'> atau keluar dari aplikasi, dan pasangkan lagi.",
         	"completePairing": "Pemasangan Lengkap",
-        	"privacyPolicy": "Kebijakan pribadi"     
+        	"privacyPolicy": "Kebijakan pribadi",
+        	"wrongApp": "Sorry this server does not support your app's current messages style. Please try a different type of app e.g. the streaming <a target='_blank' href='[STREAMINGAPPLINK]'>browser app</a>."      
         },
         "it": {
 			"getPopupNotifications": "Ricevi notifiche popup:",
@@ -239,7 +248,8 @@
          	"signAndPair": "Registrati e accoppia",
          	"afterSignUp": "2. Torna all'app toccando <img src='img/iphone-back.png' width='147' height='21'> sopra oppure <img src='img/chrome-back.png' height='30' width='24'> below<br/>3. Toccare <img src='img/re-sync.png' width='30' height='30'> o disconnettersi dall'app e ripetere l'associazione.",
         	"completePairing": "Abbinamento completo",
-        	"privacyPolicy": "Politica sulla riservatezza"     
+        	"privacyPolicy": "Politica sulla riservatezza",
+        	"wrongApp": "Sorry this server does not support your app's current messages style. Please try a different type of app e.g. the streaming <a target='_blank' href='[STREAMINGAPPLINK]'>browser app</a>."      
         },
         "jp": {
 			"getPopupNotifications": "ポップアップ通知を取得：",
@@ -257,7 +267,8 @@
          	"signAndPair": "サインアップしてペアリング",
          	"afterSignUp": "2。上記の<img src='img/iphone-back.png' width='147' height='21'>、または<img src='img/chrome-back.png' height='30' width='24'>以下<br/>3. <img src='img/re-sync.png' width='30' height='30'>をタップするか、アプリからログアウトして、もう一度ペアリングします。",
         	"completePairing": "完全なペアリング",
-        	"privacyPolicy": "個人情報保護方針"     
+        	"privacyPolicy": "個人情報保護方針",
+        	"wrongApp": "Sorry this server does not support your app's current messages style. Please try a different type of app e.g. the streaming <a target='_blank' href='[STREAMINGAPPLINK]'>browser app</a>."      
         },
         "ko": {
 			"getPopupNotifications": "팝업 알림 받기 :",
@@ -275,7 +286,8 @@
          	"signAndPair": "가입 및 페어링",
          	"afterSignUp": "2. 위의 <img src='img/iphone-back.png' width='147' height='21'> 또는 <img src='img/chrome-back.png' height='30' width='24'> 아래<br/>3. <img src='img/re-sync.png' width='30' height='30'>를 누르거나 앱에서 로그 아웃 한 다음 다시 페어링합니다.",
         	"completePairing": "완전한 페어링",
-        	"privacyPolicy": "개인 정보 정책"     
+        	"privacyPolicy": "개인 정보 정책",
+        	"wrongApp": "Sorry this server does not support your app's current messages style. Please try a different type of app e.g. the streaming <a target='_blank' href='[STREAMINGAPPLINK]'>browser app</a>."      
         },
         "pu": {
 			"getPopupNotifications": "ਪੌਪ-ਅਪ ਸੂਚਨਾਵਾਂ ਪ੍ਰਾਪਤ ਕਰੋ:",
@@ -293,7 +305,8 @@
          	"signAndPair": "ਸਾਈਨ ਅਪ ਕਰੋ ਅਤੇ ਜੋੜਾ",
          	"afterSignUp": "2. <img src='img/iphone-back.png' width='147' height='21'> ਉੱਪਰ ਟੈਪ ਕਰਕੇ ਐਪ ਤੇ ਵਾਪਸ ਜਾਓ, ਜਾਂ <img src='img/chrome-back.png' height='30' width='24'> ਹੇਠਾਂ<br/>3. ਟੈਪ ਕਰੋ <img src='img/re-sync.png' width='30' height='30'> ਜਾਂ ਐਪ ਦਾ ਲੌਗਆਉਟ, ਅਤੇ ਦੁਬਾਰਾ ਜੋੜਾ.",
         	"completePairing": "ਪੂਰੀ ਪੇਅਰਿੰਗ",
-        	"privacyPolicy": "ਪਰਾਈਵੇਟ ਨੀਤੀ"     
+        	"privacyPolicy": "ਪਰਾਈਵੇਟ ਨੀਤੀ",
+        	"wrongApp": "Sorry this server does not support your app's current messages style. Please try a different type of app e.g. the streaming <a target='_blank' href='[STREAMINGAPPLINK]'>browser app</a>."      
         },
         "ru": {
 			"getPopupNotifications": "Получать всплывающие уведомления:",
@@ -311,7 +324,8 @@
          	"signAndPair": "Зарегистрируйтесь и создайте пару",
          	"afterSignUp": "2. Вернитесь в приложение, нажав <img src='img/iphone-back.png' width='147' height='21'> выше или <img src='img/chrome-back.png' height='30' width='24'> ниже<br/>3. Нажмите <img src='img/re-sync.png' width='30' height='30'> или выйдите из приложения и снова выполните сопряжение.",
         	"completePairing": "Завершить сопряжение",
-        	"privacyPolicy": "Политика конфиденциальности"     
+        	"privacyPolicy": "Политика конфиденциальности",
+        	"wrongApp": "Sorry this server does not support your app's current messages style. Please try a different type of app e.g. the streaming <a target='_blank' href='[STREAMINGAPPLINK]'>browser app</a>."      
         }
 	}
 }
