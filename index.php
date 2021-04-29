@@ -337,9 +337,9 @@
 												"observeMessage" => $this->null_to_blank_string($message_details['observe_message']),
 												"removeUrl" => $this->null_to_blank_string($message_details['remove_url']),
 												"removeMessage" => $this->null_to_blank_string($message_details['remove_message'])	
-										)										
-									),
-									"notId" => $not_id			
+										),
+										"notId" => $not_id										
+									)			
 								);
 										
 					if($image != "") {
