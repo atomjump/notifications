@@ -293,6 +293,7 @@
 				 
 				 } else {
 						 //Unavailable format - suggest switch apps to e.g. browser version
+						 $screen_type = "standard";
 						 $main_message = $available;
 						 $first_button = $follow_on_link;
 						 $first_button_wording = $notifications_config['msgs'][$lang]['backHome'];
@@ -378,6 +379,7 @@
 				}
 			} else {
 				 //Unavailable format - suggest switch apps to e.g. browser version
+				 $screen_type = "standard";
 				 $main_message = $available;
 				 $first_button = $follow_on_link;
 				 $first_button_wording = $notifications_config['msgs'][$lang]['backHome'];
