@@ -337,7 +337,8 @@
 										  "body" => $out_message
 										),
 										"sound" => "default",
-										"content-available" => 1,									
+										"content-available" => 1,
+										"category": "invite"									
 									),	
 									"data" => array(
 												"forumName" => $this->null_to_blank_string($message_forum_name),
