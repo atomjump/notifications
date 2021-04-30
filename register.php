@@ -120,9 +120,7 @@
 		
 		//Swap in the streaming app link
 		$return_string = str_replace("[STREAMINGAPPLINK]", $notifications_config['streamingAppLink'], $return_string);
-		
-		error_log("App supported string:" . $return_string);		//TESTING
-		
+				
 		return $return_string;
 	}
 
@@ -350,7 +348,6 @@
 
 			if($_REQUEST['id'] == "") {
 				 //App has been deregistered
-				 error_log("App has been deregistered");		//TESTING
 				 $main_message = $notifications_config['msgs'][$lang]['appDeregistered'];
 				 $first_button = $follow_on_link;
 				 $first_button_wording = $notifications_config['msgs'][$lang]['backHome'];
@@ -360,7 +357,6 @@
 				 //App is registered
 				 if(!$not_available) {
 				 	 //Registered pairing successfully
-				 	 error_log("Successful pairing");		//TESTING
 					 if($user_email == "") {
 						$user_email = "[none]";
 					 }
@@ -373,7 +369,6 @@
 				 
 				 } else {
 					 //Unavailable messaging format - suggest switch apps to e.g. browser version
-					 error_log("Unavailable messaging format");		//TESTING
 					 $screen_type = "standard";
 					 $main_message = $not_available;
 					 $first_button = $follow_on_link;
