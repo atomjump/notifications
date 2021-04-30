@@ -263,10 +263,9 @@
 		$main_message = $notifications_config['msgs'][$lang]['notLoggedIn'];
 		$first_button = "#comment-open-Setup";
 		$first_button_wording = $notifications_config['msgs'][$lang]['openSetup'];
-		//$follow_on_link = "#comment-open-Setup";
-		$second_button = "";	//"javascript: window.close()";
+		$second_button = "";	
 		$second_button_wording = ""; 
-		$center = "left";   //$notifications_config['msgs'][$lang]['returnToApp'];
+		$center = "left";   
 		
 		//If there is no notification ID, we don't want users to sign up.
 		//This happens after a logout button is pushed, but we have not yet signed up.
@@ -341,21 +340,23 @@
 			$unregister_link = "register.php?userid=" . $user_id . "&id=&devicetype=";
 			
 			$available = check_device_available($device_type, $notifications_config);
-			if(is_null($available)) {
-	
+			if((is_null($available))||($_REQUEST['id'] == "")) {
+				//Update if this device's message type is available on this server, or the app being deregistered
 				$sql = "var_notification_id = " . $notification_id . ", var_device_type = '" . $device_type . "' WHERE int_user_id = " . $user_id;
 				$api->db_update("tbl_user", $sql);
-			
+			}
 
-				if($_REQUEST['id'] == "") {
-					 //App has been deregistered
-					 $main_message = $notifications_config['msgs'][$lang]['appDeregistered'];
-					 $first_button = $follow_on_link;
-					 $first_button_wording = $notifications_config['msgs'][$lang]['backHome'];
-					 $second_button = "";
-					 $second_button_wording = "";	
-				} else {
-					 //App is registered
+			if($_REQUEST['id'] == "") {
+				 //App has been deregistered
+				 $main_message = $notifications_config['msgs'][$lang]['appDeregistered'];
+				 $first_button = $follow_on_link;
+				 $first_button_wording = $notifications_config['msgs'][$lang]['backHome'];
+				 $second_button = "";
+				 $second_button_wording = "";	
+			} else {
+				 //App is registered
+				 if(is_null($available)) {
+				 	 //Registered successfully
 					 if($user_email == "") {
 						$user_email = "[none]";
 					 }
@@ -364,16 +365,20 @@
 					 $first_button_wording = $notifications_config['msgs'][$lang]['deregister'];
 					 $second_button = $follow_on_link;
 					 $second_button_wording = $notifications_config['msgs'][$lang]['backHome'];
+				 
+				 
+				 } else {
+					 //Unavailable messaging format - suggest switch apps to e.g. browser version
+					 $screen_type = "standard";
+					 $main_message = $available;
+					 $first_button = $follow_on_link;
+					 $first_button_wording = $notifications_config['msgs'][$lang]['backHome'];
+					 $second_button = "";
+					 $second_button_wording = "";	
 				}
-			} else {
-				 //Unavailable format - suggest switch apps to e.g. browser version
-				 $screen_type = "standard";
-				 $main_message = $available;
-				 $first_button = $follow_on_link;
-				 $first_button_wording = $notifications_config['msgs'][$lang]['backHome'];
-				 $second_button = "";
-				 $second_button_wording = "";	
+				 
 			}
+			
 		}
 	}
 	
