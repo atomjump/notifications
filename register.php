@@ -348,6 +348,7 @@
 
 			if($_REQUEST['id'] == "") {
 				 //App has been deregistered
+				 error_log("App has been deregistered");
 				 $main_message = $notifications_config['msgs'][$lang]['appDeregistered'];
 				 $first_button = $follow_on_link;
 				 $first_button_wording = $notifications_config['msgs'][$lang]['backHome'];
@@ -356,7 +357,8 @@
 			} else {
 				 //App is registered
 				 if(is_null($available)) {
-				 	 //Registered successfully
+				 	 //Registered pairing successfully
+				 	 error_log("Successful pairing");
 					 if($user_email == "") {
 						$user_email = "[none]";
 					 }
@@ -369,6 +371,7 @@
 				 
 				 } else {
 					 //Unavailable messaging format - suggest switch apps to e.g. browser version
+					 error_log("Unavailable messaging format");
 					 $screen_type = "standard";
 					 $main_message = $available;
 					 $first_button = $follow_on_link;
