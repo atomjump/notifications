@@ -341,8 +341,8 @@
 			//Has been confirmed
 			$unregister_link = "register.php?userid=" . $user_id . "&id=&devicetype=";
 			
-			$available = check_device_available($device_type, $notifications_config);
-			if((is_null($available))||($_REQUEST['id'] == "")) {
+			$not_available = check_device_available($device_type, $notifications_config);
+			if((!$not_available)||($_REQUEST['id'] == "")) {
 				//Update if this device's message type is available on this server, or the app being deregistered
 				$sql = "var_notification_id = " . $notification_id . ", var_device_type = '" . $device_type . "' WHERE int_user_id = " . $user_id;
 				$api->db_update("tbl_user", $sql);
@@ -358,7 +358,7 @@
 				 $second_button_wording = "";	
 			} else {
 				 //App is registered
-				 if(is_null($available)) {
+				 if(!$not_available) {
 				 	 //Registered pairing successfully
 				 	 error_log("Successful pairing");		//TESTING
 					 if($user_email == "") {
@@ -375,7 +375,7 @@
 					 //Unavailable messaging format - suggest switch apps to e.g. browser version
 					 error_log("Unavailable messaging format");		//TESTING
 					 $screen_type = "standard";
-					 $main_message = $available;
+					 $main_message = $not_available;
 					 $first_button = $follow_on_link;
 					 $first_button_wording = $notifications_config['msgs'][$lang]['backHome'];
 					 $second_button = "";
