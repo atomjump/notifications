@@ -185,17 +185,24 @@
 		$device_type = "Unknown";			//Default to Unknown if unknown
 	}
 	
+	
+	
+	//Get the user id from the session variable, if it exists - this is secure
+	if(isset($_SESSION['logged-user']) && ($_SESSION['logged-user'] != "")) {
+		$user_id = $_SESSION['logged-user'];
+	} 
+	
+	/*
+	
+	A warning: these types of options are insecure, and would allow someone to
+	go through an set all users to your own app:
+	
 	if(isset($_REQUEST['userid']) && ($_REQUEST['userid'] != "")) {
 		$user_id = $_REQUEST['userid'];
 	} else {
-		//Get from the session variable
-		if(isset($_SESSION['logged-user']) && ($_SESSION['logged-user'] != "")) {
-			$user_id = $_SESSION['logged-user'];
-			
-		} 
+		
 	}
-
-
+	
 	if(isset($_COOKIE['email'])) {
 		 $email = urldecode($_COOKIE['email']); 
 	} else {  
@@ -204,7 +211,24 @@
 		} else {
 			$email = '';		//Leave blank for user input
 		}
+	} */
+	
+	if(isset($_REQUEST['d'])) {
+		//This can be passed in - a unique GUID generated when creating a user, which identifies a user id
+		$sql = "SELECT * FROM tbl_user WHERE var_confirmcode = '" . clean_data($_REQUEST['d']) . "'";
+		
+		$result = dbquery($sql)  or die("Unable to execute query $sql " . dberror());
+		if($row = db_fetch_array($result))
+		{
+			//This confirmcode exists - get the user id from it
+			$user_id = $row['int_user_id'];
+			$user_email = $row['var_email'];
+		} else {
+			//Incorrect confirm code. Leave user blank
+		}
+	
 	}
+
 
 	global $msg;
 	global $cnf;
@@ -280,12 +304,12 @@
 			 $second_button = "";
 			 $second_button_wording = "";
 		 
-			 if($user_email != "") {
+			 /* Not needed as user_email no longer set: if($user_email != "") {
 				//With the email but without a session based id. 					
 				$sql = "var_notification_id = " . $notification_id . ", var_device_type = '" . $device_type . "' WHERE var_email = '" . $user_email . "'";
 					$api->db_update("tbl_user", $sql);
 			
-			 }
+			 }*/
 				 
 				
 
@@ -328,7 +352,7 @@
 			$sql = "UPDATE tbl_user SET var_confirmcode = '" . clean_data($confirm_code) . "' WHERE int_user_id = " . $user_id;
 			$result = dbquery($sql)  or die("Unable to execute query $sql " . dberror());
 			
-			$body_message = $msg['msgs'][$lang]['welcomeEmail']['pleaseClick'] . $root_server_url . "/link.php?d=" . $confirm_code . "&id=" . urlencode($_REQUEST['id']) . "&devicetype=" . urlencode( $_REQUEST['devicetype']) . "&email=" . urlencode($user_email) . $msg['msgs'][$lang]['welcomeEmail']['confirm'] . str_replace('CUSTOMER_PRICE_PER_SMS_US_DOLLARS', CUSTOMER_PRICE_PER_SMS_US_DOLLARS, $msg['msgs'][$lang]['welcomeEmail']['setupSMS']) . str_replace('ROOT_SERVER_URL',$root_server_url, $msg['msgs'][$lang]['welcomeEmail']['questions']) . $msg['msgs'][$lang]['welcomeEmail']['regards'];
+			$body_message = $msg['msgs'][$lang]['welcomeEmail']['pleaseClick'] . $root_server_url . "/link.php?d=" . $confirm_code . "&id=" . urlencode($_REQUEST['id']) . "&devicetype=" . urlencode( $_REQUEST['devicetype']) . $msg['msgs'][$lang]['welcomeEmail']['confirm'] . str_replace('CUSTOMER_PRICE_PER_SMS_US_DOLLARS', CUSTOMER_PRICE_PER_SMS_US_DOLLARS, $msg['msgs'][$lang]['welcomeEmail']['setupSMS']) . str_replace('ROOT_SERVER_URL',$root_server_url, $msg['msgs'][$lang]['welcomeEmail']['questions']) . $msg['msgs'][$lang]['welcomeEmail']['regards'];
 			error_log($body_message);
 						
 			$notify = true;			//Switch on global notifications			
