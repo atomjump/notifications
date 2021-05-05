@@ -195,7 +195,7 @@
 	/*
 	
 	A warning: these types of options are insecure, and would allow someone to
-	go through an set all users to your own app:
+	go through and set all users to your own app:
 	
 	if(isset($_REQUEST['userid']) && ($_REQUEST['userid'] != "")) {
 		$user_id = $_REQUEST['userid'];
@@ -223,8 +223,10 @@
 			//This confirmcode exists - get the user id from it
 			$user_id = $row['int_user_id'];
 			$user_email = $row['var_email'];		//For display purposes
+			error_log("Pairing via confirm code. Using user_id:" . $user_id . " Email:" . $user_email);
 		} else {
 			//Incorrect confirm code. Leave user blank
+			error_log("Incorrect error code submitted. This could be a bulk probe.");
 		}
 	
 	} else {
