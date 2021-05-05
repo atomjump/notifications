@@ -217,8 +217,8 @@
 		//This can be passed in - a unique GUID generated when creating a user, which identifies a user id
 		$sql = "SELECT * FROM tbl_user WHERE var_confirmcode = '" . clean_data($_REQUEST['d']) . "'";
 		
-		$result = dbquery($sql)  or die("Unable to execute query $sql " . dberror());
-		if($row = db_fetch_array($result))
+		$result = $api->db_select($sql)  or die("Unable to execute query $sql " . dberror());
+		if($row = $api->db_fetch_array($result))
 		{
 			//This confirmcode exists - get the user id from it
 			$user_id = $row['int_user_id'];
