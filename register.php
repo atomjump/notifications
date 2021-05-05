@@ -222,10 +222,16 @@
 		{
 			//This confirmcode exists - get the user id from it
 			$user_id = $row['int_user_id'];
-			$user_email = $row['var_email'];
+			$user_email = $row['var_email'];		//For display purposes
 		} else {
 			//Incorrect confirm code. Leave user blank
 		}
+	
+	} else {
+		//User's email for display purposes only.
+		if(isset($_SESSION['logged-email']) && ($_SESSION['logged-email'] != "")) {
+			$user_email = $_SESSION['logged-email'];
+		} 
 	
 	}
 
@@ -237,10 +243,7 @@
 	
 	
 	
-	//User's email for display purposes only.
-	if(isset($_SESSION['logged-email']) && ($_SESSION['logged-email'] != "")) {
-			$user_email = $_SESSION['logged-email'];
-	} 
+	
 	
 	//The $follow_on_link is the default location to go to next. The large messaging icon now always opens a setup messaging window.
 	$follow_on_link = "https://atomjump.com";
