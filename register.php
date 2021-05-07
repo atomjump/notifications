@@ -203,15 +203,20 @@
 		
 	}
 	
+	 */
+	
+	//This passed in email is for visible display purposes, only, and is not used 
+	//to select a user, itself, in the backend, or it would be insecure.
 	if(isset($_COOKIE['email'])) {
-		 $email = urldecode($_COOKIE['email']); 
+		 $display_email = urldecode($_COOKIE['email']); 
 	} else {  
 		if(isset($_REQUEST['email'])) { 
-			$email = urldecode($_REQUEST['email']);
+			$display_email = urldecode($_REQUEST['email']);
 		} else {
-			$email = '';		//Leave blank for user input
+			$display_email = '';		//Leave blank for user input
 		}
-	} */
+	}
+	 
 	
 	if(isset($_REQUEST['d'])) {
 		//This can be passed in - a unique GUID generated when creating a user, which identifies a user id
@@ -222,7 +227,7 @@
 		{
 			//This confirmcode exists - get the user id from it
 			$user_id = $row['int_user_id'];
-			$user_email = $row['var_email'];		//For display purposes
+			$user_email = $row['var_email'];		//For usage purposes, not just display
 			error_log("Pairing via confirm code. Using user_id:" . $user_id . " Email:" . $user_email);
 		} else {
 			//Incorrect confirm code. Leave user blank
@@ -230,7 +235,7 @@
 		}
 	
 	} else {
-		//User's email for display purposes only.
+		//User's email for usage purposes, not just display.
 		if(isset($_SESSION['logged-email']) && ($_SESSION['logged-email'] != "")) {
 			$user_email = $_SESSION['logged-email'];
 		} 
@@ -309,12 +314,12 @@
 			 $second_button = "";
 			 $second_button_wording = "";
 		 
-			 /* Not needed as user_email no longer set: if($user_email != "") {
+			 if($user_email != "") {
 				//With the email but without a session based id. 					
 				$sql = "var_notification_id = " . $notification_id . ", var_device_type = '" . $device_type . "' WHERE var_email = '" . $user_email . "'";
 					$api->db_update("tbl_user", $sql);
 			
-			 }*/
+			 }
 				 
 				
 
@@ -878,7 +883,7 @@
 		 echo $msg['msgs'][$lang]['subscribeSettingsButton']; 
 		} else { 
 			echo $msg['msgs'][$lang]['saveSettingsButton'];
-		} ?>'); } else { $('#email-modified').val('false'); $('#save-button').html('<?php echo $msg['msgs'][$lang]['saveSettingsButton'] ?>'); }" id="email-opt" name="email-opt" type="email" class="form-control" placeholder="<?php echo $msg['msgs'][$lang]['enterEmail'] ?>" autocomplete="false" value="<?php echo $email; ?>">
+		} ?>'); } else { $('#email-modified').val('false'); $('#save-button').html('<?php echo $msg['msgs'][$lang]['saveSettingsButton'] ?>'); }" id="email-opt" name="email-opt" type="email" class="form-control" placeholder="<?php echo $msg['msgs'][$lang]['enterEmail'] ?>" autocomplete="false" value="<?php echo $display_email; ?>">
 								</div>
 								<!--<div><a id="comment-show-password" href="javascript:"><?php echo $msg['msgs'][$lang]['more'] ?></a></div>-->
 								<div id="comment-password-vis" style="">
