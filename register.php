@@ -211,7 +211,7 @@
 		$user_id = $_SESSION['logged-user'];
 	} 
 	
-	error_log("Action: " . $action . "  Raw notification ID:" . $raw_notification_id);		//TESTING
+	error_log("Action: " . $action . "  Raw notification ID:" . $raw_notification_id . " User ID" . $user_id);		//TESTING
 	
 	/*
 	
