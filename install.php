@@ -61,9 +61,9 @@
 	}
 	
 	
-	//Create a table for notification
+	//Create a table for notification pairing
 	$sql = "CREATE TABLE `tbl_notification_pairing` ( `int_pairing_id` int(11) NOT NULL AUTO_INCREMENT,  `var_guid` varchar(255) DEFAULT NULL, `var_passcode` varchar(10) DEFAULT NULL, `dt_set` datetime DEFAULT NULL, `dt_expires` datetime DEFAULT NULL, `var_proxy` varchar(1024) DEFAULT NULL, PRIMARY KEY (`int_pairing_id`), KEY `pass` (`var_passcode`), 	  KEY `expires` (`dt_expires`)) ENGINE=InnoDB AUTO_INCREMENT=62 DEFAULT CHARSET=latin1;";
-	echo "Updating user table. SQL:" . $sql . "\n";
+	echo "Creating notification pairing table. SQL:" . $sql . "\n";
 	$result = $api->db_select($sql);
 	
 	
@@ -77,7 +77,10 @@
 	$result = $api->db_select($sql);
 	
 	
-	
+	//Create a table for multi-device registration
+	$sql = "CREATE TABLE `tbl_devices` ( `int_devices_id` int(11) NOT NULL AUTO_INCREMENT, `int_user_id` int(11) NOT NULL,  `var_notification_id` varchar(255) DEFAULT NULL, `var_device_type` varchar(50) DEFAULT NULL, PRIMARY KEY (`int_devices_id`), KEY `devices` (`int_user_id`, `var_notification_id`)) ENGINE=InnoDB AUTO_INCREMENT=62 DEFAULT CHARSET=latin1;";
+	echo "Creating multi-device registration table. SQL:" . $sql . "\n";
+	$result = $api->db_select($sql);
 	
 	
 
