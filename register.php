@@ -409,6 +409,7 @@
 			//be already adjusted for the old apps which don't have a specific action specified.
 			if(!$device_type_not_available)	{
 				//Device type is available on this server
+				error_log("Action: " . $action);		//TESTING
 				
 				if($action == "add") {
 					//Add entry to devices table for this user
