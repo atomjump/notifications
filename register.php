@@ -191,6 +191,7 @@
 		$notification_id = "'" . clean_data(urldecode($raw_notification_id)) . "'";		//Not sure about urldecode here?? Have added for the multi-case, because we need them to be always decoded
 		
 	} else {
+		$raw_notification_id = "";
 		$notification_id = "NULL";
 		
 		//This null case will remove all devices with the old apps
