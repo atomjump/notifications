@@ -84,6 +84,7 @@
 		
 		$return_string = null;
 		
+		
 		//Compare device requested, with what ther server supports
 		switch($device_type) {
 			case "iOS":
@@ -112,7 +113,12 @@
 				}
 			break;	
 			
+			case "":
+				$return_string = "";	//Assume we can use it if not specified - it is likely a de-registration where the type hasn't been specified by the app.
+			break;
+			
 			default:
+				//Trying to use a different type than we understand. Assume not supported.
 				$return_string = $notifications_config['msgs'][$lang]['wrongApp'];			
 			break;
 		
@@ -211,7 +217,7 @@
 		$user_id = $_SESSION['logged-user'];
 	} 
 	
-	error_log("Action: " . $action . "  Raw notification ID:" . $raw_notification_id . " User ID" . $user_id);		//TESTING
+	error_log("Action: " . $action . "  Raw notification ID:" . $raw_notification_id . " User ID:" . $user_id);		//TESTING
 	
 	/*
 	
@@ -398,7 +404,9 @@
 			$unregister_link = "register.php?userid=" . $user_id . "&id=" . $raw_notification_id . "&devicetype=" . $device_type . "&action=remove";
 			
 			
+			
 			$device_type_not_available = check_device_available($device_type, $notifications_config);
+			
 			
 			//Update the user table with the new entry (for a single device type or a multi device type)
 			if((!$device_type_not_available)||($raw_notification_id == "")) {
