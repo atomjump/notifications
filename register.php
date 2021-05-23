@@ -416,7 +416,7 @@
 						//Add entry to devices table for this user
 						
 						//But 1st check if the device already exists for this user, to avoid duplicates
-						$sql = "SELECT * FROM tbl_devices WHERE WHERE var_notification_id = " . $notification_id . " AND int_user_id = " . $user_id;
+						$sql = "SELECT * FROM tbl_devices WHERE var_notification_id = " . $notification_id . " AND int_user_id = " . $user_id;
 		
 						$result = $api->db_select($sql)  or die("Unable to execute query $sql " . dberror());
 						if($row = $api->db_fetch_array($result))
