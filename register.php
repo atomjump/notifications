@@ -188,7 +188,7 @@
 	//Set the notification id for this user/phone
 	if((isset($_REQUEST['id']))&&($_REQUEST['id'] != "")) {
 		$raw_notification_id = $_REQUEST['id'];
-		$notification_id = "'" . clean_data($raw_id]) . "'";
+		$notification_id = "'" . clean_data($raw_notification_id) . "'";
 		
 	} else {
 		$notification_id = "NULL";
