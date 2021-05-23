@@ -414,17 +414,17 @@
 					
 					if($action == "add") {
 						//Add entry to devices table for this user
-						$api->db_insert("tbl_devices", "(int_devices_id, int_user_id, var_notification_id, var_device_type)", "(NULL, " . $user_id . ", " . $notification_id . ",'" . $device_type . "')") or die("Unable to insert device record " . dberror());
+						$api->db_insert("tbl_devices", "(int_devices_id, int_user_id, var_notification_id, var_device_type)", "(NULL, " . $user_id . ", " . $notification_id . ",'" . $device_type . "')");
 					} else {
 						//Remove entry from devices table
 						if($raw_notification_id == "") {
 							//Remove all multi device entries for this user
 							$sql = "DELETE FROM tbl_devices WHERE int_user_id = " . $user_id;
-							$api->db_select($sql) or die("Unable to remove single multi-device entry $sql " . dberror());
+							$api->db_select($sql);
 						} else {
 							//Remove this one multi-device entry for this user
 							$sql = "DELETE FROM tbl_devices WHERE var_notification_id = " . $notification_id . " AND int_user_id = " . $user_id;
-							$api->db_select($sql) or die("Unable to remove single multi-device entry $sql " . dberror());
+							$api->db_select($sql);
 						}
 					}
 				}
