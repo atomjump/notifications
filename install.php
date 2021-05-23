@@ -78,7 +78,7 @@
 	
 	
 	//Create a table for multi-device registration
-	$sql = "CREATE TABLE `tbl_devices` ( `int_devices_id` int(11) NOT NULL AUTO_INCREMENT, `int_user_id` int(11) NOT NULL,  `var_notification_id` varchar(255) DEFAULT NULL, `var_device_type` varchar(50) DEFAULT NULL, PRIMARY KEY (`int_devices_id`), KEY `devices` (`int_user_id`, `var_notification_id`)) ENGINE=InnoDB AUTO_INCREMENT=62 DEFAULT CHARSET=latin1;";
+	$sql = "CREATE TABLE `tbl_devices` ( `int_devices_id` int(11) NOT NULL AUTO_INCREMENT, `int_user_id` int(11) NOT NULL,  `var_notification_id` varchar(255) DEFAULT NULL, `var_device_type` varchar(50) DEFAULT NULL, PRIMARY KEY (`int_devices_id`), KEY `devices` (`int_user_id`, `var_notification_id`), KEY `notification` (`var_notification_id`)) ENGINE=InnoDB AUTO_INCREMENT=62 DEFAULT CHARSET=latin1;";
 	echo "Creating multi-device registration table. SQL:" . $sql . "\n";
 	$result = $api->db_select($sql);
 	

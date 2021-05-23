@@ -170,13 +170,33 @@
 
 	
 
-	
+	if(isset($_REQUEST['action'])) {
+		//Vers apps > 1.0.4 and above will have this option set. Can be 'add' or 'remove'
+		$multi_device = true;
+		if($_REQUEST['action'] == 'add') {
+			$action = "add";	
+		} else {
+			$action = "remove";
+		}
+	} else {
+		//A classic <= 1.0.4 version app and below won't have this option at all.
+		//Fully deregistered 
+		$multi_device = false;
+		$action = "add";
+	}
 	
 	//Set the notification id for this user/phone
 	if((isset($_REQUEST['id']))&&($_REQUEST['id'] != "")) {
-		$notification_id = "'" . $_REQUEST['id'] . "'";
+		$raw_notification_id = $_REQUEST['id'];
+		$notification_id = "'" . clean_data($raw_id]) . "'";
+		
 	} else {
 		$notification_id = "NULL";
+		
+		if($multi_device == false) {
+			//This null case will remove all devices with the old apps
+			$action = "remove";
+		}
 	}
 	
 	if(isset($_REQUEST['devicetype'])) {
@@ -241,7 +261,8 @@
 		} 
 	
 	}
-
+	
+	
 
 	global $msg;
 	global $cnf;
@@ -303,7 +324,7 @@
 		
 		//If there is no notification ID, we don't want users to sign up.
 		//This happens after a logout button is pushed, but we have not yet signed up.
-		if($_REQUEST['id'] == "") {
+		if($raw_notification_id == "") {
 				 
 				
 			 //App has been deregistered
@@ -371,25 +392,54 @@
 		
 		} else {
 			//Has been confirmed
-			$unregister_link = "register.php?userid=" . $user_id . "&id=&devicetype=";
 			
-			$not_available = check_device_available($device_type, $notifications_config);
-			if((!$not_available)||($_REQUEST['id'] == "")) {
+			//Create an unregister link
+			$unregister_link = "register.php?userid=" . $user_id . "&id=" . $raw_notification_id . "&devicetype=" . $device_type . "&action=remove";
+			
+			
+			$device_type_not_available = check_device_available($device_type, $notifications_config);
+			
+			//Update the user table with the new entry - for a single device type or a multi device type
+			if((!$device_type_not_available)||($raw_notification_id == "")) {
 				//Update if this device's message type is available on this server, or the app being deregistered
 				$sql = "var_notification_id = " . $notification_id . ", var_device_type = '" . $device_type . "' WHERE int_user_id = " . $user_id;
 				$api->db_update("tbl_user", $sql);
 			}
+			
+			//Now handle the multi-device type
+			if($multi_device == true) {
+				
+				
+				if($action == "add") {
+					//Add entry to devices table
+					//TODO
+				} else {
+					//Remove entry from devices table
+					if($raw_notification_id == "") {
+						//TODO remove all multi device entries for this user
+					} else {
+						//Remove this one multi-device entry for this user
+						//TODO
+					}
+				}
+			
+			}
+			
 
-			if($_REQUEST['id'] == "") {
+			if($raw_notification_id == "") {
 				 //App has been deregistered
-				 $main_message = $notifications_config['msgs'][$lang]['appDeregistered'];
-				 $first_button = $follow_on_link;
-				 $first_button_wording = $notifications_config['msgs'][$lang]['backHome'];
-				 $second_button = "";
-				 $second_button_wording = "";	
+				 if($multi_device == true) {
+				 } else {
+				 	//User has a single device, or is using the old app - always show the fully deregistered 'receive emails only' message.
+					 $main_message = $notifications_config['msgs'][$lang]['appDeregistered'];
+					 $first_button = $follow_on_link;
+					 $first_button_wording = $notifications_config['msgs'][$lang]['backHome'];
+					 $second_button = "";
+					 $second_button_wording = "";
+				}	
 			} else {
 				 //App is registered
-				 if(!$not_available) {
+				 if(!$device_type_not_available) {
 				 	 //Registered pairing successfully
 					 if($user_email == "") {
 						$user_email = "[none]";
@@ -404,7 +454,7 @@
 				 } else {
 					 //Unavailable messaging format - suggest switch apps to e.g. browser version
 					 $screen_type = "standard";
-					 $main_message = $not_available;
+					 $main_message = $device_type_not_available;
 					 $first_button = $follow_on_link;
 					 $first_button_wording = $notifications_config['msgs'][$lang]['backHome'];
 					 $second_button = "";
