@@ -211,6 +211,8 @@
 		$user_id = $_SESSION['logged-user'];
 	} 
 	
+	error_log("Action: " . $action . "  Raw notification ID:" . $raw_notification_id);		//TESTING
+	
 	/*
 	
 	A warning: these types of options are insecure, and would allow someone to
