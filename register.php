@@ -43,6 +43,8 @@
 		//displayed, if not
 		global $lang;
 		
+		
+		
 		$use_android = false;
 		$use_ios = false;
 		$use_atomjump = false;
@@ -113,7 +115,7 @@
 				}
 			break;	
 			
-			case "":
+			case "Unknown":
 				$return_string = "";	//Assume we can use it if not specified - it is likely a de-registration where the type hasn't been specified by the app.
 			break;
 			
