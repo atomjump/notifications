@@ -399,7 +399,7 @@
 			
 			$device_type_not_available = check_device_available($device_type, $notifications_config);
 			
-			//Update the user table with the new entry - for a single device type or a multi device type
+			//Update the user table with the new entry (for a single device type or a multi device type)
 			if((!$device_type_not_available)||($raw_notification_id == "")) {
 				//Update if this device's message type is available on this server, or the app being deregistered
 				$sql = "var_notification_id = " . $notification_id . ", var_device_type = '" . $device_type . "' WHERE int_user_id = " . $user_id;
@@ -409,17 +409,23 @@
 			//Now handle the multi-device type
 			if($multi_device == true) {
 				
-				
-				if($action == "add") {
-					//Add entry to devices table
-					//TODO
-				} else {
-					//Remove entry from devices table
-					if($raw_notification_id == "") {
-						//TODO remove all multi device entries for this user
+				if(!$device_type_not_available)	{
+					//Device type is available on this server
+					
+					if($action == "add") {
+						//Add entry to devices table for this user
+						$api->db_insert("tbl_devices", "(int_devices_id, int_user_id, var_notification_id, var_device_type)", "(NULL, " . $user_id . ", " . $notification_id . ",'" . $device_type . "')") or die("Unable to insert device record " . dberror());
 					} else {
-						//Remove this one multi-device entry for this user
-						//TODO
+						//Remove entry from devices table
+						if($raw_notification_id == "") {
+							//Remove all multi device entries for this user
+							$sql = "DELETE FROM tbl_devices WHERE int_user_id = " . $user_id;
+							$api->db_select($sql) or die("Unable to remove single multi-device entry $sql " . dberror());
+						} else {
+							//Remove this one multi-device entry for this user
+							$sql = "DELETE FROM tbl_devices WHERE var_notification_id = " . $notification_id . " AND int_user_id = " . $user_id;
+							$api->db_select($sql) or die("Unable to remove single multi-device entry $sql " . dberror());
+						}
 					}
 				}
 			
@@ -429,6 +435,34 @@
 			if($raw_notification_id == "") {
 				 //App has been deregistered
 				 if($multi_device == true) {
+				 	//Determine if there are any more devices in the list. If so, display the fully deregistered message. Otherwise display the partially deregistered message.
+				 	
+				 	$full_display = false;
+				 	$sql = "SELECT COUNT(*) AS device_count FROM tbl_devices WHERE int_user_id = " . $user_id;
+				 	$result = $api->db_select($sql) or die("Could not get a count of devices for this user $sql " . dberror());
+				 	if($row = $api->db_fetch_array($result))
+					{
+				 		if($row['device_count'] <= 0) {
+				 			//No more devices for this user - display full message
+				 			$full_display = true;
+				 		}
+				 	}
+				 	
+				 	if($full_display == true) {
+			 			 $main_message = $notifications_config['msgs'][$lang]['appDeregistered'];
+						 $first_button = $follow_on_link;
+						 $first_button_wording = $notifications_config['msgs'][$lang]['backHome'];
+						 $second_button = "";
+						 $second_button_wording = "";
+				 	} else {
+			 			 $main_message = $notifications_config['msgs'][$lang]['appDeregisteredMulti'];
+						 $first_button = $follow_on_link;
+						 $first_button_wording = $notifications_config['msgs'][$lang]['backHome'];
+						 $second_button = "";
+						 $second_button_wording = "";				 	
+				 	} 
+				 	
+				 	
 				 } else {
 				 	//User has a single device, or is using the old app - always show the fully deregistered 'receive emails only' message.
 					 $main_message = $notifications_config['msgs'][$lang]['appDeregistered'];
