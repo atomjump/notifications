@@ -414,7 +414,18 @@
 					
 					if($action == "add") {
 						//Add entry to devices table for this user
-						$api->db_insert("tbl_devices", "(int_devices_id, int_user_id, var_notification_id, var_device_type)", "(NULL, " . $user_id . ", " . $notification_id . ",'" . $device_type . "')");
+						
+						//But 1st check if the device already exists for this user, to avoid duplicates
+						$sql = "SELECT * FROM tbl_devices WHERE WHERE var_notification_id = " . $notification_id . " AND int_user_id = " . $user_id;
+		
+						$result = $api->db_select($sql)  or die("Unable to execute query $sql " . dberror());
+						if($row = $api->db_fetch_array($result))
+						{
+							//There is already an entry - no need to add another
+						} else {
+							//No entry already exists, add this one
+							$api->db_insert("tbl_devices", "(int_devices_id, int_user_id, var_notification_id, var_device_type)", "(NULL, " . $user_id . ", " . $notification_id . ",'" . $device_type . "')");
+						}
 					} else {
 						//Remove entry from devices table
 						if($raw_notification_id == "") {
