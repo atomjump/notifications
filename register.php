@@ -193,10 +193,8 @@
 	} else {
 		$notification_id = "NULL";
 		
-		if($multi_device == false) {
-			//This null case will remove all devices with the old apps
-			$action = "remove";
-		}
+		//This null case will remove all devices with the old apps
+		$action = "remove";
 	}
 	
 	if(isset($_REQUEST['devicetype'])) {
