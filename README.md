@@ -35,7 +35,7 @@ This notification system option does not depend on any certificates from Android
 
 In your config.json file you should switch 'atomjumpNotifications.use' to 'true' to enable this type of notification system.
 
-**Current Limitations**: Android app notifications will appear up to 30 seconds apart. iPhone app notifications will do the same, if the app is in the foreground on the phone. But otherwise messages may take up to 15 minutes or longer (this background iOS feature is in Beta, still).
+**Current Limitations**: Android app notifications will appear up to 30 seconds apart. iPhone app notifications will do the same, if the app is in the foreground on the phone.
 
 To configure multiple MedImage Proxy Servers, and be notified if the load on your notification servers is getting too high, you will need to add a cron job to your server to be run once per day:
 
@@ -71,7 +71,6 @@ Please **log this in your own personal calendar** for a reminder, since the soft
 
 # TODO
 
-* Handle multiple devices per user (probably as a json array inside the same database field)
-* Time-slots for accepting messages
+* Time-slots for accepting messages (although Android and iOS handle this themselves fairly well now. So it would mainly be for browser notifications)
 * iPhone pictures in the popup
-* Automatic certificate updates
+* Automatic iOS certificate updates
