@@ -361,7 +361,20 @@
 							$ret = false;
 						
 							if($recipient_id) {
-								$sql = "SELECT var_notification_id, var_device_type FROM tbl_user WHERE int_user_id = " . $recipient_id;
+								
+								$sql = "SELECT * FROM tbl_devices WHERE int_user_id = " . $recipient_id;
+								$result = $api->db_select($sql);
+								while($row = $api->db_fetch_array($result))
+								{
+									if(isset($row['var_notification_id'])) {
+										$ret_data['ids'][] = $row['var_notification_id'];
+										$ret_data['device'][] = $row['var_device_type'];		//also store which device type to send to
+										$ret = true;
+									} 
+								}
+								
+								//The old way, using the simple, single case:
+								/*$sql = "SELECT var_notification_id, var_device_type FROM tbl_user WHERE int_user_id = " . $recipient_id;
 								$result = $api->db_select($sql);
 								if($row = $api->db_fetch_array($result))
 								{
@@ -370,7 +383,7 @@
 										$ret_data['device'][] = $row['var_device_type'];		//also store which device type to send to
 										$ret = true;
 									} 
-								}
+								}*/
 							}
 						} else {
 							$ret_data = $in_data;
