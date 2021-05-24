@@ -80,12 +80,6 @@
 	echo "Updating user table. SQL:" . $sql . "\n";
 	$result = $api->db_select($sql);
 	
-	
-	
-	
-	
-
-	
 		
 	echo "Completed.\n";
 	
