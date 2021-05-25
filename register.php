@@ -250,7 +250,6 @@
 	if(isset($_REQUEST['d'])) {
 		//This can be passed in - a unique GUID generated when creating a user, which identifies a user id
 		$sql = "SELECT * FROM tbl_user WHERE var_confirmcode = '" . clean_data($_REQUEST['d']) . "'";
-		$raw_notification_id = $_REQUEST['d'];
 		
 		$result = $api->db_select($sql)  or die("Unable to execute query $sql " . dberror());
 		if($row = $api->db_fetch_array($result))
