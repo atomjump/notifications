@@ -267,19 +267,12 @@
 		if(isset($_SESSION['logged-email']) && ($_SESSION['logged-email'] != "")) {
 			$user_email = $_SESSION['logged-email'];
 			
-			if(!isset($user_id)) {
-				//Get the user_id from the user_email
-				$sql = "SELECT int_user_id FROM tbl_user WHERE var_email = '" . clean_data($user_email) . "'";
-		
-				$result = $api->db_select($sql);
-				if($row = $api->db_fetch_array($result))
-				{
-					//This account exists - get the user id from it
-					$user_id = $row['int_user_id'];
-				}
-			}
+			//This helps distinguish between an auto-account with a user id only
+			//vs an account which has been set with a full email address
 			
-		} 
+		} else {
+			$user_email = "";		
+		}
 		
 		
 	
@@ -335,7 +328,10 @@
 	
 	
 	
-	if($user_id == "") {
+	if(($user_id == "")||($user_email == "")) {			//So there is a case where a user_id is set
+														//but the user_email is not.
+														//We want to show the signup in this 
+														//case still
 		//A blank user id - show the sign-up screen only.
 		$screen_type = "signup";		//
 		$main_message = $notifications_config['msgs'][$lang]['notLoggedIn'];
