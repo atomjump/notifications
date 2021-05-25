@@ -250,7 +250,7 @@
 		//This can be passed in - a unique GUID generated when creating a user, which identifies a user id
 		$sql = "SELECT * FROM tbl_user WHERE var_confirmcode = '" . clean_data($_REQUEST['d']) . "'";
 		
-		$result = $api->db_select($sql)  or die("Unable to execute query $sql " . dberror());
+		$result = $api->db_select($sql);
 		if($row = $api->db_fetch_array($result))
 		{
 			//This confirmcode exists - get the user id from it
@@ -268,14 +268,15 @@
 			$user_email = $_SESSION['logged-email'];
 			
 			if(!isset($user_id)) {
-			//Get the user_id from the user_email
-			$sql = "SELECT int_user_id FROM tbl_user WHERE var_email = '" . clean_data($user_email) . "'";
+				//Get the user_id from the user_email
+				$sql = "SELECT int_user_id FROM tbl_user WHERE var_email = '" . clean_data($user_email) . "'";
 		
-			$result = $api->db_select($sql)  or die("Unable to execute query $sql " . dberror());
-			if($row = $api->db_fetch_array($result))
-			{
-				//This account exists - get the user id from it
-				$user_id = $row['int_user_id'];
+				$result = $api->db_select($sql);
+				if($row = $api->db_fetch_array($result))
+				{
+					//This account exists - get the user id from it
+					$user_id = $row['int_user_id'];
+				}
 			}
 			
 		} 
