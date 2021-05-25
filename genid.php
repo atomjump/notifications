@@ -59,6 +59,15 @@ function cors() {
 	return;		
 }
 
+function return_message($msg) {
+	//If jsonp, wrap it in a JSON response, otherwise just display the message
+	if(isset($_REQUEST['callback'])) {
+		echo $_GET['callback'] . "(" . json_encode($msg) . ")";
+	} else {
+		echo $msg;
+	}
+}
+
 
 function trim_trailing_slash_local($str) {
 	return rtrim($str, "/");
@@ -75,12 +84,12 @@ if(!isset($notifications_config)) {
 	if($data) {
 		$notifications_config = json_decode($data, true);
 		if(!isset($notifications_config)) {
-			echo "Error: notifications config/config.json is not valid JSON.";
+			return_message("Error: notifications config/config.json is not valid JSON.");
 			exit(0);
 		}
  
 	} else {
-		echo "Error: Missing config/config.json in notifications plugin.";
+		return_message("Error: Missing config/config.json in notifications plugin.");
 		exit(0);
  
 	}
@@ -168,7 +177,7 @@ function get_least_load($server_pool, $country_code) {
    			if(isset($notifications_config['atomjumpNotifications']['serverPool']['Default'])) {
    				$proxy = get_least_load($notifications_config['atomjumpNotifications']['serverPool']['Default'], 'Default');
    			} else {
-   				echo "noproxy";
+   				return_message("noproxy");
    			}
    		}
    	}
@@ -200,7 +209,7 @@ function get_least_load($server_pool, $country_code) {
 	      	   $proxy = $row['var_proxy'];
 	      	   echo $proxy . '/write/' . $guid; 	   
 	    } else {
-	         echo 'nomatch';
+	         return_message('nomatch');
 	    }
 
  
@@ -270,7 +279,7 @@ function get_least_load($server_pool, $country_code) {
 
  	cors();
     $result = dbquery($sql)  or die("Unable to execute query $sql " . dberror());
-    echo $passcode . " " . $guid . " " . $proxy . " " . $country_used;
+    return_message($passcode . " " . $guid . " " . $proxy . " " . $country_used);
  }
 
 ?>
