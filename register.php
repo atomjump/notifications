@@ -196,7 +196,7 @@
 	//Set the notification id for this user/phone
 	if((isset($_REQUEST['id']))&&($_REQUEST['id'] != "")) {
 		$raw_notification_id = $_REQUEST['id'];
-		$notification_id = "'" . clean_data(urldecode($raw_notification_id)) . "'";		//Not sure about urldecode here?? Have added for the multi-case, because we need them to be always decoded
+		$notification_id = "'" . clean_data(urldecode($raw_notification_id)) . "'";	
 		
 	} else {
 		$raw_notification_id = "";
@@ -407,7 +407,11 @@
 			
 			//Split the ids up and handle each one
 			$raw_notification_ids = explode("|", $raw_notification_id);
-			$notification_ids = explode("|", $notification_id);
+			$notification_ids = array();
+			for($cnt = 0; $cnt < count($raw_notification_ids); $cnt++) {
+				$notification_ids[$cnt] = "'" . clean_data(urldecode($raw_notification_ids[$cnt])) . "'";			
+			}
+				
 			$device_types = explode("|", $device_type);
 			$one_device_type_available = false;		//Trigger this to display a success message
 			
