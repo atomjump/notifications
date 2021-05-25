@@ -219,7 +219,6 @@
 		$user_id = $_SESSION['logged-user'];
 	} 
 	
-	error_log("Action: " . $action . "  Raw notification ID:" . $raw_notification_id . " User ID:" . $user_id);		//TESTING
 	
 	/*
 	
@@ -267,7 +266,21 @@
 		//User's email for usage purposes, not just display.
 		if(isset($_SESSION['logged-email']) && ($_SESSION['logged-email'] != "")) {
 			$user_email = $_SESSION['logged-email'];
+			
+			if(!isset($user_id)) {
+			//Get the user_id from the user_email
+			$sql = "SELECT int_user_id FROM tbl_user WHERE var_email = '" . clean_data($user_email) . "'";
+		
+			$result = $api->db_select($sql)  or die("Unable to execute query $sql " . dberror());
+			if($row = $api->db_fetch_array($result))
+			{
+				//This account exists - get the user id from it
+				$user_id = $row['int_user_id'];
+			}
+			
 		} 
+		
+		
 	
 	}
 	
@@ -321,8 +334,8 @@
 	
 	
 	
-	if(($user_id == "")||($user_email == "")) {
-		//A blank user id
+	if($user_id == "") {
+		//A blank user id - show the sign-up screen only.
 		$screen_type = "signup";		//
 		$main_message = $notifications_config['msgs'][$lang]['notLoggedIn'];
 		$first_button = "#comment-open-Setup";
@@ -331,26 +344,19 @@
 		$second_button_wording = ""; 
 		$center = "left";   
 		
-		//If there is no notification ID, we don't want users to sign up.
-		//This happens after a logout button is pushed, but we have not yet signed up.
+		//But if there is no notification ID, we don't want users to sign up, either.
+		//This fairly rare case happens after a 'release' button is pushed, but we
+		//have not yet signed up.
 		if($raw_notification_id == "") {
 				 
 				
-			 //App has been deregistered
+			 //Show the 'app has been deregistered' screen instead.
 			 $screen_type = "standard";
 			 $main_message = $notifications_config['msgs'][$lang]['appDeregistered'];
 			 $first_button = $follow_on_link;
 			 $first_button_wording = $notifications_config['msgs'][$lang]['backHome'];
 			 $second_button = "";
 			 $second_button_wording = "";
-		 
-			 if($user_email != "") {
-				//With the email but without a session based id. 					
-				$sql = "var_notification_id = " . $notification_id . ", var_device_type = '" . $device_type . "' WHERE var_email = '" . $user_email . "'";
-					$api->db_update("tbl_user", $sql);
-			
-			 }
-				 
 				
 
 		}
@@ -370,7 +376,7 @@
 				}
 			}
 		} else {
-			//This should never happen
+			//This should never happen. Only case would be a coding mistake above
 			die("Sorry, there was a problem getting the user ID.");	
 				
 		}
@@ -390,9 +396,9 @@
 			$confirm_code = md5(uniqid(rand())); 
 			
 			$sql = "UPDATE tbl_user SET var_confirmcode = '" . clean_data($confirm_code) . "' WHERE int_user_id = " . $user_id;
-			$result = dbquery($sql)  or die("Unable to execute query $sql " . dberror());
+			$result = $api->db_select($sql);
 			
-			$body_message = $msg['msgs'][$lang]['welcomeEmail']['pleaseClick'] . $root_server_url . "/link.php?d=" . $confirm_code . "&id=" . urlencode($_REQUEST['id']) . "&devicetype=" . urlencode( $_REQUEST['devicetype']) . $msg['msgs'][$lang]['welcomeEmail']['confirm'] . str_replace('CUSTOMER_PRICE_PER_SMS_US_DOLLARS', CUSTOMER_PRICE_PER_SMS_US_DOLLARS, $msg['msgs'][$lang]['welcomeEmail']['setupSMS']) . str_replace('ROOT_SERVER_URL',$root_server_url, $msg['msgs'][$lang]['welcomeEmail']['questions']) . $msg['msgs'][$lang]['welcomeEmail']['regards'];
+			$body_message = $msg['msgs'][$lang]['welcomeEmail']['pleaseClick'] . $root_server_url . "/link.php?d=" . $confirm_code . "&id=" . urlencode($raw_notification_id) . "&devicetype=" . urlencode($device_type) . $msg['msgs'][$lang]['welcomeEmail']['confirm'] . str_replace('CUSTOMER_PRICE_PER_SMS_US_DOLLARS', CUSTOMER_PRICE_PER_SMS_US_DOLLARS, $msg['msgs'][$lang]['welcomeEmail']['setupSMS']) . str_replace('ROOT_SERVER_URL',$root_server_url, $msg['msgs'][$lang]['welcomeEmail']['questions']) . $msg['msgs'][$lang]['welcomeEmail']['regards'];
 			error_log($body_message);
 						
 			$notify = true;			//Switch on global notifications			
@@ -402,55 +408,67 @@
 		} else {
 			//Has been confirmed
 			
-			//Create an unregister link
-			$unregister_link = "register.php?userid=" . $user_id . "&id=" . $raw_notification_id . "&devicetype=" . $device_type . "&action=remove";
+			//Split the ids up and handle each one
+			$raw_notification_ids = explode("|", $raw_notification_id);
+			$notification_ids = explode("|", $notification_id);
+			$device_types = explode("|", $device_type);
+			$one_device_type_available = false;		//Trigger this to display a success message
+			
+			for($cnt = 0; $cnt < count($notification_ids); $cnt++) {
+			
+				//Create an unregister link
+				$unregister_link = "register.php?userid=" . $user_id . "&id=" . $raw_notification_ids[$cnt] . "&devicetype=" . $device_types[$cnt] . "&action=remove";
 			
 			
 			
-			$device_type_not_available = check_device_available($device_type, $notifications_config);
+				$device_type_not_available = check_device_available($device_types[$cnt], $notifications_config);
+			
+				if(!$device_type_not_available) {
+					//In other words, there is no error, here
+					$one_device_type_available = true;
+				}
 			
 			
-			//Update the user table with the new entry (for a single device type or a multi device type)
-			if((!$device_type_not_available)||($raw_notification_id == "")) {
-				//Update if this device's message type is available on this server, or the app being deregistered
-				$sql = "var_notification_id = " . $notification_id . ", var_device_type = '" . $device_type . "' WHERE int_user_id = " . $user_id;
-				$api->db_update("tbl_user", $sql);
-			}
+				//Update the user table with the new entry (for a single device type or a multi device type)
+				if((!$device_type_not_available)||($raw_notification_ids[$cnt] == "")) {
+					//Update if this device's message type is available on this server, or the app being deregistered
+					$sql = "var_notification_id = " . $notification_ids[$cnt] . ", var_device_type = '" . $device_types[$cnt] . "' WHERE int_user_id = " . $user_id;
+					$api->db_update("tbl_user", $sql);
+				}
 			
-			//Now handle the multi-device type, but also always add this. The 'action' entry will
-			//be already adjusted for the old apps which don't have a specific action specified.
-			if(!$device_type_not_available)	{
-				//Device type is available on this server
-				error_log("Action: " . $action);		//TESTING
+				//Now handle the multi-device type, but also always add this. The 'action' entry will
+				//be already adjusted for the old apps which don't have a specific action specified.
+				if(!$device_type_not_available)	{
+					//Device type is available on this server
 				
-				if($action == "add") {
-					//Add entry to devices table for this user
+					if($action == "add") {
+						//Add entry to devices table for this user
 					
-					//But 1st check if the device already exists for this user, to avoid duplicates
-					$sql = "SELECT * FROM tbl_devices WHERE var_notification_id = " . $notification_id . " AND int_user_id = " . $user_id;
+						//But 1st check if the device already exists for this user, to avoid duplicates
+						$sql = "SELECT * FROM tbl_devices WHERE var_notification_id = " . $notification_ids[$cnt] . " AND int_user_id = " . $user_id;
 	
-					$result = $api->db_select($sql)  or die("Unable to execute query $sql " . dberror());
-					if($row = $api->db_fetch_array($result))
-					{
-						//There is already an entry - no need to add another
+						$result = $api->db_select($sql);
+						if($row = $api->db_fetch_array($result))
+						{
+							//There is already an entry - no need to add another
+						} else {
+							//No entry already exists, add this one
+							$api->db_insert("tbl_devices", "(int_devices_id, int_user_id, var_notification_id, var_device_type)", "(NULL, " . $user_id . ", " . $notification_ids[$cnt] . ",'" . $device_types[$cnt] . "')");
+						}
 					} else {
-						//No entry already exists, add this one
-						$api->db_insert("tbl_devices", "(int_devices_id, int_user_id, var_notification_id, var_device_type)", "(NULL, " . $user_id . ", " . $notification_id . ",'" . $device_type . "')");
-					}
-				} else {
-					//Remove entry from devices table
-					if($raw_notification_id == "") {
-						//Remove all multi device entries for this user
-						$sql = "DELETE FROM tbl_devices WHERE int_user_id = " . $user_id;
-						$api->db_select($sql);
-					} else {
-						//Remove this one multi-device entry for this user
-						$sql = "DELETE FROM tbl_devices WHERE var_notification_id = " . $notification_id . " AND int_user_id = " . $user_id;
-						$api->db_select($sql);
+						//Remove entry from devices table
+						if($raw_notification_ids[$cnt] == "") {
+							//Remove all multi device entries for this user
+							$sql = "DELETE FROM tbl_devices WHERE int_user_id = " . $user_id;
+							$api->db_select($sql);
+						} else {
+							//Remove this one multi-device entry for this user
+							$sql = "DELETE FROM tbl_devices WHERE var_notification_id = " . $notification_ids[$cnt] . " AND int_user_id = " . $user_id;
+							$api->db_select($sql);
+						}
 					}
 				}
 			}
-			
 			
 
 			if($raw_notification_id == "") {
@@ -460,7 +478,7 @@
 				 	
 				 	$full_display = false;
 				 	$sql = "SELECT COUNT(*) AS device_count FROM tbl_devices WHERE int_user_id = " . $user_id;
-				 	$result = $api->db_select($sql) or die("Could not get a count of devices for this user $sql " . dberror());
+				 	$result = $api->db_select($sql);
 				 	if($row = $api->db_fetch_array($result))
 					{
 				 		if($row['device_count'] <= 0) {
@@ -494,7 +512,7 @@
 				}	
 			} else {
 				 //App is registered
-				 if(!$device_type_not_available) {
+				 if($one_device_type_available == true) {
 				 	 //Registered pairing successfully
 					 if($user_email == "") {
 						$user_email = "[none]";
@@ -507,7 +525,7 @@
 				 
 				 
 				 } else {
-					 //Unavailable messaging format - suggest switch apps to e.g. browser version
+					 //All unavailable messaging formats - suggest switch apps to e.g. browser version
 					 $screen_type = "standard";
 					 $main_message = $device_type_not_available;
 					 $first_button = $follow_on_link;
