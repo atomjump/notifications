@@ -467,6 +467,12 @@
 							$sql = "DELETE FROM tbl_devices WHERE var_notification_id = " . $notification_ids[$cnt] . " AND int_user_id = " . $user_id;
 							$api->db_select($sql);
 						}
+						
+						
+						//And remove the main entry for this user entry, regardless. 
+						//Or it will not clear out and go back to 'email-only' status.
+						$sql = "var_notification_id = NULL, var_device_type = NULL WHERE int_user_id = " . $user_id;
+						$api->db_update("tbl_user", $sql);
 					}
 				}
 			}
