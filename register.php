@@ -473,6 +473,8 @@
 						//Or it will not clear out and go back to 'email-only' status.
 						$sql = "var_notification_id = NULL, var_device_type = NULL WHERE int_user_id = " . $user_id;
 						$api->db_update("tbl_user", $sql);
+						//Note: this entry will only be used if there are 0 entries in
+						//the tbl_devices table for that user. 
 					}
 				}
 			}
