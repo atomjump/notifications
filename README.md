@@ -31,13 +31,13 @@ At the user end, the Android/iPhone app at https://src.atomjump.com/atomjump/mes
 
 # AtomJump's own notification system
 
-This notification system option does not depend on any certificates from Android or Apple, but instead lets you connect to one or more installations of the MedImage Proxy Server >= 1.8.1. More details are available here: http://medimage.co.nz/download/
+This notification system option does not depend on any certificates from Android or Apple, but instead lets you connect to one or more installations of the MedImage Cloud Server >= 1.8.7. More details are available here: http://medimage.co.nz/download/
 
 In your config.json file you should switch 'atomjumpNotifications.use' to 'true' to enable this type of notification system.
 
 **Current Limitations**: Android app notifications will appear up to 30 seconds apart. iPhone app notifications will do the same, if the app is in the foreground on the phone.
 
-To configure multiple MedImage Proxy Servers, and be notified if the load on your notification servers is getting too high, you will need to add a cron job to your server to be run once per day:
+To configure multiple MedImage Cloud Servers, and be notified if the load on your notification servers is getting too high, you will need to add a cron job to your server to be run once per day:
 
 ```
 sudo crontab -e  
