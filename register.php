@@ -602,7 +602,7 @@
 					//Add your configuration here for AtomJump Feedback
 					var ajFeedback = {
 						"uniqueFeedbackId" : "Setup",	//Anything globally unique to your company/page, starting with 'apix-'	
-						"myMachineUser" : "192.104.113.117:8",			
+						"myMachineUser" : "<?php echo $cnf['adminMachineUser']; ?>",			
 						"server":  "<?php echo $webroot; ?>",
 						"cssFeedback": "css/comments-1.0.4.css?ver=1",
 						"cssBootstrap": "css/bootstrap.min.css"
