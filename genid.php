@@ -251,16 +251,63 @@ function get_least_load($server_pool, $country_code) {
     	//If we already have a GUID on the server, just generate a new passcode, and leave the same GUID
     	$guid = $_REQUEST['guid'];
     	
-    	//Update the old record
-    	$sql = "UPDATE tbl_notification_pairing SET var_passcode = '" . clean_data($passcode) . "',
+    	//Check if GUID exists in the database (only situation where this wouldn't be here would be if we have lost the old database), and this is 
+    	//an exising MedImage server
+    	$guid_exists = false;
+    	$sql = "SELECT * FROM tbl_notification_pairing WHERE var_guid = '" . clean_data($guid) . "'"; 
+    	$result = dbquery($sql)  or die("Unable to execute query $sql " . dberror());
+    	if($row = db_fetch_array($result))
+	   {
+	      	   //Found the GUID
+	      	   $guid_exists = true;
+	      	   
+	    }
+    	
+    	if($guid_exists == true) {
+    		//Update the old record
+    		$sql = "UPDATE tbl_notification_pairing SET var_passcode = '" . clean_data($passcode) . "',
     						dt_set = NOW(), 
     						dt_expires = DATE_ADD(NOW(), INTERVAL " . $decay . " HOUR),
     						var_proxy = '" . clean_data($proxy) . "' 
     						WHERE var_guid = '" . clean_data($guid) . "'"; 
+    	} else {
+    		//GUID does not exist in this database, but we'll assume it is valid data.
+    		$sql = "INSERT INTO tbl_notification_pairing (
+                                         var_guid,
+                                         var_passcode,
+                                         dt_set,
+                                         dt_expires,
+                                         var_proxy) VALUES ( '" . clean_data($guid) . "', 
+                                                                '" . clean_data($passcode) . "',
+                                                                NOW(),
+                                                                DATE_ADD(NOW(), INTERVAL " . $decay . " HOUR),
+                                                                '" . clean_data($proxy) . "');";
+    	
+    	}
+    	
+    	
     	
     } else {
- 	//Generate a new GUID
-    	$guid = substr(str_shuffle(str_repeat('23456789abcdefghjkmnpqrstuvwxyzABCDEFGHJKMNPQRSTUVWXYZ', mt_rand(1,20))),1,20);	//Note: 20 is slightly longer than 18 letters in MedImage pairing. Therefore will always be differentiated.
+ 		//Generate a new GUID
+    	$guid_exists = true;
+ 		
+ 		//Loop until we have a unique GUID
+    	while($guid_exists == true) {
+    	
+			$guid = substr(str_shuffle(str_repeat('23456789abcdefghjkmnpqrstuvwxyzABCDEFGHJKMNPQRSTUVWXYZ', mt_rand(1,20))),1,20);	//Note: 20 is slightly longer than 18 letters in MedImage pairing. Therefore will always be differentiated.
+			
+			//Check if GUID exists in the database (only situation where this wouldn't be here would be if we have lost the old database), and this is 
+			//an exising MedImage server
+			$guid_exists = false;
+			$sql = "SELECT * FROM tbl_notification_pairing WHERE var_guid = '" . clean_data($guid) . "'"; 
+			$result = dbquery($sql)  or die("Unable to execute query $sql " . dberror());
+			if($row = db_fetch_array($result))
+			{
+				   //Found the GUID
+				   $guid_exists = true;
+			   
+			}
+		}
     	
     	//Insert the code and guid
     	$sql = "INSERT INTO tbl_notification_pairing (

@@ -62,7 +62,7 @@
 	
 	
 	//Create a table for notification pairing
-	$sql = "CREATE TABLE IF NOT EXISTS `tbl_notification_pairing` ( `int_pairing_id` int(11) NOT NULL AUTO_INCREMENT,  `var_guid` varchar(255) DEFAULT NULL, `var_passcode` varchar(10) DEFAULT NULL, `dt_set` datetime DEFAULT NULL, `dt_expires` datetime DEFAULT NULL, `var_proxy` varchar(1024) DEFAULT NULL, PRIMARY KEY (`int_pairing_id`), KEY `pass` (`var_passcode`), 	  KEY `expires` (`dt_expires`)) ENGINE=InnoDB AUTO_INCREMENT=62 DEFAULT CHARSET=latin1;";
+	$sql = "CREATE TABLE IF NOT EXISTS `tbl_notification_pairing` ( `int_pairing_id` int(11) NOT NULL AUTO_INCREMENT,  `var_guid` varchar(255) DEFAULT NULL, `var_passcode` varchar(10) DEFAULT NULL, `dt_set` datetime DEFAULT NULL, `dt_expires` datetime DEFAULT NULL, `var_proxy` varchar(1024) DEFAULT NULL, PRIMARY KEY (`int_pairing_id`), KEY `pass` (`var_passcode`), UNIQUE KEY(`var_guid`), KEY `expires` (`dt_expires`)) ENGINE=InnoDB AUTO_INCREMENT=62 DEFAULT CHARSET=latin1;";
 	echo "Creating notification pairing table. SQL:" . $sql . "\n";
 	$result = $api->db_select($sql);
 	
