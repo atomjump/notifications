@@ -2,10 +2,11 @@
     "serverPath": "your_path/loop-server/",
     "apiKey": "Android Legacy (No longer used). E.g. AIzaSyD8TEjhUQDDUQirNIVMdVaHPsnLxt-ygjc",
     "staging": true,
-    "iosAppLink": "https://itunes.apple.com/us/app/atomjump-messaging/id1153387200?ls=1&mt=8",
+    "iosAppLinkLegacy": "https://itunes.apple.com/us/app/atomjump-messaging/id1153387200?ls=1&mt=8",
+    "iosAppLink": "https://app.atomjump.com",
     "streamingAppLink": "https://app.atomjump.com",
     "androidAppLinkLegacy": "https://play.google.com/store/apps/details?id=com.atomjump.messaging",
-    "androidAppLink": "https://play.google.com/store/apps/details?id=org.atomjump.messaging",
+    "androidAppLink": "https://app.atomjump.com",
     "androidNotifications": {
     	"use": false,
     	"apiKey": "AIzaSyD8TEjhUQDDUQirNIVMdVaHPsnLxt-ygjc"
