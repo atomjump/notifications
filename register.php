@@ -1090,9 +1090,11 @@
    			//logo-wrapper
    	    ?>
 		<div>			
-		    <div id="logo-wrapper" class="looplogo <?php echo $welcome_popup ?>" >
-		    	<a href="<?php echo $speech_bubble_link ?>"><img class="saver-hideable" src="img/speech-bubble-start-1.png" id="bg" alt="" border="0"></a>
-			</div>
+		    <a href="<?php echo $speech_bubble_link ?>">
+		    	<div id="logo-wrapper" class="looplogo <?php echo $welcome_popup ?>" >
+		    		<img class="saver-hideable" src="img/speech-bubble-start-1.png" id="bg" alt="" border="0">
+				</div>
+			</a>
 		</div>
    		
 
