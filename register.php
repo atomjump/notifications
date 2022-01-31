@@ -345,7 +345,7 @@
 	
 
 	
-	
+	$speech_bubble_link = "javascript:";		//Defaults to opening a welcome forum
 	
 	if(($user_id == "")||($user_email == "")) {			//So there is a case where a user_id is set
 														//but the user_email is not.
@@ -545,12 +545,13 @@
 					 $second_button_wording = "";
 				}	
 			} else {
-				 //App is registered
+				 //App is registered successfully!
 				 if($one_device_type_available == true) {
 				 	 //Registered pairing successfully
 					 if($user_email == "") {
 						$user_email = "[none]";
 					 }
+					 $speech_bubble_link = 'href="' . $notifications_config['msgs'][$lang]['backHome'] . '"';		//Take you on to the messaging page
 					 $main_message = str_replace("[email]", $user_email,  $notifications_config['msgs'][$lang]['appRegistered']);
 					 $first_button = $unregister_link;
 					 $first_button_wording = $notifications_config['msgs'][$lang]['deregister'];
@@ -1087,8 +1088,8 @@
    			//logo-wrapper
    	    ?>
 		<div>			
-		    <div id="logo-wrapper" class="looplogo comment-open">
-					<img class="saver-hideable" src="img/speech-bubble-start-1.png" id="bg" alt="">
+		    <div id="logo-wrapper" class="looplogo comment-open" <?php echo $speech_bubble_link ?>>
+					<img class="saver-hideable" src="img/speech-bubble-start-1.png" id="bg" alt="" border="0">
 			</div>
 		</div>
    		
