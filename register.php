@@ -331,12 +331,14 @@
 		
 		//Determine if we have a subdomain
 		$subdomain = check_subdomain();		//From db_connect.php
+		error_log("Subdomain = " . $subdomain);		//TESTING
 		if($subdomain) {
 			$lg = new cls_login();
 			$ly = new cls_layer();
 			
 			$layer_name = "ajps_" . $subdomain;
 			$json = $lg->subscribe($user_id, $layer_name);		//No password is handled
+			echo $json;		//TESTING
 		}
 		
 		
