@@ -322,7 +322,26 @@
 	}
 	
 	
-	
+	function atomjump_com_subdomain($user_id) 
+	{
+		//With this new user ID we don't, by default, know which forum the person wants to actually listen in to (they usually have to tap the 'ear' button to listen)
+		//but in the special case of xyz.atomjump.com pages, there is only one forum that they want to listen to, and it is 'ajps_[subdomain]'. We can safely
+		//switch on listening to that forum (if it is a public forum)
+		//There is one caveat - we don't handle private forums with this. You still need to log in first on those.
+		
+		//Determine if we have a subdomain
+		$subdomain = check_subdomain();		//From db_connect.php
+		if($subdomain) {
+			$lg = new cls_login();
+			$ly = new cls_layer();
+			
+			$layer_name = "ajps_" . $subdomain;
+			$json = $lg->subscribe($user_id, $layer_name);		//No password is handled
+		}
+		
+		
+		return;
+	}
 	
 
 	
@@ -404,6 +423,12 @@
 		
 		} else {
 			//Has been confirmed
+			
+			
+			//With this new user ID we don't, by default, know which forum the person wants to actually listen in to (they usually have to tap the 'ear' button to listen)
+			//but in the special case of xyz.atomjump.com pages, there is only one forum that they want to listen to, and it is 'ajps_[subdomain]'. We can safely
+			atomjump_com_subdomain($user_id);
+			
 			
 			//Split the ids up and handle each one
 			$raw_notification_ids = explode("|", $raw_notification_id);
