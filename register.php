@@ -551,7 +551,7 @@
 					 if($user_email == "") {
 						$user_email = "[none]";
 					 }
-					 $speech_bubble_link = 'href="' . $notifications_config['msgs'][$lang]['backHome'] . '"';		//Take you on to the messaging page
+					 $speech_bubble_link = 'href="' . $follow_on_link . '"';		//Take you on to the messaging page
 					 $main_message = str_replace("[email]", $user_email,  $notifications_config['msgs'][$lang]['appRegistered']);
 					 $first_button = $unregister_link;
 					 $first_button_wording = $notifications_config['msgs'][$lang]['deregister'];
