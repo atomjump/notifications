@@ -337,7 +337,7 @@
 			$ly = new cls_layer();
 			
 			$layer_name = "ajps_" . $subdomain;
-			$json = $lg->subscribe($user_id, $layer_name);		//No password is handled
+			$json = $lg->subscribe($user_id, $layer_name, null);		//No password is handled
 			echo $json;		//TESTING
 		}
 		
