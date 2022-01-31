@@ -1088,8 +1088,8 @@
    			//logo-wrapper
    	    ?>
 		<div>			
-		    <div id="logo-wrapper" class="looplogo comment-open" <?php echo $speech_bubble_link ?>>
-					<img class="saver-hideable" src="img/speech-bubble-start-1.png" id="bg" alt="" border="0">
+		    <div id="logo-wrapper" class="looplogo comment-open" >
+		    	<a href="<?php echo $speech_bubble_link ?>"><img class="saver-hideable" src="img/speech-bubble-start-1.png" id="bg" alt="" border="0"></a>
 			</div>
 		</div>
    		
