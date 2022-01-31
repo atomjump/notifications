@@ -346,6 +346,7 @@
 
 	
 	$speech_bubble_link = "javascript:";		//Defaults to opening a welcome forum
+	$welcome_popup = "comment-open";			//Defaults to opening a welcome forum in multi languages
 	
 	if(($user_id == "")||($user_email == "")) {			//So there is a case where a user_id is set
 														//but the user_email is not.
@@ -552,6 +553,7 @@
 						$user_email = "[none]";
 					 }
 					 $speech_bubble_link = $follow_on_link;		//Take you on to the messaging page
+					 $welcome_popup = "";						//Ignore the welcome popup
 					 $main_message = str_replace("[email]", $user_email,  $notifications_config['msgs'][$lang]['appRegistered']);
 					 $first_button = $unregister_link;
 					 $first_button_wording = $notifications_config['msgs'][$lang]['deregister'];
@@ -1088,7 +1090,7 @@
    			//logo-wrapper
    	    ?>
 		<div>			
-		    <div id="logo-wrapper" class="looplogo comment-open" >
+		    <div id="logo-wrapper" class="looplogo <?php echo $welcome_popup ?>" >
 		    	<a href="<?php echo $speech_bubble_link ?>"><img class="saver-hideable" src="img/speech-bubble-start-1.png" id="bg" alt="" border="0"></a>
 			</div>
 		</div>
