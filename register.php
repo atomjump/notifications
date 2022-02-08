@@ -507,7 +507,7 @@
 			}
 			
 
-			if(($raw_notification_id == "")||($action == "remove")||($action == "removeall")) {
+			if(($action == "remove")||($action == "removeall")) {		//$raw_notification_id == "")||
 				 //App has been deregistered
 				 error_log("App being deregistered");		//TESTING
 				 if(($action == "remove")||($action == "removeall")) {
