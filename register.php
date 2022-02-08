@@ -445,6 +445,7 @@
 			
 				//Create an unregister link
 				$unregister_link = "register.php?userid=" . $user_id . "&id=" . $raw_notification_ids[$cnt] . "&devicetype=" . $device_types[$cnt] . "&action=remove";
+				$unregister_fully_link = "register.php?userid=" . $user_id . "&id=" . $raw_notification_ids[$cnt] . "&devicetype=" . $device_types[$cnt] . "&action=removeall";
 			
 			
 			
@@ -484,7 +485,7 @@
 						}
 					} else {
 						//Remove entry from devices table
-						if($raw_notification_ids[$cnt] == "") {
+						if(($raw_notification_ids[$cnt] == "")||($action == "removeall")) {
 							//Remove all multi device entries for this user
 							$sql = "DELETE FROM tbl_devices WHERE int_user_id = " . $user_id;
 							$api->db_select($sql);
@@ -508,7 +509,7 @@
 
 			if(($raw_notification_id == "")||($action == "remove")) {
 				 //App has been deregistered
-				 if($action == "remove") {
+				 if(($action == "remove")||($action == "removeall")) {
 				 	//Determine if there are any more devices in the list. If so, display the fully deregistered message. Otherwise display the partially deregistered message.
 				 	
 				 	$full_display = false;
@@ -519,19 +520,20 @@
 				 		if($row['device_count'] <= 0) {
 				 			//No more devices for this user - display full message
 				 			$full_display = true;
+				 			$still_registered_count = $row['device_count'];
 				 		}
 				 	}
 				 	
 				 	if($full_display == true) {
-			 			 $main_message = $notifications_config['msgs'][$lang]['appDeregistered'];
+			 			 $main_message = $notifications_config['msgs'][$lang]['appDeregistered'];		//Fully deregistered - use emails.
 						 $first_button = $follow_on_link;
 						 $first_button_wording = $notifications_config['msgs'][$lang]['backHome'];
 						 $second_button = "";
 						 $second_button_wording = "";
 				 	} else {
-			 			 $main_message = $notifications_config['msgs'][$lang]['appDeregisteredMulti'];
-						 $first_button = $follow_on_link;
-						 $first_button_wording = $notifications_config['msgs'][$lang]['backHome'];
+			 			 $main_message = str_replace("[devices]", $still_registered_count, $notifications_config['msgs'][$lang]['appDeregisteredMulti'];		//Deregistered one device, still more.
+						 $first_button = $unregister_fully_link;
+						 $first_button_wording = $notifications_config['msgs'][$lang]['deregisterFully'];
 						 $second_button = "";
 						 $second_button_wording = "";				 	
 				 	} 
