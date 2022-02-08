@@ -96,7 +96,7 @@
 			"appDeregisteredMulti": "O registro do seu aplicativo foi cancelado para este servidor. Você tem dispositivos [devices] ainda registrados. <br/><br/>Para retornar ao aplicativo, toque em <img src='img/iphone-back.png' width='147' height='21'> acima ou <img src='img/chrome-back.png' height='30' width='24'> abaixo.",
 			"deregister": "Cancelar registro",
 			"deregisterFully": "Cancelar registro (usar notificações por e-mail)",
-			"appRegistered": "Seu aplicativo agora está registrado neste servidor com o e-mail [e-mail].<br/><br/>Para retornar ao aplicativo, toque em <img src='img/iphone-back.png' width='147' height='21'> acima ou <img src='img/chrome-back.png' height='30' width='24'> abaixo.",
+			"appRegistered": "Seu aplicativo agora está registrado neste servidor com o e-mail [email].<br/><br/>Para retornar ao aplicativo, toque em <img src='img/iphone-back.png' width='147' height='21'> acima ou <img src='img/chrome-back.png' height='30' width='24'> abaixo.",
 			"mustBeConfirmed": "Desculpe, você precisará clicar no link em seu e-mail de ativação antes de fazer login em sua conta. Enviamos outro e-mail com este link. Se você estiver tendo problemas para receber este e-mail, entre em contato com us.<br/><br/>Para retornar ao aplicativo, toque em <img src='img/iphone-back.png' width='147' height='21'> acima ou <img src='img/chrome-back.png' height='30' width='24'> abaixo.",
 			"signUp": "Registar-se",
          	"orSignIn": "Ou faça login.",
