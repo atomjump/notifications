@@ -542,7 +542,15 @@
 						 $second_button = "";
 						 $second_button_wording = "";
 				 	} else {
-			 			 $main_message = str_replace("[devices]", $still_registered_count, $notifications_config['msgs'][$lang]['appDeregisteredMulti']);		//Deregistered one device, still more.
+				 	
+				 		 $disp_count = $still_registered_count;		//i.e. 1,2,3,4,5 devices
+				 		 if(isset($msg['msgs'][$lang]['numbers'])) {
+				 		 	 if(isset($msg['msgs'][$lang]['numbers'][$still_registered_count])) {
+				 		 		//Replace with this language version of the number
+				 		 		$disp_count = $msg['msgs'][$lang]['numbers'][$still_registered_count;
+				 		 	 }
+				 		 }
+			 			 $main_message = str_replace("[devices]", $disp_count, $notifications_config['msgs'][$lang]['appDeregisteredMulti']);		//Deregistered one device, still more.
 						 $first_button = $unregister_fully_link;
 						 $first_button_wording = $notifications_config['msgs'][$lang]['deregisterFully'];
 						 $second_button = "";
