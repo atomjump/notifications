@@ -441,6 +441,9 @@
 			$device_types = explode("|", $device_type);
 			$one_device_type_available = false;		//Trigger this to display a success message
 			
+			error_log("Notification ID count :" . count($notification_ids));		//TESTING
+			
+			
 			for($cnt = 0; $cnt < count($notification_ids); $cnt++) {
 			
 				//Create an unregister link
@@ -459,6 +462,8 @@
 			
 				//Update the user table with the new entry (for a single device type or a multi device type)
 				if((!$device_type_not_available)||($raw_notification_ids[$cnt] == "")) {
+					error_log("Setting user table to :" . $notification_ids[$cnt] . " and " . $device_types[$cnt]);		//TESTING
+				
 					//Update if this device's message type is available on this server, or the app being deregistered
 					$sql = "var_notification_id = " . $notification_ids[$cnt] . ", var_device_type = '" . $device_types[$cnt] . "' WHERE int_user_id = " . $user_id;
 					$api->db_update("tbl_user", $sql);
@@ -485,7 +490,9 @@
 						}
 					} else {
 						//Remove entry from devices table
-						if(($raw_notification_ids[$cnt] == "")||($action == "removeall")) {
+						error_log("Removing entry from devices table");		//TESTING
+						
+						if(($raw_notification_id == "")||($action == "removeall")) {
 							//Remove all multi device entries for this user
 							$sql = "DELETE FROM tbl_devices WHERE int_user_id = " . $user_id;
 							$api->db_select($sql);
