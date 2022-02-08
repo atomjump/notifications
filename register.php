@@ -509,6 +509,7 @@
 
 			if(($raw_notification_id == "")||($action == "remove")||($action == "removeall")) {
 				 //App has been deregistered
+				 error_log("App being deregistered");		//TESTING
 				 if(($action == "remove")||($action == "removeall")) {
 				 	//Determine if there are any more devices in the list. If so, display the fully deregistered message. Otherwise display the partially deregistered message.
 				 	
@@ -523,6 +524,8 @@
 				 			$still_registered_count = $row['device_count'];
 				 		}
 				 	}
+				 	
+				 	 error_log("Full display: " . $full_display);		//TESTING
 				 	
 				 	if($full_display == true) {
 			 			 $main_message = $notifications_config['msgs'][$lang]['appDeregistered'];		//Fully deregistered - use emails.
@@ -540,6 +543,7 @@
 				 	
 				 	
 				 } else {
+				 	 error_log("Single device");		//TESTING
 				 	//User has a single device, or is using the old app - always show the fully deregistered 'receive emails only' message.
 					 $main_message = $notifications_config['msgs'][$lang]['appDeregistered'];
 					 $first_button = $follow_on_link;
