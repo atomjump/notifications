@@ -447,8 +447,8 @@
 			for($cnt = 0; $cnt < count($notification_ids); $cnt++) {
 			
 				//Create an unregister link
-				$unregister_link = "register.php?userid=" . $user_id . "&id=" . $raw_notification_ids[$cnt] . "&devicetype=" . $device_types[$cnt] . "&action=remove";
-				$unregister_fully_link = "register.php?userid=" . $user_id . "&id=" . $raw_notification_ids[$cnt] . "&devicetype=" . $device_types[$cnt] . "&action=removeall";
+				$unregister_link = "register.php?userid=" . $user_id . "&id=" . $notification_ids[$cnt] . "&devicetype=" . $device_types[$cnt] . "&action=remove";
+				$unregister_fully_link = "register.php?userid=" . $user_id . "&id=" . $notification_ids[$cnt] . "&devicetype=" . $device_types[$cnt] . "&action=removeall";
 			
 			
 			
@@ -514,7 +514,7 @@
 			}
 			
 
-			if(($action == "remove")||($action == "removeall")) {		//$raw_notification_id == "")||
+			if(($action == "remove")||($action == "removeall")) {		//OLD: $raw_notification_id == "")||
 				 //App has been deregistered
 				 error_log("App being deregistered");		//TESTING
 				 if(($action == "remove")||($action == "removeall")) {
