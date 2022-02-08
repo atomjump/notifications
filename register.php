@@ -547,7 +547,7 @@
 				 		 if(isset($msg['msgs'][$lang]['numbers'])) {
 				 		 	 if(isset($msg['msgs'][$lang]['numbers'][$still_registered_count])) {
 				 		 		//Replace with this language version of the number
-				 		 		$disp_count = $msg['msgs'][$lang]['numbers'][$still_registered_count;
+				 		 		$disp_count = $msg['msgs'][$lang]['numbers'][$still_registered_count];
 				 		 	 }
 				 		 }
 			 			 $main_message = str_replace("[devices]", $disp_count, $notifications_config['msgs'][$lang]['appDeregisteredMulti']);		//Deregistered one device, still more.
