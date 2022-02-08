@@ -181,10 +181,8 @@
 	if(isset($_REQUEST['action'])) {
 		//Vers apps > 1.0.4 and above will have this option set. Can be 'add' or 'remove'
 		$multi_device = true;
-		if($_REQUEST['action'] == 'add') {
-			$action = "add";	
-		} else {
-			$action = "remove";
+		if($_REQUEST['action']) {
+			$action = $_REQUEST['action'];	
 		}
 	} else {
 		//A classic <= 1.0.4 version app and below won't have this option at all.
@@ -203,7 +201,7 @@
 		$notification_id = "NULL";
 		
 		//This null case will remove all devices with the old apps
-		$action = "remove";
+		$action = "removeall";
 	}
 	
 	if(isset($_REQUEST['devicetype'])) {
