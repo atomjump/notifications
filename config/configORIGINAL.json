@@ -324,7 +324,7 @@
 			"openSetup": "ਓਪਨ ਸੈਟਅਪ ਫੋਰਮ",
 			"returnToApp": "ਐਪ ਤੇ ਵਾਪਸ",
 			"appDeregistered": "ਤੁਹਾਡੀ ਐਪ ਹੁਣ ਇਸ ਸਰਵਰ ਨਾਲ ਰਜਿਸਟਰਡ ਹੈ. ਤੁਸੀਂ ਸਿਰਫ ਈਮੇਲ ਨੋਟੀਫਿਕੇਸ਼ਨ ਪ੍ਰਾਪਤ ਕਰੋਗੇ.<br/><br/>ਐਪ ਤੇ ਵਾਪਸ ਜਾਣ ਲਈ <img src='img/iphone-back.png' width='147' height='21'> ਉੱਪਰ, ਜਾਂ <img src='img/chrome-back.png' height='30' width='24'> ਹੇਠਾਂ। ",
-			"appDeregisteredMulti": "ਤੁਹਾਡੀ ਐਪ ਹੁਣ ਇਸ ਸਰਵਰ 'ਤੇ ਰਜਿਸਟਰਡ ਹੈ। ਤੁਹਾਡੇ ਕੋਲ [devices] ਡਿਵਾਈਸ ਅਜੇ ਵੀ ਰਜਿਸਟਰਡ ਹਨ। <br/><br/>>ਐਪ 'ਤੇ ਵਾਪਸ ਜਾਣ ਲਈ <img src='img/iphone-back.png' width='147' height='21'> ਉੱਪਰ, ਜਾਂ <img src='img/chrome-back.png' height='30' width='24'> ਹੇਠਾਂ।",
+			"appDeregisteredMulti": "ਤੁਹਾਡੀ ਐਪ ਹੁਣ ਇਸ ਸਰਵਰ 'ਤੇ ਰਜਿਸਟਰਡ ਹੈ। ਤੁਹਾਡੇ ਕੋਲ [devices] ਡਿਵਾਈਸ ਅਜੇ ਵੀ ਰਜਿਸਟਰਡ ਹਨ। <br/><br/>ਐਪ 'ਤੇ ਵਾਪਸ ਜਾਣ ਲਈ <img src='img/iphone-back.png' width='147' height='21'> ਉੱਪਰ, ਜਾਂ <img src='img/chrome-back.png' height='30' width='24'> ਹੇਠਾਂ।",
 			"deregister": "ਡੀਰੀਜਿਸਟਰ ਕਰੋ",
 			"deregisterFully": "ਡੀਰੀਜਿਸਟਰ ਕਰੋ (ਈਮੇਲ ਸੂਚਨਾਵਾਂ ਵਰਤੋ)",
 			"appRegistered": "ਤੁਹਾਡੀ ਐਪ ਹੁਣ ਇਸ ਸਰਵਰ ਨਾਲ ਈਮੇਲ [email] ਨਾਲ ਰਜਿਸਟਰ ਕੀਤੀ ਗਈ ਹੈ.<br/><br/>ਐਪ ਤੇ ਵਾਪਸ ਜਾਣ ਲਈ <img src='img/iphone-back.png' width='147' height='21'> ਉੱਪਰ, ਜਾਂ <img src='img/chrome-back.png' height='30' width='24'> ਹੇਠਾਂ। ",
