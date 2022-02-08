@@ -507,7 +507,7 @@
 			}
 			
 
-			if(($raw_notification_id == "")||($action == "remove")) {
+			if(($raw_notification_id == "")||($action == "remove")||($action == "removeall")) {
 				 //App has been deregistered
 				 if(($action == "remove")||($action == "removeall")) {
 				 	//Determine if there are any more devices in the list. If so, display the fully deregistered message. Otherwise display the partially deregistered message.
