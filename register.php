@@ -447,8 +447,8 @@
 			for($cnt = 0; $cnt < count($notification_ids); $cnt++) {
 			
 				//Create an unregister link
-				$unregister_link = "register.php?userid=" . $user_id . "&id=" . $notification_ids[$cnt] . "&devicetype=" . $device_types[$cnt] . "&action=remove";
-				$unregister_fully_link = "register.php?userid=" . $user_id . "&id=" . $notification_ids[$cnt] . "&devicetype=" . $device_types[$cnt] . "&action=removeall";
+				$unregister_link = "register.php?userid=" . $user_id . "&id=" . urlencode($notification_ids[$cnt]) . "&devicetype=" . $device_types[$cnt] . "&action=remove";
+				$unregister_fully_link = "register.php?userid=" . $user_id . "&id=" . urlencode($notification_ids[$cnt]) . "&devicetype=" . $device_types[$cnt] . "&action=removeall";
 			
 			
 			
