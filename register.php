@@ -528,8 +528,9 @@
 				 		if($row['device_count'] <= 0) {
 				 			//No more devices for this user - display full message
 				 			$full_display = true;
-				 			$still_registered_count = $row['device_count'];
+				 			
 				 		}
+				 		$still_registered_count = $row['device_count'];
 				 	}
 				 	
 				 	 error_log("Full display: " . $full_display);		//TESTING
