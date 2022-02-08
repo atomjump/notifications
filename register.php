@@ -490,7 +490,7 @@
 						}
 					} else {
 						//Remove entry from devices table
-						error_log("Removing entry from devices table");		//TESTING
+						error_log("Removing entry from devices table. Action:" . $action);		//TESTING
 						
 						if(($raw_notification_id == "")||($action == "removeall")) {
 							//Remove all multi device entries for this user
