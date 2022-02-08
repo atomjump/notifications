@@ -494,9 +494,11 @@
 						
 						if(($raw_notification_id == "")||($action == "removeall")) {
 							//Remove all multi device entries for this user
+							error_log("Deleting all entries from devices table");		//TESTING
 							$sql = "DELETE FROM tbl_devices WHERE int_user_id = " . $user_id;
 							$api->db_select($sql);
 						} else {
+							error_log("Remove one entry from devices table:" . $notification_ids[$cnt]);		//TESTING
 							//Remove this one multi-device entry for this user
 							$sql = "DELETE FROM tbl_devices WHERE var_notification_id = " . $notification_ids[$cnt] . " AND int_user_id = " . $user_id;
 							$api->db_select($sql);
