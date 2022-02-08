@@ -531,7 +531,7 @@
 						 $second_button = "";
 						 $second_button_wording = "";
 				 	} else {
-			 			 $main_message = str_replace("[devices]", $still_registered_count, $notifications_config['msgs'][$lang]['appDeregisteredMulti'];		//Deregistered one device, still more.
+			 			 $main_message = str_replace("[devices]", $still_registered_count, $notifications_config['msgs'][$lang]['appDeregisteredMulti']);		//Deregistered one device, still more.
 						 $first_button = $unregister_fully_link;
 						 $first_button_wording = $notifications_config['msgs'][$lang]['deregisterFully'];
 						 $second_button = "";
