@@ -5,7 +5,7 @@ Send notifications to the iPhone/Android AtomJump messaging app
 
 # Requirements
 
-AtomJump Loop Server >= 0.8.0
+AtomJump Messaging Server >= 0.8.0
 AtomJump Messaging app
 
 
@@ -19,7 +19,7 @@ git clone https://git.atomjump.com/notifications.git
 cd notifications
 cp config/configORIGINAL.json config/config.json
 nano config/config.json								[enter your own parameters:
-					serverPath is your Loop Server file path.
+					serverPath is your Messaging Server file path.
 					apiKey is the Google GCM apiKey.
 					staging is true/false for which Loop Server config to use.]
 cp pushcertSAMPLE.pem pushcert.pem				[You will need your own Apple push certicate in here]
