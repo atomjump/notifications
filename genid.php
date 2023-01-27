@@ -240,7 +240,6 @@ function get_least_load($server_pool, $country_code) {
 		      if($row = db_fetch_array($result))
 	      	{
 	      	   $found = $row['int_pairing_id'];
-	      	   
 	      	}
     
     } while($found != null); //keep looping until found a unique option
@@ -260,7 +259,10 @@ function get_least_load($server_pool, $country_code) {
 	   {
 	      	   //Found the GUID
 	      	   $guid_exists = true;
-	      	   
+	      	   if($row['var_proxy']) {
+	      	   		//Keep the same var_proxy
+	      	   	   $proxy = $row['var_proxy'];
+	      	   }
 	    }
     	
     	if($guid_exists == true) {
