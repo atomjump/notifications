@@ -1,5 +1,7 @@
 <img src="https://atomjump.com/images/logo80.png">
 
+__WARNING: this project has now moved to https://src.atomjump.com/atomjump/notifications.git__
+
 # notifications
 Send notifications to the iPhone/Android AtomJump messaging app
 
